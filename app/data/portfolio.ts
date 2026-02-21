@@ -1,6 +1,6 @@
 // 자동 생성 - therich.io 스크래핑
 // 마지막 업데이트: 2026-02-21
-// 총 자산: ₩89,043,568
+// 총 자산: ₩89,042,437
 
 export interface Holding {
   ticker: string;
@@ -28,11 +28,11 @@ export interface PortfolioSummary {
 }
 
 export const portfolioSummary: PortfolioSummary = {
-  totalAsset: "₩89,043,568",
+  totalAsset: "₩89,042,437",
   annualDividend: "₩1,863,510",
   dividendYield: "2.09%",
   investDividendYield: "2.53%",
-  totalReturn: "총 수익 +₩15,316,642(+23.17%)",
+  totalReturn: "총 수익 +₩15,315,511(+23.16%)",
   lastUpdated: "2026-02-21",
 };
 
@@ -252,14 +252,14 @@ export const holdings: Holding[] = [
     name: "BTC / KRW",
     shares: 0.0051,
     avgCost: 0,
-    currentPrice: 1003320000.2668,
+    currentPrice: 1001000000.035,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "가상자산",
     color: "hsl(158, 70%, 60%)",
-    rawValue: "₩516,639",
-    rawGain: "-₩143,111 (-21.69%)",
+    rawValue: "₩515,444",
+    rawGain: "-₩144,305 (-21.87%)",
     currency: "KRW",
   },
   {
