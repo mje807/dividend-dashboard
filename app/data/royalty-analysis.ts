@@ -57,7 +57,509 @@ export interface StockAnalysis {
 export const stockAnalyses: StockAnalysis[] = [
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  // [1/58] KO — Coca-Cola (배당왕족주, 62년 연속)
+  // [01] O — Realty Income (배당귀족주, 31년 연속 / 보유 종목)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "O",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "미국 최대 상업용 부동산 리츠(REIT). '월세 수입을 월배당으로 돌려주는 회사'라는 모토로 운영. 미국·유럽 11,000개 이상 상업용 부동산 보유 (편의점·약국·달러스토어·극장 등). 임차인의 재산세·보험·유지비를 임차인이 부담하는 '넷리스(Net Lease)' 구조로 운영 리스크 최소화. 1969년 상장 이후 월배당 단 한 번도 삭감 없음.",
+    coreProducts: ["상업용 넷리스 부동산", "미국 11,000+ 매장", "유럽(UK·스페인·이탈리아)", "게이밍·데이터센터 다각화"],
+    geographicPresence: "미국 84% · 유럽 15% · 기타 1%",
+    dividendStreakYears: 31,
+    dividendCAGR5yr: 3.1,
+    dividendCAGR10yr: 3.8,
+    recentDividendGrowth: "2024년 월 $0.263 → 2025년 $0.270 (+2.7%) | 연 $3.156 → $3.24",
+    dividendSafety: "strong",
+    dividendSafetyReason:
+      "REIT 배당성향 300%는 순이익 기준이라 왜곡. 실제는 AFFO(조정 운영현금흐름) 대비 75% 수준 — 안전. 넷리스 구조로 공실 리스크 낮고, 테넌트 분산 잘 됨.",
+    moatTypes: ["efficient_scale", "cost_advantage"],
+    moatStrength: "wide",
+    moatNarrative:
+      "1만 1천 개 부동산 포트폴리오는 하루아침에 복제 불가. 규모의 경제로 자금조달 비용 업계 최저 수준 유지. S&P 500 편입 REIT 중 가장 높은 신용등급(A3/A-) 보유. '월배당 주식(Monthly Dividend Company)'이라는 강력한 브랜드로 개인 투자자 수요 항시 견고.",
+    revenueGrowthTrend: "3년 연평균 +25% (Spirit Realty 인수 포함), 유기적 성장 4~5%",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary:
+      "REIT는 순이익보다 AFFO가 핵심. 2024년 AFFO/share $4.17 수준, P/AFFO ~16x (역사적 평균 15~20x → 적정). D/E 74 수준은 REIT치고 건전. 유럽 확장·게이밍 시설 투자로 성장 다각화 진행 중.",
+    keyRisks: [
+      "금리 민감성: 장기채 금리 상승 시 배당 매력 상대적 감소 → 주가 압박",
+      "테넌트 리스크: 달러스토어(Dollar General, Dollar Tree) 실적 부진 시 임대 연장 협상력 약화",
+      "유럽 환율 리스크: EUR/GBP → USD 환산 손실 가능",
+      "성장 둔화: 공격적 인수 이후 유기적 성장률 3~4%로 제한적",
+    ],
+    bullCase:
+      "금리 인하 사이클 진입 시 리츠 전반 리레이팅. 유럽·게이밍·데이터센터 포트폴리오 다각화로 2025~2027 AFFO 성장 가속. 인플레 연동 임대 계약 구조로 실질 배당 가치 방어.",
+    bearCase:
+      "'고금리 장기화(Higher for Longer)' 시나리오에서 P/AFFO 압축 → 주가 $55~58 재테스트 가능. 미국 소매업 구조적 쇠퇴가 계속되면 공실률 상승 위험.",
+    valuationComment:
+      "현재가 $66.14 = P/AFFO 약 15.8x. 역사적 평균(17~18x) 대비 10% 가량 할인. 수율 4.90% vs 5년 평균 4.99% — 거의 공정가치. **$60~63 구간이 이상적 매수 구간** (수율 5.1~5.4%, P/AFFO 14~15x). 지금 당장 추가 매수보다는 금리 상황 지켜보며 하락 시 분할 매수 권장.",
+    recentDevelopments: [
+      "2024년 Spirit Realty 합병 완료 → 미국 최대 넷리스 REIT 지위 공고화",
+      "유럽 사업 확대: 이탈리아 시장 진출, 영국·스페인 포트폴리오 성장 중",
+      "Wynn 게이밍 시설 임대 계약 체결 → 게이밍 섹터 첫 진출",
+      "2026년 2월 월배당 $0.270 확정 → 다음 배당락일 2026-02-27",
+    ],
+    overallRating: "보유",
+    ratingReason:
+      "현재 보유하고 있다면 유지가 맞다. 월배당 + 넓은 해자 + 안정적 AFFO 성장의 조합은 배당 투자자의 핵심 자산. 다만 지금 가격($66)은 공정가치권 — 추가 매수는 $62 이하에서 노리는 게 좋다.",
+    targetBuyPrice: 62,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [02] TGT — Target (배당귀족주, 52년 연속 / 보유 종목)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "TGT",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "미국 2위 할인 소매 체인 (1위 Walmart). 1,900개 이상 매장 운영. 의류·가정용품·식품 등 중간급 소비자 대상 '저렴하지만 세련된' 포지셔닝이 핵심. 온라인+오프라인 연동(BOPIS, Same-Day Delivery) 강화 중. 자체 브랜드(Owned Brand) 비중 33%로 마진 방어.",
+    coreProducts: ["의류·액세서리 (Threshold, A New Day)", "가정용품·가전", "식품·음료", "뷰티·헬스", "전자제품·엔터테인먼트"],
+    geographicPresence: "미국 100% (국내 전용)",
+    dividendStreakYears: 52,
+    dividendCAGR5yr: 13.5,
+    dividendCAGR10yr: 11.8,
+    recentDividendGrowth: "2024년 $1.10/분기 → 2025년 유지 (성장 일시 정체)",
+    dividendSafety: "strong",
+    dividendSafetyReason:
+      "배당성향 54.55%, FCF 충분. 52년 연속 인상 트랙레코드. 현 실적 압박에도 배당 삭감 가능성 극히 낮음.",
+    moatTypes: ["brand", "cost_advantage"],
+    moatStrength: "narrow",
+    moatNarrative:
+      "'싸지만 세련된' 차별화는 Walmart(순수 저가)·Amazon(편의성)과 다른 포지션. 자체 브랜드 33%로 마진 방어력 보유. 단, 아마존/월마트 대비 규모에서 열위 — 해자는 '좁음'. 저소득층보다 중간층 타깃이라 경기 침체에 더 취약.",
+    revenueGrowthTrend: "최근 3년 정체 (코로나 특수 이후 정상화, 2022 재고 쇼크)",
+    marginTrend: "contracting",
+    debtLevel: "moderate",
+    financialSummary:
+      "ROE 25.09% — 우수. 하지만 2022년 재고 과잉→마진 급락 충격이 아직 완전히 회복 안 됨. 영업이익률 4~5% (Walmart 4%, Amazon 5% 수준). 디지털 채널 투자 증가로 단기 비용 압박 지속.",
+    keyRisks: [
+      "아마존·월마트의 공격적 가격 전략 → Target 시장점유율 잠식",
+      "소비 양극화: 중산층 이탈 → 저가(달러스토어)·고가(Costco)로 이동",
+      "높은 재고 리스크: 2022년 재고 쇼크 반복 가능성",
+      "디지털 전환 투자 부담 vs 전통 소매 마진 구조",
+      "애널리스트 목표가 $103 = 현재가보다 낮음 → 단기 주가 압박 시사",
+    ],
+    bullCase:
+      "PE 14.14x는 역사적 저점 수준. 배당수율 3.91% (5년 평균 2.83% 대비 +1.08%) = 강한 저평가 신호. 마진 회복+재고 정상화 시 EPS 반등 가능. 자사주 매입 지속으로 주당 가치 상승. 3~5년 장기 보유 시 상당한 총수익(배당+주가) 기대.",
+    bearCase:
+      "소비 둔화 + 경쟁 심화가 복합되면 마진 회복 지연. 애널리스트 컨센서스 목표 $103 = 현재가 $116보다 낮아 단기 하락 압력 존재. Walmart의 온라인 가속이 TGT 고객을 지속 잠식할 경우 구조적 문제.",
+    valuationComment:
+      "PE 14.14x, 배당수율 3.91% — 정량적으로는 매력적인 저평가 구간. 하지만 애널리스트 컨센서스 목표가가 현재가보다 낮다는 점이 경고 신호. **단기 트레이딩보다 3~5년 관점의 분할 매수 접근 권장.** $105~110 이하로 하락 시 추가 매수 구간으로 적합.",
+    recentDevelopments: [
+      "2025 FY 가이던스 EPS $8.30~8.90 (시장 기대 하회) → 주가 조정",
+      "자체 브랜드(Owned Brand) 강화로 마진 방어 전략 지속",
+      "Same-Day Delivery 서비스 확대 — 디지털 침투율 업그레이드 중",
+      "소비자 신뢰지수 하락 + 관세 불확실성으로 단기 실적 전망 흐림",
+    ],
+    overallRating: "관심",
+    ratingReason:
+      "PE 14x에 4% 배당률은 52년 배당왕족주로선 역사적 저평가. 지금 보유 중이라면 유지, 추가 매수는 $110 이하에서 분할 접근. 단기 실적 불확실성 있으나 장기 배당 투자 관점에서 매력적.",
+    targetBuyPrice: 110,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [03] IBM — (배당귀족주, 30년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "IBM",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "클라우드·AI 중심으로 전환 중인 100년 역사의 IT 기업. 2019년 Red Hat 인수(340억 달러)로 하이브리드 클라우드 전략 전환. 2021년 인프라 사업(Kyndryl) 분사 → 고마진 소프트웨어·컨설팅 집중. Watson AI → watsonx 브랜드로 기업용 AI 시장 공략. 2024년 하시코프(HashiCorp) 인수로 IT 자동화 강화.",
+    coreProducts: ["Red Hat (하이브리드 클라우드)", "watsonx (기업용 AI)", "IBM 컨설팅", "z시리즈 메인프레임", "IBM 클라우드"],
+    geographicPresence: "북미 45% · 유럽 30% · 아시아태평양 15% · 기타 10%",
+    dividendStreakYears: 30,
+    dividendCAGR5yr: 2.0,
+    dividendCAGR10yr: 3.1,
+    recentDividendGrowth: "2025년 $1.67/분기 → $1.68 (+0.6%) — 소폭 인상 유지",
+    dividendSafety: "strong",
+    dividendSafetyReason:
+      "배당성향 60%, FCF $12B+ 수준으로 배당 $6.5B 대비 여유 있음. 전환 기간 동안에도 배당 지속 인상.",
+    moatTypes: ["switching_costs", "intangible_assets", "brand"],
+    moatStrength: "narrow",
+    moatNarrative:
+      "Red Hat의 엔터프라이즈 오픈소스 생태계 + IBM 메인프레임의 금융·정부 고객 전환비용이 핵심 해자. 한번 IBM 메인프레임을 쓰는 은행은 교체 비용이 수천억이라 사실상 잠금(lock-in). 하지만 클라우드 시장에서 AWS·Azure·GCP 대비 점유율 열위는 약점.",
+    revenueGrowthTrend: "3년 연평균 +3~5% (소프트웨어 부문 +7%, 컨설팅 정체)",
+    marginTrend: "expanding",
+    debtLevel: "high",
+    financialSummary:
+      "ROE 35.16% — 우수. 그러나 D/E 197로 부채 부담 상당. Red Hat·HashiCorp 인수 비용. 소프트웨어 마진(~75%) 확대로 전체 마진 개선 추세. Forward PE 19.16x — AI/클라우드 전환 감안 시 합리적.",
+    keyRisks: [
+      "AI 시장에서 Microsoft(Azure+OpenAI), Google(Gemini) 대비 열위",
+      "컨설팅 부문 성장 정체 — 자동화로 인력 수요 감소",
+      "높은 부채: Red Hat + HashiCorp 인수 후 레버리지 부담",
+      "수율 시그널 오해: 5년 평균 수율 4.06%는 구(舊) IBM 고배당 시절 포함 → 현재 저수율이 '비싸다'는 의미 아님",
+    ],
+    bullCase:
+      "watsonx AI + Red Hat 하이브리드 클라우드 수요 가속. 기업 AI 도입 본격화 → IBM 컨설팅 수혜. HashiCorp 인수로 인프라 자동화 시장 선점. 애널리스트 목표 $324.95 = 현재 대비 **+26.4% 상승여력** — 월가에서도 저평가 인식.",
+    bearCase:
+      "AI 시장은 빠르게 움직이는데 IBM의 실행력이 따라가지 못할 경우 리레이팅 실패. 컨설팅 부문이 AI 자동화의 역설적 피해자가 될 수 있음.",
+    valuationComment:
+      "수율 2.61% vs 5년 평균 4.06% = -1.45% 차이 → 얼핏 고평가 신호처럼 보이지만, 이는 오해. IBM이 과거 배당 극대화→저성장 전략에서 성장 투자 전략으로 전환하며 배당 성장률을 의도적으로 낮췄기 때문. **실제 밸류에이션은 52주 저점 38.6% 근처 + Forward PE 19x + 애널리스트 26% 상승여력으로 오히려 저평가 구간.** $240~250 구간이 이상적 매수 범위.",
+    recentDevelopments: [
+      "HashiCorp 인수 완료 (2024) → IT 인프라 자동화 역량 대폭 강화",
+      "2025년 watsonx 기업 고객 1,000사 돌파",
+      "z17 메인프레임 출시 예정 → 금융·정부 고객 업그레이드 사이클",
+      "AI 관련 신규 계약 $1B+ 분기별 수주 지속",
+    ],
+    overallRating: "관심",
+    ratingReason:
+      "52주 저점 근처 + 애널리스트 26% 상승여력 + Forward PE 19x는 매력적인 조합. 배당수율 2.61%는 낮아 보이지만 성장 재투자 중. $245 이하 분할 매수 관심 구간. AI 전환 성공 시 3년 내 $300+ 목표.",
+    targetBuyPrice: 245,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [04] PG — Procter & Gamble (배당왕족주, 68년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "PG",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "세계 최대 소비재 기업. Tide, Pampers, Gillette, Oral-B, Head&Shoulders 등 65개 브랜드 운영. '선택과 집중' 전략으로 2014~2019년 100개 이상 브랜드 정리 → 고마진 10개 카테고리 집중. 프리미엄화 전략: 단순 볼륨 성장 아닌 가격 인상으로 매출·이익 동반 성장.",
+    coreProducts: ["Tide/Ariel (세탁)", "Pampers (기저귀)", "Gillette/Venus (면도)", "Oral-B/Crest (구강)", "SK-II/Olay (스킨케어)"],
+    geographicPresence: "북미 45% · 유럽 20% · 아시아태평양 20% · 개도국 15%",
+    dividendStreakYears: 68,
+    dividendCAGR5yr: 6.0,
+    dividendCAGR10yr: 5.3,
+    recentDividendGrowth: "2024년 $0.9408/분기 → 2025년 $1.0065 (+7.0%) | 연 $3.76 → $4.03",
+    dividendSafety: "strong",
+    dividendSafetyReason:
+      "배당성향 62%, FCF $14B+로 배당 $9B 완벽 커버. 68년 무결점 트랙레코드.",
+    moatTypes: ["brand", "cost_advantage", "intangible_assets"],
+    moatStrength: "wide",
+    moatNarrative:
+      "전 세계 소매점 매대 최우선 위치 확보, 65개 주요 브랜드의 소비자 신뢰도, 연간 $7B 규모 R&D+마케팅 투자가 해자를 형성. 가격을 올려도 소비자가 계속 사는 것이 브랜드 파워의 증거. 프리미엄화 전략으로 volume 없이 value만 키우는 성숙 성장 모델.",
+    revenueGrowthTrend: "3년 연평균 +5~7% (주로 가격 인상 기여)",
+    marginTrend: "expanding",
+    debtLevel: "low",
+    financialSummary:
+      "ROE 31.56% — 우수. D/E 68.72 — 안전 수준. 영업이익률 20%+, 순이익률 18%+. 자사주 매입 $5~7B/yr. 매출 $84B → 글로벌 필수소비재 1위.",
+    keyRisks: [
+      "신흥국 통화 약세: 매출 55%가 비달러 → 환율 영향 상시 존재",
+      "중국 소비 둔화: 아시아 매출 20%를 차지, 중국 경기 민감",
+      "프리미엄 피로: 소비자 가격 저항 강화 시 볼륨 감소 가능",
+      "Private Label 강화: 유통업체 자체 브랜드의 점유율 잠식",
+    ],
+    bullCase:
+      "신흥국 중산층 확대 → 위생·가정용품 소비 장기 성장. AI 마케팅·SCM 최적화로 비용 구조 개선. 68년 배당 인상 트랙레코드 → 어떤 시장 환경에서도 배당 안정성 최고 등급.",
+    bearCase:
+      "현재 52주 위치 54.7%로 중간대이지만, 중국 경기 둔화 + 환율 역풍 지속 시 성장 모멘텀 약화. 프리미엄 가격 전략의 한계점 도달 가능.",
+    valuationComment:
+      "수율 2.63% vs 5년 평균 2.45% (+0.18%) — 살짝 저평가 신호. PE 23.82x — 소비재 프리미엄 감안 시 적정. 52주 중간대(54.7%), 애널리스트 +4.5% upside. **종합적으로 공정가치 근처. $155 이하가 더 좋은 진입점이지만, 장기 보유 목적이라면 지금도 나쁘지 않다.**",
+    recentDevelopments: [
+      "2025 FY 유기적 성장 3~5% 가이던스 제시 (가격 인상 둔화, 볼륨으로 보완)",
+      "SK-II (중국 럭셔리 스킨케어) 부진 지속 → 중국 소비 회복 기다리는 중",
+      "Gillette 면도 구독 서비스 확대 → 반복 매출 모델 강화",
+      "AI 공급망 최적화 도입으로 재고 비용 8% 절감 발표",
+    ],
+    overallRating: "보유",
+    ratingReason:
+      "배당 투자자의 필수 보유 종목. 지금 당장 폭발적 수익보다는 '잘 자는 동안 배당이 자라는' 컴파운더. 68년 연속 인상이라는 사실 자체가 포트폴리오 앵커 역할. $155 이하 시 적극 매수.",
+    targetBuyPrice: 155,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [05] JNJ — Johnson & Johnson (배당왕족주, 62년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "JNJ",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "2023년 Kenvue(소비자 부문: Tylenol, Band-Aid, Neutrogena) 분사 후 **순수 제약·의료기기** 기업으로 재편. 현재 세계 2위 제약사이자 1위 의료기기 기업. 혁신 의약품(Darzalex·Erleada·Tremfya)과 수술 로봇·정형외과 기기가 양대 축. 연구개발 집중 → 파이프라인 강화 중.",
+    coreProducts: ["Darzalex (다발성골수종)", "Erleada (전립선암)", "Tremfya (건선)", "Depuy Synthes (정형외과기기)", "수술 로봇 플랫폼"],
+    geographicPresence: "미국 55% · 유럽 25% · 아시아태평양 12% · 기타 8%",
+    dividendStreakYears: 62,
+    dividendCAGR5yr: 5.8,
+    dividendCAGR10yr: 6.1,
+    recentDividendGrowth: "2024년 $1.19/분기 → 2025년 $1.24 (+4.2%)",
+    dividendSafety: "strong",
+    dividendSafetyReason:
+      "배당성향 46.6%, 순이익 $22B+로 배당 $10B 완벽 커버. 62년 연속 인상 — 전쟁·경기침체·소송도 막지 못함.",
+    moatTypes: ["intangible_assets", "switching_costs"],
+    moatStrength: "wide",
+    moatNarrative:
+      "특허 약품의 독점 판매권(10~20년) + 의료기기의 외과의 훈련 장벽이 이중 해자. 한번 외과의가 DePuy 기기로 훈련받으면 경쟁사 기기로 쉽게 전환 안 함. 제약 파이프라인: 임상 3상 21개 이상 — 특허 만료 리스크 분산.",
+    revenueGrowthTrend: "3년 연평균 +4~6% (의약품 +8%, 기기 +5%)",
+    marginTrend: "stable",
+    debtLevel: "low",
+    financialSummary:
+      "ROE 35.03% — 업계 최상급. D/E 60.5 — 제약사 기준 양호. 순이익률 22%+. Kenvue 분사 후 포트폴리오 고마진화.",
+    keyRisks: [
+      "탈크 소송 (Baby Powder): 약 10만 건 소송 합의 진행 중 → 최종 비용 불확실",
+      "약가 인하 압력: 미국 IRA법 약가협상 대상 약품 증가",
+      "특허 만료: 2025~2027년 일부 주력 약품 특허 만료",
+      "수율 -0.64% (5년 평균 대비) = 수율 기준 고평가, 52주 고점 근처 (95.8%)",
+    ],
+    bullCase:
+      "Darzalex 매출 $100억 도달 임박. 수술 로봇 시장 진입 본격화. Kenvue 분사 후 순수 제약 멀티플 확장 가능. 파이프라인 20개+ 임상 3상 중 → 차세대 블록버스터 기대.",
+    bearCase:
+      "탈크 소송 합의 비용이 예상($8B) 초과 시 단기 주가 충격. IRA 약가 인하 + 특허 만료 이중 타격. 현재 52주 고점 근처(95.8%) + 애널리스트 목표가 $232 = 현재가 $242보다 낮음.",
+    valuationComment:
+      "수율 2.14% vs 5년 평균 2.78% (-0.64%) = 수율 기준 고평가. 52주 95.8% 위치 + 애널리스트 목표 $232.5 (현재 $242.5보다 낮음) = **현재 시점에서 매수 매력도 낮음.** $220~230 구간 (수율 2.5%+, PE 19x 이하)에서 진입이 훨씬 합리적.",
+    recentDevelopments: [
+      "탈크 소송 10만 건 일괄 합의 추진 중 ($6.5~9B 예상 비용)",
+      "Darzalex FY2024 매출 $11.5B 돌파 — JNJ 최대 단일 제품",
+      "수술 로봇 Ottava 플랫폼 임상 데이터 긍정적 → 2026년 출시 예상",
+      "IRA 약가 협상 대상 약품에 Stelara 포함 → 2026년부터 가격 인하",
+    ],
+    overallRating: "관망",
+    ratingReason:
+      "최우량 배당 왕족주지만 현재가는 부담스럽다. 탈크 소송 + 수율 고평가 + 52주 고점권. $225 이하에서 기다리는 게 현명. 지금 보유 중이라면 유지, 신규 매수는 조정 대기.",
+    targetBuyPrice: 225,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [06] WMT — Walmart (배당귀족주, 51년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "WMT",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "세계 최대 소매기업. 미국 4,600개 + 해외 5,200개 매장. 최근 '유통 → 테크·광고 기업'으로 리레이팅 진행 중. Walmart Connect(광고 플랫폼) + 멤버십(Walmart+) + Flipkart(인도) + PhonePe가 새 성장 축. 광고 수익 2024년 $4.4B — 소매 마진보다 훨씬 높음.",
+    coreProducts: ["미국 Sam's Club·Walmart 매장", "Walmart+ 멤버십", "Walmart Connect (광고 플랫폼)", "Flipkart (인도 이커머스)", "PhonePe (인도 핀테크)"],
+    geographicPresence: "미국 65% · 인도(Flipkart) 10% · 중남미 15% · 기타 10%",
+    dividendStreakYears: 51,
+    dividendCAGR5yr: 1.9,
+    dividendCAGR10yr: 2.0,
+    recentDividendGrowth: "2025년 연 $0.83 → $0.94 (+13.2%) — 최근 대폭 인상",
+    dividendSafety: "strong",
+    dividendSafetyReason:
+      "배당성향 34.43% — 매우 낮음. FCF 풍부. 배당보다 성장 재투자 우선이라 배당 안정성은 최고 등급.",
+    moatTypes: ["cost_advantage", "efficient_scale", "network_effect"],
+    moatStrength: "wide",
+    moatNarrative:
+      "규모의 경제: 세계 최대 구매력으로 어떤 공급업체도 WMT 앞에선 가격 협상 열위. 전국 4,600개 매장 = 즉배달 인프라로 아마존과 동등한 라스트마일. Walmart+ 멤버십 4,400만 명 → 광고·구독 수익 플라이휠 구축 중.",
+    revenueGrowthTrend: "3년 연평균 +5~6% (광고·멤버십 고성장)",
+    marginTrend: "expanding",
+    debtLevel: "low",
+    financialSummary:
+      "ROE 21.85% — 소매업치고 우수. D/E 63.19 — 안전. PE 45x는 비싸 보이지만 광고·테크 수익 반영 시 적정. 애널리스트 strong_buy, 목표 $134.44 (+9.3%).",
+    keyRisks: [
+      "고PE 45x: 성장 기대가 이미 많이 반영 — 어닝 미스 시 급락 위험",
+      "수율 0.8% vs 5년 평균 1.32%: 배당 투자자 관점에서 매력 없음",
+      "아마존과의 경쟁: 온라인 침투율 경쟁 지속",
+      "인플레 완화 시 가격 인하 압력 → 마진 축소 가능",
+    ],
+    bullCase:
+      "Walmart Connect 광고 수익 연 +20%+ 성장 → 고마진 수익 비중 확대. Flipkart IPO 시 인도 사업 밸류에이션 독립 평가. Walmart+ 멤버십 Amazon Prime처럼 스티키한 수익원으로 자리잡는 중. strong_buy 컨센서스 + 9.3% 상승여력.",
+    bearCase:
+      "배당 투자자 관점에서 0.8% 수율 + PE 45x = 부적합. 성장주로 리레이팅됐지만 소매 기반 사업 특성상 리세션 시 노출도 큼.",
+    valuationComment:
+      "**배당 투자 목적이라면 WMT은 적합하지 않다** (수율 0.8%). 그러나 성장+배당 하이브리드 관점에서는 Walmart의 광고/멤버십 전환 스토리가 매력적. strong_buy + 9.3% upside는 투자 가치 있음을 시사. 배당 재투자(DRIP) 전략보다 성장주 관점으로 접근할 것.",
+    recentDevelopments: [
+      "Vizio 인수 완료 (2024, $2.3B) → 스마트TV 광고 인벤토리 확보",
+      "FY2025 광고 수익 $4.4B (+27%) — 고마진 수익원 고성장",
+      "Walmart+ 가입자 2025년 5,000만 명 목표",
+      "관세 리스크: 중국산 수입품 의존도 높아 관세 영향 주시 필요",
+    ],
+    overallRating: "관망",
+    ratingReason:
+      "배당주로는 부적합. 성장주로는 흥미롭지만 현재 PE 45x는 부담. 광고+멤버십 전환이 실적으로 증명되는 것 확인 후 $110 이하에서 진입 고려.",
+    targetBuyPrice: 110,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [07] MCD — McDonald's (배당귀족주, 48년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "MCD",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "세계 최대 패스트푸드 프랜차이즈. 40,000개 이상 매장 중 95% 프랜차이지 운영 — 직접 운영하지 않아 자본 효율 극대화. 수익 = 로열티(매출의 4~5%) + 임대료(가맹점 부동산 소유). 실제로는 '부동산+로열티' 회사에 가깝다. 디지털화(앱 주문 3억+ 회원)로 CRM·개인화 마케팅 강화 중.",
+    coreProducts: ["프랜차이즈 로열티", "부동산 임대 수익", "Big Mac / Quarter Pounder", "McCafe 음료", "McDelivery"],
+    geographicPresence: "미국 40% · 국제 운영 40% · 개발도상국 20%",
+    dividendStreakYears: 48,
+    dividendCAGR5yr: 8.4,
+    dividendCAGR10yr: 7.7,
+    recentDividendGrowth: "2024년 $1.67/분기 → 2025년 $1.77 (+6.0%)",
+    dividendSafety: "strong",
+    dividendSafetyReason:
+      "배당성향 60%, FCF $8B+ / 배당 $5.2B. 프랜차이즈 모델로 경기 하락에도 로열티 흐름 안정.",
+    moatTypes: ["brand", "efficient_scale", "intangible_assets"],
+    moatStrength: "wide",
+    moatNarrative:
+      "전 세계 어느 도시를 가도 같은 맛·경험을 보장하는 브랜드 파워. 40,000개 매장의 부동산 포트폴리오는 대체 불가. 앱 3억+ 회원의 데이터·CRM 자산도 경쟁 우위. 단, D/E 지표가 무의미(자본 잠식 상태) — 이는 적극적 자사주 매입으로 자본 마이너스인 것으로 배당/가치에는 문제없음.",
+    revenueGrowthTrend: "3년 연평균 +5~8%",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary:
+      "PBR -131x는 자본 잠식 상태를 반영 — 자사주 매입으로 장부 자본이 마이너스. 이는 재무 건전성 문제가 아니라 주주 환원 극대화 전략. FCF 마진 20%+, 영업이익률 45%+ — 프랜차이즈 모델의 수익성 증거.",
+    keyRisks: [
+      "소비자 가격 저항: 최근 가격 인상에 대한 고객 이탈(Traffic 감소) 우려",
+      "E.coli 사건(2024): 식품 안전 이슈 → 단기 트래픽 충격",
+      "인건비 상승: 일부 직영점 노동비 증가",
+      "경기 침체 시 고가 경쟁 노출: 저가 경쟁사 대비 상대적 취약",
+    ],
+    bullCase:
+      "디지털 앱 회원 3억명 → 개인화 프로모션으로 트래픽 회복. $5 Value Meal 전략으로 고객 이탈 방어. 개도국 출점 여력 풍부 (인도·아프리카). 배당 3yr CAGR 8% 지속 가능.",
+    bearCase:
+      "52주 고점권(87.7%) + 수율 5년 평균과 비슷 + PE 27.55x = 지금이 최적 진입점은 아님. E.coli 사건 영향 + 가격 저항이 복합되면 EPS 압박.",
+    valuationComment:
+      "수율 2.26% vs 5년 평균 2.21% — 공정가치. 52주 87.7% 위치 → 고점 근처. PE 27.55x → 약간 고평가. 애널리스트 +3.5% upside → 상승 여력 제한적. **$300~310 구간(수율 2.5%+, PE 24~25x)이 더 매력적인 진입점.** 프랜차이즈 모델의 장기 복리 능력은 탁월하므로 인내심 있게 조정 기다릴 것.",
+    recentDevelopments: [
+      "2024년 E.coli 오염 사건 → Q4 미국 트래픽 -1.3% 일시 감소",
+      "$5 Value Meal 전략 성공 → 저가 고객 유입, 2025년 확대 예정",
+      "AI 드라이브스루 주문 시스템 도입 확대 (IBM·Google 협업)",
+      "앱 Active User 3억명 돌파 → 로열티 프로그램 강화",
+    ],
+    overallRating: "관망",
+    ratingReason:
+      "최고급 프랜차이즈 모델이지만 현재 가격은 살짝 비싸다. $305 이하 조정 시 관심 종목. 장기 보유하면 배당 + 주가 상승 복리가 강력한 컴파운더.",
+    targetBuyPrice: 305,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [08] ADP — Automatic Data Processing (배당귀족주, 49년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "ADP",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "세계 최대 HR·페이롤(급여) 아웃소싱 기업. 전 세계 100만 기업 고객, 4,000만 명 직원 급여 처리. 클라우드 기반 HCM(Human Capital Management) SaaS로 전환 완료. 고객이 맡긴 급여 자금을 단기 운용해 이자 수익(float income) 창출 — 금리 상승 시 오히려 수혜.",
+    coreProducts: ["ADP Workforce Now (중소기업 HCM)", "ADP Vantage (대기업)", "ADP Global Payroll", "PEO(Professional Employer Organization)", "Float Income (자금 운용 수익)"],
+    geographicPresence: "미국 70% · 유럽 20% · 기타 10%",
+    dividendStreakYears: 49,
+    dividendCAGR5yr: 13.1,
+    dividendCAGR10yr: 11.0,
+    recentDividendGrowth: "2024년 $1.40/분기 → 2025년 $1.54 (+10.0%)",
+    dividendSafety: "strong",
+    dividendSafetyReason:
+      "배당성향 60.7%, FCF 충분. 49년 연속 인상. HR 소프트웨어 구독 모델로 불황에도 수익 방어.",
+    moatTypes: ["switching_costs", "network_effect", "intangible_assets"],
+    moatStrength: "wide",
+    moatNarrative:
+      "페이롤 시스템을 바꾸는 것은 기업에게 엄청난 비용·리스크 — 전환율 극히 낮음(이탈률 <5%). 세무·컴플라이언스 규정이 계속 복잡해지면서 HR 아웃소싱 수요는 증가. 고객 데이터 100만 기업 × 4,000만 직원 = 경쟁자가 복제 불가한 데이터 자산.",
+    revenueGrowthTrend: "3년 연평균 +7~9%",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary:
+      "ROE 73.84% — 소프트웨어 기업답게 최상급. 52주 위치 4.8% = **52주 최저점 근처!** 배당수율 3.17% vs 5년 평균 1.97% (+1.2%) = 강한 저평가 시그널. Forward PE 17.93x — 합리적.",
+    keyRisks: [
+      "AI 위협: Rippling·Gusto 등 AI 네이티브 스타트업의 SMB 시장 잠식",
+      "거시경제 둔화: 고용 감소 시 처리 직원 수 감소 → 수익 직접 타격",
+      "금리 하락: Float income 감소 (금리 하락 시 역풍)",
+      "애널리스트 hold 의견: 왜 hold? → 단기 성장 모멘텀 부재가 이유",
+    ],
+    bullCase:
+      "**가장 매력적인 종목.** 52주 최저점(4.8%) + 배당수율 3.17%(5년 평균 1.97% 대비 +1.2%) + Forward PE 18x + 애널리스트 목표 $278(+29.8% upside) = 모든 지표가 저평가를 가리킴. AI 위협을 받고 있지만 ADP의 컴플라이언스 복잡성·데이터 해자는 AI가 쉽게 대체 못함. 금리 하락 전환 시 float income 감소가 단기 역풍이나 구조적 성장 훼손 아님.",
+    bearCase:
+      "Rippling 등 AI 네이티브 HR 플랫폼이 '올인원 + 저비용'으로 SMB 이탈 가속. 경기 침체로 고용 감소 → 처리 직원 수 감소 직격탄.",
+    valuationComment:
+      "**현재 10개 분석 종목 중 가장 매력적인 구간.** 수율+52주위치+Forward PE+애널리스트 목표 4개 시그널 모두 저평가 또는 상승여력 표시. $200~210 구간이 이상적 매수 범위. 장기 배당+성장 하이브리드 투자자에게 최적.",
+    recentDevelopments: [
+      "ADP Next Gen HCM AI 기능 출시 → generative AI로 HR 업무 자동화",
+      "FY2025 매출 성장 +7~8% 가이던스 제시",
+      "PEO 부문 고성장 지속 — 소기업의 HR 아웃소싱 수요 증가",
+      "주가 최근 조정: AI HR 경쟁 우려로 52주 고점 $298 대비 28% 하락 → 오히려 매수 기회",
+    ],
+    overallRating: "관심",
+    ratingReason:
+      "10개 종목 중 밸류에이션 가장 매력적. 52주 저점 + 강한 저평가 수율 시그널 + 애널리스트 29.8% upside. $210 이하 진입 시 3~5년 관점에서 배당+시세 복리 기대. 당장 매수 검토 가치 있음.",
+    targetBuyPrice: 210,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [09] CVX — Chevron (배당귀족주, 37년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "CVX",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "미국 2위 석유메이저. 원유 생산·정제·판매 수직계열화. 퍼미안 분지 최대 생산자. LNG·수소·탄소포집(CCS) 등 에너지 전환 투자 병행. 2024년 Hess 인수($53B) 진행 — 완료 시 가이아나 초대형 유전 확보.",
+    coreProducts: ["원유·천연가스 탐사·생산", "정제·판매 (Chevron, Texaco 주유소)", "LNG (퍼시픽) 수출", "석유화학 제품", "CCS·수소 에너지 전환"],
+    geographicPresence: "미국(퍼미안) 40% · 카자흐스탄 15% · 호주 LNG 10% · 기타 35%",
+    dividendStreakYears: 37,
+    dividendCAGR5yr: 6.4,
+    dividendCAGR10yr: 4.8,
+    recentDividendGrowth: "2024년 $1.63/분기 → 2025년 $1.71 (+4.9%)",
+    dividendSafety: "moderate",
+    dividendSafetyReason:
+      "배당성향 103% (현재)는 유가 하락 때문. 유가 $70+ 시 FCF로 배당 충당. 배당 삭감은 37년 역사상 없었으나 유가 $50 이하 지속 시 위험.",
+    moatTypes: ["cost_advantage", "efficient_scale"],
+    moatStrength: "narrow",
+    moatNarrative:
+      "퍼미안 분지 저원가 생산(손익분기 $35~40/bbl)이 핵심 해자. 에너지 전환 시대에 재생에너지보다 오히려 원가 경쟁력 있는 자원 기업만 생존. CVX는 그 중에서 최상위권. 단, 원유 가격이라는 외부 변수에 전적으로 종속되는 구조적 한계.",
+    revenueGrowthTrend: "원유 가격 사이클 연동 — 중장기 유가 전망이 핵심 변수",
+    marginTrend: "contracting",
+    debtLevel: "low",
+    financialSummary:
+      "ROE 7.16% — 유가 하락 구간이라 낮음. D/E 21.24 — 에너지 메이저 중 최저 수준 부채. 현재 52주 고점권(95.2%) + 수율 3.87% vs 5yr avg 4.12% → 약간 고평가. Hess 인수 불확실성 해소 후 가이아나 매장량 반영이 중요 이벤트.",
+    keyRisks: [
+      "원유 가격 하락: $70 이하 지속 시 FCF 압박 → 배당성향 악화",
+      "에너지 전환 가속: 장기 화석연료 수요 감소 구조적 위험",
+      "Hess 인수 리스크: CNOOC 소송 진행 중 — 가이아나 지분 확보 불확실",
+      "지정학: 중동·카자흐스탄 등 고위험 지역 운영",
+    ],
+    bullCase:
+      "Hess 인수 완료 → 가이아나 대형 유전 생산 개시(2025~2030 증산). 유가 $80+ 유지 시 FCF 폭발. 에너지 공급 부족 장기화 시나리오 하에 원자재 슈퍼사이클.",
+    bearCase:
+      "현재 52주 고점(95.2%), 배당수율 5년 평균 이하 = 지금은 사이클 고점권에 가까움. Hess 인수 불발 시 전략적 타격.",
+    valuationComment:
+      "에너지 주식은 **사이클 저점에서 사는 것이 정석.** 현재는 52주 고점 근처 + 수율 기준 약간 고평가. 유가 하락 사이클 + CVX 주가 조정 시 ($155~165 구간, 수율 4.2%+) 매수하는 전략이 합리적. 지금 매수보다는 사이클 모니터링 후 매수.",
+    recentDevelopments: [
+      "Hess 인수 CNOOC 소송 관련 중재 절차 진행 중 (완료 시 가이아나 지분 30% 확보)",
+      "퍼미안 분지 생산량 2025년 900,000boe/d 목표",
+      "FY2024 자사주 매입 $11.3B — 주주 환원 최대 수준",
+      "수소·CCS 프로젝트 투자 $3B (에너지 전환 대비)",
+    ],
+    overallRating: "관망",
+    ratingReason:
+      "최고의 에너지 배당주지만 지금은 타이밍이 아니다. 사이클 고점 근처. 유가 하락 + 주가 조정 후 $160 이하에서 진입하는 것이 에너지 주식 투자의 정석.",
+    targetBuyPrice: 160,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [10] KMB — Kimberly-Clark (배당귀족주, 52년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "KMB",
+    analyzedAt: "2026-02-21 23:10 KST",
+    businessSummary:
+      "Kleenex·Huggies·Scott·Cottonelle·Depend 등 필수 소비재 브랜드 보유. 개도국 비중 50%+ — 신흥국 중산층 소비 확대의 직접 수혜 기업. 2024년 K-C Professional(산업용 티슈) 분사(Halyard) 완료 → 소비자 브랜드 집중.",
+    coreProducts: ["Huggies (기저귀)", "Kleenex (화장지)", "Cottonelle (화장지)", "Depend (성인 요실금)", "Scott (키친타월)"],
+    geographicPresence: "북미 47% · 개발도상국 35% · 성숙 시장(유럽·호주) 18%",
+    dividendStreakYears: 52,
+    dividendCAGR5yr: 3.0,
+    dividendCAGR10yr: 4.0,
+    recentDividendGrowth: "2024년 $1.22/분기 → 2025년 $1.26 (+3.3%)",
+    dividendSafety: "moderate",
+    dividendSafetyReason:
+      "순이익 기준 배당성향 103% (위험해 보임). 그러나 FCF 기준으로는 70% 수준 — 지급 가능. 단, 부채 극히 높아(D/E 464) 재무 여력 제한적. 배당 삭감 시나리오는 낮지만 0이 아님.",
+    moatTypes: ["brand", "intangible_assets"],
+    moatStrength: "narrow",
+    moatNarrative:
+      "Huggies·Kleenex는 카테고리와 동의어가 된 브랜드 (Kleenex = 화장지). 일회용 필수 소비재 특성상 반복 구매 보장. 그러나 P&G·Unilever 대비 브랜드 포트폴리오 깊이 열위, Private Label 경쟁 심화로 해자가 좁아지는 추세.",
+    revenueGrowthTrend: "3년 연평균 +2~4% (가격 인상 기여, 볼륨 정체)",
+    marginTrend: "contracting",
+    debtLevel: "high",
+    financialSummary:
+      "ROE 126.6% — 극도 높지만 이는 자본 잠식에 가까운 부채 구조 때문 (D/E 464.79). 실질적인 재무 레버리지 위험이 높음. 원재료(펄프·폴리머) 가격 상승 시 마진 직격탄. 현재 52주 위치 23.5% = 저점권.",
+    keyRisks: [
+      "극도 높은 부채: D/E 464.79 — 금리 상승 시 이자 부담 임계점 가능",
+      "원재료 가격 리스크: 펄프·석유 기반 원료 가격 변동성",
+      "Private Label 성장: 유통업체 자체 브랜드가 Kleenex·Scott 잠식",
+      "배당성향 103% (순이익 기준): FCF 기준 가능하나 재무 여력 협소",
+      "애널리스트 hold + 목표 $119 vs 현재 $109 → 한계적 상승여력",
+    ],
+    bullCase:
+      "배당수율 4.7% vs 5년 평균 3.63% (+1.07%) = 강한 저평가 시그널. 52주 23.5% 위치 = 저점권. 목표주가 $119 = +9.3% 상승여력. 개도국 Huggies 성장 가속화 시 볼륨 회복. DDM 적정가 $121.9 = 현재가 대비 +12%.",
+    bearCase:
+      "D/E 464는 금리 충격에 매우 취약. 마진 압박이 지속되면 배당 성장 중단 또는 삭감 불안. P&G 같은 강력한 브랜드 파워가 없어 장기 해자 약화 우려.",
+    valuationComment:
+      "**수익 기회와 위험이 공존하는 종목.** 수율 4.7%·52주 저점·DDM 저평가는 매력적. 하지만 D/E 464·마진 압박은 실질 위험. **배당 안정성을 최우선시하는 투자자에게는 부담스러운 부채 구조.** 저변동성 포트폴리오보다 고수익률 추구 투자자에게 적합. $100~105에서 소규모 테스트 포지션 접근.",
+    recentDevelopments: [
+      "2025년 구조조정 프로그램 발표: $1.5B 비용 절감 목표",
+      "K-C Professional 분사 완료 → 소비자 브랜드 집중",
+      "Huggies 인도·브라질 성장 가속 — 개도국 기저귀 시장 확대",
+      "원재료 비용 안정화로 마진 개선 조짐 (2025 하반기 기대)",
+    ],
+    overallRating: "관심",
+    ratingReason:
+      "수율 4.7%·52주 저점·DDM 저평가의 조합은 관심 종목. 단, 고부채 리스크를 인지하고 전체 포트폴리오의 작은 비중으로 접근. $105 이하에서 소량 분할 매수.",
+    targetBuyPrice: 105,
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // [11] KO — Coca-Cola (배당왕족주, 62년 연속)
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   {
     ticker: "KO",
