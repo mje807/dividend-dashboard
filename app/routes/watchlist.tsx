@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router";
-import { ArrowLeft, Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown } from "lucide-react";
+import { ArrowLeft, Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 import { royaltyStocks, royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
 
 export function meta() {
@@ -204,21 +204,24 @@ export default function Watchlist() {
               {filtered.map(s => (
                 <tr
                   key={s.ticker}
-                  className="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors"
+                  className="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors group cursor-pointer"
                 >
                   {/* 종목 */}
                   <td className="px-5 py-3">
-                    <div className="flex items-center gap-2.5">
+                    <Link to={`/watchlist/${s.ticker}`} className="flex items-center gap-2.5">
                       <span className="text-base">
                         {s.category === "king" ? "👑" : "🏆"}
                       </span>
                       <div>
-                        <div className="font-bold text-white text-sm">{s.ticker}</div>
+                        <div className="font-bold text-white text-sm group-hover:text-indigo-300 transition-colors flex items-center gap-1.5">
+                          {s.ticker}
+                          <ExternalLink size={10} className="text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
                         <div className="text-gray-500 text-xs leading-tight max-w-[140px] truncate">
                           {s.name}
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </td>
 
                   {/* 섹터 */}
