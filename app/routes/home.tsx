@@ -2,7 +2,7 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip,
   PieChart, Pie, Cell, ResponsiveContainer,
 } from "recharts";
-import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, RefreshCw } from "lucide-react";
+import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, RefreshCw, Crown } from "lucide-react";
 import { holdings, portfolioSummary, calcPortfolioStats } from "~/data/portfolio";
 import { Link } from "react-router";
 
@@ -58,6 +58,13 @@ export default function Home() {
           >
             <CalendarDays size={16} />
             배당 캘린더
+          </Link>
+          <Link
+            to="/watchlist"
+            className="flex items-center gap-2 bg-yellow-600 hover:bg-yellow-500 text-white px-4 py-2 rounded-lg text-sm transition-colors"
+          >
+            <Crown size={16} />
+            왕족·귀족주
           </Link>
         </div>
       </div>
