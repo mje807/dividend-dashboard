@@ -1,10 +1,13 @@
+import { useState } from "react";
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip,
   PieChart, Pie, Cell, ResponsiveContainer,
 } from "recharts";
 import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, RefreshCw, Crown } from "lucide-react";
-import { holdings, portfolioSummary, calcPortfolioStats } from "~/data/portfolio";
+import { holdings, portfolioSummary, calcPortfolioStats, type Holding } from "~/data/portfolio";
+import { stockMetrics, getMetrics } from "~/data/metrics";
 import { Link } from "react-router";
+import StockDetailDrawer from "~/components/StockDetailDrawer";
 
 export function meta() {
   return [{ title: "배당 대시보드" }];
@@ -12,6 +15,7 @@ export function meta() {
 
 export default function Home() {
   const stats = calcPortfolioStats(holdings);
+  const [selectedHolding, setSelectedHolding] = useState<Holding | null>(null);
 
   // 보유 종목 상위 8개로 파이 차트
   const parseValue = (v: string) => parseFloat(v?.replace(/[^0-9.]/g, '') || '0') || 0;
@@ -153,8 +157,9 @@ export default function Home() {
 
       {/* 종목 테이블 */}
       <div className="bg-gray-900 rounded-xl overflow-hidden">
-        <div className="p-5 border-b border-gray-800">
+        <div className="p-5 border-b border-gray-800 flex items-center justify-between">
           <h2 className="text-sm font-semibold text-gray-400">보유 종목 상세 ({holdings.length}개)</h2>
+          <span className="text-gray-600 text-xs">클릭하면 상세 지표를 확인할 수 있어요 👆</span>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -170,39 +175,59 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              {holdings.map((h) => (
-                <tr key={h.ticker} className="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors">
-                  <td className="px-5 py-3">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full" style={{ backgroundColor: h.color }} />
-                      <div>
-                        <div className="font-semibold text-white text-sm">{h.ticker}</div>
-                        <div className="text-gray-500 text-xs">{h.sector}</div>
+              {holdings.map((h) => {
+                const m = getMetrics(h.ticker);
+                const hasMetrics = !!m?.currentPrice;
+                return (
+                  <tr
+                    key={h.ticker}
+                    className="border-b border-gray-800/50 hover:bg-gray-800/40 transition-colors cursor-pointer group"
+                    onClick={() => setSelectedHolding(h)}
+                  >
+                    <td className="px-5 py-3">
+                      <div className="flex items-center gap-3">
+                        <span className="w-2 h-2 rounded-full" style={{ backgroundColor: h.color }} />
+                        <div>
+                          <div className="font-semibold text-white text-sm group-hover:text-indigo-300 transition-colors">{h.ticker}</div>
+                          <div className="text-gray-500 text-xs">{h.sector}</div>
+                        </div>
+                        {hasMetrics && (
+                          <span className="text-gray-600 text-xs opacity-0 group-hover:opacity-100 transition-opacity">상세보기 →</span>
+                        )}
                       </div>
-                    </div>
-                  </td>
-                  <td className="text-right px-5 py-3 text-gray-300 text-xs">{h.shares}</td>
-                  <td className="text-right px-5 py-3 text-white font-medium text-xs">{h.rawValue}</td>
-                  <td className="text-right px-5 py-3 text-xs">
-                    <span className={h.rawGain?.includes('+') ? 'text-green-400' : h.rawGain?.includes('-') ? 'text-red-400' : 'text-gray-400'}>
-                      {h.rawGain || '-'}
-                    </span>
-                  </td>
-                  <td className="text-right px-5 py-3 text-indigo-400 text-xs">
-                    {h.dividendYield > 0 ? `${h.dividendYield}%` : '-'}
-                  </td>
-                  <td className="text-right px-5 py-3 text-gray-300 text-xs">{h.currentPrice > 0 ? h.currentPrice : '-'}</td>
-                  <td className="text-right px-5 py-3">
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${h.dividendFrequency === "monthly" ? "bg-green-900/50 text-green-400" : "bg-blue-900/50 text-blue-400"}`}>
-                      {h.dividendFrequency === "monthly" ? "월배당" : "분기"}
-                    </span>
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                    <td className="text-right px-5 py-3 text-gray-300 text-xs">{h.shares}</td>
+                    <td className="text-right px-5 py-3 text-white font-medium text-xs">{h.rawValue}</td>
+                    <td className="text-right px-5 py-3 text-xs">
+                      <span className={h.rawGain?.includes('+') ? 'text-green-400' : h.rawGain?.includes('-') ? 'text-red-400' : 'text-gray-400'}>
+                        {h.rawGain || '-'}
+                      </span>
+                    </td>
+                    <td className="text-right px-5 py-3 text-indigo-400 text-xs">
+                      {h.dividendYield > 0 ? `${h.dividendYield}%` : '-'}
+                    </td>
+                    <td className="text-right px-5 py-3 text-gray-300 text-xs">{h.currentPrice > 0 ? h.currentPrice : '-'}</td>
+                    <td className="text-right px-5 py-3">
+                      <span className={`text-xs px-2 py-0.5 rounded-full ${h.dividendFrequency === "monthly" ? "bg-green-900/50 text-green-400" : "bg-blue-900/50 text-blue-400"}`}>
+                        {h.dividendFrequency === "monthly" ? "월배당" : "분기"}
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
       </div>
+
+      {/* 종목 상세 드로어 */}
+      {selectedHolding && (
+        <StockDetailDrawer
+          holding={selectedHolding}
+          metrics={getMetrics(selectedHolding.ticker)}
+          onClose={() => setSelectedHolding(null)}
+        />
+      )}
     </div>
   );
 }
