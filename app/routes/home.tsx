@@ -3,7 +3,7 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip,
   PieChart, Pie, Cell, ResponsiveContainer,
 } from "recharts";
-import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, RefreshCw, Crown } from "lucide-react";
+import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, RefreshCw, Crown, Calculator } from "lucide-react";
 import { holdings, portfolioSummary, calcPortfolioStats, type Holding } from "~/data/portfolio";
 import { stockMetrics, getMetrics } from "~/data/metrics";
 import { Link } from "react-router";
@@ -33,6 +33,35 @@ export default function Home() {
 
   // 종목별 연간 배당금 (KRW 환산, 1 USD ≈ 1,430 KRW)
   const USD_TO_KRW = 1430;
+
+  // 섹터별 배분 계산
+  const SECTOR_COLORS: Record<string, string> = {
+    "ETF": "#6366f1",
+    "리츠": "#f59e0b",
+    "기술주": "#8b5cf6",
+    "채권": "#06b6d4",
+    "필수 소비재": "#22c55e",
+    "가상자산": "#f97316",
+  };
+  const sectorMap = new Map<string, { value: number; dividend: number }>();
+  for (const h of holdings) {
+    const val = parseValue(h.rawValue || "");
+    const krwVal = h.currency === "USD" ? val * USD_TO_KRW : val;
+    const annualDiv = h.annualDividendPerShare * h.shares;
+    const krwDiv = h.currency === "USD" ? annualDiv * USD_TO_KRW : annualDiv;
+    const prev = sectorMap.get(h.sector) ?? { value: 0, dividend: 0 };
+    sectorMap.set(h.sector, { value: prev.value + krwVal, dividend: prev.dividend + krwDiv });
+  }
+  const totalPortValue = Array.from(sectorMap.values()).reduce((s, v) => s + v.value, 0);
+  const totalDivValue = Array.from(sectorMap.values()).reduce((s, v) => s + v.dividend, 0);
+  const sectorPieData = Array.from(sectorMap.entries())
+    .map(([sector, data]) => ({
+      name: sector,
+      value: parseFloat(((data.value / totalPortValue) * 100).toFixed(1)),
+      dividend: parseFloat(((data.dividend / totalDivValue) * 100).toFixed(1)),
+      color: SECTOR_COLORS[sector] ?? "#9ca3af",
+    }))
+    .sort((a, b) => b.value - a.value);
   const barData = holdings
     .filter(h => h.annualDividendPerShare > 0)
     .map(h => {
@@ -69,6 +98,13 @@ export default function Home() {
           >
             <Crown size={16} />
             왕족·귀족주
+          </Link>
+          <Link
+            to="/calculator"
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm transition-colors"
+          >
+            <Calculator size={16} />
+            계산기
           </Link>
         </div>
       </div>
@@ -114,7 +150,7 @@ export default function Home() {
               <Tooltip
                 contentStyle={{ backgroundColor: "#1f2937", border: "none", borderRadius: "8px" }}
                 labelStyle={{ color: "#fff" }}
-                formatter={(v: number) => [`₩${(v * 1000).toLocaleString()}`, "연간 배당"]}
+                formatter={(v: unknown) => [`₩${((v as number) * 1000).toLocaleString()}`, "연간 배당"]}
               />
               <Bar dataKey="연간배당" radius={[4, 4, 0, 0]}>
                 {barData.map((entry, i) => (
@@ -138,7 +174,7 @@ export default function Home() {
                 </Pie>
                 <Tooltip
                   contentStyle={{ backgroundColor: "#1f2937", border: "none", borderRadius: "8px" }}
-                  formatter={(v: number) => [`${v}%`, "비중"]}
+                  formatter={(v: unknown) => [`${v as number}%`, "비중"]}
                 />
               </PieChart>
             </ResponsiveContainer>
@@ -151,6 +187,38 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 섹터 배분 분석 */}
+      <div className="bg-gray-900 rounded-xl p-5 mb-6">
+        <h2 className="text-sm font-semibold text-gray-400 mb-4">섹터 배분 분석</h2>
+        <div className="flex flex-col sm:flex-row gap-6 items-center">
+          <ResponsiveContainer width={180} height={180}>
+            <PieChart>
+              <Pie data={sectorPieData} cx="50%" cy="50%" innerRadius={45} outerRadius={75} dataKey="value">
+                {sectorPieData.map((entry, i) => (
+                  <Cell key={i} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip
+                contentStyle={{ backgroundColor: "#1f2937", border: "none", borderRadius: "8px" }}
+                formatter={(v: unknown) => [`${v as number}%`, "비중"]}
+              />
+            </PieChart>
+          </ResponsiveContainer>
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {sectorPieData.map(s => (
+              <div key={s.name} className="bg-gray-800/60 rounded-lg px-3 py-2.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: s.color }} />
+                  <span className="text-gray-300 text-xs font-medium truncate">{s.name}</span>
+                </div>
+                <div className="text-white font-bold text-sm">{s.value}%</div>
+                <div className="text-gray-500 text-xs">배당기여 {s.dividend}%</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

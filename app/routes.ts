@@ -4,4 +4,5 @@ export default [
   index("routes/home.tsx"),
   route("calendar", "routes/calendar.tsx"),
   route("watchlist", "routes/watchlist.tsx"),
+  route("calculator", "routes/calculator.tsx"),
 ] satisfies RouteConfig;
