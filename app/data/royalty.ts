@@ -266,7 +266,7 @@ export const royaltyStocks: RoyaltyStock[] = [
     sector: "유틸리티",
     streak: 51,
     price: 54.13,
-    dividendYield: 2.57,
+    dividendYield: 2.59,
     dividendRate: 1.4,
     peRatio: 22.6,
     payoutRatio: 56.9,
