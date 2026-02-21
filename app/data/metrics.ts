@@ -553,7 +553,7 @@ export const stockMetrics: StockMetrics[] = [
     sector: null,
     industry: null,
     marketCap: null,
-    longBusinessSummary: "The fund is an actively-managed exchange-traded fund ("ETF") that will invest under normal circumstances primarily (at least 65% of its assets) in dom...",
+    longBusinessSummary: "The fund is an actively-managed exchange-traded fund (\"ETF\") that will invest under normal circumstances primarily (at least 65% of its assets) in dom...",
   },
   {
     ticker: "MGK",
