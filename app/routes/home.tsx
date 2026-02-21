@@ -27,15 +27,17 @@ export default function Home() {
     .sort((a, b) => b.value - a.value)
     .slice(0, 8);
 
+  // 종목별 연간 배당금 (KRW 환산, 1 USD ≈ 1,430 KRW)
+  const USD_TO_KRW = 1430;
   const barData = holdings
-    .filter(h => h.dividendYield > 0)
-    .sort((a, b) => b.dividendYield - a.dividendYield)
-    .slice(0, 8)
-    .map(h => ({
-      name: h.ticker,
-      수익률: h.dividendYield,
-      color: h.color,
-    }));
+    .filter(h => h.annualDividendPerShare > 0)
+    .map(h => {
+      const annualDiv = h.annualDividendPerShare * h.shares;
+      const krwValue = h.currency === "USD" ? annualDiv * USD_TO_KRW : annualDiv;
+      return { name: h.ticker, 연간배당: Math.round(krwValue / 1000), color: h.color };
+    })
+    .sort((a, b) => b.연간배당 - a.연간배당)
+    .slice(0, 8);
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
@@ -90,19 +92,20 @@ export default function Home() {
 
       {/* 차트 섹션 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        {/* 배당수익률 바 차트 */}
+        {/* 종목별 누적 배당금 바 차트 */}
         <div className="bg-gray-900 rounded-xl p-5">
-          <h2 className="text-sm font-semibold text-gray-400 mb-4">종목별 투자 배당률 (%)</h2>
+          <h2 className="text-sm font-semibold text-gray-400 mb-1">종목별 연간 배당금 (상위 8)</h2>
+          <p className="text-gray-600 text-xs mb-4">KRW 환산 기준 (천원) · 1 USD ≈ 1,430 KRW</p>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={barData}>
-              <XAxis dataKey="name" stroke="#6b7280" tick={{ fill: "#9ca3af", fontSize: 11 }} />
-              <YAxis stroke="#6b7280" tick={{ fill: "#9ca3af" }} unit="%" />
+              <XAxis dataKey="name" stroke="#6b7280" tick={{ fill: "#9ca3af", fontSize: 10 }} />
+              <YAxis stroke="#6b7280" tick={{ fill: "#9ca3af", fontSize: 10 }} unit="천" />
               <Tooltip
                 contentStyle={{ backgroundColor: "#1f2937", border: "none", borderRadius: "8px" }}
                 labelStyle={{ color: "#fff" }}
-                formatter={(v: number) => [`${v}%`, "배당률"]}
+                formatter={(v: number) => [`₩${(v * 1000).toLocaleString()}`, "연간 배당"]}
               />
-              <Bar dataKey="수익률" radius={[4, 4, 0, 0]}>
+              <Bar dataKey="연간배당" radius={[4, 4, 0, 0]}>
                 {barData.map((entry, i) => (
                   <Cell key={i} fill={entry.color} />
                 ))}
