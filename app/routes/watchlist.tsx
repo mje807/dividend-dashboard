@@ -2,13 +2,15 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router";
 import { ArrowLeft, Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 import { royaltyStocks, royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
+import { getRoyaltyMetrics } from "~/data/royalty-metrics";
+import { calcAttractiveness } from "~/utils/attractiveness";
 
 export function meta() {
   return [{ title: "배당 왕족주·귀족주" }];
 }
 
 type Category = "all" | "king" | "aristocrat";
-type SortKey = "streak" | "dividendYield" | "price" | "peRatio" | "payoutRatio";
+type SortKey = "streak" | "dividendYield" | "price" | "peRatio" | "payoutRatio" | "attractiveness";
 
 const SECTOR_COLORS: Record<string, string> = {
   "필수소비재": "bg-green-900/40 text-green-400",
@@ -26,7 +28,7 @@ const SECTOR_COLORS: Record<string, string> = {
 export default function Watchlist() {
   const [category, setCategory] = useState<Category>("all");
   const [search, setSearch] = useState("");
-  const [sortKey, setSortKey] = useState<SortKey>("streak");
+  const [sortKey, setSortKey] = useState<SortKey>("attractiveness");
   const [sortAsc, setSortAsc] = useState(false);
 
   const kingCount = royaltyStocks.filter(s => s.category === "king").length;
@@ -36,8 +38,16 @@ export default function Watchlist() {
     : "0";
   const maxStreak = royaltyStocks.reduce((m, r) => Math.max(m, r.streak), 0);
 
+  const enriched = useMemo(() =>
+    royaltyStocks.map(s => {
+      const m = getRoyaltyMetrics(s.ticker);
+      const att = calcAttractiveness(m, s.streak);
+      return { ...s, attractivenessScore: att?.score ?? 5, attractiveness: att };
+    }), []
+  );
+
   const filtered = useMemo(() => {
-    let list = royaltyStocks;
+    let list = enriched;
     if (category !== "all") list = list.filter(s => s.category === category);
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -48,11 +58,11 @@ export default function Watchlist() {
       );
     }
     return [...list].sort((a, b) => {
-      const av = a[sortKey] ?? 0;
-      const bv = b[sortKey] ?? 0;
-      return sortAsc ? (av as number) - (bv as number) : (bv as number) - (av as number);
+      const av = sortKey === "attractiveness" ? (a.attractivenessScore ?? 0) : (a[sortKey as keyof RoyaltyStock] ?? 0) as number;
+      const bv = sortKey === "attractiveness" ? (b.attractivenessScore ?? 0) : (b[sortKey as keyof RoyaltyStock] ?? 0) as number;
+      return sortAsc ? av - bv : bv - av;
     });
-  }, [category, search, sortKey, sortAsc]);
+  }, [enriched, category, search, sortKey, sortAsc]);
 
   const handleSort = (key: SortKey) => {
     if (sortKey === key) setSortAsc(!sortAsc);
@@ -159,6 +169,14 @@ export default function Watchlist() {
                 <th className="text-left px-5 py-3">섹터</th>
                 <th
                   className="text-right px-4 py-3 cursor-pointer hover:text-white select-none"
+                  onClick={() => handleSort("attractiveness")}
+                >
+                  <span className="flex items-center justify-end gap-1">
+                    매력도 <SortIcon k="attractiveness" />
+                  </span>
+                </th>
+                <th
+                  className="text-right px-4 py-3 cursor-pointer hover:text-white select-none"
                   onClick={() => handleSort("streak")}
                 >
                   <span className="flex items-center justify-end gap-1">
@@ -229,6 +247,22 @@ export default function Watchlist() {
                     <span className={`text-xs px-2 py-0.5 rounded-full ${SECTOR_COLORS[s.sector] ?? "bg-gray-800 text-gray-400"}`}>
                       {s.sector}
                     </span>
+                  </td>
+
+                  {/* 매력도 */}
+                  <td className="text-right px-4 py-3">
+                    {s.attractiveness ? (
+                      <div className="flex flex-col items-end gap-0.5">
+                        <span className={`text-sm font-black ${s.attractiveness.color}`}>
+                          {s.attractiveness.score.toFixed(1)}
+                        </span>
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded border ${s.attractiveness.bgColor} ${s.attractiveness.color}`}>
+                          {s.attractiveness.label}
+                        </span>
+                      </div>
+                    ) : (
+                      <span className="text-gray-600 text-xs">-</span>
+                    )}
                   </td>
 
                   {/* 연속증가 */}
