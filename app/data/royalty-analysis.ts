@@ -1006,6 +1006,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "61년 연속 배당 증가의 신뢰도 높은 배당킹이나, 현재가($95)는 역사적 평균 대비 고평가·상승 여력 부재로 추가 하락 시 분할 매수 전략이 적합함",
     targetBuyPrice: 85,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // HRL — Hormel Foods (배당왕족주, 58년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "HRL",
+    analyzedAt: "2026-02-22 18:30 KST",
+    businessSummary: "호멜 푸즈는 SPAM, 제니오터키, 애플게이트 등 미국 대표 브랜드를 보유한 필수소비재 식품 기업으로, 냉장·냉동·가공식품 전반을 영위합니다. 소매·외식·국제 채널을 통해 안정적인 매출을 확보하며 58년 연속 배당 성장을 이어온 Dividend King입니다.",
+    coreProducts: [
+      "SPAM 통조림 및 가공육",
+      "제니오터키 칠면조 제품",
+      "애플게이트 유기농·자연 육가공품",
+    ],
+    geographicPresence: "미국 약 88% · 국제(아시아·유럽·중남미 등) 약 12%",
+    dividendStreakYears: 58,
+    dividendCAGR5yr: 5.2,
+    dividendCAGR10yr: 7.8,
+    recentDividendGrowth: "최근 배당 증가율이 둔화되어 2023~2024년 연간 약 1~2센트 수준의 소폭 인상에 그침",
+    dividendSafety: "watch",
+    dividendSafetyReason: "배당성향이 133%로 순이익을 초과하는 상태이며, ROE 6%로 수익성이 낮아 배당 지속 가능성에 단기 우려가 있음",
+    moatTypes: [
+      "brand",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "SPAM 등 수십 년 역사의 브랜드 자산과 넓은 유통망은 일정 수준의 해자를 제공합니다. 그러나 사모 브랜드(Private Label) 경쟁 심화와 소비자 건강 트렌드 변화로 프리미엄 가격 유지 능력이 약화되고 있습니다. 전반적으로 wide보다는 narrow 수준의 해자로 평가됩니다.",
+    revenueGrowthTrend: "인플레이션 수혜가 소멸된 2023년 이후 매출이 정체되거나 소폭 감소하는 추세",
+    marginTrend: "contracting",
+    debtLevel: "low",
+    financialSummary: "D/E 38.2%로 부채 부담은 낮아 재무 구조 자체는 건전합니다. 그러나 ROE 6%와 Trailing PER 28.7배가 보여주듯 수익성 대비 밸류에이션 부담이 있으며, 원재료 비용 상승과 포트폴리오 재편 비용으로 마진이 지속적으로 압박받고 있습니다.",
+    keyRisks: [
+      "배당성향 133% — 현 이익 수준에서 배당 삭감 또는 동결 리스크",
+      "가공육·통조림 기피 트렌드로 인한 핵심 제품군 장기 볼륨 감소",
+      "원재료(돼지·칠면조 등) 가격 변동성 및 조류독감 등 공급 리스크",
+    ],
+    bullCase: "Forward PER 16.1배는 회복 기대를 반영하며, 비용 절감 프로그램과 포트폴리오 구조조정이 성공할 경우 마진 회복과 함께 배당 성장이 재개될 수 있습니다.",
+    bearCase: "이익 회복이 지연되면 배당성향 부담이 가중되어 배당 동결 혹은 삭감이 단행될 수 있으며, 이는 주가의 추가 하락을 촉발할 수 있습니다.",
+    valuationComment: "현재 배당수익률 4.68%는 5년 평균(3.01%) 대비 역사적 고점 수준으로 표면상 매력적이나, 배당성향 초과·ROE 저하가 핵심 문제입니다. 애널리스트 목표가 $27은 8% 상승에 불과하며, 이익 정상화($1.55~1.60 EPS 회복) 확인 전까지는 분할 매수가 바람직합니다. 매수 적정 구간은 $23~$25로 판단합니다.",
+    recentDevelopments: [
+      "2024~2025년 구조조정 및 비용 절감 프로그램 추진 중 (Transform & Modernize 이니셔티브)",
+      "조류독감(HPAI) 영향으로 칠면조 부문 수익성 악화, 회복 시기 불확실",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당성향 초과와 수익성 부진이 해소되기 전까지는 적극 매수보다 이익 회복 신호를 확인 후 진입하는 것이 유리함",
+    targetBuyPrice: 23.0,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
