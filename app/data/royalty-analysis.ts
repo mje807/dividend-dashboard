@@ -1851,6 +1851,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "30년 연속 배당 성장 + Forward PER 14배 + 20% 상승여력으로 매력적이나 현재가 기준 추가 조정 시 적극 매수 고려 권장",
     targetBuyPrice: 66.5,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // CAH — Cardinal Health (배당귀족주, 37년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "CAH",
+    analyzedAt: "2026-02-23 03:30 KST",
+    businessSummary: "Cardinal Health는 미국 최대 의약품 및 의료기기 유통업체 중 하나로, 병원·약국·클리닉 등 전국 의료기관에 의약품과 의료 소모품을 공급한다. 제약 유통 세그먼트와 의료 세그먼트를 양축으로, 방사성의약품(Nuclear & Precision Health) 부문에서도 틈새 경쟁력을 보유하고 있다. 규모 기반의 마진 구조로 매출 대비 순마진은 낮지만 안정적인 현금흐름을 창출한다.",
+    coreProducts: [
+      "제약 유통 (Pharmaceutical Distribution) — 전체 매출의 약 80%+",
+      "의료 소모품·수술 용품 유통 (Medical Segment)",
+      "방사성의약품 솔루션 (Nuclear & Precision Health Solutions)",
+    ],
+    geographicPresence: "미국 약 93% · 국제(주로 캐나다·아시아) 약 7% — 사실상 북미 집중 사업 구조",
+    dividendStreakYears: 37,
+    dividendCAGR5yr: 7.5,
+    dividendCAGR10yr: 6.3,
+    recentDividendGrowth: "3년 CAGR 8.7%로 최근 배당 성장 가속화 추세; 37년 연속 증배로 Aristocrat 지위 안정적 유지",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 29.3%로 매우 보수적이며, 안정적 현금흐름 사업 구조상 단기 배당 삭감 리스크는 낮음",
+    moatTypes: [
+      "switching_costs",
+      "cost_advantage",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "전국 배송 인프라와 병원·약국 체인과의 장기 계약 구조가 핵심 진입장벽이다. 단, 제약 유통 업계는 McKesson·Cencora(AmerisourceBergen)와의 3강 과점으로, 개별 기업의 가격 결정력은 제한적이다. 방사성의약품 세그먼트는 규제·물류 복잡성으로 차별화된 틈새 해자를 보유한다.",
+    revenueGrowthTrend: "제약 유통 물량 증가 및 GLP-1(비만·당뇨약) 수요 급증에 힘입어 매출 연 10%+ 성장세 지속 중",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "유통업 특성상 순마진은 0.5% 내외로 얇지만, 매출 규모(약 $2,300억 달러)로 절대 이익이 크다. 부채 수준은 높은 편이나, 안정적인 영업현금흐름으로 이자 커버리지는 양호하다. 오피오이드 소송 합의금 지급이 완료 단계에 접어들어 재무 불확실성이 완화되고 있다.",
+    keyRisks: [
+      "대형 약국 체인(CVS·Walgreens) 및 PBM의 협상력 강화로 인한 마진 압박",
+      "정부의 약가 규제 강화 시 제약 유통 수익성 직접 영향",
+      "의료 세그먼트의 구조적 수익성 회복 지연 및 경쟁 심화",
+    ],
+    bullCase: "GLP-1 등 고가 전문의약품 유통 물량 급증이 매출·이익 동반 성장을 견인하고, 방사성의약품 부문 고성장으로 프리미엄 밸류에이션이 정당화될 수 있다.",
+    bearCase: "현재 52주 최고가 부근(94.2%)에서 Forward PER 19.4배는 저마진 유통업체치고 고평가 구간으로, 약가 규제나 GLP-1 성장 둔화 시 급격한 멀티플 축소 가능성이 있다.",
+    valuationComment: "현재 배당수익률 0.91%는 5년 평균(2.41%) 대비 현저히 낮아 주가가 펀더멘털 대비 선반영된 상태다. Forward PER 19.4배는 합리적으로 보이나, 순마진 0.5%대 유통업체에 적용하기에는 부담스러운 수준이다. 수익률 1.5~2% 회복 구간인 $100~$135, 또는 Forward PER 15배 수준인 $173 전후가 더 매력적인 매수 구간으로 판단된다.",
+    recentDevelopments: [
+      "GLP-1 계열(세마글루타이드·티르제파타이드) 처방 급증으로 제약 유통 물량 및 매출 대폭 증가 — 2025년 실적 서프라이즈 주요 원인",
+      "오피오이드 소송 합의(약 $60억) 지급이 마무리 단계에 접어들며 법적 불확실성 해소 국면 진입",
+    ],
+    overallRating: "관망",
+    ratingReason: "37년 배당 성장의 신뢰도는 높으나, 현재 주가는 52주 고점 부근·배당수익률 역대 최저 수준으로 신규 매수 매력도가 낮음 — 조정 시 분할 매수 전략 유효",
+    targetBuyPrice: 178,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
