@@ -1757,6 +1757,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업 품질과 배당 성장성은 최상급이나 현재 주가가 고점 부근·목표가 초과 상태로 매력적인 매수 가격 대비 약 10% 이상의 조정 후 진입이 바람직",
     targetBuyPrice: 162,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // BDX — Becton Dickinson (배당귀족주, 52년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "BDX",
+    analyzedAt: "2026-02-23 02:30 KST",
+    businessSummary: "Becton Dickinson은 의료기기, 진단 장비, 생명과학 솔루션을 개발·제조·판매하는 글로벌 의료기술 기업으로, BD Medical·BD Diagnostics·BD Life Sciences 세 부문으로 운영된다. 주사기·채혈관·수액 주입 시스템 등 병원 필수 소모품 시장에서 압도적 점유율을 보유하며, C.R. Bard 인수(2017)를 통해 혈관·비뇨기 분야로 포트폴리오를 확장하였다.",
+    coreProducts: [
+      "BD Vacutainer 채혈 시스템",
+      "BD Alaris 수액 주입 펌프",
+      "BD MAX 분자진단 플랫폼",
+    ],
+    geographicPresence: "미국 55% · 유럽·중동·아프리카 25% · 아시아태평양 13% · 기타 7%",
+    dividendStreakYears: 52,
+    dividendCAGR5yr: 5.5,
+    dividendCAGR10yr: 5.2,
+    recentDividendGrowth: "3년 CAGR 6.0%로 인플레이션 대비 실질 배당 성장 유지 중, 52년 연속 증배 기록 보유",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 68.1%로 다소 높고 D/E 77.3%의 부채 부담이 존재하나, 의료기기 필수소모품 특성상 현금흐름 안정성이 뒷받침",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "병원 시스템에 깊숙이 내재된 전자의무기록·수액관리 소프트웨어와 하드웨어 통합 솔루션은 교체 비용이 매우 높아 강력한 고객 잠금 효과를 형성한다. 50년 이상 구축한 브랜드 신뢰도와 FDA 인허가 노하우, 방대한 유통망은 신규 경쟁자의 진입을 구조적으로 차단한다.",
+    revenueGrowthTrend: "핵심 사업 중심 저~중단위 성장 유지, 의료기기 수요 회복과 신흥국 확장으로 점진적 매출 개선 기대",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary: "C.R. Bard 인수 이후 부채가 증가했으나 자산 매각과 FCF 창출로 디레버리징 진행 중이다. ROE 7.0%는 일시적 상각 비용 영향으로 낮게 표시되며, Forward PER 13.7은 Trailing PER 30.3 대비 대폭 개선된 이익 정상화를 반영한다. 안정적인 의료 소모품 수요 기반의 반복 수익이 재무 회복의 핵심 동력이다.",
+    keyRisks: [
+      "대규모 인수 후 지속되는 부채 상환 부담 및 금리 리스크",
+      "의료기기 가격 규제 강화 및 병원의 비용 절감 압력",
+      "C.R. Bard 텍스처드 임플란트 관련 법적 소송 불확실성",
+    ],
+    bullCase: "Forward PER 13.7 수준의 이익 정상화가 실현되고 디레버리징이 가속화될 경우, DDM 내재가치 $420 수준으로의 장기 재평가 가능성이 높다. 신흥국 의료인프라 투자 확대와 수술 볼륨 회복이 매출·마진 동반 개선을 이끌 수 있다.",
+    bearCase: "높은 배당성향(68%)과 부채 부담이 지속될 경우 배당 성장 둔화 또는 동결 리스크가 발생할 수 있다. 의료기기 가격 규제 심화 및 소송 비용 확대 시 이익 회복 일정이 지연될 수 있다.",
+    valuationComment: "현재가 $185는 52주 범위 최고 수준에 근접해 있어 단기 추가 상승 여력이 제한적이다. 애널리스트 목표가 $195(+5.4%)는 소폭 upside에 불과하지만, Forward PER 13.7과 현재 배당수익률 2.27%(5년 평균 1.57% 대비 +0.7%p)는 중장기 가치 매력을 시사한다. 적정 매수 구간은 주가 조정 시 $170~$175 내외로, 해당 구간에서 배당수익률 약 2.4~2.5% 확보 가능하다.",
+    recentDevelopments: [
+      "BD Alaris 수액 펌프 FDA 경고서한 해소 및 출하 재개로 의료기기 부문 회복 궤도 진입",
+      "비핵심 자산 매각 및 Embecta(인슐린 디바이스) 분사를 통한 포트폴리오 집중화 및 부채 축소 진행 중",
+    ],
+    overallRating: "관심",
+    ratingReason: "52년 연속 증배의 배당 신뢰성과 Forward 기준 저평가 매력은 있으나, 현재가가 52주 고점권에 위치해 $170~$175 조정 구간까지 기다리는 전략이 유효하다",
+    targetBuyPrice: 172,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
