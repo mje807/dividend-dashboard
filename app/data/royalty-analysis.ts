@@ -725,6 +725,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "52주 고점 부근에서 배당수익률이 역사적 평균 대비 낮고 애널리스트 목표가 하회 상태로, 추가 하락 시 $190 목표가 도달 후 분할 매수 전략이 유효함",
     targetBuyPrice: 190,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // GPC — Genuine Parts (배당왕족주, 68년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "GPC",
+    analyzedAt: "2026-02-22 15:31 KST",
+    businessSummary: "GPC(Genuine Parts Company)는 1928년 설립된 글로벌 자동차·산업용 교체 부품 유통 전문기업으로, 미국에서 NAPA Auto Parts 브랜드로 잘 알려져 있습니다. 자동차 부품(Automotive) 및 산업용 부품(Industrial, Motion Industries) 두 세그먼트를 중심으로 북미·유럽·아시아태평양에 걸쳐 광범위한 유통망을 운영합니다. 68년 연속 배당 증가라는 기록이 보여주듯 장기 안정적 현금흐름 창출에 강점을 지닙니다.",
+    coreProducts: [
+      "NAPA 자동차 교체 부품 유통",
+      "Motion Industries 산업용 부품·MRO 유통",
+      "EIS 전기·전자 소재 유통",
+    ],
+    geographicPresence: "북미(미국·캐나다·멕시코) 약 60% · 유럽(독일·영국 등) 약 25% · 아시아태평양(호주·뉴질랜드) 약 15%",
+    dividendStreakYears: 68,
+    dividendCAGR5yr: 5.9,
+    dividendCAGR10yr: 6.2,
+    recentDividendGrowth: "2024년 배당을 주당 $4.25(전년 대비 약 5% 인상)로 확대하며 68년 연속 증가 기록 유지",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 70.4%와 D/E 147.2%의 높은 레버리지가 부담이나, 안정적 유통업 현금흐름과 68년 연속 증가 트랙레코드가 지지대 역할",
+    moatTypes: [
+      "cost_advantage",
+      "switching_costs",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "NAPA 브랜드와 전국 6,000여 개 유통 거점이 만드는 밀도 높은 물류 네트워크는 경쟁사가 단기간에 복제하기 어려운 비용 우위를 제공합니다. 정비소·딜러십과의 장기 공급 관계 및 EDI 시스템 연동은 고객 전환비용을 높입니다. 다만 아마존·RockAuto 등 이커머스 채널의 부상으로 해자의 두께는 과거 대비 점진적으로 얇아지는 추세입니다.",
+    revenueGrowthTrend: "인수(유럽 부품 유통사 등)에 힘입어 외형은 성장했으나 2024년 수요 둔화로 유기적 성장률이 1~2%대로 낮아진 상황",
+    marginTrend: "contracting",
+    debtLevel: "high",
+    financialSummary: "D/E 147%의 높은 부채 부담과 ROE 1.5%라는 이례적으로 낮은 자본효율은 2024년 일회성 구조조정·자산상각 비용이 반영된 결과로 해석됩니다. 영업현금흐름 자체는 연 $1B 이상으로 배당 지급 능력은 유지되고 있으나, 레버리지 축소와 마진 회복이 투자 포인트의 핵심 과제입니다. Forward PER 13.6배는 실적 정상화 기대를 반영하고 있습니다.",
+    keyRisks: [
+      "전기차(EV) 전환 가속에 따른 자동차 교체 부품 수요 장기 감소 위협",
+      "아마존·이커머스 채널 경쟁 심화로 인한 가격 압력과 시장점유율 잠식",
+      "높은 D/E와 금리 환경 지속 시 이자 비용 증가 및 재무 유연성 저하",
+    ],
+    bullCase: "현재 배당수익률 3.60%가 5년 평균(2.68%) 대비 35% 이상 높아 역사적 저평가 구간에 진입했으며, DDM 적정가 $193 대비 38% 이상 할인된 현재가는 장기 배당 투자자에게 매력적인 진입 기회를 제공합니다.",
+    bearCase: "EV 보급 가속화와 부품 단순화로 자동차 세그먼트 수요가 구조적으로 감소할 경우, 고부채 상태에서 이익 악화가 겹치면 배당 성장 중단 혹은 감배당 압력이 발생할 수 있습니다.",
+    valuationComment: "현재가 $118은 52주 저점 기준 29.5% 수준으로 연중 하단에 위치하며, 배당수익률이 역사적 평균을 크게 웃돌고 있어 밸류에이션 매력도는 높습니다. DDM 적정가 $193, 애널리스트 평균 목표가 $143 모두 현재가 대비 상당한 업사이드를 시사합니다. 다만 ROE와 마진 회복 여부를 확인하면서 $110~$115 구간을 분할 매수 목표 구간으로 설정하는 것이 적절합니다.",
+    recentDevelopments: [
+      "2024년 하반기 실적 부진 및 연간 가이던스 하향으로 주가가 52주 최저 구간까지 급락",
+      "유럽·아시아태평양 자동차 부품 유통사 인수를 통한 글로벌 유통망 확장 지속 추진",
+    ],
+    overallRating: "관심",
+    ratingReason: "역사적 저평가 구간과 높은 배당수익률이 매력적이나, ROE 1.5%·고부채·마진 압박 등 단기 실적 불확실성이 해소될 때까지 분할 접근 권장",
+    targetBuyPrice: 112,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
