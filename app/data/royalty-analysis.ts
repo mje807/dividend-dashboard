@@ -1804,6 +1804,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "52년 연속 증배의 배당 신뢰성과 Forward 기준 저평가 매력은 있으나, 현재가가 52주 고점권에 위치해 $170~$175 조정 구간까지 기다리는 전략이 유효하다",
     targetBuyPrice: 172,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // BRO — Brown & Brown (배당귀족주, 30년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "BRO",
+    analyzedAt: "2026-02-23 03:00 KST",
+    businessSummary: "Brown & Brown은 미국 내 4대 독립 보험 중개사 중 하나로, 기업 및 개인 고객에게 보험 제품 및 리스크 관리 솔루션을 제공합니다. 보험사와 계약자 사이에서 수수료 기반으로 운영되어 경기 사이클에 비교적 방어적인 수익 구조를 보유하고 있습니다. 인수합병(M&A)을 통한 공격적 외형 성장 전략으로 지속적으로 시장 점유율을 확대해왔습니다.",
+    coreProducts: [
+      "보험 중개 및 리스크 관리 솔루션",
+      "전문 프로그램 보험(틈새 시장 특화)",
+      "보험 관련 서비스(클레임 처리·직원 복리후생 관리)",
+    ],
+    geographicPresence: "미국 약 85% · 영국·캐나다·기타 국제 약 15%",
+    dividendStreakYears: 30,
+    dividendCAGR5yr: 10.2,
+    dividendCAGR10yr: 9.5,
+    recentDividendGrowth: "3년 CAGR 22.5%의 가파른 배당 성장, 현재 수익률 0.91%로 5년 평균(0.63%) 대비 확연히 높아진 상태",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 19.5%로 극히 보수적이며 30년 연속 배당 증가 이력이 배당 지속성을 강하게 뒷받침",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "보험 중개는 장기 고객 관계와 높은 전환 비용을 기반으로 하는 구조적 해자를 보유합니다. 수십 년간 축적된 특수 산업별 틈새 프로그램(니치 마켓) 전문성과 지역 브로커 네트워크는 신규 경쟁자가 단기간에 복제하기 어렵습니다. 꾸준한 M&A를 통한 규모의 경제 확보로 비용 효율성과 가격 협상력이 지속 강화되고 있습니다.",
+    revenueGrowthTrend: "M&A와 유기적 성장을 결합해 연 10~15% 수준의 꾸준한 매출 성장 유지",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary: "D/E 63%는 중개업 특성상 부채를 활용한 M&A 전략 결과로 동종업계 대비 관리 가능한 수준입니다. ROE 11.2%는 다소 평범해 보이나 무형자산 상각 부담을 고려하면 실질 수익성은 더 높으며, 영업현금흐름은 안정적으로 배당 및 M&A 재원을 충분히 커버합니다. Forward PER 14.0은 성장률 대비 매력적인 구간으로 재무 건전성은 양호합니다.",
+    keyRisks: [
+      "금리 하락 시 보험 프리미엄 감소로 수수료 수익 압박 가능",
+      "공격적 M&A에 따른 통합 리스크 및 부채 증가 우려",
+      "대형 보험사의 직접 판매 채널 확대로 중개사 입지 약화 가능성",
+    ],
+    bullCase: "보험 경쟁 시장에서 틈새 프로그램 전문성과 M&A 기반 외형 확장이 지속되며 Forward PER 14배는 성장주 대비 저평가 구간으로 재평가 가능합니다.",
+    bearCase: "52주 고점 대비 6.5% 수준에 위치하여 이미 많이 하락했음에도 경기 침체 시 보험 시장 둔화와 M&A 통합 비용이 동시에 발생할 경우 추가 하방 압력이 불가피합니다.",
+    valuationComment: "Trailing PER 22배는 부담스러우나 Forward PER 14배는 22.5%의 높은 배당 성장률을 감안할 때 매력적입니다. 애널리스트 목표가 $83.50(+20%) 및 현재 52주 저점 근접 구간을 고려하면 $65~$68 부근이 분할 매수 적정 구간으로 판단됩니다.",
+    recentDevelopments: [
+      "2024~2025년 지속적인 소형 보험 중개사 인수로 특수 프로그램 포트폴리오 확대",
+      "미국 내 재해보험 수요 급증 수혜로 상업용 보험 중개 부문 유기적 성장 가속화",
+    ],
+    overallRating: "관심",
+    ratingReason: "30년 연속 배당 성장 + Forward PER 14배 + 20% 상승여력으로 매력적이나 현재가 기준 추가 조정 시 적극 매수 고려 권장",
+    targetBuyPrice: 66.5,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
