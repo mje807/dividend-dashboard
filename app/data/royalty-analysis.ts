@@ -1568,6 +1568,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "탁월한 사업 품질과 배당 성장력을 인정하나, 현 주가는 역사적 밸류에이션 상단으로 안전마진 확보가 어려운 구간",
     targetBuyPrice: 860,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // CBSH — Commerce Bancshares (배당왕족주, 56년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "CBSH",
+    analyzedAt: "2026-02-23 00:30 KST",
+    businessSummary: "Commerce Bancshares는 미주리주 캔자스시티를 본거지로 하는 중서부 지역 은행 지주회사로, 상업·소매 금융, 자산관리, 트레저리 서비스를 핵심 축으로 운영한다. 56년 연속 배당 증가라는 Dividend King 타이틀이 입증하듯 경기 사이클 전반에 걸쳐 안정적 수익 창출 능력을 보유하고 있으며, 보수적 리스크 관리로 대형 금융위기에서도 배당을 유지해 왔다.",
+    coreProducts: [
+      "상업·기업 금융 (대출·신용한도)",
+      "리테일 뱅킹 및 모기지",
+      "자산관리·신탁·증권 서비스",
+    ],
+    geographicPresence: "미국 중서부 집중 (미주리·캔자스·일리노이·오클라호마·콜로라도) · 국내 지역 특화 전략",
+    dividendStreakYears: 56,
+    dividendCAGR5yr: 4.5,
+    dividendCAGR10yr: 5.0,
+    recentDividendGrowth: "최근 3년 배당 CAGR 4.6%로 물가 상승률 수준의 꾸준한 증가세 유지",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 26.3%로 매우 낮고 ROE 16%의 탄탄한 수익성이 뒷받침되어 배당 안전성 최상위 수준",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "중서부 지역 내 수십 년간 축적된 브랜드 신뢰와 기업·개인 고객의 높은 계좌 이동 비용(스위칭 코스트)이 핵심 해자다. 자산관리·신탁 부문은 장기 고객 관계 기반의 반복 수익을 창출하며, 지역 특화 집중 전략이 운영 효율성을 제공한다. 다만 광역 대형 은행 및 핀테크의 침투로 해자 폭이 상대적으로 좁은 편이다.",
+    revenueGrowthTrend: "고금리 환경에서 순이자마진 개선에 힘입어 완만한 매출 성장세 유지 중",
+    marginTrend: "stable",
+    debtLevel: "low",
+    financialSummary: "PER 13.4배·PBR 1.96배는 우량 지역 은행 대비 합리적 수준이며, ROE 16%는 동종업계 상위권에 해당한다. 배당성향 26%의 낮은 수준은 경기 하강 시에도 배당 유지 여력이 충분함을 의미하고, D/E 데이터가 불명확하나 보수적 여신 정책으로 자산 건전성은 양호하다.",
+    keyRisks: [
+      "금리 하락 사이클 전환 시 순이자마진 압축",
+      "중서부 지역 경기 둔화에 따른 대출 부실 증가 가능성",
+      "핀테크·대형 은행의 지역 침투 심화로 인한 고객 이탈",
+    ],
+    bullCase: "금리 안정 및 중서부 경기 호조 지속 시 ROE 개선과 함께 애널리스트 목표가 $62 달성이 가능하며, Dividend King 프리미엄 재평가로 PBR 확장 여지가 있다.",
+    bearCase: "연준의 금리 인하 사이클이 가속화되면 순이자마진이 압축되어 EPS가 하락하고, DDM 적정가($45.83) 수준으로 주가가 회귀할 위험이 존재한다.",
+    valuationComment: "현재가 $54.03은 DDM 적정가($45.83) 대비 소폭 고평가 구간이나, Forward PER 12.3배·현재 배당수익률 2.04%(5년 평균 1.72% 대비 +32bp)는 역사적 평균보다 매력적이다. 배당수익률 2.2~2.3% 수준인 $48~$50 구간이 이상적 매수 목표이며, 52주 저점 부근인 $50 초반에서도 분할 매수 고려 가능하다.",
+    recentDevelopments: [
+      "2024~2025년 고금리 환경에서 순이자마진 방어에 성공하며 안정적 실적 유지",
+      "자사주 매입 프로그램 지속 및 56년 연속 배당 증가 기록 갱신",
+    ],
+    overallRating: "관심",
+    ratingReason: "Dividend King의 안전성과 합리적 밸류에이션은 매력적이나, DDM 대비 소폭 고평가 상태이므로 $50 초반 분할 매수 접근이 유리",
+    targetBuyPrice: 50.5,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
