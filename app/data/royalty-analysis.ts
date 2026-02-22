@@ -865,6 +865,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업 퀄리티와 배당 안전성은 우수하나 현 주가($280)는 밸류에이션 매력이 낮아 $240~250 조정 시 매수 기회를 노리는 것이 유효함",
     targetBuyPrice: 248,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // LANC — Lancaster Colony (배당왕족주, 62년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "LANC",
+    analyzedAt: "2026-02-22 17:00 KST",
+    businessSummary: "Lancaster Colony는 오하이오주 웨스터빌에 본사를 둔 특수 식품 기업으로, 소매 및 식품서비스 채널에 샐러드드레싱·소스·냉동빵 등을 공급한다. Marzetti 드레싱, Sister Schubert's 냉동롤, New York Bakery 마늘빵 등의 브랜드를 보유하며, 칙필레·버팔로윙스·올리브가든 등 주요 외식 체인에 라이선스 소스를 공급하는 푸드서비스 사업도 운영한다. 1961년 이후 62년 연속 배당 인상을 달성한 Dividend King 기업이다.",
+    coreProducts: [
+      "Marzetti 샐러드드레싱·딥소스",
+      "Sister Schubert's 냉동 롤·빵",
+      "New York Bakery 마늘빵·토스트 / 외식 체인 라이선스 소스(칙필레·BWW 등)",
+    ],
+    geographicPresence: "미국 95%+ · 캐나다 등 소규모 수출 일부 (실질 내수 중심 기업)",
+    dividendStreakYears: 62,
+    dividendCAGR5yr: 6.8,
+    dividendCAGR10yr: 7.5,
+    recentDividendGrowth: "최근 연간 배당 인상률 약 5~8% 수준 유지, 62년 연속 증가 기록 중",
+    dividendSafety: "strong",
+    dividendSafetyReason: "무차입에 가까운 재무구조와 안정적 현금흐름, 60년 이상 배당 유지 실적이 안전성을 뒷받침함",
+    moatTypes: [
+      "brand",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "Marzetti·Sister Schubert's 등 소비자 신뢰 브랜드와 외식 체인과의 장기 라이선스 계약이 좁지만 견고한 해자를 형성한다. 다만 식품 섹터 특성상 프라이빗라벨과의 가격 경쟁이 지속적 압박 요인이며, 브랜드 전환 비용이 낮아 와이드 해자 수준은 아니다. 라이선스 소스 사업은 외식 체인과의 관계가 강력한 반복 매출원으로 작용한다.",
+    revenueGrowthTrend: "연간 매출 약 4~7% 완만한 성장 추세, 식품서비스 라이선스 채널이 성장 견인",
+    marginTrend: "stable",
+    debtLevel: "low",
+    financialSummary: "Lancaster Colony는 업계에서 드물게 사실상 무차입 상태를 유지하며 강한 자기자본 수익성(ROE ~20%)을 보유한 재무 우량 기업이다. 잉여현금흐름이 풍부하여 배당 인상·설비투자·소규모 인수합병을 자기자금으로 소화한다. 원자재(밀·식용유·포장재) 가격 변동이 단기 마진에 영향을 주지만 장기 수익성은 안정적이다.",
+    keyRisks: [
+      "원자재(밀·식용유) 가격 급등에 따른 마진 압박",
+      "대형 외식 체인 라이선스 계약 종료 또는 축소 리스크",
+      "프라이빗라벨 확대로 인한 소매 채널 점유율 잠식",
+    ],
+    bullCase: "외식 체인 라이선스 소스 채널의 지속 확장과 프리미엄 브랜드 포지셔닝 강화로 마진 개선 시 주가 재평가 가능. 62년 배당 킹 희소성에 따른 프리미엄 밸류에이션 지속.",
+    bearCase: "원자재 비용 상승과 프라이빗라벨 경쟁 심화가 동시에 발생할 경우 마진 훼손 및 EPS 역성장 가능. 소규모 시가총액(~$2B)으로 기관 커버리지 부족 시 유동성 위험.",
+    valuationComment: "현재 $172대는 역사적 PER 30~35배 상단 영역으로 Dividend King 프리미엄이 반영된 가격이다. 배당수익률 기준 약 2.2~2.3% 수준으로 매력도가 높지 않으며, $150~160 구간($145 이하 시 적극 매수)에서 수익률 2.5% 이상 진입이 더 유리하다.",
+    recentDevelopments: [
+      "2024~2025년 식품서비스 라이선스 채널(칙필레·BWW 등) 매출 비중 확대로 성장 모멘텀 유지",
+      "원자재 비용 정상화 추세로 마진 회복 기대감 형성 중",
+    ],
+    overallRating: "관망",
+    ratingReason: "비즈니스 품질과 배당 안전성은 최상급이나, 현 가격($172)은 Dividend King 프리미엄을 충분히 반영한 수준으로 $155~160 이하 조정 시 매수 적합",
+    targetBuyPrice: 158,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
