@@ -912,6 +912,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "비즈니스 품질과 배당 안전성은 최상급이나, 현 가격($172)은 Dividend King 프리미엄을 충분히 반영한 수준으로 $155~160 이하 조정 시 매수 적합",
     targetBuyPrice: 158,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // NDSN — Nordson (배당왕족주, 61년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "NDSN",
+    analyzedAt: "2026-02-22 17:44 KST",
+    businessSummary: "Nordson은 정밀 분배(dispensing), 테스팅, 검사 장비를 설계·제조하는 산업재 기업으로, 반도체, 전자, 의료, 포장 등 다양한 산업에 특화 솔루션을 공급한다. 접착제·유체 분배 시스템과 결함 검사 장비 분야에서 세계적 시장 지위를 보유하며, 고도의 기술력과 고객 맞춤형 솔루션으로 강한 반복 매출 구조를 갖는다.",
+    coreProducts: [
+      "정밀 접착제·유체 분배 시스템 (Industrial Precision Solutions)",
+      "반도체·전자 패키징 검사·테스트 장비 (Electronics Systems)",
+      "의료·생명과학용 분배·주입 솔루션 (Medical & Fluid Solutions)",
+    ],
+    geographicPresence: "미국 약 35% · 유럽 30% · 아시아 25% · 기타 10% (국제 매출 비중 65%+로 글로벌 분산 우수)",
+    dividendStreakYears: 61,
+    dividendCAGR5yr: 15.2,
+    dividendCAGR10yr: 14.8,
+    recentDividendGrowth: "2024년 배당금 인상 약 15% 단행, 3년 CAGR 19.7%로 Dividend King 중 최상위권 배당 성장률 유지",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 37.1%로 매우 보수적이며, 잉여현금흐름 대비 배당 커버리지도 탄탄해 향후 수년간 15% 내외 배당 성장 지속 가능",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "Nordson의 핵심 해자는 강력한 전환비용에서 비롯된다. 고객의 생산라인에 깊숙이 통합된 맞춤형 분배 시스템은 교체 시 막대한 재설계·재인증 비용이 발생해 고객 락인 효과가 탁월하다. 61년 배당 증가 이력을 뒷받침하는 고마진 소모품·유지보수 서비스의 반복 매출 구조와, 정밀 분배 기술 분야에서 수십 년간 축적된 특허·노하우가 진입 장벽을 더욱 높인다.",
+    revenueGrowthTrend: "최근 반도체·전자 부문 사이클 둔화로 단기 성장세가 다소 둔화됐으나, 의료·AI 반도체 패키징 수요 증가로 중장기 성장 궤도는 유효",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "D/E 비율 67%는 산업재 기준 보수적 수준이며, ROE 17.5%는 자본 효율성이 우수함을 방증한다. 배당성향 37%로 이익의 상당 부분이 재투자·M&A 재원으로 활용 가능하며, 꾸준한 FCF 창출력이 61년 배당 성장의 물적 기반이다.",
+    keyRisks: [
+      "반도체·전자 설비투자 사이클 하강 시 수요 급감 위험 (단기 실적 변동성)",
+      "글로벌 매출 비중 65%+로 달러 강세·지정학적 불확실성(특히 중국) 환위험 노출",
+      "현재 주가가 52주 고점 대비 92% 수준으로 밸류에이션 프리미엄 부담 — 성장 기대 미충족 시 주가 조정 폭 클 수 있음",
+    ],
+    bullCase: "AI·전장·의료 분야 정밀 분배 수요 구조적 성장과 반도체 패키징 고도화 트렌드가 Nordson의 고마진 반복 매출을 중장기적으로 가속할 경우, EPS 성장이 재가속되며 목표주가 $320+ 달성 가능하다.",
+    bearCase: "글로벌 설비투자 위축 및 반도체 사이클 장기 침체 시 매출 역성장이 현실화될 수 있으며, 현재 Forward PER 23.6배의 프리미엄 밸류에이션이 빠르게 압축되어 $240 이하 조정 시나리오도 배제할 수 없다.",
+    valuationComment: "애널리스트 목표가 $297.90 대비 현재가 $290.17로 상승여력이 2.7%에 불과하고, 52주 위치 92.2%로 단기 고점 부담이 크다. Trailing PER 34.1배는 산업재 평균 대비 프리미엄이나 Forward PER 23.6배는 양호하다. 배당 매력(수율 1.13%)보다 성장 프리미엄으로 평가받는 종목으로, 안전마진 확보를 위해 $250~$260 구간(Forward PER 20~21배) 진입이 이상적이다.",
+    recentDevelopments: [
+      "2024년 의료·생명과학 부문 인수(Atrion 관련 유사 타깃 검토 등)로 포트폴리오 다각화 추진 중",
+      "AI 반도체 고밀도 패키징(Advanced Packaging) 수요 증가로 전자 부문 수주 회복 조짐 — 2025년 하반기 실적 개선 기대",
+    ],
+    overallRating: "관망",
+    ratingReason: "61년 배당 성장의 압도적 신뢰도와 광폭 해자는 인정하나, 현재가가 목표가에 근접하고 52주 고점 부근에 위치해 신규 매수 시 안전마진이 부족하므로 $255 이하 조정 시 분할 매수 전략 권장",
+    targetBuyPrice: 258,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
