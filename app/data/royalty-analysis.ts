@@ -677,7 +677,54 @@ export const stockAnalyses: StockAnalysis[] = [
     overallRating: "관심",
     ratingReason: "배당수익률이 5년 평균을 40% 이상 상회하며 52주 저점권에 위치, 장기 배당 성장주로 분할 매수 관점의 관심 유지 적합",
     targetBuyPrice: 67,
-  }
+  },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // DOV — Dover Corporation (배당왕족주, 68년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "DOV",
+    analyzedAt: "2026-02-22 13:00 KST",
+    businessSummary: "Dover Corporation은 산업용 펌프·밸브, 열교환기, 청정에너지 주유 장비, 식품 소매 냉장 시스템, 바이오파마 공정 부품 등을 설계·제조하는 고도로 다각화된 산업재 기업이다. 엔지니어드 제품, 청정에너지·연료공급, 이미징·식별, 펌프·공정 솔루션, 기후·지속가능성 기술 등 5개 사업부문을 운영한다. 틈새 산업 시장에서 높은 점유율을 가진 사업부들을 M&A로 지속 확장해 왔다.",
+    coreProducts: [
+      "산업용 펌프 및 공정 솔루션",
+      "청정에너지·주유소 장비 (Tokheim, Wayne)",
+      "식품 소매 냉장·열관리 시스템",
+    ],
+    geographicPresence: "미국 약 55% · 유럽 25% · 아시아태평양 및 기타 20%",
+    dividendStreakYears: 68,
+    dividendCAGR5yr: 1.5,
+    dividendCAGR10yr: 5.2,
+    recentDividendGrowth: "최근 3년 배당 CAGR 1.0%로 68년 연속 증가 기록 유지 중이나 성장 속도가 현저히 둔화",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 26%로 매우 보수적이며 잉여현금흐름 대비 배당 커버리지가 충분해 삭감 위험 극히 낮음",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "Dover는 틈새 산업 세그먼트에서 고객 맞춤형 엔지니어링 솔루션을 제공해 교체 비용(switching cost)이 높은 시장 지위를 구축했다. 독점 기술·특허 및 수십 년간 축적된 공정 노하우가 진입 장벽을 형성하나, 경쟁사가 많은 산업재 특성상 '광폭(wide)' 해자로 보기는 어렵다. 지속적인 볼트온(Bolt-on) M&A 전략으로 해자를 점진적으로 강화 중이다.",
+    revenueGrowthTrend: "2021~2022년 고성장 이후 둔화, 2023~2024년 유기적 성장 정체 및 일부 사업부 수요 약화 국면",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "D/E 비율 약 48%(0.48배)로 레버리지는 관리 가능한 수준이며, ROE 15.3%는 자본효율성이 양호함을 시사한다. 배당성향 26%와 안정적 잉여현금흐름으로 재무 유연성이 충분하나, 금리 상승 환경에서 M&A 중심 성장 전략의 자본비용 부담이 다소 증가했다.",
+    keyRisks: [
+      "산업 경기 사이클 둔화에 따른 수요 감소 및 마진 압박",
+      "고금리 환경에서 M&A 통한 성장 전략 실행 비용 상승",
+      "청정에너지 전환 가속으로 전통 연료공급 사업부 구조적 역풍",
+    ],
+    bullCase: "청정에너지·바이오파마 등 성장 사업부 확대와 가격 인상력 회복 시 Forward PER 20배 수준에서 매력적 재가속 성장이 가능하다. 68년 배당 성장 트랙레코드 보유로 방어적 성격도 겸비한다.",
+    bearCase: "3년 배당 CAGR 1.0%에 불과해 인플레이션 대비 실질 배당가치가 감소 중이며, 현재 주가가 애널리스트 목표가($226)를 상회하는 상태에서 추가 하락 가능성이 존재한다.",
+    valuationComment: "현재가 $233.31은 52주 고점 대비 95.5% 수준으로 이미 고평가 구간에 진입했으며, 배당수익률 0.89%는 5년 평균(1.28%) 대비 크게 낮아 역사적으로 비싼 구간이다. Trailing PER 29.2배는 부담스러우나 Forward PER 20.3배는 합리적이다. 배당수익률이 5년 평균에 근접하는 $185~$200 구간을 적정 매수 타이밍으로 판단하며, $190 이하 진입 시 안전 마진 확보 가능하다.",
+    recentDevelopments: [
+      "2024년 바이오파마 및 수소연료 관련 청정에너지 사업부 확장 투자 진행",
+      "2025년 일부 산업재 수요 부진으로 유기적 성장 목표 하향 조정 우려 대두",
+    ],
+    overallRating: "관망",
+    ratingReason: "52주 고점 부근에서 배당수익률이 역사적 평균 대비 낮고 애널리스트 목표가 하회 상태로, 추가 하락 시 $190 목표가 도달 후 분할 매수 전략이 유효함",
+    targetBuyPrice: 190,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
