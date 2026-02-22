@@ -630,7 +630,7 @@ export const stockAnalyses: StockAnalysis[] = [
       "코카콜라는 배당 투자자의 '교과서 종목'. 62년 연속 배당 인상, 넓은 해자, 초우량 재무. 그러나 현재 PER 32x는 성장 기대 없이는 비싼 가격. $70 이하에서 매수하면 배당률 2.9%+ 달성하며 장기 보유에 적합. 지금 당장 추격 매수보다는 조정 시 관심 목록 유지 권장.",
     targetBuyPrice: 70,
   },
-];,
+,
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // AWR — American States Water (배당왕족주, 69년 연속)
@@ -678,6 +678,7 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당수익률이 5년 평균을 40% 이상 상회하며 52주 저점권에 위치, 장기 배당 성장주로 분할 매수 관점의 관심 유지 적합",
     targetBuyPrice: 67,
   }
+];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
   return stockAnalyses.find(a => a.ticker === ticker);
