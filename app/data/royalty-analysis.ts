@@ -1615,6 +1615,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "Dividend King의 안전성과 합리적 밸류에이션은 매력적이나, DDM 대비 소폭 고평가 상태이므로 $50 초반 분할 매수 접근이 유리",
     targetBuyPrice: 50.5,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ABT — Abbott Laboratories (배당귀족주, 52년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "ABT",
+    analyzedAt: "2026-02-23 01:00 KST",
+    businessSummary: "Abbott Laboratories는 의료기기, 진단, 영양, 제약 4개 사업부를 보유한 글로벌 헬스케어 기업입니다. 연속혈당측정기(CGM) FreeStyle Libre가 의료기기 부문의 핵심 성장 동력이며, Alinity 진단 시스템과 Ensure·Similac 등 영양 브랜드가 안정적인 수익을 창출합니다. 131년 역사를 가진 배당 귀족주로 52년 연속 배당을 증가시켜 왔습니다.",
+    coreProducts: [
+      "FreeStyle Libre (CGM 연속혈당측정기)",
+      "Alinity 진단 플랫폼 (IVD 시스템)",
+      "Ensure·Similac·Pedialyte (의료 영양제품)",
+    ],
+    geographicPresence: "미국 약 45% · 국제(유럽·아시아·이머징마켓 등) 약 55%",
+    dividendStreakYears: 52,
+    dividendCAGR5yr: 8.2,
+    dividendCAGR10yr: 13.1,
+    recentDividendGrowth: "3년 CAGR 16.7%의 공격적 증배 지속, 최근 분기 주당 $0.59 → $0.63 수준으로 인상",
+    dividendSafety: "strong",
+    dividendSafetyReason: "52년 연속 배당 증가, D/E 25.3으로 부채 극히 낮음, 배당성향 63.4%는 헬스케어 귀족주 기준 양호한 수준",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "FreeStyle Libre는 CGM 시장에서 강력한 고객 전환 비용과 브랜드 충성도를 구축하였으며, Libre 생태계(앱·클라우드 연동)로 락인 효과가 심화되고 있습니다. 의료기기·진단 부문에서 특허 및 FDA 승인 등 규제 기반 진입장벽이 높고, 영양 사업의 글로벌 브랜드 인지도(Ensure·Similac)는 수십 년에 걸쳐 형성된 무형자산입니다. 이머징마켓 기성의약품(EPD) 부문은 현지 유통망 기반의 비용 우위를 보유합니다.",
+    revenueGrowthTrend: "COVID 진단 특수 기저효과 소멸 후 정상화 과정 중이나, FreeStyle Libre 및 심장전기생리학(EP) 기기 중심으로 연간 6~9%대 유기적 성장 재가속 추세",
+    marginTrend: "expanding",
+    debtLevel: "low",
+    financialSummary: "D/E 25.3으로 동종 헬스케어 대비 재무 레버리지가 매우 낮아 금리 리스크가 제한적입니다. ROE 13.2%는 성장 투자 사이클 감안 시 양호하며, Forward PER 18.0배는 Trailing 30.1배 대비 이익 정상화 기대를 반영합니다. 프리캐시플로우 창출력이 안정적으로 배당 성장 및 R&D 투자를 동시에 뒷받침하고 있습니다.",
+    keyRisks: [
+      "COVID 진단 매출 정상화에 따른 전사 매출 성장률 비교 부담 지속",
+      "Dexcom·Medtronic 등 CGM 경쟁 심화 및 기술 혁신 사이클 압박",
+      "Similac 등 영양 부문 제품 리콜·품질 이슈 재발 가능성 및 이머징마켓 환율 역풍",
+    ],
+    bullCase: "FreeStyle Libre의 글로벌 시장 점유율 확대와 비당뇨 웰니스 CGM(Lingo) 신시장 개척이 성공하면 의료기기 부문 이익이 크게 레버리지될 수 있습니다. 애널리스트 목표가 $133.39 달성 시 배당수익 포함 총수익률 21% 이상 기대 가능합니다.",
+    bearCase: "진단 부문 매출 회복 지연과 CGM 경쟁 격화로 Forward EPS 추정치가 하향 조정될 경우, 현재 배당수익률 수준(2.25%)도 주가 지지 근거로 부족할 수 있습니다. 글로벌 경기 침체 시 영양·이머징마켓 사업 성장 둔화가 겹칠 위험이 존재합니다.",
+    valuationComment: "현재가 $112.21은 52주 범위 하위 19.3% 수준으로 역사적 저점권 근처에 위치하며, 배당수익률 2.25%가 5년 평균(1.74%)을 유의미하게 상회해 상대적 저평가 구간입니다. Forward PER 18배는 배당 귀족 헬스케어주 프리미엄 감안 시 합리적이며, 애널리스트 목표가($133.39) 기준 18.9% 업사이드가 남아 있습니다. $105~$115 구간은 매수 적합 구간으로 판단되며, $108 전후 분할 매수 전략이 유효합니다.",
+    recentDevelopments: [
+      "FreeStyle Libre 3 Plus 미국 FDA 승인 및 비당뇨 웰니스용 Lingo CGM 출시로 TAM 확장 본격화",
+      "심장전기생리학(EP) 카테터 사업 고성장 지속 및 Volt 배터리리스 ICD 글로벌 론칭",
+    ],
+    overallRating: "관심",
+    ratingReason: "52주 저점 인근 + 역사적 고배당수익률 구간 + 애널리스트 매수 의견 + Forward PER 18배 합리적 → 분할 매수 적합 시점",
+    targetBuyPrice: 108,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
