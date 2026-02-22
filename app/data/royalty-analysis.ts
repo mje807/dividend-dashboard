@@ -1379,6 +1379,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 안전성과 해자는 탁월하나 현재가가 애널리스트 목표가를 웃돌고 52주 고점 부근에 위치해 추가 상승보다 조정 리스크가 더 큰 시점",
     targetBuyPrice: 268,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // MSEX — Middlesex Water (배당왕족주, 51년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "MSEX",
+    analyzedAt: "2026-02-22 22:30 KST",
+    businessSummary: "Middlesex Water Company는 뉴저지주와 델라웨어주를 중심으로 상·하수도 서비스를 제공하는 규제 유틸리티 기업입니다. 주거·상업·산업 고객 약 50만 명에게 수도를 공급하며, 규제 당국의 요금 승인 하에 안정적인 현금흐름을 창출합니다. 51년 연속 배당 증가로 Dividend King 지위를 보유한 미국 수도 유틸리티의 대표 종목 중 하나입니다.",
+    coreProducts: [
+      "수도 공급 및 배급 서비스",
+      "하수도·수처리 운영 서비스",
+      "지자체 위탁 운영(Contract Operations)",
+    ],
+    geographicPresence: "뉴저지 약 85% · 델라웨어 약 15% (미국 동부 지역 집중)",
+    dividendStreakYears: 51,
+    dividendCAGR5yr: 5.5,
+    dividendCAGR10yr: 4.8,
+    recentDividendGrowth: "3년 CAGR 5.3%로 인플레이션 이상의 안정적 배당 성장 유지 중",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 56.9%로 규제 유틸리티 특성상 현금흐름이 매우 안정적이며 과거 51년간 단 한 차례도 배당 삭감 없음",
+    moatTypes: [
+      "efficient_scale",
+      "intangible_assets",
+      "switching_costs",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "수도 사업은 대규모 인프라 투자가 선행되어야 하는 자연독점(Natural Monopoly) 구조로, 신규 경쟁자의 시장 진입이 사실상 불가능합니다. 규제 당국의 독점 영업 면허(intangible_assets)와 교체 불가능한 고객 기반(switching_costs)이 강력한 해자를 형성합니다. 요금 인상 역시 공익위원회(BPU)를 통해 정기적으로 승인받는 구조로 수익 가시성이 매우 높습니다.",
+    revenueGrowthTrend: "인프라 투자 확대 및 규제 요금 인상으로 연 3~5%의 완만하고 안정적인 매출 성장세 유지",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "D/E 비율 84.3으로 부채 부담이 높지만, 이는 수도 유틸리티 섹터의 구조적 특성(대규모 설비 투자)에 기인한 것으로 동종업계 평균 수준입니다. ROE 9.1%는 규제 자본수익률 범위 내에 있으며, PER(Forward) 18.4는 동종 수도 유틸리티 대비 다소 할인된 수준입니다. 규제된 현금흐름 덕분에 이자 상환 능력은 안정적입니다.",
+    keyRisks: [
+      "금리 상승 시 높은 부채 비용 증가 및 할인율 상승으로 밸류에이션 압박",
+      "규제 당국의 요금 인상 불허 또는 지연으로 인한 수익성 훼손",
+      "인프라 노후화에 따른 대규모 자본지출(CapEx) 증가로 배당 성장 둔화 가능성",
+    ],
+    bullCase: "DDM 적정가 $82.35는 현재가 대비 52% 이상 상승 여력을 시사하며, 금리 하락 사이클 진입 시 유틸리티 섹터 재평가로 주가 회복이 가속될 수 있습니다. 현재 배당수익률 2.59%는 5년 평균(1.80%) 대비 역사적으로 높은 수준으로, 매수 매력도가 있습니다.",
+    bearCase: "애널리스트 컨센서스 목표가가 $56에 불과해 단기 주가 상승 모멘텀이 제한적이며, 고금리 환경 장기화 시 유틸리티 섹터 전반의 밸류에이션 리레이팅이 지연될 수 있습니다.",
+    valuationComment: "현재가 $54.13은 DDM 적정가($82.35) 대비 34% 할인된 수준이며, 배당수익률도 5년 평균보다 약 80bp 높아 역사적 저평가 구간입니다. 다만 애널리스트 목표가($56)와의 간극이 작아 단기 상승 촉매는 부족합니다. 장기 배당 투자자라면 $50~$52 구간을 목표 매수가로 설정하고 분할 접근하는 전략이 유효합니다.",
+    recentDevelopments: [
+      "2024년 뉴저지 공익위원회(BPU)에 요금 인상 신청 진행 중으로 수익성 개선 기대",
+      "인프라 현대화 및 PFAS(과불화화합물) 처리 설비 투자 확대로 CapEx 증가 및 장기 요금 기반 확대 전망",
+    ],
+    overallRating: "관심",
+    ratingReason: "51년 배당 왕의 안정성과 역사적 저평가 매력은 있으나 단기 모멘텀 부재로 $50~$52 분할 매수 구간 대기 전략 추천",
+    targetBuyPrice: 51.0,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
