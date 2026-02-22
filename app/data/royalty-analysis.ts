@@ -819,6 +819,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 킹 지위와 낮은 배당성향으로 장기 보유 매력은 충분하나, 현재가는 52주 고점 근처로 배당수익률이 역사적 평균 하단이어서 추가 조정 시 매수가 유리함",
     targetBuyPrice: 150,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // LOW — Lowe's (배당왕족주, 62년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "LOW",
+    analyzedAt: "2026-02-22 16:30 KST",
+    businessSummary: "Lowe's는 미국 최대 홈임프루브먼트 소매업체 중 하나로, 건축 자재·가전·인테리어·조경 제품을 판매한다. 약 1,700개 이상의 매장을 운영하며 DIY 소비자와 전문 시공업자(Pro) 양쪽을 핵심 고객층으로 삼는다. 최근 Pro 고객 비중 확대와 디지털 전환을 통해 수익성 개선에 집중하고 있다.",
+    coreProducts: [
+      "건축자재 및 인테리어 자재",
+      "가전·조명·배관 설비",
+      "조경·원예 및 시즌 상품",
+    ],
+    geographicPresence: "미국 거의 100% (캐나다 철수 후 북미 내수 집중)",
+    dividendStreakYears: 62,
+    dividendCAGR5yr: 16.8,
+    dividendCAGR10yr: 18.5,
+    recentDividendGrowth: "2024년 배당 5.1% 인상, 62년 연속 배당 증가로 Dividend King 지위 유지",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 38.9%로 충분한 여유가 있으며, 강한 잉여현금흐름이 배당 지속성을 뒷받침함",
+    moatTypes: [
+      "brand",
+      "cost_advantage",
+      "switching_costs",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "Lowe's는 Home Depot과 함께 홈임프루브먼트 양강 구도를 형성하며 강력한 브랜드 인지도와 전국적 매장 네트워크를 보유한다. Pro 고객 대상 전용 프로그램과 대량구매 계약은 일정 수준의 전환비용을 제공한다. 그러나 Home Depot 대비 규모가 작고 순수 온라인 경쟁자와의 경쟁도 지속되어 해자 폭은 협소한 편이다.",
+    revenueGrowthTrend: "금리 상승·주택 거래 위축으로 최근 2년 매출 소폭 감소세, 2025년 하반기 회복 기대",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "Lowe's는 적극적인 자사주 매입으로 부채비율이 높고 장부가 기준 자본이 마이너스이지만, 이는 구조적 선택이며 강한 영업현금흐름(연 7~8조원 규모)이 부채 상환 및 배당을 충분히 커버한다. ROE·PBR N/A는 자본잠식이 아닌 자사주 소각 효과로 해석해야 하며, 이익 창출력 자체는 견조하다.",
+    keyRisks: [
+      "주택 경기 침체 장기화 시 DIY·Pro 수요 동반 부진",
+      "금리 고점 지속에 따른 주택 리모델링 투자 지연",
+      "Home Depot과의 Pro 고객 유치 경쟁 심화",
+    ],
+    bullCase: "주택 금리 하락 시 억눌린 리모델링 수요가 폭발적으로 회복되며 실적 재가속이 예상되고, Pro 비중 확대 전략이 안정적인 매출 기반을 강화한다.",
+    bearCase: "고금리 환경이 예상보다 길어질 경우 주택 거래 및 리모델링 지출이 추가 위축될 수 있으며, 경쟁 심화 속 마진 방어가 어려워질 수 있다.",
+    valuationComment: "현재 PER 23.2배는 역사적 평균 대비 다소 높고, 애널리스트 목표가 $284.25 대비 상승여력이 1.4%에 불과해 단기 매력은 낮다. 52주 고점 대비 85% 수준으로 이미 상당히 회복된 가격대이며, 배당수익률 1.71%도 역사적 평균(1.7~2.0%)의 하단에 위치한다. 배당수익률 2.0% 이상(약 $240~250 구간)에서 분할 매수가 합리적이다.",
+    recentDevelopments: [
+      "2025년 Pro 고객 전용 디지털 플랫폼 및 공급망 고도화 투자 확대",
+      "캐나다 사업 완전 철수 후 미국 내수 수익성 집중 전략 지속",
+    ],
+    overallRating: "관망",
+    ratingReason: "사업 퀄리티와 배당 안전성은 우수하나 현 주가($280)는 밸류에이션 매력이 낮아 $240~250 조정 시 매수 기회를 노리는 것이 유효함",
+    targetBuyPrice: 248,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
