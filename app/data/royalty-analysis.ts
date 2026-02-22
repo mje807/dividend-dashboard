@@ -1993,6 +1993,55 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "56년 배당왕의 탁월한 안전성에 현재 수익률이 역사적 평균 초과 — $50~52 분할 매수 시 장기 배당 성장주로 보유 적합",
     targetBuyPrice: 51.0,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // CHD — Church & Dwight (배당귀족주, 28년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "CHD",
+    analyzedAt: "2026-02-23 05:30 KST",
+    businessSummary: "Church & Dwight는 Arm & Hammer, OxiClean, Trojan, Vitafusion 등 15개 이상의 강력한 소비자 브랜드를 보유한 미국 필수소비재 기업으로, 세탁·구강위생·피임·비타민 등 생활 밀착형 카테고리에서 높은 시장 점유율을 유지하고 있다. 유기적 성장과 함께 M&A를 통한 포트폴리오 확장 전략(Waterpik, Flawless 등)으로 꾸준히 외형을 키워왔으며, 경기 방어적 사업 구조로 안정적인 현금흐름을 창출한다.",
+    coreProducts: [
+      "Arm & Hammer (중탄산소다·세탁세제·구강케어)",
+      "OxiClean (세탁 표백·클리너)",
+      "Trojan (피임·성인용품)",
+      "Vitafusion / L'il Critters (비타민 젤리)",
+      "Waterpik (구강 세정기·칫솔)",
+    ],
+    geographicPresence: "미국 약 80% · 국제(캐나다·영국·호주 등) 약 20%",
+    dividendStreakYears: 28,
+    dividendCAGR5yr: 6.8,
+    dividendCAGR10yr: 7.5,
+    recentDividendGrowth: "2024년 배당을 주당 $1.23으로 인상, 3년 CAGR 12.3%로 최근 3년 간 배당 성장 가속화",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 39.1%로 낮고 필수소비재 특성상 안정적 FCF 창출, 28년 연속 증가 이력으로 배당 안전성 매우 높음",
+    moatTypes: [
+      "brand",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "Arm & Hammer·OxiClean 등 수십 년간 쌓인 브랜드 충성도와 소매 유통 채널 내 우월한 진열 협상력이 핵심 해자다. 다만 P&G·Unilever 등 대형 CPG 경쟁사와 아마존·이마트 PB(Private Brand) 확장에 노출되어 있어 해자 폭은 'narrow' 수준으로 평가된다. 틈새 카테고리(구강 세정기, 피임 등)에서는 시장지배력이 상대적으로 강하다.",
+    revenueGrowthTrend: "연 4~6% 수준의 안정적 유기 성장세 유지, 가격 인상과 볼륨 성장 혼합",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "D/E 59.5%로 부채 수준은 CPG 업계 평균 대비 무난한 편이며, 꾸준한 영업현금흐름으로 이자 커버리지에 문제가 없다. ROE 17.6%는 업종 평균을 상회하며 자본 효율성은 양호하나, 공격적 M&A 이후 무형자산·굿윌 비중이 높아 장부가 대비 프리미엄(PBR 6.09x)이 지속되고 있다.",
+    keyRisks: [
+      "밸류에이션 부담: PER 34.1x(Trailing)는 성장 기대치를 상당 부분 선반영, 실적 미스 시 주가 하락폭 클 수 있음",
+      "원자재·물류 비용 재상승 시 마진 압박 위험",
+      "아마존 PB 및 경쟁 CPG社의 틈새 카테고리 진입으로 가격 결정력 약화 가능성",
+    ],
+    bullCase: "필수소비재 특성과 강력한 브랜드 포트폴리오를 바탕으로 경기 침체 시에도 실적 방어력이 뛰어나며, 인수한 프리미엄 브랜드들의 시너지가 본격화되면 Forward PE 25.5x 대비 추가 Re-rating 가능.",
+    bearCase: "현재 주가가 애널리스트 목표가($102.95)와 거의 동일해 단기 상승 여력이 제한적이며, 금리 고착화 환경에서 저배당(1.19%) 필수소비재주의 상대적 매력이 채권 대비 낮아질 수 있음.",
+    valuationComment: "Forward PER 25.5x는 필수소비재 평균(20~22x)을 웃도는 프리미엄 수준으로, 현재가($103)는 충분히 가격이 반영된 상태다. 애널리스트 목표가도 현재가와 동일 수준이어서 추가 매수 매력은 낮다. 배당수익률이 5년 평균(1.16%)에 근접한 $90~95 구간, 또는 Forward PER 22~23x에 해당하는 $88~94 구간을 분할 매수 타깃으로 고려할 것을 권장한다.",
+    recentDevelopments: [
+      "2024년 Zicam(감기 브랜드) 등 포트폴리오 최적화 및 일부 비핵심 자산 정리 진행",
+      "유통 채널 다변화(D2C·이커머스 강화) 및 국제 시장 점유율 확대 전략 지속 추진",
+    ],
+    overallRating: "관망",
+    ratingReason: "현재가가 애널리스트 목표가와 거의 동일하고 프리미엄 밸류에이션이 부담스러워, $90~95 수준으로 조정 시 매수를 고려하는 관망 전략이 적절함",
+    targetBuyPrice: 92,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
