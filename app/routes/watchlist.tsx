@@ -10,6 +10,7 @@ export function meta() {
 }
 
 type Category = "all" | "king" | "aristocrat";
+type AttrFilter = "all" | "buy" | "neutral" | "caution";
 type SortKey = "streak" | "dividendYield" | "price" | "peRatio" | "payoutRatio" | "attractiveness";
 
 const SECTOR_COLORS: Record<string, string> = {
@@ -27,6 +28,7 @@ const SECTOR_COLORS: Record<string, string> = {
 
 export default function Watchlist() {
   const [category, setCategory] = useState<Category>("all");
+  const [attrFilter, setAttrFilter] = useState<AttrFilter>("all");
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("attractiveness");
   const [sortAsc, setSortAsc] = useState(false);
@@ -49,6 +51,15 @@ export default function Watchlist() {
   const filtered = useMemo(() => {
     let list = enriched;
     if (category !== "all") list = list.filter(s => s.category === category);
+    if (attrFilter !== "all") {
+      list = list.filter(s => {
+        const score = s.attractivenessScore ?? 5;
+        if (attrFilter === "buy")     return score >= 6.5;
+        if (attrFilter === "neutral") return score > 3.5 && score < 6.5;
+        if (attrFilter === "caution") return score <= 3.5;
+        return true;
+      });
+    }
     if (search.trim()) {
       const q = search.toLowerCase();
       list = list.filter(s =>
@@ -62,7 +73,7 @@ export default function Watchlist() {
       const bv = sortKey === "attractiveness" ? (b.attractivenessScore ?? 0) : (b[sortKey as keyof RoyaltyStock] ?? 0) as number;
       return sortAsc ? av - bv : bv - av;
     });
-  }, [enriched, category, search, sortKey, sortAsc]);
+  }, [enriched, category, attrFilter, search, sortKey, sortAsc]);
 
   const handleSort = (key: SortKey) => {
     if (sortKey === key) setSortAsc(!sortAsc);
@@ -125,26 +136,58 @@ export default function Watchlist() {
       </div>
 
       {/* 필터·검색 */}
-      <div className="flex flex-col sm:flex-row gap-3 mb-5">
-        {/* 카테고리 탭 */}
-        <div className="flex gap-1 bg-gray-900 rounded-xl p-1">
-          {(["all", "king", "aristocrat"] as Category[]).map(c => (
-            <button
-              key={c}
-              onClick={() => setCategory(c)}
-              className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                category === c
-                  ? "bg-indigo-600 text-white"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              {c === "all" ? "전체" : c === "king" ? "👑 왕족주" : "🏆 귀족주"}
-            </button>
-          ))}
+      <div className="flex flex-col gap-3 mb-5">
+        {/* 1행: 카테고리 + 매력도 필터 + 종목수 */}
+        <div className="flex flex-wrap items-center gap-2">
+          {/* 카테고리 탭 */}
+          <div className="flex gap-1 bg-gray-900 rounded-xl p-1">
+            {(["all", "king", "aristocrat"] as Category[]).map(c => (
+              <button
+                key={c}
+                onClick={() => setCategory(c)}
+                className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                  category === c
+                    ? "bg-indigo-600 text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                {c === "all" ? "전체" : c === "king" ? "👑 왕족주" : "🏆 귀족주"}
+              </button>
+            ))}
+          </div>
+
+          {/* 구분선 */}
+          <div className="w-px h-6 bg-gray-700 hidden sm:block" />
+
+          {/* 매력도 필터 */}
+          <div className="flex gap-1 bg-gray-900 rounded-xl p-1">
+            {([
+              { key: "all",     label: "매력도 전체",  cls: "text-gray-400 hover:text-white" },
+              { key: "buy",     label: "💚 저평가 매력", cls: attrFilter === "buy"     ? "bg-emerald-700 text-white" : "text-gray-400 hover:text-white" },
+              { key: "neutral", label: "🟡 적정",       cls: attrFilter === "neutral" ? "bg-yellow-700 text-white"  : "text-gray-400 hover:text-white" },
+              { key: "caution", label: "🔴 고평가 신중", cls: attrFilter === "caution" ? "bg-red-700 text-white"    : "text-gray-400 hover:text-white" },
+            ] as { key: AttrFilter; label: string; cls: string }[]).map(({ key, label, cls }) => (
+              <button
+                key={key}
+                onClick={() => setAttrFilter(key)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                  key === "all" && attrFilter === "all"
+                    ? "bg-gray-700 text-white"
+                    : cls
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <div className="text-gray-500 text-xs ml-auto self-center">
+            {filtered.length}개 종목
+          </div>
         </div>
 
-        {/* 검색 */}
-        <div className="flex items-center gap-2 bg-gray-900 rounded-xl px-4 py-2 flex-1">
+        {/* 2행: 검색 */}
+        <div className="flex items-center gap-2 bg-gray-900 rounded-xl px-4 py-2">
           <Search size={14} className="text-gray-500" />
           <input
             className="bg-transparent text-sm text-white placeholder-gray-500 flex-1 outline-none"
@@ -152,10 +195,6 @@ export default function Watchlist() {
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
-        </div>
-
-        <div className="text-gray-500 text-xs self-center">
-          {filtered.length}개 종목
         </div>
       </div>
 
