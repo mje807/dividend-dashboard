@@ -1239,6 +1239,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "52주 고점 근처(88%)에 위치하고 배당수익률이 역사적 평균을 하회해 현재 진입 매력도가 낮으며, $67~$70 수준으로 눌림 시 재검토 권장",
     targetBuyPrice: 69,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // GWW — W.W. Grainger (배당왕족주, 53년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "GWW",
+    analyzedAt: "2026-02-22 21:00 KST",
+    businessSummary: "W.W. Grainger는 MRO(유지보수·수리·운영) 산업용 자재 유통 전문기업으로, 미국 내 최대 규모의 B2B 산업재 유통망을 보유합니다. 100만 개 이상의 SKU를 오프라인·온라인·현장 배송으로 공급하며, 일본 자회사 MonotaRO를 통해 아시아 시장도 빠르게 성장 중입니다. 디지털 전환 가속으로 e-커머스 비중이 70% 이상으로 확대되며 수익성 개선이 지속되고 있습니다.",
+    coreProducts: [
+      "MRO 산업용 소모품 및 공구",
+      "안전용품·청소용품·전기자재 유통",
+      "B2B 온라인 플랫폼(Grainger.com) 및 KeepStock 재고관리 서비스",
+    ],
+    geographicPresence: "미국 약 75% · 일본(MonotaRO) 약 15% · 캐나다·영국·멕시코 등 기타 10%",
+    dividendStreakYears: 53,
+    dividendCAGR5yr: 10.5,
+    dividendCAGR10yr: 8.5,
+    recentDividendGrowth: "3년 CAGR 17.8%로 최근 배당 성장 가속화, 낮은 배당성향(24.9%) 대비 공격적 증배 기조 유지",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 24.9%로 매우 낮고 ROE 46.1%의 탁월한 수익성과 안정적 현금흐름이 배당 지속성을 강하게 뒷받침",
+    moatTypes: [
+      "cost_advantage",
+      "switching_costs",
+      "intangible_assets",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "100만 개 이상의 방대한 SKU와 전국 물류망이 만들어내는 규모의 경제가 핵심 해자입니다. KeepStock 등 재고관리 솔루션이 고객사 ERP에 깊이 통합되어 교체 비용이 매우 높습니다. 53년간 쌓아온 B2B 신뢰 브랜드와 장기 계약 고객 기반이 신규 경쟁자의 진입 장벽을 높이고 있습니다.",
+    revenueGrowthTrend: "최근 3년 연평균 10% 이상 매출 성장, e-커머스 전환 및 가격 전가력으로 성장세 견조 유지",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary: "D/E 69.1%로 관리 가능한 부채 수준이며, ROE 46.1%의 탁월한 자본 효율성이 돋보입니다. 강한 영업현금흐름을 기반으로 자사주 매입과 배당 증가를 동시에 시행하고 있으며, 재무 구조 전반은 매우 건전합니다.",
+    keyRisks: [
+      "산업 경기 침체 시 MRO 수요 급감 가능성 (경기민감 특성)",
+      "Amazon Business·Fastenal 등 저가 경쟁자의 시장 잠식 가속화",
+      "일본 MonotaRO 성장 둔화 또는 엔화 약세로 인한 실적 희석",
+    ],
+    bullCase: "e-커머스 전환 가속과 공급망 내재화 수요 증가로 시장점유율이 꾸준히 확대되고, MonotaRO의 아시아 성장이 중장기 멀티플 확장 동력이 될 수 있습니다.",
+    bearCase: "현재 주가가 PER 31.9배로 산업재 섹터 프리미엄이 상당히 반영되어 있어, 경기 둔화나 실적 미스 시 밸류에이션 디레이팅 리스크가 큽니다.",
+    valuationComment: "현재 배당수익률 0.80%는 5년 평균(1.05%) 대비 역사적으로 고평가 영역이며, 애널리스트 목표가 대비 상승여력도 0.4%에 불과해 현 가격 매수는 매력적이지 않습니다. Forward PER 23.4배는 성장성을 감안 시 합리적이나, 배당주 관점에서 수익률 1.0% 이상(주가 약 $904 이하)이 되는 구간이 의미 있는 매수 영역으로 판단됩니다. 분할매수 시작가는 $950 전후가 적정합니다.",
+    recentDevelopments: [
+      "2025년 Q1 실적에서 e-커머스 매출 비중 70% 돌파, 마진 개선 지속 확인",
+      "MonotaRO의 일본 내 SMB 고객 확대 전략 가속화로 아시아 매출 성장세 유지",
+    ],
+    overallRating: "관망",
+    ratingReason: "53년 배당왕의 탁월한 품질이지만 현재 0.80% 수익률과 0.4% 상승여력은 신규 매수 매력이 낮아 조정 시 분할매수 전략 권장",
+    targetBuyPrice: 950,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
