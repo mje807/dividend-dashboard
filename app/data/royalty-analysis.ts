@@ -630,7 +630,54 @@ export const stockAnalyses: StockAnalysis[] = [
       "코카콜라는 배당 투자자의 '교과서 종목'. 62년 연속 배당 인상, 넓은 해자, 초우량 재무. 그러나 현재 PER 32x는 성장 기대 없이는 비싼 가격. $70 이하에서 매수하면 배당률 2.9%+ 달성하며 장기 보유에 적합. 지금 당장 추격 매수보다는 조정 시 관심 목록 유지 권장.",
     targetBuyPrice: 70,
   },
-];
+];,
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // AWR — American States Water (배당왕족주, 69년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "AWR",
+    analyzedAt: "2026-02-22 11:10 KST",
+    businessSummary: "American States Water는 자회사 Golden State Water를 통해 캘리포니아 주 약 100만 명에게 수도 서비스를 제공하는 규제 유틸리티 기업이다. Bear Valley Electric Service를 통한 전력 공급과 함께, 미 전국 군사기지에 수도·전력 시스템 운영을 대행하는 계약서비스 부문도 운영한다. 69년 연속 배당 증가라는 압도적 배당 역사로 Dividend King의 상징적 종목이다.",
+    coreProducts: [
+      "캘리포니아 규제 수도 서비스 (Golden State Water)",
+      "캘리포니아 규제 전력 서비스 (Bear Valley Electric)",
+      "미군 기지 수도·전력 위탁 운영 계약서비스",
+    ],
+    geographicPresence: "캘리포니아 중심 약 75% · 미 전국 군사기지 계약 약 25%",
+    dividendStreakYears: 69,
+    dividendCAGR5yr: 8.5,
+    dividendCAGR10yr: 8.0,
+    recentDividendGrowth: "3년 CAGR 8.3% 수준의 안정적 성장세 유지, 매년 8~9% 인상 지속",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 56.2%로 유틸리티 업종 대비 보수적이며, ROE 13.3%와 69년 연속 증배 이력이 안전성을 뒷받침함",
+    moatTypes: [
+      "efficient_scale",
+      "intangible_assets",
+      "switching_costs",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "규제 당국(캘리포니아 PUC)으로부터 부여받은 지역 독점 프랜차이즈가 핵심 해자이며, 경쟁자 진입이 구조적으로 차단된 efficient scale 독점이다. 수도 인프라 교체 비용과 규제 장벽으로 고객 이탈이 사실상 불가능하며, 군사기지 장기 계약은 추가적인 안정적 수익원이자 진입장벽 역할을 한다.",
+    revenueGrowthTrend: "캘리포니아 PUC 요금 인상 승인 사이클에 연동한 연 3~5%대 완만하고 예측 가능한 매출 성장",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "D/E 89.8은 유틸리티 업종 특성상 전형적인 수준으로 우려보다는 업종 표준으로 봐야 한다. ROE 13.3%는 규제 유틸리티치고 양호하며, 배당성향 56.2%는 업종 평균(60~70%)보다 낮아 배당 지속 여력이 충분하다. 안정적인 규제 수익 구조로 현금흐름 가시성이 높다.",
+    keyRisks: [
+      "캘리포니아 PUC 요금 심사 지연 또는 요금 인상 불승인 리스크",
+      "군사기지 계약 만료 시 갱신 불발 또는 계약 조건 악화",
+      "캘리포니아 장기 가뭄·기후변화로 인한 수자원 가용성 감소 및 운영 비용 증가",
+    ],
+    bullCase: "캘리포니아 PUC의 적극적 요금 인상 승인과 군사기지 계약 확대가 맞물리면 8~9% 배당 CAGR이 지속되며, 현재 역사적 평균 대비 높은 배당수익률(2.76% vs 5년평균 2.00%)이 재평가 기회를 제공한다.",
+    bearCase: "금리 장기 고착화 시 유틸리티 섹터 전반의 재평가 압력이 지속되고, 캘리포니아 규제 환경 악화 또는 군사 예산 삭감 시 성장 동력이 약화될 수 있다.",
+    valuationComment: "현재 배당수익률 2.76%는 5년 평균 2.00% 대비 뚜렷이 높아 역사적으로 저평가 구간에 진입했음을 시사한다. 52주 하단 25.9% 위치와 Forward PER 19.6배는 유틸리티 섹터 내 절대적 저가는 아니나 상대적 매력도가 개선된 수준이다. 배당수익률 3.0% 기준 적정 매수가는 약 $67로, $65~$70 구간이 장기 적립 관점의 합리적 진입 구간이다.",
+    recentDevelopments: [
+      "2024년 캘리포니아 PUC 요금 인상 승인으로 수익성 개선 기반 마련",
+      "군사기지 물·전력 서비스 계약 포트폴리오 지속 유지로 안정적 비규제 수익 확보",
+    ],
+    overallRating: "관심",
+    ratingReason: "배당수익률이 5년 평균을 40% 이상 상회하며 52주 저점권에 위치, 장기 배당 성장주로 분할 매수 관점의 관심 유지 적합",
+    targetBuyPrice: 67,
+  }
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
   return stockAnalyses.find(a => a.ticker === ticker);
