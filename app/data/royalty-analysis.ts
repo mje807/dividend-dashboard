@@ -772,6 +772,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "역사적 저평가 구간과 높은 배당수익률이 매력적이나, ROE 1.5%·고부채·마진 압박 등 단기 실적 불확실성이 해소될 때까지 분할 접근 권장",
     targetBuyPrice: 112,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // CINF — Cincinnati Financial (배당왕족주, 63년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "CINF",
+    analyzedAt: "2026-02-22 16:00 KST",
+    businessSummary: "Cincinnati Financial은 미국 중부 및 남동부를 중심으로 상업용·개인용 재산보험과 상해보험을 제공하는 종합 보험 지주회사다. 독립 대리인 채널을 핵심 배포 전략으로 삼아 장기적 관계 기반 영업을 구축하고 있으며, 생명보험 및 자산운용 부문도 보유하고 있다. 63년 연속 배당 증가라는 탁월한 주주환원 이력을 자랑하는 배당 킹 종목이다.",
+    coreProducts: [
+      "상업용 재산·상해보험 (Commercial Lines)",
+      "개인용 자동차·주택보험 (Personal Lines)",
+      "생명보험 및 잉여금 라인 (Cincinnati Life / E&S)",
+    ],
+    geographicPresence: "미국 집중 약 95% · 해외 5% 미만 (주로 중서부·남동부 주 중심)",
+    dividendStreakYears: 63,
+    dividendCAGR5yr: 7.2,
+    dividendCAGR10yr: 6.1,
+    recentDividendGrowth: "2024년 주당 배당금 $3.55로 전년 대비 약 8% 인상, 3년 CAGR 8.0% 유지 중",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 22.9%로 극히 낮고, 보험 부문 현금흐름과 투자포트폴리오(주식 비중 높음)가 배당을 넉넉히 커버함",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "독립 대리인과의 장기적 신뢰 관계 및 지역 밀착형 서비스 모델이 핵심 해자다. 63년 배당 연속 증가라는 브랜드 신뢰가 대리인 유치에 프리미엄을 제공하며, 보험업 특성상 고객 전환 비용도 일정 수준 존재한다. 다만 대형 보험사 대비 규모의 경제는 제한적이어서 해자 폭은 좁은 편이다.",
+    revenueGrowthTrend: "보험료 수입 및 투자이익 모두 완만한 성장세 유지 중, 2023~2024년 가격 경화 국면에서 수익성 개선",
+    marginTrend: "expanding",
+    debtLevel: "low",
+    financialSummary: "D/E 5.6은 보험사 특유의 레버리지 구조로 일반 제조업 기준과 다르며 업종 내에서는 보수적 수준이다. ROE 16.0%로 자본 효율성이 우수하고 배당성향이 낮아 자본 적립 여력이 충분하다. 투자포트폴리오에 주식 비중이 높아 시장 변동성에 순이익이 크게 흔들릴 수 있으나 장기 배당 지급 능력에는 영향이 없다.",
+    keyRisks: [
+      "대형 자연재해(허리케인·토네이도 등) 집중으로 인한 보험금 급증 리스크",
+      "주식 집중 투자포트폴리오로 인한 시장 급락 시 순이익 변동성 확대",
+      "금리 변화에 따른 채권 포트폴리오 평가손실 및 준비금 적정성 이슈",
+    ],
+    bullCase: "보험료 가격 경화 사이클 지속 시 손해율 개선과 보험료 수입 증가가 동시에 실현되며, 63년 배당 성장 트랙레코드가 장기 복리 투자자에게 안정적 수익을 제공한다.",
+    bearCase: "기록적 대형 재해 시즌 또는 주식시장 급락으로 순이익이 급감하면 Forward PER 17.7배 밸류에이션 부담이 부각되며 주가가 52주 고점에서 조정받을 수 있다.",
+    valuationComment: "Trailing PER 10.7배는 주식 투자 평가이익 제거 후 정상화 이익 기준이며, Forward PER 17.7배가 실질적 운영 밸류에이션에 가깝다. 현재가 $163는 52주 고점 78% 수준으로 다소 고평가 구간이며, 배당수익률 2.18%도 5년 평균 2.39% 대비 낮다. 적정 매수 구간은 수익률 2.4% 이상, 즉 $148~$153 부근이 유리하다.",
+    recentDevelopments: [
+      "2024년 연간 배당 8% 인상 발표로 63년 연속 증가 기록 경신",
+      "상업용 보험 가격 경화 국면 수혜로 2024년 손해율 개선 및 보험영업이익 증가",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 킹 지위와 낮은 배당성향으로 장기 보유 매력은 충분하나, 현재가는 52주 고점 근처로 배당수익률이 역사적 평균 하단이어서 추가 조정 시 매수가 유리함",
+    targetBuyPrice: 150,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
