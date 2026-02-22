@@ -1521,6 +1521,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당수익률 1.46%로 Dividend King 프리미엄 대비 배당 매력 부족, 52주 고점 근처의 밸류에이션 부담으로 추가 하락 시 매수 전환 검토 권고",
     targetBuyPrice: 130,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // PH — Parker Hannifin (배당왕족주, 48년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "PH",
+    analyzedAt: "2026-02-23 00:00 KST",
+    businessSummary: "Parker Hannifin은 모션 및 제어 기술 분야 세계 최대 기업으로, 항공우주·산업용 유압·공압·전기 제어 시스템을 제조한다. 2022년 Meggitt 인수(약 8.8조원)를 통해 항공우주 사업을 크게 확장했으며, 제조업·에너지·방위산업 전반에 필수적인 구성 요소를 공급한다. 68개국 이상에서 약 60,000명을 고용하는 글로벌 산업 인프라 기업이다.",
+    coreProducts: [
+      "산업용 유압·공압 시스템",
+      "항공우주 구동 및 제어 장치(Meggitt 포함)",
+      "전기 모션 제어 및 필터레이션 솔루션",
+    ],
+    geographicPresence: "북미 약 55% · 유럽 약 25% · 아시아 및 기타 약 20%",
+    dividendStreakYears: 48,
+    dividendCAGR5yr: 14.2,
+    dividendCAGR10yr: 11.8,
+    recentDividendGrowth: "3년 배당 CAGR 20.7%로 Meggitt 인수 이후 이익 급증과 함께 배당 증가 가속화",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 25.6%로 매우 낮고, ROE 25.8%의 높은 수익성이 배당을 안정적으로 뒷받침함",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "Parker의 제품은 고객 시스템 깊숙이 통합되어 교체 비용이 매우 높고, 60년 이상 축적된 엔지니어링 특허·인증·애플리케이션 노하우가 강력한 진입 장벽을 형성한다. Win Strategy 2.0을 통한 운영 효율화와 수십만 종의 부품 포트폴리오는 단일 공급사 의존도를 높여 고객 이탈을 방지한다.",
+    revenueGrowthTrend: "Meggitt 인수 효과 반영으로 최근 3년간 두 자릿수 매출 성장, 유기적 성장도 고단가 항공우주·방위 비중 증가로 견조",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary: "Meggitt 인수로 부채가 증가했지만 D/E 68.9% 수준은 현금흐름 대비 관리 가능한 범위다. ROE 25.8%와 낮은 배당성향(25.6%)은 재무 유연성과 지속적 배당 성장 여력을 동시에 시사한다. 잉여현금흐름의 빠른 부채 상환으로 레버리지 개선이 진행 중이다.",
+    keyRisks: [
+      "52주 고점(99.6%) 근처에서 밸류에이션 부담, 현재 수익률(0.70%)이 5년 평균(1.25%) 대비 현저히 낮음",
+      "글로벌 제조업 경기 둔화 시 산업재 수주 감소 및 마진 압박 가능성",
+      "Meggitt 인수 후 통합 리스크 및 항공우주 공급망 차질",
+    ],
+    bullCase: "항공우주·방위 수요 구조적 확대와 Win Strategy 마진 개선이 지속될 경우, EPS 성장으로 배당 CAGR 15%+ 유지 가능하며 프리미엄 밸류에이션 정당화 가능하다.",
+    bearCase: "경기 침체로 산업재 수요가 위축되거나 금리 상승이 이어질 경우, 현 P/E 37배 수준은 빠른 멀티플 압축으로 이어질 수 있다.",
+    valuationComment: "현 주가($1,022)는 52주 최고점 수준이며 애널리스트 목표가($1,027)와 거의 일치해 단기 상승여력이 제한적이다. 현재 배당수익률(0.70%)이 5년 평균(1.25%)보다 크게 낮아 역사적 기준으로 고평가 구간에 해당한다. 5년 평균 수익률(1.0~1.1%) 기준 매수 매력 구간은 $650~$720, 보수적 관점에서 $800~$880 수준에서 분할 매수를 고려할 것을 권장한다.",
+    recentDevelopments: [
+      "Meggitt 통합 완료 후 항공우주 부문 마진이 지속 개선되며 FY2024 조정 EPS 사상 최고치 경신",
+      "Win Strategy 3.0 발표 — 2029년까지 조정 EBITDA 마진 26% 목표 제시",
+    ],
+    overallRating: "관망",
+    ratingReason: "탁월한 사업 품질과 배당 성장력을 인정하나, 현 주가는 역사적 밸류에이션 상단으로 안전마진 확보가 어려운 구간",
+    targetBuyPrice: 860,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
