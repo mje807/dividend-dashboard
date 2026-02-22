@@ -1426,6 +1426,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "51년 배당 왕의 안정성과 역사적 저평가 매력은 있으나 단기 모멘텀 부재로 $50~$52 분할 매수 구간 대기 전략 추천",
     targetBuyPrice: 51.0,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SPGI — S&P Global (배당왕족주, 51년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "SPGI",
+    analyzedAt: "2026-02-22 23:00 KST",
+    businessSummary: "S&P Global은 신용평가(S&P Ratings), 금융정보(Market Intelligence), 지수(S&P Dow Jones Indices), 상품정보(Platts) 사업을 영위하는 글로벌 금융정보 기업입니다. 2022년 IHS Markit 인수 이후 데이터·분석 플랫폼으로 사업 영역을 대폭 확장하였으며, 금융시장 인프라의 핵심 공급자로 자리매김하고 있습니다.",
+    coreProducts: [
+      "S&P 신용평가 (Ratings)",
+      "S&P 500 등 지수 사업 (Indices)",
+      "Market Intelligence 금융데이터·분석 플랫폼",
+    ],
+    geographicPresence: "미국 약 60% · 유럽·중동·아프리카 25% · 아시아태평양 및 기타 15%",
+    dividendStreakYears: 51,
+    dividendCAGR5yr: 5.0,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 5.0%로 안정적 증가세 유지, 51년 연속 배당 증가 기록 중",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 26.2%로 매우 낮고, 독점적 사업구조에서 창출되는 높은 현금흐름이 배당을 강력히 뒷받침함",
+    moatTypes: [
+      "intangible_assets",
+      "switching_costs",
+      "network_effect",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "S&P의 신용등급과 지수 브랜드는 수십 년간 쌓인 신뢰와 규제적 지위로 대체 불가능한 무형자산입니다. 발행사·투자자 모두 S&P 등급 없이는 자본시장 접근이 사실상 불가능하며, 지수 추종 자산(수십조 달러)이 S&P 지수에 연동되어 강력한 네트워크 효과와 전환비용을 형성합니다.",
+    revenueGrowthTrend: "IHS Markit 합병 시너지 및 데이터·분석 수요 확대로 중장기 매출 성장세 지속 예상",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary: "D/E 37.9로 IHS Markit 인수 관련 부채가 남아 있으나, 높은 영업현금흐름으로 빠른 부채 상환이 가능한 수준입니다. ROE 13.1%는 IHS Markit 인수로 인한 거대 영업권 희석 효과이며, 자본효율성 자체는 업계 최상위권입니다. 배당성향 26%대의 보수적 배당 정책으로 재투자 여력도 충분합니다.",
+    keyRisks: [
+      "채권 발행 시장 침체 시 신용평가 부문 수익 감소",
+      "반독점 규제 강화 및 경쟁사(Moody's·Fitch) 시장점유율 확대 압력",
+      "고금리 장기화로 인한 자본시장 거래 위축 및 M&A 감소",
+    ],
+    bullCase: "금리 인하 사이클 진입 시 채권 발행 급증으로 신용평가 부문 실적이 폭발적으로 개선되고, AI·데이터 수요 확대에 따른 Market Intelligence 구독 성장이 복합적으로 주가 재평가를 이끌 수 있습니다.",
+    bearCase: "고금리 장기화로 채권 발행이 억제되면 신용평가 매출이 정체되고, PER 28배 수준의 밸류에이션 부담이 주가 하방 압력으로 작용할 수 있습니다.",
+    valuationComment: "Trailing PER 28.5배는 역사적 평균 대비 다소 부담스러우나 Forward PER 18.9배는 수익 회복 기대를 반영해 합리적 수준입니다. DDM 적정가 $194는 낮은 배당수익률(0.93%) 특성상 현실적이지 않으며, 애널리스트 목표가 $540(+29.5%)이 더 적합한 참고지표입니다. 52주 저점 부근(18.2%)에 위치해 기술적으로 매력적이며, $380~$400 구간 분할 매수가 유효합니다.",
+    recentDevelopments: [
+      "2024년 AI 기반 데이터 분석 플랫폼 강화 및 Kensho AI 서비스 확장",
+      "IHS Markit 합병 시너지 가속화로 부문 간 교차 판매 성과 가시화",
+    ],
+    overallRating: "관심",
+    ratingReason: "52주 저점 인근의 기술적 매력도와 강력한 해자, 애널리스트 strong buy 컨센서스를 고려 시 $380~$400 구간 분할 매수 관심 종목",
+    targetBuyPrice: 390,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
