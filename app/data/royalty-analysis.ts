@@ -1474,6 +1474,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "52주 저점 인근의 기술적 매력도와 강력한 해자, 애널리스트 strong buy 컨센서스를 고려 시 $380~$400 구간 분할 매수 관심 종목",
     targetBuyPrice: 390,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // EMR — Emerson Electric (배당왕족주, 48년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "EMR",
+    analyzedAt: "2026-02-22 23:30 KST",
+    businessSummary: "에머슨 일렉트릭은 산업 자동화 및 소프트웨어 솔루션을 제공하는 글로벌 기술 기업으로, 제조·에너지·생명과학 등 다양한 산업군에 공정 제어 및 자동화 장비를 공급합니다. 2023년 Climate Technologies 부문(코프랜드)을 분사하며 순수 산업 자동화 기업으로 체질 전환을 완료했습니다.",
+    coreProducts: [
+      "공정 자동화 솔루션 (DeltaV, Ovation DCS)",
+      "측정 및 계측 장비 (Fisher 밸브, Rosemount 센서)",
+      "산업용 소프트웨어 및 디지털 트윈 (AspenTech 지분 포함)",
+    ],
+    geographicPresence: "미국 약 45% · 유럽 25% · 아시아태평양 20% · 기타 신흥국 10%",
+    dividendStreakYears: 48,
+    dividendCAGR5yr: 1.8,
+    dividendCAGR10yr: 1.5,
+    recentDividendGrowth: "2024년 주당 배당금 $2.17, 최근 수년간 소폭 인상 기조 유지 (3년 CAGR 9.3%는 구조개편 이전 기준 포함)",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 52.4%로 안정적이며, 50년 이상 연속 배당 증가 이력과 견조한 잉여현금흐름이 배당 지속성을 뒷받침함",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "에머슨의 DCS·공정제어 솔루션은 석유화학·LNG·원자력 등 핵심 인프라에 깊이 내재화되어 교체 비용이 매우 높습니다. Rosemount, Fisher, DeltaV 등 수십 년간 구축된 브랜드 신뢰도와 인증 데이터가 경쟁 진입장벽으로 작용합니다. AspenTech와의 소프트웨어 통합으로 하드웨어-소프트웨어 결합형 해자가 강화되고 있습니다.",
+    revenueGrowthTrend: "구조개편(Climate Tech 분사) 이후 자동화 부문 집중으로 유기적 매출 성장률 mid-single digit 수준 유지",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary: "D/E 69.3%로 산업재 기업 대비 무난한 부채 수준이며, 안정적인 잉여현금흐름 창출 능력을 보유합니다. 분사 및 포트폴리오 재편으로 단기 ROE(9.7%)가 다소 낮아 보이나, 자동화 집중 후 수익성 개선 궤도에 있습니다. Forward PER 20.7배는 구조개편 완료 후 실적 정상화를 반영하고 있습니다.",
+    keyRisks: [
+      "Trailing PER 36.3배로 고평가 구간 — 실적 미스 시 주가 조정 위험",
+      "산업 자동화 투자 사이클 둔화 또는 설비투자 축소 시 수요 감소",
+      "AspenTech 통합 비용 및 소프트웨어 부문 성장 기대치 미달 가능성",
+    ],
+    bullCase: "글로벌 산업 디지털 전환 및 에너지 전환 수혜로 공정 자동화 수요가 장기 확대되며, 소프트웨어 비중 확대에 따른 마진 구조 개선이 실현될 경우 현 목표가($166.69)를 상회하는 상승 여력 존재.",
+    bearCase: "Trailing PER 36배의 부담스러운 밸류에이션 하에서 거시경제 둔화나 제조업 투자 위축이 발생하면 멀티플 리레이팅(하향) 위험이 크며, 배당수익률 1.46%는 배당 매력도 측면에서 경쟁종목 대비 현저히 낮음.",
+    valuationComment: "현재가 $148.62는 52주 고점 부근(78% 위치)이며 배당수익률 1.46%로 5년 평균(2.06%) 대비 상당히 낮아 밸류에이션 부담이 큽니다. Forward PER 20.7배는 합리적이나 배당 투자 관점에서는 수익률 2.0% 회복 구간($108~$110)이 이상적 매수 구간이며, 성장주 성격 감안 시 $130~$135 내외도 관심 구간으로 고려 가능합니다.",
+    recentDevelopments: [
+      "2023년 Climate Technologies(코프랜드) 분사 완료 — 순수 산업 자동화 기업으로 리포지셔닝",
+      "AspenTech 지분 확대 및 소프트웨어 통합 가속화로 SaaS형 반복 매출 비중 증가 중",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당수익률 1.46%로 Dividend King 프리미엄 대비 배당 매력 부족, 52주 고점 근처의 밸류에이션 부담으로 추가 하락 시 매수 전환 검토 권고",
+    targetBuyPrice: 130,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
