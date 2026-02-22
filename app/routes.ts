@@ -6,4 +6,5 @@ export default [
   route("watchlist", "routes/watchlist.tsx"),
   route("watchlist/:ticker", "routes/stock-detail.tsx"),
   route("calculator", "routes/calculator.tsx"),
+  route("market", "routes/market.tsx"),
 ] satisfies RouteConfig;

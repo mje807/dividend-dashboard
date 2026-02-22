@@ -3,7 +3,7 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip,
   PieChart, Pie, Cell, ResponsiveContainer,
 } from "recharts";
-import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, RefreshCw, Crown, Calculator } from "lucide-react";
+import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, RefreshCw, Crown, Calculator, Globe } from "lucide-react";
 import { holdings, portfolioSummary, calcPortfolioStats, type Holding } from "~/data/portfolio";
 import { stockMetrics, getMetrics } from "~/data/metrics";
 import { Link } from "react-router";
@@ -105,6 +105,13 @@ export default function Home() {
           >
             <Calculator size={16} />
             계산기
+          </Link>
+          <Link
+            to="/market"
+            className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm transition-colors"
+          >
+            <Globe size={16} />
+            시장 인사이트
           </Link>
         </div>
       </div>
