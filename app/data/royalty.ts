@@ -1,5 +1,5 @@
 // 자동 생성 - 배당 왕족주·귀족주 데이터
-// 마지막 업데이트: 2026-02-21
+// 마지막 업데이트: 2026-02-22
 
 export type DividendCategory = "king" | "aristocrat";
 
@@ -16,7 +16,7 @@ export interface RoyaltyStock {
   payoutRatio: number;   // 배당성향 (%)
 }
 
-export const royaltyLastUpdated = "2026-02-21";
+export const royaltyLastUpdated = "2026-02-22";
 
 export const royaltyStocks: RoyaltyStock[] = [
   {
