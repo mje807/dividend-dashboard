@@ -2516,6 +2516,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "방어적 사업과 배당의 질은 좋지만, 레버리지와 밸류에이션을 감안하면 추격 매수보다 가격 메리트 구간 대기가 유리합니다.",
     targetBuyPrice: 64,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // NEE — NextEra Energy (배당귀족주, 29년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "NEE",
+    analyzedAt: "2026-02-23 12:30 KST",
+    businessSummary: "넥스트에라 에너지는 플로리다 전력사업(FPL) 중심의 규제형 유틸리티와 대규모 재생에너지 개발·운영 사업을 함께 보유한 미국 대표 전력 기업입니다. 안정적인 규제 자산에서 현금흐름을 확보하면서, 풍력·태양광·저장장치 확장으로 중장기 성장을 추구합니다.",
+    coreProducts: [
+      "규제 전력 판매(FPL)",
+      "풍력·태양광 발전 및 전력계약(PPA)",
+      "배터리 에너지저장장치(ESS) 개발·운영",
+    ],
+    geographicPresence: "미국 95%+ 중심 (플로리다 및 미국 전역 재생에너지 자산) · 국제 비중 제한적",
+    dividendStreakYears: 29,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 10.1%로 고배당보다는 배당성장 성격이 뚜렷합니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 68.7%로 관리 가능한 구간이지만, 높은 부채비율(D/E 146.2)과 금리 민감도가 안전성의 상단을 제한합니다.",
+    moatTypes: [
+      "efficient_scale",
+      "cost_advantage",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "규제 유틸리티는 지역 독점적 성격과 대규모 인프라 진입장벽으로 효율적 규모의 해자를 가집니다. 재생에너지 부문에서도 프로젝트 개발·조달·운영 역량을 통한 원가 경쟁력이 강점입니다. 다만 자본집약·금리민감 산업 특성상 해자는 넓다기보다 견고한 협소 해자에 가깝습니다.",
+    revenueGrowthTrend: "규제요금 기반의 안정 성장에 재생에너지 증설이 더해져 중기적으로 완만한 성장 추세입니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "ROE 8.4%는 유틸리티 업종 특성을 감안하면 무난한 수준입니다. 다만 D/E 146.2로 레버리지가 높아 금리 환경 변화에 민감합니다. 배당성향 68.7%와 지속 배당성장 이력은 긍정적이나, 고평가 구간에서는 총수익률 여지가 제한될 수 있습니다.",
+    keyRisks: [
+      "고금리 장기화에 따른 자본비용 상승 및 밸류에이션 압축",
+      "규제환경 변화(허용수익률·요금 승인 지연)로 인한 실적 변동",
+      "재생에너지 프로젝트의 건설비·지연 리스크",
+    ],
+    bullCase: "금리 하향 안정과 재생에너지 수주 확대가 동시에 진행되면 이익 성장과 멀티플 재평가가 가능해집니다. 배당성장 지속 시 장기 복리 수익이 강화될 수 있습니다.",
+    bearCase: "현재 주가가 52주 고점권(90%)이고 목표가 괴리가 0.6%에 불과해 단기 업사이드는 제한적입니다. 금리 재상승이나 규제·프로젝트 변수 발생 시 밸류에이션 조정 위험이 큽니다.",
+    valuationComment: "Trailing PER 27.9, Forward PER 21.0은 유틸리티 대비 성장 프리미엄이 반영된 수준입니다. 현재가가 목표가에 근접해 추격매수 매력은 낮고, 밸류 부담 완화를 위해 80달러 중후반 이하에서 분할 접근이 더 합리적입니다.",
+    recentDevelopments: [
+      "미국 전력수요 구조 변화(데이터센터·전력망 투자)로 유틸리티 성장 기대가 유지",
+      "재생에너지·저장장치 확대 기조는 유효하나 금리와 자본조달 환경이 수익성의 핵심 변수",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당성장과 사업 질은 우수하지만 현재 주가·목표가 괴리가 작고 고점권 밸류 부담이 커 신규 진입은 가격 조정 대기가 유리합니다.",
+    targetBuyPrice: 86,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
