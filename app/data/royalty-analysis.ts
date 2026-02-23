@@ -2230,6 +2230,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "현재가가 DDM·애널리스트 목표가 대비 고평가 구간이며 배당 성장 모멘텀도 둔화, $140~145 수준 조정 시 재진입 검토",
     targetBuyPrice: 145,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // GD — General Dynamics (배당귀족주, 32년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "GD",
+    analyzedAt: "2026-02-23 09:30 KST",
+    businessSummary: "General Dynamics는 미국 최대 방산 기업 중 하나로, 전투함·잠수함(Gulfstream 항공기) 등 육해공 방위 시스템과 IT 서비스를 제공한다. 주요 사업부는 항공우주(Gulfstream 비즈니스젯), 해양·핵잠수함, 지상전투차량, 기술 서비스(GDIT)로 구성되며, 미 국방부와 NATO 동맹국에 장기 계약 기반으로 납품한다. 지정학적 긴장 고조와 국방예산 증가 기조 속에서 수주잔고가 꾸준히 확대되고 있다.",
+    coreProducts: [
+      "Virginia급·컬럼비아급 핵잠수함",
+      "Gulfstream 비즈니스젯 (G700·G800)",
+      "Abrams 전차 및 지상전투차량 (AJAX·Stryker)",
+      "GDIT IT·사이버 서비스",
+    ],
+    geographicPresence: "미국 약 80% · 국제(영국·캐나다·호주·NATO 동맹국) 약 20%",
+    dividendStreakYears: 32,
+    dividendCAGR5yr: 8.5,
+    dividendCAGR10yr: 10.2,
+    recentDividendGrowth: "2024년 분기 배당 $1.42→$1.50 인상 (5.6% 증가), 32년 연속 배당 증가 유지",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 38.8%로 여유 있고, 국방부 장기계약 기반 안정적 FCF가 배당을 견고하게 뒷받침",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "핵잠수함·전투함 분야에서 미 해군의 사실상 유일한 주계약자 지위(Newport News와 협력 또는 독점)를 보유하며, 수십 년간 축적된 기밀취급 인가·설계 노하우는 신규 진입을 사실상 차단한다. Gulfstream은 초대형 비즈니스젯 시장에서 Bombardier와 양강 구도를 유지하며 강력한 브랜드 프리미엄을 누린다. 정부 조달 특성상 일단 선정되면 교체 비용이 극히 높아 고착 효과(switching cost)가 매우 강하다.",
+    revenueGrowthTrend: "최근 3년 연평균 매출 성장률 약 7~9%, 방산 수요 증가와 Gulfstream G700 양산 확대로 성장 가속 중",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary: "D/E 38.2로 방산업종 대비 보수적인 부채 수준을 유지하고 있으며, ROE 17.7%는 자본 효율성이 양호함을 나타낸다. 수주잔고(백로그) 약 900억 달러 이상으로 향후 3~4년 매출 가시성이 높고, 안정적 FCF 창출로 배당·자사주매입을 병행할 여력이 충분하다.",
+    keyRisks: [
+      "미국 국방예산 삭감 또는 계속결의(CR) 지속 시 프로그램 지연 리스크",
+      "컬럼비아급 잠수함 납기 지연 및 비용 초과 리스크 (조선 인력 부족)",
+      "Gulfstream 비즈니스젯 경기 민감성 — 글로벌 경기침체 시 기업 수요 급감 가능",
+    ],
+    bullCase: "NATO·인도태평양 국방비 증가 기조로 잠수함·지상차량 수주가 지속 확대되고, Gulfstream G800 인도 본격화로 항공우주 마진이 크게 개선되어 EPS 성장이 가속화될 수 있다.",
+    bearCase: "미 행정부의 국방예산 구조조정(DOGE 효과)으로 핵심 프로그램 예산이 삭감되거나, 컬럼비아급 생산 병목이 심화되어 수익성이 악화될 수 있다.",
+    valuationComment: "현재 Forward PER 19.4x는 방산 피어 대비 적정 수준이나, 52주 고점 대비 86% 위치로 밸류에이션 부담이 존재한다. 배당수익률 1.71%는 5년 평균(2.10%) 대비 낮아 역사적으로 다소 고평가 구간에 속한다. 수익률이 2.0% 이상(주가 $300 전후)으로 회귀 시 매력적인 매수 구간으로, 단기 조정 시 $315~$330 구간 분할매수 전략이 합리적이다.",
+    recentDevelopments: [
+      "2024년 미 해군 컬럼비아급 SSBN 2번함(Wisconsin) 건조 착수 및 다년 계약 확정",
+      "Gulfstream G700 FAA 인증 획득 후 양산 인도 가속화, 2025년 G800 초도 인도 예정",
+    ],
+    overallRating: "관망",
+    ratingReason: "사업 펀더멘털과 해자는 탁월하나 현재가는 역사적 밸류에이션 상단에 위치해 있어, $315~$330 조정 시 매수 관점으로 접근하는 것이 유리",
+    targetBuyPrice: 322,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
