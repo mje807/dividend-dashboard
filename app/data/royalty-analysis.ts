@@ -2278,6 +2278,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업 펀더멘털과 해자는 탁월하나 현재가는 역사적 밸류에이션 상단에 위치해 있어, $315~$330 조정 시 매수 관점으로 접근하는 것이 유리",
     targetBuyPrice: 322,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // IVZ — Invesco (배당귀족주, 13년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "IVZ",
+    analyzedAt: "2026-02-23 10:00 KST",
+    businessSummary: "Invesco(IVZ)는 전통 액티브 전략과 ETF를 함께 운영하는 글로벌 자산운용사로, 개인·기관 고객의 주식/채권/대체자산 운용 수요를 다룹니다. 운용보수와 성과보수가 핵심 수익원이며, 실적은 운용자산(AUM) 규모와 시장 방향성에 크게 연동됩니다.",
+    coreProducts: [
+      "ETF(특히 Invesco QQQ 등 패시브/스마트베타 라인업)",
+      "액티브 주식·채권·멀티에셋 펀드",
+      "기관 대상 대체투자 및 솔루션 운용",
+    ],
+    geographicPresence: "미국 중심의 글로벌 운영(북미 비중이 크고, 유럽·아시아를 포함한 국제 사업 병행)",
+    dividendStreakYears: 13,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 12.5%로 배당 증가 모멘텀은 양호하나, 절대 배당수익률은 과거 평균 대비 낮은 구간입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 56.5%는 감내 가능한 수준이지만, 자산운용업 특성상 이익이 시장 변동에 민감해 배당 안정성은 경기·증시 사이클 영향을 받습니다.",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "Invesco는 장기간 축적한 브랜드, 운용 트랙레코드, 유통 네트워크를 통해 일정한 진입장벽을 보유합니다. 다만 자산운용업은 상품 비교가 쉬워 가격 경쟁과 성과 경쟁이 치열해 해자가 매우 넓다고 보긴 어렵습니다. 규모의 경제는 존재하지만 수수료 압박이 이를 일부 상쇄합니다.",
+    revenueGrowthTrend: "시장 상승기에는 AUM 확대와 함께 회복, 하락기에는 보수수익 둔화가 나타나는 경기민감·사이클형 추세입니다.",
+    marginTrend: "contracting",
+    debtLevel: "high",
+    financialSummary: "Forward PER 8.7, PBR 0.96으로 밸류에이션은 역사적 평균 대비 부담이 크지 않은 편입니다. 다만 D/E 14.0은 레버리지 부담 신호로 해석될 수 있어 금리·신용환경 점검이 필요합니다. 수익구조가 시장 민감형이므로 실적 가시성은 방어주 대비 낮습니다.",
+    keyRisks: [
+      "주식·채권 시장 조정 시 AUM 감소로 인한 보수수익 둔화",
+      "ETF/패시브 확산에 따른 수수료 경쟁 심화",
+      "상대적으로 높은 레버리지와 금리 환경 변화에 따른 재무 부담",
+    ],
+    bullCase: "위험자산 강세와 자금 유입이 이어지면 AUM 증가로 이익 레버리지가 확대될 수 있습니다. 저평가 구간(PBR 1배 내외) 재평가와 함께 배당 성장 스토리가 부각될 가능성이 있습니다.",
+    bearCase: "시장 변동성 확대로 자금 유출이 발생하면 수수료 수익과 이익이 동시에 압박받을 수 있습니다. 수수료 인하 경쟁이 지속되면 밸류에이션 할인 상태가 장기화될 수 있습니다.",
+    valuationComment: "현재 배당수익률 3.17%는 5년 평균 4.13%보다 낮아 배당 관점에서는 비싸게 거래되는 구간으로 해석됩니다. 단순 배당역산 기준(연배당 0.84달러/평균수익률 4.13%) 적정 매수 구간은 약 20~22달러대로 보는 것이 보수적입니다.",
+    recentDevelopments: [
+      "애널리스트 컨센서스는 buy이며 목표가 30.14달러로 약 13.9% 상승여력을 반영",
+      "주가가 52주 밴드 상단 근처(위치 82.6%)에 있어 단기 진입 가격 메리트는 제한적",
+    ],
+    overallRating: "관망",
+    ratingReason: "이익·배당 체력은 무난하지만 현재 배당수익률이 과거 평균 대비 낮아 배당투자 관점의 안전마진이 부족합니다.",
+    targetBuyPrice: 21.5,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
