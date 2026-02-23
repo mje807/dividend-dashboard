@@ -2752,6 +2752,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "질 좋은 배당 성장주이지만 현재 밸류에이션과 레버리지 부담을 감안하면 신규 매수는 가격 조정 구간이 더 유리합니다.",
     targetBuyPrice: 315,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TROW — T. Rowe Price (배당귀족주, 38년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "TROW",
+    analyzedAt: "2026-02-23 15:00 KST",
+    businessSummary: "T. Rowe Price는 개인·기관 고객을 대상으로 액티브 중심의 자산운용 서비스를 제공하는 글로벌 운용사입니다. 주식·채권·멀티에셋·타깃데이트 등 다양한 전략을 뮤추얼펀드, ETF, 별도계정 형태로 운용하며, 운용보수 기반의 수익구조를 갖고 있습니다. 시장 변동과 자금 유출입에 따라 운용자산(AUM)과 실적이 연동되는 금융주입니다.",
+    coreProducts: [
+      "액티브 뮤추얼펀드 및 ETF",
+      "기관/연금 대상 별도계정 운용",
+      "타깃데이트·자산배분 솔루션",
+    ],
+    geographicPresence: "미국 중심(약 75~80%) · 국제(약 20~25%)",
+    dividendStreakYears: 38,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR이 1.9%로, 배당은 증가 중이나 인상 속도는 낮아진 상태입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 55%와 높은 ROE는 방어적이지만, 실적이 시장·AUM 사이클에 민감해 배당 성장 여력은 경기 국면 영향을 받습니다.",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "오랜 운용 트랙레코드와 브랜드 신뢰는 자금 유치에 유리하게 작용합니다. 연금·기관 채널에서는 운용사 교체 비용과 절차 부담이 있어 일정 수준의 고객 고착성이 존재합니다. 다만 수수료 경쟁과 패시브 전환 압력으로 해자는 광범위(wide)보다는 제한적(narrow)입니다.",
+    revenueGrowthTrend: "시장 반등 시 회복 탄력이 있으나 중장기적으로는 순유출·수수료 압박으로 저성장 기조입니다.",
+    marginTrend: "contracting",
+    debtLevel: "moderate",
+    financialSummary: "PER 10.3(선행 9.3)으로 밸류에이션은 역사 대비 부담이 낮은 편입니다. ROE 18.8%로 수익성은 양호하고 배당수익률 5.45%는 5년 평균 3.95%를 크게 상회해 인컴 매력은 높습니다. 다만 금융시장 변동성과 자금 유출입에 따른 이익 변동성이 상존합니다.",
+    keyRisks: [
+      "지속적인 순유출 발생 시 AUM 축소와 수수료 수익 감소",
+      "패시브·저보수 상품 확대로 구조적 마진 압박",
+      "주식·채권 시장 약세 장기화 시 실적 및 배당 성장 둔화",
+    ],
+    bullCase: "시장 반등과 순유출 완화가 동시에 나타나면 AUM 및 실적 회복 속도가 빨라질 수 있습니다. 현재 고배당+낮은 멀티플 구간에서 재평가가 붙으면 총수익률 개선 여지가 있습니다.",
+    bearCase: "순유출이 장기화되고 수수료 인하 경쟁이 심화되면 이익 체력이 약화될 수 있습니다. 이 경우 배당은 유지하더라도 증액 여력이 제한되어 밸류에이션 할인 상태가 지속될 수 있습니다.",
+    valuationComment: "현재가는 DDM 적정가($101.96)와 애널리스트 목표가($102.08) 대비 소폭 할인 구간이며, 배당수익률도 역사 평균 대비 높아 절대가치는 나쁘지 않습니다. 다만 성장 모멘텀이 약해 적극적 프리미엄 확장은 제한적이므로 분할 접근이 유효하며, $88~$92 구간은 보다 매력적인 매수 구간으로 판단됩니다.",
+    recentDevelopments: [
+      "고배당(5%대) 구간 진입으로 인컴 투자자 관점의 매력 확대",
+      "애널리스트 컨센서스는 hold로, 실적 회복 속도에 대한 신중한 시각 유지",
+    ],
+    overallRating: "보유",
+    ratingReason: "밸류에이션과 배당 매력은 충분하지만, 저성장·자금유출 리스크로 공격적 매수보다는 보유/분할접근이 합리적입니다.",
+    targetBuyPrice: 90,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
