@@ -2326,6 +2326,52 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "이익·배당 체력은 무난하지만 현재 배당수익률이 과거 평균 대비 낮아 배당투자 관점의 안전마진이 부족합니다.",
     targetBuyPrice: 21.5,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // LEG — Leggett & Platt (배당귀족주, 52년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "LEG",
+    analyzedAt: "2026-02-23 10:30 KST",
+    businessSummary: "Leggett & Platt는 침구(매트리스 스프링/폼 컴포넌트), 가구·바닥재·텍스타일 관련 부품을 공급하는 산업재 성격의 소비재 밸류체인 기업입니다. 완제품 브랜드보다 B2B 부품·소재 비중이 높고, 주거/가구 수요와 경기 민감도가 실적에 크게 반영됩니다. 최근에는 수요 둔화와 포트폴리오 재편 속에서 수익성 방어와 현금흐름 안정화가 핵심 과제입니다.",
+    coreProducts: [
+      "매트리스용 스프링·침구 부품",
+      "가구용 메커니즘·프레임·컴포넌트",
+      "바닥재/텍스타일 관련 산업용 소재",
+    ],
+    geographicPresence: "북미 중심(미국 비중이 높은 구조) · 유럽/아시아 등 국제 매출은 보조적 비중",
+    dividendStreakYears: 52,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 배당금이 과거 대비 큰 폭으로 조정(감배)되며 배당 성장 스토리가 약화되었습니다.",
+    dividendSafety: "watch",
+    dividendSafetyReason: "현재 배당성향 수치 자체는 낮지만 최근 감배 이력과 높은 부채 부담으로 배당 신뢰도는 경계 구간입니다.",
+    moatTypes: [
+      "cost_advantage",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "대량 생산·공급망 운영에서 규모의 경제와 원가 경쟁력이 일부 존재합니다. 다만 제품 차별화가 제한적이고 경기 사이클 영향이 커 강한 가격결정력은 약한 편입니다. 따라서 해자는 존재하더라도 폭은 좁은 편으로 판단됩니다.",
+    revenueGrowthTrend: "최근 몇 년은 최종수요 둔화 영향으로 저성장 또는 역성장 압력이 우세합니다.",
+    marginTrend: "contracting",
+    debtLevel: "high",
+    financialSummary: "PER이 낮아 보이지만 이는 이익 변동성과 사이클 저점 효과를 함께 반영한 멀티플일 수 있습니다. ROE는 높지만 D/E 161.9 수준의 레버리지 영향이 크며, 자본구조 리스크를 동반합니다. 전반적으로 밸류는 싸 보이나 재무 체력은 방어적이라 보기 어렵습니다.",
+    keyRisks: [
+      "주택·가구 경기 둔화 장기화에 따른 수요 부진",
+      "높은 부채비율로 인한 금리·차환 리스크",
+      "추가 감배 또는 주주환원 축소 가능성",
+    ],
+    bullCase: "주택/가구 업황이 반등하고 원가 안정이 이어지면 이익 정상화와 밸류에이션 리레이팅이 가능할 수 있습니다. 재무개선이 동반되면 배당 정책 신뢰 회복 여지도 있습니다.",
+    bearCase: "경기 둔화가 길어지면 매출·마진 압박이 지속되고, 높은 레버리지가 주주가치 훼손으로 이어질 수 있습니다. 이 경우 배당 매력 회복이 지연되며 주가 박스권 또는 추가 하락 가능성이 있습니다.",
+    valuationComment: "현재 주가는 낮은 PER 대비 저평가처럼 보이지만, DDM 적정가와 최근 배당정책 변화(감배)를 고려하면 단순 저PER만으로 매수하기 어렵습니다. 업황·재무 안정 신호 확인 전에는 보수적으로 접근하고, 안전마진이 확보되는 구간에서 분할 매수가 적절합니다.",
+    recentDevelopments: [
+      "배당금 수준이 과거 대비 크게 낮아지며 배당주 투자 매력도가 약화",
+      "애널리스트 컨센서스는 hold이며 목표가 기준 상승여력은 제한적(약 4.9%)",
+    ],
+    overallRating: "관망",
+    ratingReason: "저평가 지표 대비 배당 신뢰도와 재무레버리지 리스크가 커 확인 후 접근이 유리합니다.",
+    targetBuyPrice: 10,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
