@@ -2563,6 +2563,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당성장과 사업 질은 우수하지만 현재 주가·목표가 괴리가 작고 고점권 밸류 부담이 커 신규 진입은 가격 조정 대기가 유리합니다.",
     targetBuyPrice: 86,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // NTRS — Northern Trust (배당귀족주, 33년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "NTRS",
+    analyzedAt: "2026-02-23 13:00 KST",
+    businessSummary: "Northern Trust는 기관투자자와 고액자산가를 대상으로 자산관리(Wealth Management)와 자산서비스(Asset Servicing)를 제공하는 미국계 금융회사입니다. 수탁·커스터디, 펀드관리, 운용지원, 신탁 및 프라이빗뱅킹이 핵심이며, 금리 환경과 시장 변동성에 따라 이자이익과 수수료 수익이 함께 영향을 받는 구조입니다.",
+    coreProducts: [
+      "자산수탁·커스터디 및 펀드 어드민",
+      "기관 대상 자산운용·운용지원 서비스",
+      "고액자산가 대상 웰스매니지먼트·신탁 서비스",
+    ],
+    geographicPresence: "미국 중심의 매출/이익 구조이며, 유럽·아시아 등 국제 비중이 보조적으로 기여하는 형태",
+    dividendStreakYears: 33,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR이 2.2%로, 배당은 증가했지만 인상 속도는 완만한 편입니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 35.5%로 부담이 낮고 33년 연속 증배 이력이 있어 배당 지속 가능성은 높은 편입니다.",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "기관 수탁·자산서비스는 운영 안정성, 규제 대응, 시스템 연동이 중요해 고객 교체비용이 높습니다. 오랜 트랙레코드와 신뢰 기반의 브랜드/무형자산이 계약 유지율에 기여합니다. 다만 초대형 글로벌 수탁은행과의 경쟁이 강해 해자는 넓다기보다 견고한 협소 해자에 가깝습니다.",
+    revenueGrowthTrend: "이자이익과 수수료 수익이 혼재된 가운데 전반적으로 저성장·완만한 사이클 흐름입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "ROE 13.5%는 금융주 내에서 무난한 수익성을 시사하고, PBR 2.23은 프리미엄 밸류에이션을 반영합니다. Trailing PER 16.6 대비 Forward PER 13.0은 이익 개선 기대를 보여주지만, 현재 주가가 52주 상단(83.1%) 근처라 밸류 부담이 일부 존재합니다. 배당성향이 낮아 배당 여력은 양호하나, 배당 매력도(수익률)는 과거 평균 대비 낮습니다.",
+    keyRisks: [
+      "금리 하락 국면에서 순이자마진 및 이자이익 둔화 가능성",
+      "시장 변동성 확대 시 AUC/AUM 기반 수수료 수익 변동",
+      "규제 강화·컴플라이언스 비용 증가 및 대형사와의 가격 경쟁",
+    ],
+    bullCase: "이익이 예상대로 개선되어 Forward PER 기준 밸류가 정당화되고, 안정적 자본정책과 점진적 배당 인상이 이어지면 주가가 애널리스트 목표가 구간에 근접할 수 있습니다. 기관 고객 기반의 높은 유지율이 하방을 완충할 가능성도 있습니다.",
+    bearCase: "배당 성장 둔화가 지속되고 금리/시장 환경이 비우호적으로 바뀌면 수익성 개선이 지연될 수 있습니다. 현재 낮은 배당수익률과 높은 52주 위치를 감안하면 멀티플 디레이팅 시 주가 조정 리스크가 있습니다.",
+    valuationComment: "현재 배당수익률 2.18%는 5년 평균 2.99% 대비 낮아 배당 기준으로는 고평가 신호입니다. DDM 적정가($65.62)와의 괴리는 모델 가정 한계가 크지만, 보수적으로는 최소한 과거 평균 수익률에 가까워지는 가격대에서 분할 접근이 유리합니다.",
+    recentDevelopments: [
+      "Forward PER이 Trailing 대비 낮아져 이익 개선 기대가 일부 선반영된 상태",
+      "애널리스트 컨센서스는 hold이며 목표가 기준 상승여력은 제한적인 한 자릿수",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 안전성은 높지만 현재 배당 매력(수익률)과 가격 위치를 감안하면 신규 매수 메리트는 크지 않습니다.",
+    targetBuyPrice: 105,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
