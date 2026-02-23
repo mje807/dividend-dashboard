@@ -70,6 +70,16 @@ export default function Watchlist() {
     });
   }, []);
 
+  const filteredGrowth = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    const base = q
+      ? growthEnriched.filter((g) => g.ticker.toLowerCase().includes(q) || g.name.toLowerCase().includes(q))
+      : growthEnriched;
+    return [...base].sort((a, b) => b.score.score - a.score.score);
+  }, [growthEnriched, search]);
+
+  const topGrowthPicks = useMemo(() => filteredGrowth.slice(0, 3), [filteredGrowth]);
+
   const filtered = useMemo(() => {
     let list = enriched;
     if (category !== "all") list = list.filter(s => s.category === category);
@@ -393,7 +403,14 @@ export default function Watchlist() {
         <div className="bg-gray-900 rounded-xl overflow-hidden">
           <div className="px-5 py-4 border-b border-gray-800">
             <h2 className="text-sm font-semibold text-white">🚀 Growth Score (1~10)</h2>
-            <p className="text-xs text-gray-400 mt-1">성장성(40) + 수익성(30) + 밸류에이션(20) + 리스크(10)</p>
+            <p className="text-xs text-gray-400 mt-1">성장성(35) + 수익성(30) + 밸류에이션(20) + 모멘텀(15)</p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              {topGrowthPicks.map((g, idx) => (
+                <span key={g.ticker} className="text-[11px] px-2 py-1 rounded-full bg-emerald-900/30 text-emerald-300 border border-emerald-700/40">
+                  TOP{idx + 1} {g.ticker} {g.score.score.toFixed(1)}
+                </span>
+              ))}
+            </div>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -409,9 +426,7 @@ export default function Watchlist() {
                 </tr>
               </thead>
               <tbody>
-                {growthEnriched
-                  .sort((a, b) => b.score.score - a.score.score)
-                  .map((g) => (
+                {filteredGrowth.map((g) => (
                   <tr key={g.ticker} className="border-b border-gray-800/50 hover:bg-gray-800/30">
                     <td className="px-5 py-3">
                       <div className="font-bold text-white text-sm">{g.ticker}</div>
