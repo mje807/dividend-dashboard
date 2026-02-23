@@ -3,12 +3,16 @@ import { Link } from "react-router";
 import { ArrowLeft, Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 import { royaltyStocks, royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
 import { getRoyaltyMetrics } from "~/data/royalty-metrics";
+import { getMetrics } from "~/data/metrics";
+import { growthTickers } from "~/data/growth";
 import { calcAttractiveness } from "~/utils/attractiveness";
+import { calcGrowthScore } from "~/utils/growth-score";
 
 export function meta() {
   return [{ title: "배당 왕족주·귀족주" }];
 }
 
+type Mode = "dividend" | "growth";
 type Category = "all" | "king" | "aristocrat";
 type AttrFilter = "all" | "buy" | "neutral" | "caution";
 type SortKey = "streak" | "dividendYield" | "price" | "peRatio" | "payoutRatio" | "attractiveness";
@@ -27,6 +31,7 @@ const SECTOR_COLORS: Record<string, string> = {
 };
 
 export default function Watchlist() {
+  const [mode, setMode] = useState<Mode>("dividend");
   const [category, setCategory] = useState<Category>("all");
   const [attrFilter, setAttrFilter] = useState<AttrFilter>("all");
   const [search, setSearch] = useState("");
@@ -47,6 +52,23 @@ export default function Watchlist() {
       return { ...s, attractivenessScore: att?.score ?? 5, attractiveness: att };
     }), []
   );
+
+  const growthEnriched = useMemo(() => {
+    return growthTickers.map((ticker) => {
+      const m = getMetrics(ticker);
+      const score = calcGrowthScore(m);
+      return {
+        ticker,
+        name: m?.longName ?? ticker,
+        price: m?.currentPrice ?? null,
+        revenueGrowth: m?.revenueGrowth ?? null,
+        roe: m?.roe ?? null,
+        profitMargin: m?.profitMargin ?? null,
+        pe: (m?.forwardPE && m.forwardPE > 0) ? m.forwardPE : m?.trailingPE ?? null,
+        score,
+      };
+    });
+  }, []);
 
   const filtered = useMemo(() => {
     let list = enriched;
@@ -103,6 +125,23 @@ export default function Watchlist() {
         </div>
       </div>
 
+      <div className="flex gap-2 mb-5">
+        <button
+          onClick={() => setMode("dividend")}
+          className={`px-4 py-2 rounded-lg text-sm font-medium ${mode === "dividend" ? "bg-indigo-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
+        >
+          배당 분석
+        </button>
+        <button
+          onClick={() => setMode("growth")}
+          className={`px-4 py-2 rounded-lg text-sm font-medium ${mode === "growth" ? "bg-emerald-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
+        >
+          성장주 분석
+        </button>
+      </div>
+
+      {mode === "dividend" && (
+      <>
       {/* 요약 카드 */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <SummaryCard
@@ -347,6 +386,50 @@ export default function Watchlist() {
       <p className="text-gray-600 text-xs mt-4 text-center">
         배당성향 빨간색 &gt; 80% · 노란색 60~80% · 배당률 초록색 ≥ 3% · 노란색 2~3%
       </p>
+      </>
+      )}
+
+      {mode === "growth" && (
+        <div className="bg-gray-900 rounded-xl overflow-hidden">
+          <div className="px-5 py-4 border-b border-gray-800">
+            <h2 className="text-sm font-semibold text-white">🚀 Growth Score (1~10)</h2>
+            <p className="text-xs text-gray-400 mt-1">성장성(40) + 수익성(30) + 밸류에이션(20) + 리스크(10)</p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-800 text-gray-500 text-xs">
+                  <th className="text-left px-5 py-3">종목</th>
+                  <th className="text-right px-4 py-3">현재가</th>
+                  <th className="text-right px-4 py-3">매출성장률</th>
+                  <th className="text-right px-4 py-3">ROE</th>
+                  <th className="text-right px-4 py-3">순이익률</th>
+                  <th className="text-right px-4 py-3">PE</th>
+                  <th className="text-right px-4 py-3">점수</th>
+                </tr>
+              </thead>
+              <tbody>
+                {growthEnriched
+                  .sort((a, b) => b.score.score - a.score.score)
+                  .map((g) => (
+                  <tr key={g.ticker} className="border-b border-gray-800/50 hover:bg-gray-800/30">
+                    <td className="px-5 py-3">
+                      <div className="font-bold text-white text-sm">{g.ticker}</div>
+                      <div className="text-gray-500 text-xs max-w-[220px] truncate">{g.name}</div>
+                    </td>
+                    <td className="text-right px-4 py-3 text-white text-sm">{g.price ? g.price.toLocaleString() : "-"}</td>
+                    <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.revenueGrowth !== null ? `${g.revenueGrowth.toFixed(1)}%` : "-"}</td>
+                    <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.roe !== null ? `${g.roe.toFixed(1)}%` : "-"}</td>
+                    <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.profitMargin !== null ? `${g.profitMargin.toFixed(1)}%` : "-"}</td>
+                    <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.pe !== null ? g.pe.toFixed(1) : "-"}</td>
+                    <td className={`text-right px-4 py-3 text-sm font-bold ${g.score.color}`}>{g.score.score.toFixed(1)} ({g.score.label})</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
