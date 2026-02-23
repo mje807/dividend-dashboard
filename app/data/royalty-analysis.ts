@@ -2183,6 +2183,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "49년 배당 귀족 안정성은 탁월하나 현재가는 DDM·목표가 대비 고평가이며 배당수익률도 역사적 평균 이하로 진입 시점으로 부적합",
     targetBuyPrice: 98,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // EXR — Extra Space Storage (배당귀족주, 14년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "EXR",
+    analyzedAt: "2026-02-23 09:00 KST",
+    businessSummary: "EXR(Extra Space Storage)는 2023년 Life Storage 인수합병을 통해 미국 최대 자가창고(Self-Storage) 리츠로 등극한 기업이다. 전국 3,800개 이상의 시설을 운영하며 개인·기업 고객 대상 다양한 크기의 창고 공간을 임대한다. 브랜드 인지도와 규모의 경제를 바탕으로 안정적인 입주율과 임대료 인상을 이끌어왔다.",
+    coreProducts: [
+      "자가창고 유닛 임대 (개인·기업)",
+      "제3자 창고 운영 관리 서비스",
+      "창고 보험 및 부가 서비스",
+    ],
+    geographicPresence: "미국 전역 약 100% (40개 이상 주 분산 운영, 주요 거점: 텍사스·플로리다·캘리포니아·뉴욕)",
+    dividendStreakYears: 14,
+    dividendCAGR5yr: 8.5,
+    dividendCAGR10yr: 14.2,
+    recentDividendGrowth: "최근 3년 CAGR 2.6%로 이전 10년 대비 급격히 둔화, LSI 인수 후 재무 부담으로 배당 성장 속도 조정 국면",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "GAAP 기준 배당성향 145%로 과도해 보이나 리츠 특성상 FFO 기준으로는 양호하며, 다만 D/E 97.7의 높은 레버리지와 금리 환경이 잠재 위험 요소",
+    moatTypes: [
+      "efficient_scale",
+      "brand",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "미국 최대 규모의 창고 운영 네트워크는 효율적 규모의 경제를 통해 신규 경쟁자의 진입을 억제한다. 그러나 자가창고 산업은 진입장벽이 낮고 Public Storage·CubeSmart 등 강력한 경쟁자가 존재해 넓은 해자로 보기는 어렵다. 브랜드 인지도와 디지털 마케팅 역량이 점유율 유지에 기여하는 수준이다.",
+    revenueGrowthTrend: "LSI 인수 효과로 2023년 매출 급증, 그러나 2024년 이후 공실률 상승 및 임대료 압력으로 유기적 성장 둔화 추세",
+    marginTrend: "contracting",
+    debtLevel: "high",
+    financialSummary: "LSI 인수로 부채가 대폭 증가해 D/E 비율이 97.7에 달하며 금리 부담이 수익성을 압박하고 있다. ROE 7.0%는 리츠 섹터 내에서 낮은 편으로 인수 후 자산 희석 효과가 반영된 결과다. 다만 창고 자산 자체는 경기 방어적 특성이 있어 현금흐름 안정성은 일정 수준 유지된다.",
+    keyRisks: [
+      "고금리 장기화 시 높은 부채비율로 인한 이자비용 급증 및 FFO 압박",
+      "공급 과잉: 팬데믹 이후 자가창고 신규 공급 증가로 입주율 및 임대료 하락 압력",
+      "경기 둔화 시 소비자 지출 감소로 창고 수요 위축 가능성",
+    ],
+    bullCase: "금리 인하 사이클 진입 시 부채 비용 감소와 리츠 섹터 전반 재평가로 주가 반등이 기대되며, 업계 최대 규모의 플랫폼으로 운영 효율화와 수수료 사업 확대를 통한 수익 다각화가 가능하다.",
+    bearCase: "금리 고착화와 창고 공급 과잉이 겹칠 경우 임대료 성장 정체와 배당 성장 동결이 이어질 수 있으며, 과도한 부채로 인한 신용 등급 하향 리스크도 배제할 수 없다.",
+    valuationComment: "현재가 $152.75는 DDM 적정가 $147.27 및 애널리스트 목표가 $149.85를 모두 상회하여 단기 고평가 구간으로 판단된다. 52주 고점 대비 76% 수준에 위치해 추가 상승 모멘텀은 제한적이며, $140~145 수준으로 조정 시 매수 매력이 높아진다.",
+    recentDevelopments: [
+      "2023년 Life Storage(LSI) 인수 완료로 미국 최대 자가창고 리츠 등극, 단기 부채 부담 증가",
+      "2024~2025년 일부 시장의 공실률 상승 및 임대료 성장 둔화로 FFO 가이던스 보수적 유지",
+    ],
+    overallRating: "관망",
+    ratingReason: "현재가가 DDM·애널리스트 목표가 대비 고평가 구간이며 배당 성장 모멘텀도 둔화, $140~145 수준 조정 시 재진입 검토",
+    targetBuyPrice: 145,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
