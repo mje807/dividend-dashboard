@@ -2657,6 +2657,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당의 질은 우수하지만 주가 위치와 목표가 대비 업사이드가 제한적이라 신규 진입은 가격 조정 대기가 합리적입니다.",
     targetBuyPrice: 115,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ROP — Roper Technologies (배당귀족주, 31년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "ROP",
+    analyzedAt: "2026-02-23 14:00 KST",
+    businessSummary: "Roper Technologies는 전통적인 하드웨어 중심 기업이 아니라 미션 크리티컬 소프트웨어와 데이터 기반 솔루션을 보유·운영하는 고부가가치 기술 기업입니다. 의료, 법률, 보험, 교육, 산업 소프트웨어 등 니치 시장에서 높은 점유율을 가진 자회사를 포트폴리오 형태로 운영하며 반복 매출 비중을 높여왔습니다. 최근에는 경기 민감도가 낮고 현금흐름이 안정적인 자산 중심으로 사업 구조를 고도화하고 있습니다.",
+    coreProducts: [
+      "Vertafore(보험 소프트웨어)",
+      "Deltek(프로젝트·ERP 소프트웨어)",
+      "의료/법률/교육 등 버티컬 SaaS 및 데이터 솔루션",
+    ],
+    geographicPresence: "미국 중심 매출 구조(대략 미국 비중이 높고 국제 매출은 보완적 수준)",
+    dividendStreakYears: 31,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 19.3%로 배당 성장 속도가 매우 빠른 편입니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 23.2%로 여유가 크고, 31년 연속 증액 이력이 배당 지속 가능성을 뒷받침합니다.",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "Roper의 핵심 소프트웨어는 고객 업무 프로세스에 깊게 통합되어 교체 비용이 높습니다. 버티컬 시장 특화 기능과 데이터 자산은 진입장벽을 만들고 가격 결정력을 강화합니다. 또한 작은 니치 시장에서의 높은 점유율은 규모 효율과 안정적인 반복 매출 구조로 이어집니다.",
+    revenueGrowthTrend: "인수와 유기적 성장의 결합으로 중장기적으로 완만한 우상향 추세를 유지해왔습니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "Forward PER 14.4는 Trailing PER 23.6 대비 이익 개선 기대가 반영된 구간으로 해석됩니다. ROE 7.9%는 과열 수준은 아니지만 안정적 수익성을 시사하며, 배당성향이 낮아 배당 재원 여력은 충분합니다. D/E 46.8은 관리 가능한 레버리지 범위로 보이나 금리 환경에 따라 이자비용 부담은 점검이 필요합니다.",
+    keyRisks: [
+      "인수 의존 성장 전략에서 밸류에이션 부담 및 통합 리스크",
+      "고금리 장기화 시 차입 비용과 멀티플 압박",
+      "특정 버티컬 소프트웨어 수요 둔화 또는 규제 변화",
+    ],
+    bullCase: "반복 매출 중심 포트폴리오와 높은 전환비용으로 이익 가시성이 유지되면, 낮은 배당성향 기반의 추가 증액과 멀티플 재평가가 동반될 수 있습니다. 애널리스트 목표가 기준으로 주가 정상화 여지도 큽니다.",
+    bearCase: "인수 후 시너지 지연, 금리 부담, 성장 둔화가 겹치면 이익 추정치 하향과 함께 밸류에이션 디스카운트가 장기화될 수 있습니다. 이 경우 배당은 유지되더라도 주가 회복 속도는 느려질 수 있습니다.",
+    valuationComment: "52주 위치 8.1%와 5년 평균 대비 높은 현재 배당수익률(1.08% vs 0.56%)은 역사적 밴드 기준 저평가 신호로 볼 수 있습니다. DDM은 부적합하므로 현금흐름/멀티플 기준 접근이 타당하며, 분할매수 관점에서 현재 구간은 관심 유효, 보수적으로는 320달러 전후가 매수 효율이 더 좋습니다.",
+    recentDevelopments: [
+      "포트폴리오를 미션 크리티컬 소프트웨어 중심으로 재편하며 반복 매출 비중을 강화",
+      "Forward PER이 낮아진 점은 향후 이익 개선 기대가 반영된 신호",
+    ],
+    overallRating: "관심",
+    ratingReason: "배당 안전성과 해자 품질이 높고 저점권 신호가 유의미하지만, 인수·금리 변수 확인을 위해 분할 접근이 적절합니다.",
+    targetBuyPrice: 320,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
