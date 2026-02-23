@@ -2610,6 +2610,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 안전성은 높지만 현재 배당 매력(수익률)과 가격 위치를 감안하면 신규 매수 메리트는 크지 않습니다.",
     targetBuyPrice: 105,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // PPG — PPG Industries (배당귀족주, 52년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "PPG",
+    analyzedAt: "2026-02-23 13:30 KST",
+    businessSummary: "PPG Industries는 도료·코팅·특수소재를 제조하는 글로벌 소재 기업으로, 건축·자동차·항공·산업용 고객에 제품을 공급합니다. 성능 코팅과 보호 코팅 중심의 포트폴리오를 통해 경기 민감 업종 전반에 노출되어 있으면서도, 보수·유지보수 수요로 일부 방어력을 확보합니다.",
+    coreProducts: [
+      "건축용 도료 및 코팅",
+      "자동차·산업용 성능 코팅",
+      "항공·해양·보호용 특수 코팅",
+    ],
+    geographicPresence: "미주 중심의 글로벌 사업 구조로, 미주 비중이 가장 크고 유럽·아시아가 뒤를 잇는 분산 포트폴리오",
+    dividendStreakYears: 52,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 13.0%로 배당 성장 모멘텀이 양호한 편입니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 40.2%로 커버 여력이 있고 52년 연속 증배 이력이 배당 정책의 일관성을 보여줍니다.",
+    moatTypes: [
+      "intangible_assets",
+      "switching_costs",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "PPG는 산업 현장 인증·품질 신뢰·고객 맞춤 기술 축적이라는 무형자산을 보유하고 있습니다. 코팅은 공정 적합성·품질 안정성이 중요해 고객 전환비용이 존재하며, 글로벌 조달·생산 네트워크로 원가 경쟁력도 일부 확보합니다. 다만 원재료와 경기 사이클 영향이 커 해자는 광범위(wide)보다는 좁은(narrow) 수준으로 보는 것이 합리적입니다.",
+    revenueGrowthTrend: "중장기적으로 완만한 성장이나 단기적으로는 산업 경기와 최종 수요에 따라 변동성이 큽니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "ROE 21.1%와 배당성향 40.2%는 수익성과 주주환원 여력이 양호함을 시사합니다. 다만 D/E 97.6으로 레버리지 부담은 낮지 않아 금리·경기 둔화 구간에서 재무 유연성이 제한될 수 있습니다. PER 18.3(선행 14.5)은 이익 개선 기대를 일부 반영한 구간으로 해석됩니다.",
+    keyRisks: [
+      "원재료 가격 및 에너지 비용 변동으로 인한 마진 압박",
+      "자동차·건설·산업 생산 둔화에 따른 수요 감소",
+      "높은 부채비율 환경에서 금리 및 환율 변동 리스크",
+    ],
+    bullCase: "산업 수요 회복과 원가 안정이 동시에 나타나면 이익 레버리지가 커져 선행 PER 기준 재평가 여지가 있습니다. 꾸준한 증배 정책이 총주주수익률을 지지할 가능성이 높습니다.",
+    bearCase: "경기 둔화가 장기화되면 물량 감소와 가격 경쟁 심화로 이익이 둔화될 수 있습니다. 부채 부담이 높은 구간에서 금리 부담이 겹치면 밸류에이션 할인 요인이 될 수 있습니다.",
+    valuationComment: "현재가는 52주 위치 84%로 상단에 가깝고 애널리스트 목표가($125.30) 대비 매력은 크지 않습니다. 배당 프리미엄을 감안해도 추격 매수보다는 조정 시 분할 접근이 유리하며, 보수적 관점의 매수 구간은 대략 $112~$118 수준으로 판단합니다.",
+    recentDevelopments: [
+      "선행 PER이 후행 대비 낮아 이익 정상화 기대가 시장에 반영되는 모습",
+      "배당수익률 2.24%가 5년 평균 1.93%를 상회해 소득 매력은 과거 대비 개선",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당의 질은 우수하지만 주가 위치와 목표가 대비 업사이드가 제한적이라 신규 진입은 가격 조정 대기가 합리적입니다.",
+    targetBuyPrice: 115,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
