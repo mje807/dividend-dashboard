@@ -3128,6 +3128,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 연속성은 매우 우수하지만 현재 핵심 정량 지표 부재로 매수 타이밍 판단 근거가 부족합니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // MO — 알트리아그룹 (배당왕족주, 56년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "MO",
+    analyzedAt: "2026-02-25 01:30 KST",
+    businessSummary: "알트리아그룹(MO)은 미국 내 담배·니코틴 제품 중심의 소비재 기업으로, Marlboro를 핵심 브랜드로 보유하고 있습니다. 전통 궐련에서 발생하는 높은 현금흐름을 기반으로 배당을 지속 확대해 왔으며, 무연·전자니코틴 영역으로 포트폴리오 전환을 병행 중입니다.",
+    coreProducts: [
+      "Marlboro 등 궐련 제품",
+      "무연니코틴(oral nicotine pouch)",
+      "전자니코틴/베이프 관련 제품 및 투자자산",
+    ],
+    geographicPresence: "미국 중심(사실상 대부분이 미국 매출)",
+    dividendStreakYears: 56,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근에도 소폭 인상 기조를 유지했지만 인상 폭은 과거 대비 완만한 편입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "방어적 수요와 강한 현금창출력은 장점이나, 높은 배당성향과 규제 리스크로 안전성은 ‘강함’보다는 ‘보통’에 가깝습니다.",
+    moatTypes: [
+      "brand",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "Marlboro 중심의 브랜드 파워와 유통·판매망, 규제 산업 특성에서 오는 진입장벽이 해자의 핵심입니다. 다만 흡연율 구조적 하락과 대체 니코틴 제품 경쟁으로 해자 폭은 과거 대비 좁아진 상태로 보는 것이 합리적입니다.",
+    revenueGrowthTrend: "장기적으로는 물량 감소 압력이 있으나 가격 인상과 제품 믹스로 방어하는 흐름입니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "전통 담배 사업의 높은 영업현금흐름은 배당 재원을 뒷받침합니다. 다만 레버리지 부담과 규제·소송 관련 불확실성이 밸류에이션 할인 요인으로 작용합니다. 성장성보다는 현금수익(배당) 중심의 성격이 강한 종목입니다.",
+    keyRisks: [
+      "미국 규제 강화(멘솔, 니코틴 함량 규제 등)",
+      "흡연 인구 감소에 따른 구조적 물량 하락",
+      "전자니코틴 전환 지연 및 관련 투자 성과 부진",
+    ],
+    bullCase: "가격 결정력과 비용 통제로 높은 현금흐름을 유지하고, 무연 제품 전환이 점진적으로 성과를 내면 고배당+재평가가 가능할 수 있습니다.",
+    bearCase: "규제 강도 상승과 물량 급감이 동시에 발생하면 이익 기반이 약화되어 배당 성장 여력이 크게 둔화될 수 있습니다.",
+    valuationComment: "정량 지표 공란으로 정밀 산정은 제한적이지만, MO는 일반적으로 ‘저성장 고배당’ 할인주 프레임으로 접근하는 것이 적절합니다. 금리·규제 불확실성을 감안해 분할매수 전제의 보수적 진입 구간 설정이 유리합니다.",
+    recentDevelopments: [
+      "무연·전자니코틴 포트폴리오 확대를 위한 전략적 투자/인수 지속",
+      "규제 이슈 및 소송·정책 변화에 따른 실적 가시성 변동",
+    ],
+    overallRating: "보유",
+    ratingReason: "성장주는 아니지만 현금흐름 기반의 배당 매력은 유효해 기존 배당 포트폴리오 내 보유 관점이 타당합니다.",
+    targetBuyPrice: 42,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
