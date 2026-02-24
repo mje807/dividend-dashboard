@@ -3410,6 +3410,52 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "고품질 파이프라인과 주주환원 매력은 유효하지만 특허·규제 변수 확인이 필요한 구간입니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // CDUAF — 캐네디언 유틸리티 (배당왕족주, 53년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "CDUAF",
+    analyzedAt: "2026-02-25 04:30 KST",
+    businessSummary: "캐네디언 유틸리티(ATCO 계열)는 전기·천연가스의 송배전 및 유통, 발전, 저장 인프라를 운영하는 규제형 유틸리티 기업입니다. 캐나다 중심의 규제자산 기반 수익 구조를 바탕으로 안정적인 현금흐름을 창출해 왔고, 50년 이상 배당을 늘린 배당 성장 이력이 핵심 투자 포인트입니다.",
+    coreProducts: [
+      "전력 송배전 및 유통",
+      "천연가스 유통·저장·관련 인프라",
+      "규제 기반 유틸리티 서비스 운영",
+    ],
+    geographicPresence: "캐나다 중심(알버타 비중 높음) · 일부 국제/기타 인프라 사업",
+    dividendStreakYears: 53,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "연속 증배 기조는 유지되고 있으나, 최근 증배율은 과거 대비 완만한 구간으로 평가됩니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "규제자산 기반 현금흐름은 방어적이지만, 금리·자본집약적 투자 부담이 배당 여력을 제약할 수 있습니다.",
+    moatTypes: [
+      "efficient_scale",
+      "switching_costs",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "유틸리티는 지역 독점에 가까운 네트워크 특성과 높은 초기 투자비로 신규 진입이 어렵습니다. 또한 규제 체계 내에서 예측 가능한 수익 회수 구조를 갖추고 있어 현금흐름 가시성이 높습니다. 다만 규제 환경과 허용수익률 변화에 따라 해자 강도는 변동될 수 있습니다.",
+    revenueGrowthTrend: "저성장·안정형(규제 요금기반 확장과 투자 집행에 연동)",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "사업 구조상 대규모 설비투자가 필요해 레버리지 의존도가 상대적으로 높을 가능성이 큽니다. 반면 규제자산 기반 모델은 경기 민감도를 낮추고 장기 현금흐름 안정성을 제공합니다. 금리 수준과 규제기관의 허용수익률 결정이 재무 체력의 핵심 변수입니다.",
+    keyRisks: [
+      "금리 상승에 따른 이자비용 및 밸류에이션 압박",
+      "규제기관의 허용수익률(ROE) 하향 또는 비용 전가 제한",
+      "대규모 CAPEX 지연·초과로 인한 수익성/현금흐름 악화",
+    ],
+    bullCase: "규제자산(Rate Base) 확대와 안정적 요금 회수로 이익·배당의 장기 복리 성장이 지속될 수 있습니다. 금리 안정 또는 하락 국면에서는 배당주 재평가 가능성도 있습니다.",
+    bearCase: "고금리 장기화와 규제 불확실성이 겹치면 자본비용 부담이 커져 배당 성장률이 둔화될 수 있습니다. 프로젝트 집행 리스크가 현실화되면 주가 디스카운트가 확대될 수 있습니다.",
+    valuationComment: "현재 핵심 밸류에이션 지표가 부재해 정량 저평가 판단은 유보가 필요합니다. 유틸리티 특성상 금리 피크아웃 신호와 배당수익률의 역사적 밴드 상단 접근 구간에서 분할 매수가 유리합니다.",
+    recentDevelopments: [
+      "배당왕(50년+) 기록을 유지하며 연속 증배 트랙레코드를 지속",
+      "규제자산 확대 및 인프라 투자 집행이 중장기 실적 가시성의 핵심 이슈",
+    ],
+    overallRating: "관망",
+    ratingReason: "사업·배당의 질은 우수하나 현재 제공된 수치가 없어 가격 매력도를 확인하기 전까지는 보수적 접근이 합리적입니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
