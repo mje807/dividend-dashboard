@@ -1,6 +1,6 @@
 // 자동 생성 - therich.io 스크래핑
 // 마지막 업데이트: 2026-02-25
-// 총 자산: ₩59,429,041
+// 총 자산: ₩59,469,506
 
 export interface Holding {
   ticker: string;
@@ -28,11 +28,11 @@ export interface PortfolioSummary {
 }
 
 export const portfolioSummary: PortfolioSummary = {
-  totalAsset: "₩59,429,041",
+  totalAsset: "₩59,469,506",
   annualDividend: "₩1,857,776",
   dividendYield: "1.73%",
   investDividendYield: "1.96%",
-  totalReturn: "총 수익 +₩12,223,142(+13.98%)",
+  totalReturn: "총 수익 +₩12,254,093(+14.02%)",
   lastUpdated: "2026-02-25",
 };
 
@@ -72,14 +72,14 @@ export const holdings: Holding[] = [
     name: "O",
     shares: 91,
     avgCost: 0,
-    currentPrice: 66.55,
+    currentPrice: 66.49,
     dividendYield: 4.9,
     annualDividendPerShare: 3.26,
     dividendFrequency: "monthly",
     sector: "리츠",
     color: "#6366f1",
-    rawValue: "$6,055.8",
-    rawGain: "+$1,165.85 (+23.84%)",
+    rawValue: "$6,050.8",
+    rawGain: "+$1,160.84 (+23.74%)",
     currency: "USD",
   },
   {
@@ -117,14 +117,14 @@ export const holdings: Holding[] = [
     name: "NVDA",
     shares: 22.76,
     avgCost: 0,
-    currentPrice: 192.66,
+    currentPrice: 192.62,
     dividendYield: 0.02,
     annualDividendPerShare: 0.04,
     dividendFrequency: "quarterly",
     sector: "기술주",
     color: "#f59e0b",
-    rawValue: "$4,384.83",
-    rawGain: "+$2,076.99 (+90%)",
+    rawValue: "$4,383.92",
+    rawGain: "+$2,076.08 (+89.96%)",
     currency: "USD",
   },
   {
@@ -147,14 +147,14 @@ export const holdings: Holding[] = [
     name: "BTC / KRW",
     shares: 0.0515,
     avgCost: 0,
-    currentPrice: 94406660.19,
+    currentPrice: 94480660.19,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "가상자산",
     color: "hsl(259, 70%, 60%)",
-    rawValue: "₩4,861,943",
-    rawGain: "-₩1,735,176 (-26.3%)",
+    rawValue: "₩4,865,754",
+    rawGain: "-₩1,731,366 (-26.24%)",
     currency: "KRW",
   },
   {
@@ -207,14 +207,14 @@ export const holdings: Holding[] = [
     name: "TLT",
     shares: 15.69,
     avgCost: 0,
-    currentPrice: 89.92,
+    currentPrice: 89.85,
     dividendYield: 4.43,
     annualDividendPerShare: 3.98,
     dividendFrequency: "monthly",
     sector: "채권",
     color: "#06b6d4",
-    rawValue: "$1,410.79",
-    rawGain: "+$28.17 (+2.037%)",
+    rawValue: "$1,409.69",
+    rawGain: "+$27.07 (+1.958%)",
     currency: "USD",
   },
   {
@@ -237,14 +237,14 @@ export const holdings: Holding[] = [
     name: "TSLA",
     shares: 1.09,
     avgCost: 0,
-    currentPrice: 408.39,
+    currentPrice: 408.38,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "기술주",
     color: "#ef4444",
-    rawValue: "$445.15",
-    rawGain: "-$5.98 (-1.326%)",
+    rawValue: "$445.13",
+    rawGain: "-$5.99 (-1.328%)",
     currency: "USD",
   },
   {
@@ -252,14 +252,14 @@ export const holdings: Holding[] = [
     name: "TGT",
     shares: 3.522,
     avgCost: 0,
-    currentPrice: 115.05,
+    currentPrice: 115.03,
     dividendYield: 3.91,
     annualDividendPerShare: 4.5,
     dividendFrequency: "quarterly",
     sector: "필수 소비재",
     color: "#84cc16",
-    rawValue: "$405.22",
-    rawGain: "+$79.56 (+24.43%)",
+    rawValue: "$405.12",
+    rawGain: "+$79.46 (+24.4%)",
     currency: "USD",
   },
   {
