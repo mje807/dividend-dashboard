@@ -1,6 +1,6 @@
 // 자동 생성 - therich.io 스크래핑
 // 마지막 업데이트: 2026-02-24
-// 총 자산: ₩59,099,664
+// 총 자산: ₩59,075,321
 
 export interface Holding {
   ticker: string;
@@ -28,11 +28,11 @@ export interface PortfolioSummary {
 }
 
 export const portfolioSummary: PortfolioSummary = {
-  totalAsset: "₩59,099,664",
+  totalAsset: "₩59,075,321",
   annualDividend: "₩1,857,247",
   dividendYield: "1.74%",
   investDividendYield: "1.96%",
-  totalReturn: "총 수익 +₩11,721,744(+13.41%)",
+  totalReturn: "총 수익 +₩11,704,641(+13.39%)",
   lastUpdated: "2026-02-24",
 };
 
@@ -117,14 +117,14 @@ export const holdings: Holding[] = [
     name: "NVDA",
     shares: 22.76,
     avgCost: 0,
-    currentPrice: 190.76,
+    currentPrice: 190.66,
     dividendYield: 0.02,
     annualDividendPerShare: 0.04,
     dividendFrequency: "quarterly",
     sector: "기술주",
     color: "#f59e0b",
-    rawValue: "$4,341.59",
-    rawGain: "+$2,035.67 (+88.28%)",
+    rawValue: "$4,339.32",
+    rawGain: "+$2,033.39 (+88.18%)",
     currency: "USD",
   },
   {
@@ -147,14 +147,14 @@ export const holdings: Holding[] = [
     name: "BTC / KRW",
     shares: 0.0515,
     avgCost: 0,
-    currentPrice: 92383048.54,
+    currentPrice: 92317067.96,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "가상자산",
     color: "hsl(259, 70%, 60%)",
-    rawValue: "₩4,757,727",
-    rawGain: "-₩1,839,392 (-27.88%)",
+    rawValue: "₩4,754,329",
+    rawGain: "-₩1,842,790 (-27.93%)",
     currency: "KRW",
   },
   {
@@ -237,14 +237,14 @@ export const holdings: Holding[] = [
     name: "TSLA",
     shares: 1.09,
     avgCost: 0,
-    currentPrice: 398.72,
+    currentPrice: 398.85,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "기술주",
     color: "#ef4444",
-    rawValue: "$434.61",
-    rawGain: "-$16.14 (-3.581%)",
+    rawValue: "$434.75",
+    rawGain: "-$16 (-3.55%)",
     currency: "USD",
   },
   {
