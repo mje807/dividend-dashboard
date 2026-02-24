@@ -3645,6 +3645,52 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 이력은 매우 우수하지만 현재 핵심 수치 공백이 커서 수익성·밸류에이션 확인 전까지는 보수적 접근이 적절합니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // MGEE — MGE 에너지 (배당왕족주, 50년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "MGEE",
+    analyzedAt: "2026-02-25 07:00 KST",
+    businessSummary: "MGE 에너지는 위스콘신 매디슨 지역을 중심으로 전기·가스 유틸리티 서비스를 제공하는 규제형 공익기업입니다. 안정적인 요금 기반 수익 구조를 바탕으로 송배전 인프라 투자와 청정에너지 전환을 병행하며 장기 배당 성장을 이어온 기업으로 평가됩니다.",
+    coreProducts: [
+      "전력 공급 및 송배전",
+      "천연가스 공급",
+      "재생에너지·발전 자산 운영",
+    ],
+    geographicPresence: "미국 위스콘신(매디슨 및 인근 서비스 권역) 중심의 지역 유틸리티",
+    dividendStreakYears: 50,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "50년 연속 배당 증가 이력을 유지해 온 점은 배당 정책의 일관성을 시사합니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "규제형 유틸리티의 현금흐름 안정성은 강점이지만, 금리·설비투자 부담에 따라 커버리지 변동 가능성이 있습니다.",
+    moatTypes: [
+      "efficient_scale",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "지역 독점에 가까운 유틸리티 사업 구조는 신규 진입이 매우 어렵고 수요 기반이 비교적 안정적입니다. 또한 인허가·규제 체계 자체가 사업자 수를 제한해 효율적 규모의 해자를 형성합니다. 다만 요금 승인과 수익성은 규제 당국 결정에 크게 좌우됩니다.",
+    revenueGrowthTrend: "완만한 성장(요금 조정과 설비투자 기반의 점진적 확대) 가능성이 높은 구조입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "유틸리티 특성상 실적 변동성은 상대적으로 낮지만, 자본집약적 산업이라 부채와 이자비용 관리가 핵심입니다. 규제자산 기반 확대는 중장기 수익 기반을 지지할 수 있으나, 금리 환경이 밸류에이션과 배당 매력도에 직접 영향을 줍니다.",
+    keyRisks: [
+      "금리 상승에 따른 배당주 상대 매력 하락",
+      "규제 당국의 요금 인상 승인 지연 또는 축소",
+      "대규모 설비투자 집행 시 비용 초과 및 수익성 압박",
+    ],
+    bullCase: "규제자산 투자와 요금기반 확대가 계획대로 진행되면 이익과 배당이 안정적으로 증가할 수 있습니다. 금리 하향 국면에서는 유틸리티 배당주의 멀티플 재평가 가능성도 있습니다.",
+    bearCase: "금리 고착과 규제 불확실성이 동시에 이어지면 밸류에이션 부담이 커지고 총수익률이 둔화될 수 있습니다. 투자비 회수 지연 시 배당 성장 속도도 낮아질 수 있습니다.",
+    valuationComment: "현재 핵심 밸류에이션 수치가 부재해 절대 저평가/고평가 판단은 제한적입니다. 유틸리티 특성상 과거 평균 배당수익률 대비 상단 구간(수익률 확대 구간)에서 분할 접근하는 전략이 유효합니다.",
+    recentDevelopments: [
+      "청정에너지 전환 및 전력 인프라 현대화 관련 중장기 투자 기조 지속",
+      "규제 환경과 금리 변화가 유틸리티 섹터 전반의 밸류에이션에 영향",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 이력은 우수하지만 현재 가격·수익성·밸류에이션 데이터 공백으로 매수 확신을 내리기 어렵습니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
