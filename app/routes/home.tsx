@@ -97,7 +97,14 @@ export default function Home() {
             className="flex items-center gap-2 bg-yellow-600 hover:bg-yellow-500 text-white px-4 py-2 rounded-lg text-sm transition-colors"
           >
             <Crown size={16} />
-            왕족·귀족주
+            배당주 워치리스트
+          </Link>
+          <Link
+            to="/growth"
+            className="flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm transition-colors"
+          >
+            <TrendingUp size={16} />
+            성장주 (분리)
           </Link>
           <Link
             to="/calculator"
