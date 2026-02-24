@@ -1,6 +1,6 @@
 // 자동 생성 - therich.io 스크래핑
 // 마지막 업데이트: 2026-02-24
-// 총 자산: ₩59,199,078
+// 총 자산: ₩59,154,839
 
 export interface Holding {
   ticker: string;
@@ -28,11 +28,11 @@ export interface PortfolioSummary {
 }
 
 export const portfolioSummary: PortfolioSummary = {
-  totalAsset: "₩59,199,078",
+  totalAsset: "₩59,154,839",
   annualDividend: "₩1,857,247",
   dividendYield: "1.74%",
   investDividendYield: "1.96%",
-  totalReturn: "총 수익 +₩11,740,562(+13.43%)",
+  totalReturn: "총 수익 +₩11,715,984(+13.4%)",
   lastUpdated: "2026-02-24",
 };
 
@@ -49,7 +49,7 @@ export const holdings: Holding[] = [
     sector: "ETF",
     color: "#22c55e",
     rawValue: "$12,920.43",
-    rawGain: "+$2,273.45 (+21.35%)",
+    rawGain: "+$2,284.51 (+21.48%)",
     currency: "USD",
   },
   {
@@ -79,7 +79,7 @@ export const holdings: Holding[] = [
     sector: "리츠",
     color: "#6366f1",
     rawValue: "$6,055.8",
-    rawGain: "+$1,162.46 (+23.76%)",
+    rawGain: "+$1,167.54 (+23.88%)",
     currency: "USD",
   },
   {
@@ -117,14 +117,14 @@ export const holdings: Holding[] = [
     name: "NVDA",
     shares: 22.76,
     avgCost: 0,
-    currentPrice: 190.22,
+    currentPrice: 189.51,
     dividendYield: 0.02,
     annualDividendPerShare: 0.04,
     dividendFrequency: "quarterly",
     sector: "기술주",
     color: "#f59e0b",
-    rawValue: "$4,329.3",
-    rawGain: "+$2,019.87 (+87.46%)",
+    rawValue: "$4,313.15",
+    rawGain: "+$2,006.11 (+86.96%)",
     currency: "USD",
   },
   {
@@ -132,14 +132,14 @@ export const holdings: Holding[] = [
     name: "QQQM",
     shares: 14.1,
     avgCost: 0,
-    currentPrice: 248.35,
+    currentPrice: 248.19,
     dividendYield: 0.49,
     annualDividendPerShare: 1.22,
     dividendFrequency: "quarterly",
     sector: "ETF",
     color: "#8b5cf6",
-    rawValue: "$3,501.7",
-    rawGain: "+$985.04 (+39.14%)",
+    rawValue: "$3,499.44",
+    rawGain: "+$985.4 (+39.2%)",
     currency: "USD",
   },
   {
@@ -147,14 +147,14 @@ export const holdings: Holding[] = [
     name: "BTC / KRW",
     shares: 0.0515,
     avgCost: 0,
-    currentPrice: 92889961.17,
+    currentPrice: 92641009.71,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "가상자산",
     color: "hsl(259, 70%, 60%)",
-    rawValue: "₩4,783,833",
-    rawGain: "-₩1,813,286 (-27.49%)",
+    rawValue: "₩4,771,012",
+    rawGain: "-₩1,826,107 (-27.68%)",
     currency: "KRW",
   },
   {
@@ -207,14 +207,14 @@ export const holdings: Holding[] = [
     name: "TLT",
     shares: 15.69,
     avgCost: 0,
-    currentPrice: 89.85,
+    currentPrice: 89.97,
     dividendYield: 4.43,
-    annualDividendPerShare: 3.98,
+    annualDividendPerShare: 3.99,
     dividendFrequency: "monthly",
     sector: "채권",
     color: "#06b6d4",
-    rawValue: "$1,409.69",
-    rawGain: "+$26.11 (+1.887%)",
+    rawValue: "$1,411.57",
+    rawGain: "+$29.43 (+2.129%)",
     currency: "USD",
   },
   {
@@ -237,14 +237,14 @@ export const holdings: Holding[] = [
     name: "TSLA",
     shares: 1.09,
     avgCost: 0,
-    currentPrice: 397.73,
+    currentPrice: 397.17,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "기술주",
     color: "#ef4444",
-    rawValue: "$433.53",
-    rawGain: "-$17.91 (-3.967%)",
+    rawValue: "$432.91",
+    rawGain: "-$18.06 (-4.005%)",
     currency: "USD",
   },
   {
@@ -259,7 +259,7 @@ export const holdings: Holding[] = [
     sector: "필수 소비재",
     color: "#84cc16",
     rawValue: "$399.84",
-    rawGain: "+$73.95 (+22.69%)",
+    rawGain: "+$74.29 (+22.82%)",
     currency: "USD",
   },
   {
@@ -274,7 +274,7 @@ export const holdings: Holding[] = [
     sector: "ETF",
     color: "#f97316",
     rawValue: "$266.45",
-    rawGain: "-$31.61 (-10.61%)",
+    rawGain: "-$31.3 (-10.51%)",
     currency: "USD",
   },
   {
@@ -289,7 +289,7 @@ export const holdings: Holding[] = [
     sector: "ETF",
     color: "#0ea5e9",
     rawValue: "$159.27",
-    rawGain: "-$2.76 (-1.702%)",
+    rawGain: "-$2.59 (-1.6%)",
     currency: "USD",
   },
   {
