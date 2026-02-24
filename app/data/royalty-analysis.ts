@@ -3456,6 +3456,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업·배당의 질은 우수하나 현재 제공된 수치가 없어 가격 매력도를 확인하기 전까지는 보수적 접근이 합리적입니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // PEP — 펩시코 (배당왕족주, 53년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "PEP",
+    analyzedAt: "2026-02-25 05:00 KST",
+    businessSummary: "펩시코는 탄산음료(펩시, 마운틴듀)와 스낵(레이즈, 도리토스, 치토스)을 함께 보유한 글로벌 식음료 기업입니다. 음료보다 수익성이 높은 스낵 비중이 큰 구조 덕분에 경기 둔화 구간에서도 상대적으로 안정적인 현금흐름을 창출하는 경기방어형 사업 모델을 갖고 있습니다. 유통·마케팅·제품 포트폴리오를 결합한 규모의 경제가 강점입니다.",
+    coreProducts: [
+      "탄산/비탄산 음료(Pepsi, Mountain Dew, Gatorade)",
+      "스낵(Frito-Lay: Lay’s, Doritos, Cheetos)",
+      "간편식·시리얼·기타 식품(Quaker 등)",
+    ],
+    geographicPresence: "북미 비중이 가장 크고, 유럽·중남미·아시아/중동/아프리카로 분산된 글로벌 매출 구조",
+    dividendStreakYears: 53,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "53년 연속 배당 증가 이력을 유지하며 최근에도 증배 기조를 이어가는 배당 성장주 성격이 강합니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "필수소비재 중심의 방어적 수요와 강한 브랜드 파워로 경기 변동기에도 배당 지속 가능성이 높은 편입니다.",
+    moatTypes: [
+      "brand",
+      "cost_advantage",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "펩시코는 음료와 스낵 양축 브랜드 자산이 매우 강해 가격 인상 전가력이 상대적으로 높습니다. 대형 유통망과 물류·마케팅 규모의 경제로 경쟁사 대비 원가·진열·판촉 효율이 우수하며, 장기간 구축된 무형자산이 진입장벽으로 작동합니다.",
+    revenueGrowthTrend: "성숙 기업 특성상 고성장보다는 가격·믹스 개선과 신제품 중심의 완만한 성장 추세입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "현금창출력이 높은 사업 구조 덕분에 배당과 자사주 환원을 병행할 수 있는 체력을 보유한 편입니다. 다만 원재료·물류·환율 변동에 따라 단기 수익성이 흔들릴 수 있어 비용 통제력이 중요합니다. 전반적으로 방어적 재무 체질로 평가됩니다.",
+    keyRisks: [
+      "원재료(설탕·옥수수·포장재) 및 물류비 상승에 따른 마진 압박",
+      "건강/규제 트렌드 변화(당류·가공식품 규제)로 제품 믹스 전환 비용 확대",
+      "신흥국 환율 및 거시 둔화로 해외 실적 변동성 확대",
+    ],
+    bullCase: "스낵 중심의 고마진 포트폴리오와 가격 결정력이 유지되면 이익 방어와 점진적 EPS 성장이 가능하고, 배당 증가가 장기 복리 수익을 뒷받침할 수 있습니다.",
+    bearCase: "소비 둔화와 비용 인플레이션이 동반되면 가격 전가 한계로 마진이 훼손되고, 밸류에이션 부담이 있는 구간에서는 주가 조정 폭이 커질 수 있습니다.",
+    valuationComment: "현재 핵심 밸류에이션 수치가 비어 있어 정밀 판단은 제한적입니다. 일반적으로 펩시코는 프리미엄이 붙는 방어주 성격이므로, 과거 평균 대비 배당수익률이 의미 있게 높아지는 조정 구간에서 분할 매수 접근이 유리합니다.",
+    recentDevelopments: [
+      "글로벌 인플레이션 환경에서 가격·제품믹스 중심의 수익성 방어 전략 지속",
+      "건강 지향·저당 트렌드 대응을 위한 포트폴리오 리밸런싱 및 신제품 확대",
+    ],
+    overallRating: "관망",
+    ratingReason: "사업·배당의 질은 높지만 현재 제공된 밸류에이션 데이터 부재로 매수 가격 메리트 판단이 어려워 대기 전략이 합리적입니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
