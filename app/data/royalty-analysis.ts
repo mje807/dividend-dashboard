@@ -2892,6 +2892,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 연속성은 매우 우수하나, 금리·규제·밸류에이션 데이터 확인 전에는 공격적 진입보다 조건부 분할 접근이 적절합니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // FMCB — 파머스 & 머천트 밴코프 (배당왕족주, 61년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "FMCB",
+    analyzedAt: "2026-02-24 22:30 KST",
+    businessSummary: "FMCB(파머스 & 머천트 밴코프)는 지역 기반 상업은행 지주사로, 예금 수취와 대출(상업용·부동산·소비자)을 중심으로 전통적인 은행업을 영위합니다. 관계형 영업과 보수적 여신 운영을 통해 안정적인 이자이익과 수수료수익을 추구하는 구조입니다.",
+    coreProducts: [
+      "지역 예금(요구불·저축·정기예금)",
+      "상업용/부동산/소비자 대출",
+      "기초 금융서비스(결제·현금관리·온라인/모바일 뱅킹)",
+    ],
+    geographicPresence: "미국 내 지역은행 중심(캘리포니아 기반 비중이 높은 내수형 구조로 추정)",
+    dividendStreakYears: 61,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "61년 연속 배당 증가 이력은 강점이나, 최근 수치 데이터 부재로 증가율 정량 평가는 제한적입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "장기 배당 이력은 긍정적이지만 현재 배당성향·수익성·자본비율 정량값 부재로 안전성을 보수적으로 판단합니다.",
+    moatTypes: [
+      "switching_costs",
+      "efficient_scale",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "지역은행은 고객 관계 기반의 전환비용과 지역 내 영업망에서 오는 효율적 규모를 가질 수 있습니다. 다만 전국 대형은행 대비 가격/상품 경쟁력이 제한될 수 있어 해자는 넓기보다 협소한 편으로 보는 것이 합리적입니다.",
+    revenueGrowthTrend: "금리 사이클과 대출 성장률에 연동되는 완만한 성장/둔화 반복 가능성이 큽니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "은행업 특성상 레버리지를 활용하므로 절대 부채보다 자본적정성과 대손관리의 질이 핵심입니다. 본 건은 ROE, 배당성향, 밸류에이션 지표가 비어 있어 현재 재무 체력에 대한 확정적 결론은 유보가 필요합니다.",
+    keyRisks: [
+      "지역 경기 둔화 시 대출자산 건전성 악화",
+      "예금 조달비용 상승에 따른 순이자마진 압박",
+      "규제·자본요건 강화로 주주환원 여력 축소",
+    ],
+    bullCase: "금리 안정과 지역 대출 수요 회복이 동시에 나타나면 순이자마진 및 이익 안정성이 개선될 수 있습니다. 장기 배당 성장 스토리가 재평가되면 밸류에이션 프리미엄이 가능해집니다.",
+    bearCase: "경기 둔화와 신용비용 상승이 겹치면 이익·배당 여력이 동시에 약화될 수 있습니다. 유동성 경쟁 심화로 예금 유치 비용이 오르면 수익성이 빠르게 악화될 위험이 있습니다.",
+    valuationComment: "현재가·PER·PBR·DDM·목표가가 모두 부재해 절대/상대가치 판단이 불가능합니다. 매수 검토 전 최소한 최근 3~5년 배당성향, CET1(또는 유사 자본지표), 대손비용 추세 확인이 선행되어야 합니다.",
+    recentDevelopments: [
+      "제공된 데이터 기준 정량 지표 공백으로 최근 실적/가이던스 반영 평가가 제한적",
+      "배당왕(61년 연속 증배) 이력 자체는 장기 주주환원 신호로 유효",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 이력은 매우 우수하지만 핵심 밸류에이션·재무지표 공백으로 현재 시점 투자판단 근거가 부족합니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
