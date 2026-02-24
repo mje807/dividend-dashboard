@@ -2987,6 +2987,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 연속성은 매우 우수하지만 현재 제공된 정량 데이터 공백이 커서, 진입 가격과 배당 커버리지 확인 전까지는 관망이 합리적입니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SCL — 스테판 (배당왕족주, 57년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "SCL",
+    analyzedAt: "2026-02-25 00:00 KST",
+    businessSummary: "스테판(Stepan Company)은 계면활성제, 폴리올, 특수화학 제품을 생산하는 특수화학 소재 기업입니다. 생활용품·산업재·건축 단열재 등 다양한 최종 시장에 원재료를 공급하며 경기 민감성과 원재료 가격 변동의 영향을 함께 받습니다. 장기적으로는 고부가 스페셜티 제품 비중 확대와 안정적인 배당 성장 기록이 강점입니다.",
+    coreProducts: [
+      "계면활성제(Surfactants)",
+      "폴리올(Polyols)",
+      "특수화학 제품(Specialty Products)",
+    ],
+    geographicPresence: "북미 중심의 글로벌 사업 구조(미주 비중이 높고, 유럽·아시아·중남미로 분산)",
+    dividendStreakYears: 57,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "57년 연속 배당 인상을 이어가며 소폭이지만 배당 성장 기조를 유지하고 있습니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "장기 배당 이력은 매우 우수하지만, 화학 업종 특성상 수요 사이클과 원재료/스프레드 변동으로 이익 변동성이 존재합니다.",
+    moatTypes: [
+      "switching_costs",
+      "cost_advantage",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "고객 맞춤형 포뮬레이션과 품질 인증, 장기 거래 관계로 전환 비용이 일정 수준 존재합니다. 규모의 경제와 공정 노하우가 원가 경쟁력에 기여하지만, 업계 전반의 경쟁도 높아 절대적 지배력은 제한적입니다. 따라서 해자는 존재하되 폭은 넓지 않은 편으로 판단됩니다.",
+    revenueGrowthTrend: "최근은 업황 둔화 구간을 거치며 변동성이 있었고, 중장기적으로는 완만한 회복/성장 가능성이 있습니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "재무 구조는 전반적으로 관리 가능한 범위로 보이며, 배당을 지속할 수 있는 기본 체력은 갖춘 편입니다. 다만 화학 소재 특성상 마진은 원재료 가격, 가동률, 제품 믹스에 따라 분기 변동이 발생할 수 있습니다. 배당 안정성은 높지만 성장 속도는 보수적으로 보는 접근이 합리적입니다.",
+    keyRisks: [
+      "원재료 가격 및 에너지 비용 급등에 따른 마진 압박",
+      "경기 둔화 시 산업재·건설 관련 수요 약화",
+      "환경 규제 강화 및 공정/설비 투자 부담 증가",
+    ],
+    bullCase: "고부가 제품 비중 확대와 수요 회복이 동시에 나타나면 이익 레버리지가 커질 수 있습니다. 이 경우 배당 성장 지속성과 밸류에이션 재평가가 함께 가능해집니다.",
+    bearCase: "수요 부진이 길어지고 원가 부담이 지속되면 수익성 회복이 지연될 수 있습니다. 배당은 유지하더라도 주가 모멘텀은 제한될 가능성이 큽니다.",
+    valuationComment: "현재 제공된 정량 지표가 없어 절대적 저평가/고평가 단정은 어렵습니다. 화학 업종 특성상 실적 저점 구간에서 분할 접근하고, 정상화 이익 기준 밸류에이션이 보수 구간으로 내려올 때 매수하는 전략이 유효합니다.",
+    recentDevelopments: [
+      "배당 귀족/킹 수준의 장기 배당 인상 기록을 지속",
+      "수요·마진 정상화 여부가 실적 회복의 핵심 변수로 부각",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 이력은 탁월하지만 현재 핵심 밸류에이션/수익성 지표 공백으로 매수 확신 구간 판단이 제한적입니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
