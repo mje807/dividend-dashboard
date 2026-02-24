@@ -3034,6 +3034,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 이력은 탁월하지만 현재 핵심 밸류에이션/수익성 지표 공백으로 매수 확신 구간 판단이 제한적입니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SWK — 스탠리 블랙 & 데커 (배당왕족주, 57년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "SWK",
+    analyzedAt: "2026-02-25 00:30 KST",
+    businessSummary: "스탠리 블랙 & 데커는 전동공구·핸드툴(DeWALT, Stanley, Craftsman)과 산업용 체결 솔루션을 중심으로 운영되는 글로벌 산업재 기업입니다. 주택 리모델링·건설·제조 경기와 연동되는 수요 구조를 가지며, 최근에는 재고 정상화와 비용 절감을 통해 수익성 회복에 집중하고 있습니다.",
+    coreProducts: [
+      "전동공구 및 핸드툴",
+      "산업용 체결·엔지니어링 솔루션",
+      "전문가용/소비자용 공구 플랫폼 및 액세서리",
+    ],
+    geographicPresence: "미국 중심 매출 구조이며 유럽·신흥국을 포함한 글로벌 판매망 보유 (대략 북미 비중이 가장 큼)",
+    dividendStreakYears: 57,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 배당은 연속 증액 기조는 유지했지만 인상 폭은 매우 보수적인 수준입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "긴 배당 역사와 브랜드 경쟁력은 강점이지만 경기민감 업황과 수익성 변동, 부채 부담이 배당 여력을 제약할 수 있습니다.",
+    moatTypes: [
+      "brand",
+      "cost_advantage",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "DeWALT·Stanley·Craftsman 등 강한 브랜드 자산은 유통 채널 협상력과 반복 구매를 지지합니다. 대규모 조달·생산·유통 네트워크는 원가 경쟁력에 기여하지만, 공구 시장은 경쟁이 치열해 초과이익의 지속성은 제한적입니다. 따라서 해자는 존재하나 폭은 넓지 않은 편으로 판단됩니다.",
+    revenueGrowthTrend: "최근 몇 년은 경기 둔화와 채널 재고조정 영향으로 변동성이 컸고, 중기적으로는 완만한 회복이 핵심 변수입니다.",
+    marginTrend: "contracting",
+    debtLevel: "high",
+    financialSummary: "현금창출력 자체는 견조한 편이지만, 최근 사이클에서 이익률 압박과 구조조정 비용이 부담으로 작용했습니다. 부채 축소(디레버리징) 진행 여부가 재무 안정성 개선의 핵심입니다. 배당 지속성은 높지만 공격적 증액 여력은 제한적일 수 있습니다.",
+    keyRisks: [
+      "주택·건설 경기 둔화 장기화",
+      "원자재/물류/프로모션 비용 압박으로 인한 마진 훼손",
+      "부채 부담 지속 시 자본배분 유연성 저하",
+    ],
+    bullCase: "재고 정상화와 비용절감이 예상보다 빠르게 반영되면 마진이 회복되고 이익 레버리지가 커질 수 있습니다. 이 경우 밸류에이션 리레이팅과 함께 배당 안정성 프리미엄이 재평가될 가능성이 있습니다.",
+    bearCase: "수요 부진이 길어지고 가격경쟁이 심화되면 이익 회복이 지연될 수 있습니다. 부채 부담이 높은 상태에서 현금흐름이 약화되면 배당 성장 여력이 더 축소될 수 있습니다.",
+    valuationComment: "사이클 저점 통과 신호(마진 반등·재고 정상화)가 확인되기 전에는 할인된 구간에서 분할 접근이 유리합니다. 배당주 관점에서는 고배당만 보기보다 잉여현금흐름 회복 속도를 함께 확인하는 보수적 매수 전략이 적절합니다.",
+    recentDevelopments: [
+      "원가절감·조직 슬림화 중심의 구조조정 및 운영 효율화 지속",
+      "재고 조정 이후 수요 정상화와 마진 회복 여부가 실적 핵심 변수로 부각",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 이력은 최상위지만 경기민감도와 재무 부담을 감안하면 실적 회복 확인 후 접근이 더 안전합니다.",
+    targetBuyPrice: 75,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
