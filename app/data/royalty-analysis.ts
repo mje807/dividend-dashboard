@@ -3363,6 +3363,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 이력은 우수하지만 현재 핵심 정량지표가 모두 결측이라 매수 판단 근거가 부족합니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ABBV — 애브비 (배당왕족주, 53년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "ABBV",
+    analyzedAt: "2026-02-25 04:00 KST",
+    businessSummary: "애브비는 면역학, 종양학, 신경과학, 에스테틱(미용) 분야의 처방의약품을 개발·판매하는 글로벌 바이오제약 기업입니다. 휴미라 특허절벽 이후 스카이리지(Skyrizi)와 린버크(Rinvoq)를 중심으로 성장 축을 재편하며 매출 구조를 전환하고 있습니다. 알러간 인수로 보톡스 등 에스테틱 포트폴리오를 확보해 현금흐름 다변화도 진행했습니다.",
+    coreProducts: [
+      "스카이리지(Skyrizi)",
+      "린버크(Rinvoq)",
+      "보톡스(Botox)",
+    ],
+    geographicPresence: "미국 비중이 가장 크고, 유럽·일본·신흥국 등 국제 매출이 보완하는 글로벌 구조",
+    dividendStreakYears: 53,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근에도 연간 배당 인상을 이어가며 주주환원 기조를 유지하고 있습니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "강한 현금창출력이 있으나 대형 인수 이후 부채와 의약품 특허 리스크를 함께 관리해야 합니다.",
+    moatTypes: [
+      "intangible_assets",
+      "switching_costs",
+      "brand",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "신약 특허, 임상·허가 역량, 글로벌 영업망은 제약 산업에서 진입장벽이 높은 무형자산 해자를 형성합니다. 만성질환 치료제의 경우 처방 관성과 환자 전환 비용이 존재해 매출 방어력에 기여합니다. 다만 핵심 제품의 특허 만료 시점마다 해자 강도가 일시적으로 약해질 수 있습니다.",
+    revenueGrowthTrend: "휴미라 감소를 신제품 성장으로 상쇄하며 중기적으로 회복 추세를 보이는 구간입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "애브비는 대형 제약사 수준의 영업현금흐름과 높은 수익성을 기반으로 배당과 R&D를 병행합니다. 알러간 인수 이후 부채 축소를 지속해 재무 레버리지를 점진적으로 개선해 왔습니다. 향후 핵심 파이프라인의 상업화 속도가 재무 탄력성의 핵심 변수입니다.",
+    keyRisks: [
+      "주요 블록버스터의 특허 만료 및 바이오시밀러 경쟁 심화",
+      "미국 약가 규제 및 리베이트 구조 변화",
+      "임상 실패·허가 지연에 따른 파이프라인 가치 훼손",
+    ],
+    bullCase: "스카이리지·린버크의 고성장이 휴미라 공백을 빠르게 메우고, 에스테틱 사업이 경기 회복과 함께 반등하면 이익과 배당 여력이 동반 개선될 수 있습니다. 부채 축소가 추가로 진행되면 멀티플 재평가 가능성도 있습니다.",
+    bearCase: "신제품 성장률이 기대에 못 미치거나 규제·약가 압력이 확대되면 이익 회복이 지연될 수 있습니다. 이 경우 배당 성장 속도 둔화와 밸류에이션 디레이팅이 동시에 나타날 수 있습니다.",
+    valuationComment: "현재 제시된 정량 지표가 없어 절대적 저평가/고평가 판단은 제한적입니다. 일반적으로는 배당수익률이 과거 평균 대비 상단에 위치하고, 신제품 매출 모멘텀이 확인되는 조정 구간에서 분할매수 접근이 유효합니다.",
+    recentDevelopments: [
+      "휴미라 이후 포트폴리오 전환의 핵심인 스카이리지·린버크 매출 비중 확대",
+      "에스테틱 및 신경과학 포트폴리오를 통한 사업 다변화와 부채 관리 병행",
+    ],
+    overallRating: "관심",
+    ratingReason: "고품질 파이프라인과 주주환원 매력은 유효하지만 특허·규제 변수 확인이 필요한 구간입니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
