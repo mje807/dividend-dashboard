@@ -1,6 +1,6 @@
 // 자동 생성 - therich.io 스크래핑
 // 마지막 업데이트: 2026-02-24
-// 총 자산: ₩59,158,067
+// 총 자산: ₩59,095,905
 
 export interface Holding {
   ticker: string;
@@ -28,11 +28,11 @@ export interface PortfolioSummary {
 }
 
 export const portfolioSummary: PortfolioSummary = {
-  totalAsset: "₩59,158,067",
+  totalAsset: "₩59,095,905",
   annualDividend: "₩1,857,247",
   dividendYield: "1.74%",
   investDividendYield: "1.96%",
-  totalReturn: "총 수익 +₩11,751,737(+13.44%)",
+  totalReturn: "총 수익 +₩11,690,029(+13.37%)",
   lastUpdated: "2026-02-24",
 };
 
@@ -117,14 +117,14 @@ export const holdings: Holding[] = [
     name: "NVDA",
     shares: 22.76,
     avgCost: 0,
-    currentPrice: 190.25,
+    currentPrice: 190.3,
     dividendYield: 0.02,
     annualDividendPerShare: 0.04,
     dividendFrequency: "quarterly",
     sector: "기술주",
     color: "#f59e0b",
-    rawValue: "$4,329.99",
-    rawGain: "+$2,022.95 (+87.69%)",
+    rawValue: "$4,331.12",
+    rawGain: "+$2,024.08 (+87.74%)",
     currency: "USD",
   },
   {
@@ -147,14 +147,14 @@ export const holdings: Holding[] = [
     name: "BTC / KRW",
     shares: 0.0515,
     avgCost: 0,
-    currentPrice: 92602019.42,
+    currentPrice: 92310077.67,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "가상자산",
     color: "hsl(259, 70%, 60%)",
-    rawValue: "₩4,769,004",
-    rawGain: "-₩1,828,116 (-27.71%)",
+    rawValue: "₩4,753,969",
+    rawGain: "-₩1,843,151 (-27.94%)",
     currency: "KRW",
   },
   {
@@ -207,14 +207,14 @@ export const holdings: Holding[] = [
     name: "TLT",
     shares: 15.69,
     avgCost: 0,
-    currentPrice: 89.87,
+    currentPrice: 89.8,
     dividendYield: 4.43,
     annualDividendPerShare: 3.98,
     dividendFrequency: "monthly",
     sector: "채권",
     color: "#06b6d4",
-    rawValue: "$1,410",
-    rawGain: "+$27.86 (+2.016%)",
+    rawValue: "$1,408.9",
+    rawGain: "+$26.76 (+1.936%)",
     currency: "USD",
   },
   {
@@ -237,14 +237,14 @@ export const holdings: Holding[] = [
     name: "TSLA",
     shares: 1.09,
     avgCost: 0,
-    currentPrice: 398.06,
+    currentPrice: 398.16,
     dividendYield: 0,
     annualDividendPerShare: 0,
     dividendFrequency: "quarterly",
     sector: "기술주",
     color: "#ef4444",
-    rawValue: "$433.89",
-    rawGain: "-$17.08 (-3.788%)",
+    rawValue: "$433.99",
+    rawGain: "-$16.98 (-3.766%)",
     currency: "USD",
   },
   {
