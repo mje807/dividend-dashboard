@@ -50,6 +50,24 @@ export default function Watchlist() {
     royaltyStocks.map(s => {
       const m = getRoyaltyMetrics(s.ticker);
       const att = calcAttractiveness(m, s.streak);
+
+      // growth 카테고리는 royalty-metrics 미수집 시 growth-score로 fallback
+      if (!att && s.category === "growth") {
+        const gm = getMetrics(s.ticker);
+        const gs = calcGrowthScore(gm);
+        const fallback = {
+          score: gs.score,
+          label: gs.label === "강함" ? "성장 강함" : gs.label === "주의" ? "성장 주의" : "성장 보통",
+          color: gs.color,
+          bgColor: gs.label === "강함"
+            ? "bg-emerald-900/30 border-emerald-700/40"
+            : gs.label === "주의"
+              ? "bg-red-900/30 border-red-700/40"
+              : "bg-yellow-900/30 border-yellow-700/40",
+        };
+        return { ...s, attractivenessScore: fallback.score, attractiveness: fallback };
+      }
+
       return { ...s, attractivenessScore: att?.score ?? 5, attractiveness: att };
     }), []
   );
