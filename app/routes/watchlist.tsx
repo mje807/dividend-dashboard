@@ -13,7 +13,7 @@ export function meta() {
 }
 
 type Mode = "dividend" | "growth";
-type Category = "all" | "king" | "aristocrat";
+type Category = "all" | "king" | "aristocrat" | "growth";
 type AttrFilter = "all" | "buy" | "neutral" | "caution";
 type SortKey = "streak" | "dividendYield" | "price" | "peRatio" | "payoutRatio" | "attractiveness";
 
@@ -40,6 +40,7 @@ export default function Watchlist() {
 
   const kingCount = royaltyStocks.filter(s => s.category === "king").length;
   const aristoCount = royaltyStocks.filter(s => s.category === "aristocrat").length;
+  const growthDivCount = royaltyStocks.filter(s => s.category === "growth").length;
   const avgYield = royaltyStocks.length
     ? (royaltyStocks.reduce((s, r) => s + r.dividendYield, 0) / royaltyStocks.length).toFixed(2)
     : "0";
@@ -153,7 +154,7 @@ export default function Watchlist() {
       {mode === "dividend" && (
       <>
       {/* 요약 카드 */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
         <SummaryCard
           icon={<Crown size={18} className="text-yellow-400" />}
           label="배당 왕족주"
@@ -167,6 +168,13 @@ export default function Watchlist() {
           value={`${aristoCount}개`}
           sub="25년+ 연속 증가"
           subColor="text-indigo-400"
+        />
+        <SummaryCard
+          icon={<TrendingUp size={18} className="text-emerald-400" />}
+          label="배당성장주"
+          value={`${growthDivCount}개`}
+          sub="10~24년 증가"
+          subColor="text-emerald-400"
         />
         <SummaryCard
           icon={<TrendingUp size={18} className="text-green-400" />}
@@ -190,7 +198,7 @@ export default function Watchlist() {
         <div className="flex flex-wrap items-center gap-2">
           {/* 카테고리 탭 */}
           <div className="flex gap-1 bg-gray-900 rounded-xl p-1">
-            {(["all", "king", "aristocrat"] as Category[]).map(c => (
+            {(["all", "king", "aristocrat", "growth"] as Category[]).map(c => (
               <button
                 key={c}
                 onClick={() => setCategory(c)}
@@ -200,7 +208,7 @@ export default function Watchlist() {
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                {c === "all" ? "전체" : c === "king" ? "👑 왕족주" : "🏆 귀족주"}
+                {c === "all" ? "전체" : c === "king" ? "👑 왕족주" : c === "aristocrat" ? "🏆 귀족주" : "🌱 배당성장주"}
               </button>
             ))}
           </div>
