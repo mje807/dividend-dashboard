@@ -3737,6 +3737,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 이력은 우수하지만 고점권 주가와 높은 배당성향을 감안하면 현재는 보수적 대기 구간입니다.",
     targetBuyPrice: 58,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // PNR — 펜테어 (배당귀족주, 48년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "PNR",
+    analyzedAt: "2026-02-25 08:00 KST",
+    businessSummary: "펜테어(PNR)는 수처리, 유체 제어, 수영장·상업용 워터 솔루션을 제공하는 산업재 기업입니다. 주거·상업·산업 고객을 대상으로 물의 이동, 여과, 품질 관리에 필요한 장비와 시스템을 판매하며 교체 수요와 유지보수 수요가 반복적으로 발생하는 구조를 갖고 있습니다.",
+    coreProducts: [
+      "수처리·여과 시스템",
+      "펌프·밸브·유체 제어 장비",
+      "수영장 장비 및 워터 솔루션",
+    ],
+    geographicPresence: "북미 중심 매출 구조이며 유럽·기타 지역으로 분산된 글로벌 판매망을 보유",
+    dividendStreakYears: 48,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 14.8%로 배당 성장 속도는 견조한 편입니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 25.4%로 여유가 크고 장기 연속 증배 이력이 배당 지속 가능성을 뒷받침합니다.",
+    moatTypes: [
+      "intangible_assets",
+      "switching_costs",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "펜테어는 산업·상업용 물 관리 영역에서 브랜드 신뢰와 유통·서비스 네트워크를 기반으로 고객 락인을 형성합니다. 설치 후 교체·보수 중심의 반복 수요가 발생해 수익 안정성이 상대적으로 높습니다. 다만 완전한 독점 구조보다는 경쟁사와 기술·가격 경쟁이 공존해 해자는 좁은 편으로 판단됩니다.",
+    revenueGrowthTrend: "경기와 최종시장 수요에 따라 변동은 있으나 중장기적으로는 물 인프라·수처리 수요에 연동된 완만한 성장 추세입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "ROE 17.5%로 수익성은 양호하며 자본 효율도 준수합니다. D/E 42.4는 과도하지 않은 수준으로 해석되나 금리 환경에 따라 이자비용 부담은 점검이 필요합니다. 저배당성향과 증배 여력 조합으로 재무 유연성은 비교적 탄탄한 편입니다.",
+    keyRisks: [
+      "산업 경기 둔화 시 설비투자 및 교체 수요 약화",
+      "원자재·물류·인건비 상승에 따른 마진 압박",
+      "금리·환율 변동 및 글로벌 수요 둔화로 실적 변동성 확대",
+    ],
+    bullCase: "물 인프라 투자와 수처리 규제 강화가 맞물리면 매출 믹스 개선과 이익률 방어가 가능해 밸류에이션 프리미엄이 유지될 수 있습니다. 낮은 배당성향을 바탕으로 증배와 자사주 매입이 병행되면 주주환원 매력도 높아질 수 있습니다.",
+    bearCase: "경기 둔화가 길어지면 산업·주거 수요가 동시에 약해져 실적과 멀티플이 함께 압축될 수 있습니다. 현재 주가가 평균 배당수익률 대비 높은 구간이라 실적 미스 시 조정 폭이 커질 수 있습니다.",
+    valuationComment: "현재 배당수익률(1.06%)이 5년 평균(1.25%)보다 낮아 배당 기준으로는 다소 비싼 구간입니다. Forward PER 17.7은 과열은 아니지만 Trailing PER 26.2와 52주 위치 72.2%를 감안하면 추격매수보다 조정 시 분할 접근이 유리합니다.",
+    recentDevelopments: [
+      "애널리스트 컨센서스는 buy이며 목표가 $113.68로 약 10.4% 상승여력을 제시",
+      "48년 연속 배당 증가 기록을 유지하며 배당 성장주 성격을 지속",
+    ],
+    overallRating: "관망",
+    ratingReason: "질적 체력은 우수하지만 현재 배당수익률이 과거 평균 대비 낮아 가격 메리트가 크지 않습니다.",
+    targetBuyPrice: 86.4,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
