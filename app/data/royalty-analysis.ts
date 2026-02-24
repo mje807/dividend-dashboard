@@ -3175,6 +3175,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "성장주는 아니지만 현금흐름 기반의 배당 매력은 유효해 기존 배당 포트폴리오 내 보유 관점이 타당합니다.",
     targetBuyPrice: 42,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // MSA — MSA 세이프티 (배당왕족주, 55년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "MSA",
+    analyzedAt: "2026-02-25 02:00 KST",
+    businessSummary: "MSA 세이프티는 산업 현장과 소방·구조 분야에서 인명 안전 장비를 설계·제조하는 전문 기업입니다. 가스·화염 감지, 호흡보호장비(SCBA), 소방 헬멧/보호구 등 고신뢰 제품을 중심으로 반복 교체 수요와 서비스 매출을 확보하는 구조입니다.",
+    coreProducts: [
+      "가스·화염 감지기 및 고정식 감지 시스템",
+      "소방/구조용 SCBA(자급식 호흡보호장비)",
+      "산업·소방용 헬멧/보호구 및 낙하방지 장비",
+    ],
+    geographicPresence: "북미 비중이 가장 크고, 유럽·중동·아시아 등 국제 시장으로 확장된 구조",
+    dividendStreakYears: 55,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "55년 연속 배당 증가 이력을 유지하며 방어적 배당 성장 기조를 이어가는 중",
+    dividendSafety: "strong",
+    dividendSafetyReason: "안전 규제 기반의 필수 수요와 제품 교체 주기 덕분에 경기 변동 대비 현금흐름 방어력이 높은 편",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "안전장비 시장은 신뢰성·인증·레퍼런스가 중요해 검증된 브랜드에 수요가 집중되는 경향이 있습니다. 고객은 장비 교체 시 교육·운용 표준·유지보수 체계 때문에 동일 벤더를 선호해 전환비용이 존재합니다. 다만 산업재 특성상 절대적 독점보다는 경쟁사와의 기술·가격 경쟁이 병행됩니다.",
+    revenueGrowthTrend: "중장기적으로는 규제 강화와 산업 안전 투자 확대에 연동된 완만한 성장 추세",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "MSA는 고부가 안전장비 중심 포트폴리오로 수익성 변동을 상대적으로 통제해온 편입니다. 다만 산업 경기와 공공 발주 사이클 영향으로 분기 실적의 진폭은 존재할 수 있습니다. 전반적으로 배당 지속성 측면에서는 우량하지만, 밸류에이션 구간에 따라 기대수익률 차이가 커질 수 있습니다.",
+    keyRisks: [
+      "산업경기 둔화 시 설비투자·발주 지연 리스크",
+      "원자재·부품 비용 상승 및 공급망 차질",
+      "밸류에이션 프리미엄 구간 진입 시 멀티플 조정 리스크",
+    ],
+    bullCase: "산업 안전 규제 강화와 소방·유틸리티 교체 수요가 동시에 확대되면 매출과 이익의 질적 성장이 가능하다. 프리미엄 제품 믹스가 유지되면 배당 성장과 주가 재평가가 함께 나타날 수 있다.",
+    bearCase: "경기 둔화로 프로젝트 지연이 누적되면 주문과 마진이 압박받을 수 있다. 높은 기대가 선반영된 밸류에이션 구간에서는 실적이 양호해도 주가 조정이 발생할 수 있다.",
+    valuationComment: "현재 제공된 핵심 밸류에이션 지표가 부재해 정량 판단 신뢰도가 낮습니다. 배당주 관점에서는 역사적 평균 밸류에이션 대비 할인 구간(시장 조정 시)에서 분할 접근이 유리합니다.",
+    recentDevelopments: [
+      "산업·소방 안전 규제 강화 흐름으로 고신뢰 감지·보호장비 수요 기대 지속",
+      "포트폴리오 고도화 및 운영 효율화 중심의 수익성 방어 전략 지속",
+    ],
+    overallRating: "관망",
+    ratingReason: "사업과 배당의 질은 우수하나 현재 수치 데이터 부재로 매수 타이밍의 정량 확신이 부족함",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
