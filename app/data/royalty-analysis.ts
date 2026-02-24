@@ -3784,6 +3784,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "질적 체력은 우수하지만 현재 배당수익률이 과거 평균 대비 낮아 가격 메리트가 크지 않습니다.",
     targetBuyPrice: 86.4,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // BEN — 프랭클린 리소시스 (배당귀족주, 44년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "BEN",
+    analyzedAt: "2026-02-25 08:30 KST",
+    businessSummary: "프랭클린 리소시스(BEN)는 Franklin Templeton 브랜드로 전통 자산운용, ETF, 대체투자, 자산관리 솔루션을 제공하는 글로벌 금융회사입니다. 개인·기관 고객의 주식, 채권, 멀티에셋, 사모·대체전략 운용에서 발생하는 수수료가 핵심 수익원이며, 시장수익률과 순자금 유입/유출에 실적이 크게 연동됩니다.",
+    coreProducts: [
+      "뮤추얼펀드·ETF 운용",
+      "기관투자자 대상 투자 솔루션",
+      "대체투자·자산관리 플랫폼",
+    ],
+    geographicPresence: "미국 중심 수익 구조이나 유럽·아시아·신흥국 등 글로벌 고객 기반을 보유한 분산형 매출 구조",
+    dividendStreakYears: 44,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 3.3%로 저성장이나, 44년 연속 증배 기조는 유지 중입니다.",
+    dividendSafety: "watch",
+    dividendSafetyReason: "배당성향 119.4%와 ROE 4.5% 조합은 이익 대비 배당 여력이 약해 배당 안전성 점검이 필요합니다.",
+    moatTypes: [
+      "brand",
+      "efficient_scale",
+      "switching_costs",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "Franklin Templeton 브랜드와 장기 운용 트랙레코드는 기관·리테일 유치에 유리한 무형자산입니다. 다만 자산운용 산업은 상품 차별화가 제한적이고 수수료 경쟁이 강해 초과수익 기반의 해자는 넓지 않습니다. 규모의 경제와 기존 고객 유지 효과는 있으나 순유입 전환 여부가 해자 강도를 좌우합니다.",
+    revenueGrowthTrend: "시장환경과 자금흐름 영향으로 변동성이 크며 구조적 고성장보다는 정체·완만 회복 구간에 가깝습니다.",
+    marginTrend: "contracting",
+    debtLevel: "moderate",
+    financialSummary: "Forward PER 9.3으로 이익 정상화 기대는 일부 반영됐지만, Trailing PER 25.1과 낮은 ROE는 최근 수익성 부담을 시사합니다. PBR 1.16은 극단적 고평가 구간은 아니나, 배당성향이 100%를 상회해 배당의 질은 보수적으로 봐야 합니다. 재무구조는 과도한 레버리지는 아니지만 이익 체력 회복이 선행되어야 밸류에이션 매력이 강화됩니다.",
+    keyRisks: [
+      "순자금 유출 지속 시 운용보수 기반 이익 둔화",
+      "시장 하락 시 AUM 감소로 실적과 배당 커버리지 동반 악화",
+      "수수료 인하 경쟁 및 패시브/저비용 상품 확대로 구조적 마진 압박",
+    ],
+    bullCase: "금리 안정과 위험자산 회복으로 AUM이 증가하고 순유입이 개선되면 Forward 이익 기준 저평가 매력이 부각될 수 있습니다. 이익 정상화가 확인되면 배당지속성과 밸류에이션 재평가가 동시에 가능합니다.",
+    bearCase: "자금 유출과 수수료 압박이 장기화되면 배당성향이 높은 상태에서 배당 성장 둔화 또는 정책 재검토 압력이 커질 수 있습니다. 현재 주가가 52주 상단 근처라 실적 미스 시 하방 변동성이 확대될 수 있습니다.",
+    valuationComment: "DDM 적정가(35.68달러) 대비 저평가 여지는 보이나, 애널리스트 목표가와의 괴리(0.9%)가 작고 주가가 52주 상단(90.1%)에 있어 단기 매력은 제한적입니다. 배당 안정성 리스크를 감안하면 분할 접근 시 더 높은 배당수익률이 확보되는 가격대가 유리합니다.",
+    recentDevelopments: [
+      "주가가 52주 범위 상단에 근접하며 밸류에이션 부담이 확대된 상태",
+      "시장 컨센서스는 hold로, 이익 회복 확인 전까지 중립적 시각이 우세",
+    ],
+    overallRating: "관망",
+    ratingReason: "고배당 매력은 있으나 배당성향 과다와 낮은 수익성 대비 현재 주가 메리트가 크지 않아 추격매수보다 대기 전략이 적절합니다.",
+    targetBuyPrice: 24,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
