@@ -3551,6 +3551,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 이력은 우수하지만 핵심 밸류에이션/재무 수치 공백으로 현재 시점의 기대수익 대비 위험을 정량화하기 어렵습니다.",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // RPM — RPM 인터내셔널 (배당왕족주, 52년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "RPM",
+    analyzedAt: "2026-02-25 06:00 KST",
+    businessSummary: "RPM 인터내셔널은 건축용 코팅, 실란트, 바닥재, 방수재 등 특수 화학제품을 제조·판매하는 산업재 기업입니다. Rust-Oleum, DAP, Tremco 등 강한 브랜드 포트폴리오를 기반으로 유지보수·보수(Repair/Maintenance) 수요에 깊게 노출되어 있으며, 경기 민감한 신축보다 상대적으로 방어적인 수요원을 함께 보유하고 있습니다.",
+    coreProducts: [
+      "보호 코팅·페인트(예: Rust-Oleum)",
+      "실란트·접착제·건축 보수재(예: DAP)",
+      "상업용 지붕·방수·바닥 시스템(예: Tremco)",
+    ],
+    geographicPresence: "북미 중심 매출 구조이며 유럽·기타 해외 비중이 보완하는 형태",
+    dividendStreakYears: 52,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "52년 연속 배당 증가 이력은 배당 정책의 일관성을 보여주지만, 최근 인상 폭은 업황·원가 환경에 따라 탄력적으로 결정될 가능성이 있습니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "장기 배당 트랙레코드는 강점이지만 산업재 특성상 원재료·건설 사이클 영향으로 이익 변동성이 존재합니다.",
+    moatTypes: [
+      "brand",
+      "cost_advantage",
+      "intangible_assets",
+      "switching_costs",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "소비자·전문가 시장에서 축적된 브랜드 신뢰와 유통망은 반복 구매를 유도하는 핵심 경쟁력입니다. 또한 제조·조달 규모를 통한 원가 효율과 제품 인증·규격 대응 역량이 진입장벽으로 작동합니다. 다만 화학소재 업계 특성상 절대적 독점력보다는 다수 강자의 경쟁 구도에 가깝습니다.",
+    revenueGrowthTrend: "인수합병과 가격 전가, 유지보수 수요를 바탕으로 중장기 완만한 성장 기조",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "RPM은 다양한 엔드마켓과 브랜드 포트폴리오로 현금흐름 기반이 비교적 분산되어 있습니다. 수익성은 원재료 가격, 물류비, 판가 전가 능력에 따라 변동하지만 구조적으로 급격한 훼손 가능성은 제한적입니다. 레버리지는 성장 투자와 주주환원 사이 균형 관리가 필요한 수준으로 보입니다.",
+    keyRisks: [
+      "원재료·에너지 비용 상승 시 마진 압박",
+      "건설·제조 경기 둔화로 산업재 수요 약화",
+      "인수합병 통합 실패 또는 예상 시너지 미달",
+    ],
+    bullCase: "비주거 보수·리모델링 수요가 견조하고 원가 안정화가 동반되면 마진 개선과 이익 레버리지가 동시에 나타날 수 있습니다. 여기에 배당 성장 스토리가 재평가되면 멀티플 확장 여지도 있습니다.",
+    bearCase: "경기 둔화와 원가 재상승이 겹치면 판가 전가 한계로 수익성이 후퇴할 수 있습니다. 이 경우 배당 성장률 둔화와 밸류에이션 디레이팅이 동반될 위험이 있습니다.",
+    valuationComment: "현재 핵심 밸류에이션 데이터가 부재해 정밀한 적정가 산출은 어렵습니다. 일반적으로는 역사적 밴드 대비 과열 구간 추격 매수보다, 실적 모멘텀 확인 후 조정 구간 분할 접근이 보수적입니다.",
+    recentDevelopments: [
+      "운영 효율화와 포트폴리오 고도화를 통한 수익성 개선 노력 지속",
+      "건설·유지보수 수요 및 원가 흐름에 따라 단기 실적 변동성 확대 가능성",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 이력과 사업 안정성은 매력적이지만 현재 핵심 수치 공백으로 가격 메리트 판단 근거가 부족합니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
