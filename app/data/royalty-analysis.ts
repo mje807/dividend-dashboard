@@ -3222,6 +3222,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업과 배당의 질은 우수하나 현재 수치 데이터 부재로 매수 타이밍의 정량 확신이 부족함",
     targetBuyPrice: null,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // UVV — 유니버설 (배당왕족주, 54년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "UVV",
+    analyzedAt: "2026-02-25 02:30 KST",
+    businessSummary: "유니버설(UVV)은 글로벌 담배 원료(leaf tobacco) 조달·가공·공급을 주력으로 하는 B2B 기업으로, 대형 담배 제조사에 안정적으로 원재료를 공급합니다. 최근에는 식물성 원료·성분, 과일/채소 기반 원료 등 비담배 소재 사업으로 포트폴리오를 다변화하며 현금흐름 안정성을 높이려는 전략을 병행하고 있습니다.",
+    coreProducts: [
+      "담배 원료(Leaf Tobacco) 조달·가공·공급",
+      "식물성 원료 및 성분(Ingredient Solutions)",
+      "농산물 기반 부가가치 소재",
+    ],
+    geographicPresence: "미국 및 주요 담배 소비/생산 국가를 포함한 글로벌 소싱·판매 네트워크 중심 (북미 비중이 높고 국제 사업이 보완)",
+    dividendStreakYears: 54,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "배당킹 이력(54년 연속 인상)을 유지하며 저성장·안정형 배당 증가 기조를 이어가는 모습입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "오랜 배당 기록은 강점이지만, 담배 원료 업황·규제·작황 변동에 따라 이익 변동성이 존재해 절대적 안전구간으로 보긴 어렵습니다.",
+    moatTypes: [
+      "cost_advantage",
+      "efficient_scale",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "UVV는 글로벌 소싱망과 가공·품질관리 역량, 장기 고객관계에서 오는 운영 효율로 진입장벽을 형성합니다. 다만 최종 소비재 브랜드 기업이 아니라 원재료 공급사 특성상 가격결정력이 제한적이고, 구조적 수요 둔화 리스크가 있어 해자는 좁은 편으로 판단됩니다.",
+    revenueGrowthTrend: "전통 담배 원료는 저성장/정체 성향이며, 비담배 소재 확장이 중장기 성장의 핵심 변수입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "현금창출력과 운전자본 관리가 중요한 사업 구조로, 전반적으로 경기방어적 성격을 보이나 농산물·원재료 사이클 영향을 받습니다. 재무는 과도한 레버리지보다는 중간 수준의 부채 운용에 가까운 프로파일로 해석됩니다.",
+    keyRisks: [
+      "글로벌 흡연율 하락 및 담배 산업의 구조적 수요 감소",
+      "각국 규제 강화(니코틴/담배 관련 정책)로 인한 고객사 생산·구매 변동",
+      "기후·작황·원재료 가격 변동에 따른 마진 압박",
+    ],
+    bullCase: "비담배 소재 사업이 의미 있는 이익 비중으로 성장하고, 기존 담배 원료 사업이 안정적 현금흐름을 유지하면 멀티플 재평가가 가능해집니다. 배당 성장 지속 시 방어형 소득주로 수요가 강화될 수 있습니다.",
+    bearCase: "담배 원료 수요 감소가 예상보다 빠르고 비담배 사업 확장이 지연되면 이익·밸류에이션이 동반 압박받을 수 있습니다. 원가 변동과 규제 충격이 겹치면 배당 여력에 대한 시장 신뢰가 약해질 수 있습니다.",
+    valuationComment: "현재 핵심 밸류에이션 수치가 부재해 정량 저평가 판단은 유보가 필요합니다. 다만 UVV는 일반적으로 고성장주가 아닌 현금흐름·배당 기반 종목이므로, 역사적 배당수익률 밴드 상단 구간과 P/E 하단 구간 동시 진입 시 분할매수가 유효한 접근입니다.",
+    recentDevelopments: [
+      "배당킹 타이틀(54년 연속 증배) 유지로 주주환원 신뢰를 지속",
+      "비담배 원료·성분 사업 확대를 통한 사업 다각화 전략을 진행",
+    ],
+    overallRating: "관망",
+    ratingReason: "장기 배당 이력은 매력적이지만 핵심 지표 공백 상태에서는 안전마진 확인 후 접근하는 것이 합리적입니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
