@@ -30,6 +30,7 @@ export function calcAttractiveness(
   const divRate   = m.dividendRate;
   const pct52     = m.pctIn52Range;
   const upside    = m.analystUpside;
+  const target    = m.targetMeanPrice;
 
   // ① 수율 시그널
   let yieldSignal: "저평가" | "적정" | "고평가" | "N/A" = "N/A";
@@ -52,6 +53,11 @@ export function calcAttractiveness(
     const gap = (fairByYield - price) / price * 100;
     if (gap >= 12)       ddmSignal = "저평가";
     else if (gap <= -12) ddmSignal = "고평가";
+    else                 ddmSignal = "적정";
+  } else if (target && price) {
+    const gap = (target - price) / price * 100;
+    if (gap >= 10)       ddmSignal = "저평가";
+    else if (gap <= -10) ddmSignal = "고평가";
     else                 ddmSignal = "적정";
   }
 

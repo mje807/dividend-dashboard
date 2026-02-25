@@ -68,7 +68,7 @@ function computeValuation(m: ReturnType<typeof getRoyaltyMetrics>, streak: numbe
   let ddmGap: number | null = null;
   let ddmSignal: "저평가" | "적정" | "고평가" | "N/A" = "N/A";
   let fairValueUsed: number | null = null;
-  let fairValueMethod: "ddm" | "yield" | "none" = "none";
+  let fairValueMethod: "ddm" | "yield" | "analyst" | "none" = "none";
   if (ddm && price) {
     fairValueUsed = ddm;
     fairValueMethod = "ddm";
@@ -83,6 +83,13 @@ function computeValuation(m: ReturnType<typeof getRoyaltyMetrics>, streak: numbe
     ddmGap = parseFloat(((fairByYield - price) / price * 100).toFixed(1));
     if (ddmGap >= 12)       ddmSignal = "저평가";
     else if (ddmGap <= -12) ddmSignal = "고평가";
+    else                    ddmSignal = "적정";
+  } else if (analystTarget && price) {
+    fairValueUsed = analystTarget;
+    fairValueMethod = "analyst";
+    ddmGap = parseFloat(((analystTarget - price) / price * 100).toFixed(1));
+    if (ddmGap >= 10)       ddmSignal = "저평가";
+    else if (ddmGap <= -10) ddmSignal = "고평가";
     else                    ddmSignal = "적정";
   }
 
@@ -274,13 +281,15 @@ export default function StockDetail() {
               signal={val.ddmSignal}
               detail={
                 val.fairValueUsed && price
-                  ? `${val.fairValueMethod === "ddm" ? "DDM" : "수율평균 폴백"} 적정가 $${val.fairValueUsed} / 현재 $${price.toFixed(2)} / 괴리율 ${val.ddmGap! > 0 ? "+" : ""}${val.ddmGap}%`
+                  ? `${val.fairValueMethod === "ddm" ? "DDM" : val.fairValueMethod === "yield" ? "수율평균 폴백" : "애널리스트 목표가 폴백"} 적정가 $${val.fairValueUsed} / 현재 $${price.toFixed(2)} / 괴리율 ${val.ddmGap! > 0 ? "+" : ""}${val.ddmGap}%`
                   : "내재가치 계산 데이터 부족"
               }
               description={
                 val.fairValueMethod === "ddm"
                   ? `DDM = 주당배당금 ÷ (요구수익률 7% - 배당성장률 ${m?.dividendCAGR3yr ?? "?"}%)`
-                  : "DDM 불가 시: 배당금 ÷ 5년 평균수율(히스토리컬 수율 회귀)"
+                  : val.fairValueMethod === "yield"
+                    ? "DDM 불가 시: 배당금 ÷ 5년 평균수율(히스토리컬 수율 회귀)"
+                    : "수율기반도 불가 시: 애널리스트 목표주가를 최종 폴백으로 사용"
               }
             />
 
