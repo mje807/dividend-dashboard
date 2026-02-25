@@ -4735,6 +4735,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 안전성과 질적 경쟁우위는 매우 우수하지만, 낮은 배당수익률과 프리미엄 밸류에이션을 감안해 가격 조정 시 비중 확대가 유리합니다.",
     targetBuyPrice: 380,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // BBY — 베스트 바이 (배당귀족주, 21년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "BBY",
+    analyzedAt: "2026-02-26 08:26 KST",
+    businessSummary: "베스트 바이는 북미 중심의 가전·IT 제품 전문 리테일러로, 오프라인 매장과 이커머스를 결합한 옴니채널 전략을 운영합니다. 하드웨어 판매 외에 멤버십, 설치·수리(Geek Squad), 보증/서비스 수익을 통해 반복 매출 기반을 강화하고 있습니다.",
+    coreProducts: [
+      "소비자 전자제품(PC·모바일·TV·가전)",
+      "옴니채널 유통(매장+온라인)",
+      "서비스/멤버십(설치·수리·보증)",
+    ],
+    geographicPresence: "미국 중심(대부분) · 캐나다 보조",
+    dividendStreakYears: 21,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR은 2.6%로 배당 성장 속도는 완만해졌습니다.",
+    dividendSafety: "watch",
+    dividendSafetyReason: "배당성향 125.1%로 이익 대비 배당 부담이 높아 단기 안전성 점검이 필요합니다.",
+    moatTypes: [
+      "brand",
+      "cost_advantage",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "베스트 바이는 대형 유통망과 브랜드 인지도를 바탕으로 가전 카테고리에서 규모의 경제를 보유합니다. 다만 온라인 가격 경쟁과 제조사 직판 확대로 초과수익 지속성은 제한적이며, 서비스·멤버십의 고객 락인 효과가 해자를 보완하는 구조입니다.",
+    revenueGrowthTrend: "팬데믹 특수 이후 매출은 조정 국면에서 완만한 회복을 시도하는 흐름입니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "ROE 22.5%로 수익성 지표는 양호하지만, D/E 154.5로 레버리지는 높은 편입니다. Forward PER 9.3은 실적 반등 기대를 반영한 저평가 신호로 해석 가능하나, 높은 배당성향과 경기 민감한 수요를 함께 고려해야 합니다.",
+    keyRisks: [
+      "소비 경기 둔화 시 고가 전자제품 수요 위축",
+      "온라인 채널과의 가격 경쟁 심화로 마진 압박",
+      "높은 배당성향 지속 시 배당 성장 정체 또는 조정 가능성",
+    ],
+    bullCase: "현재 주가가 52주 하단(20.3%)에 위치하고 배당수익률이 5년 평균 대비 높아 밸류 매력이 큽니다. 수요 정상화와 서비스 매출 확대가 동반되면 목표가 영역으로의 리레이팅이 가능합니다.",
+    bearCase: "소비 둔화가 장기화되면 매출·이익 회복이 지연되고 높은 배당성향이 재무 유연성을 약화시킬 수 있습니다. 이 경우 고배당 매력이 오히려 배당 지속 가능성 우려로 전환될 수 있습니다.",
+    valuationComment: "현재가는 DDM 적정가(86.36달러)와 애널리스트 목표가(78.90달러) 대비 할인 구간으로 보입니다. 다만 배당 커버리지 리스크를 감안해 분할 접근이 유효하며, 58~62달러 구간을 우선 매수 관찰 구간으로 판단합니다.",
+    recentDevelopments: [
+      "Forward PER 9.3으로 Trailing PER 20.6 대비 큰 괴리(실적 회복 기대 반영)",
+      "배당수익률 6.06%로 5년 평균 4.15% 대비 높은 수준 유지",
+    ],
+    overallRating: "관심",
+    ratingReason: "밸류에이션과 배당 매력은 높지만 배당성향·부채 부담이 커 보수적 분할 매수가 적절합니다.",
+    targetBuyPrice: 60,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
