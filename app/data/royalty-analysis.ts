@@ -4447,6 +4447,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 성장 이력과 입지 경쟁력은 강점이지만, 높은 배당성향·레버리지로 신규 비중 확대는 신중함이 필요합니다.",
     targetBuyPrice: 252,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ERIE — 이리 인데믹니티 (배당귀족주, 25년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "ERIE",
+    analyzedAt: "2026-02-26 08:24 KST",
+    businessSummary: "ERIE(Erie Indemnity)는 Erie Insurance Exchange의 매니저로서 보험 인수·관리 서비스를 제공하고 수수료 수익을 창출하는 금융/보험 회사입니다. 개인·상업용 손해보험 중심의 안정적 보험료 기반 위에서 장기적으로 배당을 늘려온 배당성장 기업입니다.",
+    coreProducts: [
+      "자동차 보험 관련 관리/인수 서비스",
+      "주택·재산 보험 관련 관리 서비스",
+      "상업용 보험(책임·재산 등) 관련 관리 서비스",
+    ],
+    geographicPresence: "미국 중심(사실상 대부분 미국 내 사업)",
+    dividendStreakYears: 25,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "25년 연속 배당 증가를 이어가고 있으며, 최근 3년 배당 CAGR이 16.0%로 높은 성장세를 보였습니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 44.1%로 여력이 있고 ROE 26.2%로 수익성이 높아 배당 지속 가능성이 우수합니다.",
+    moatTypes: [
+      "brand",
+      "efficient_scale",
+      "intangible_assets",
+      "switching_costs",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "보험업 특성상 신뢰 기반 브랜드와 지역 네트워크, 규제/라이선스 기반 운영역량이 진입장벽으로 작동합니다. 기존 계약자의 전환 비용과 관계 유지 성향도 유지율에 기여합니다. 다만 전국 초대형 보험사 대비 압도적 규모 우위는 제한적이어서 해자는 좁지만 유효한 편입니다.",
+    revenueGrowthTrend: "보험료 인상과 계약 기반 확대로 중장기 완만한 성장 추세입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "Trailing PER 21.8, Forward PER 19.3으로 이익 성장 기대가 일부 반영된 밸류에이션입니다. PBR 6.18은 자본효율(ROE 26.2%) 프리미엄이 반영된 수준으로 해석됩니다. D/E 2.7은 금융업 특성을 감안하면 관리 가능한 레버리지로 보이나 금리·손해율 변동 모니터링이 필요합니다.",
+    keyRisks: [
+      "대형 자연재해 증가로 손해율이 악화될 위험",
+      "금리 및 투자수익 변동에 따른 이익 변동성",
+      "보험료 인상 규제/경쟁 심화로 성장 둔화 가능성",
+    ],
+    bullCase: "높은 ROE와 보수적 배당성향을 바탕으로 배당 성장과 이익 성장이 동반될 경우, 현재 주가 구간에서 재평가가 가능합니다. 52주 저점 부근 위치는 장기 투자자에게 리스크-리워드가 개선된 구간일 수 있습니다.",
+    bearCase: "손해율 급등이나 규제 환경 악화가 발생하면 이익과 배당 성장률이 동시에 둔화될 수 있습니다. 고PBR 프리미엄이 축소될 경우 주가 변동성이 커질 수 있습니다.",
+    valuationComment: "현재 배당수익률 2.16%가 5년 평균 1.76%를 상회하고 52주 위치도 낮아, 역사적 배당 관점에서는 상대적으로 매력적인 구간입니다. 다만 PBR 프리미엄이 높아 분할 매수 접근이 적절하며, 260~280달러대는 우선 매수 검토 구간으로 판단됩니다.",
+    recentDevelopments: [
+      "배당 25년 연속 증가 트랙레코드 유지",
+      "주가가 52주 범위 하단(6.6%) 부근에서 거래되며 밸류에이션 매력도 개선",
+    ],
+    overallRating: "관심",
+    ratingReason: "배당 안전성과 수익성은 강하지만 밸류에이션 프리미엄을 감안해 적극 매수보다 분할 접근이 유리합니다.",
+    targetBuyPrice: 275,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
