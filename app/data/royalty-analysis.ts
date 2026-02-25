@@ -4495,6 +4495,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 안전성과 수익성은 강하지만 밸류에이션 프리미엄을 감안해 적극 매수보다 분할 접근이 유리합니다.",
     targetBuyPrice: 275,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // FAST — 패스널 (배당귀족주, 25년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "FAST",
+    analyzedAt: "2026-02-26 08:24 KST",
+    businessSummary: "패스널(FAST)은 산업·건설·유지보수(MRO) 현장에 체결부품, 안전용품, 공구 등을 공급하는 북미 중심의 산업 유통 기업입니다. 온사이트(Onsite) 재고관리와 자동판매기(FASTVend) 기반의 고정 고객 락인 모델로 반복 매출을 창출합니다. 소량·빈번 구매 수요를 빠르게 공급하는 운영 역량이 핵심 경쟁력입니다.",
+    coreProducts: [
+      "체결부품(패스너) 및 산업 소모품",
+      "MRO 공급 및 재고관리(Onsite) 서비스",
+      "산업용 자동판매기(FASTVend) 솔루션",
+    ],
+    geographicPresence: "미국 중심(대부분) · 캐나다/멕시코 등 북미 및 일부 해외 비중",
+    dividendStreakYears: 25,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 21.6%로 배당 성장 속도는 매우 높지만, 배당성향이 80%대로 올라 여력 관리는 필요합니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "장기 배당 증가 이력은 강점이나 배당성향(80.3%)과 높은 밸류에이션이 안전마진을 줄입니다.",
+    moatTypes: [
+      "switching_costs",
+      "efficient_scale",
+      "cost_advantage",
+      "brand",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "고객 현장 재고를 FAST 시스템에 맞춰 운영하면 공급사 전환 비용이 높아집니다. 촘촘한 물류망과 현장 서비스 인력은 소량 다빈도 주문에서 규모의 효율을 제공합니다. 다만 제품 자체의 절대적 차별화보다는 운영 실행력 기반 해자라 폭은 넓지 않은 편입니다.",
+    revenueGrowthTrend: "경기 민감 업종 특성상 사이클 영향을 받지만, 온사이트·자동판매기 확대로 중장기 완만한 성장 기조를 유지하는 흐름입니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "ROE 33.3%로 자본 효율성은 우수하지만, PBR 12.99와 높은 멀티플은 기대를 선반영한 상태입니다. D/E 11.2는 보수적 관점에서 레버리지 부담 요인입니다. 현금흐름 기반의 배당 지속성은 있으나 배당성향이 높아 경기 둔화 구간에서 방어력 점검이 필요합니다.",
+    keyRisks: [
+      "산업 경기 둔화 시 물량 감소로 매출·이익 압박",
+      "고배수(PER 40.9/Forward 33.3) 구간에서 디레이팅 리스크",
+      "배당성향 80%대 지속 시 배당 성장률 둔화 가능성",
+    ],
+    bullCase: "온사이트·자동판매기 확장이 계속되면 고객 락인이 강화되고 반복 매출 비중이 높아질 수 있습니다. 경기 회복과 함께 운영 레버리지까지 붙으면 이익 성장 재가속이 가능합니다.",
+    bearCase: "제조업/건설 수요 둔화가 길어지면 고정비 부담으로 수익성이 약해질 수 있습니다. 현재 멀티플이 높아 실적 미스 시 주가 조정 폭이 커질 수 있습니다.",
+    valuationComment: "현재가는 애널리스트 목표가와 거의 동일하고(상승여력 0.1%), 배당수익률도 5년 평균 대비 낮아 밸류 매력이 제한적입니다. 프리미엄을 감안하면 분할 접근은 가능하나, 의미 있는 안전마진은 더 낮은 가격대에서 확보하는 편이 유리합니다.",
+    recentDevelopments: [
+      "자동판매기·온사이트 중심의 고객 침투 전략이 지속되며 서비스형 유통 모델이 강화되는 흐름",
+      "산업 경기 불확실성과 고평가 부담으로 시장 컨센서스가 hold에 머무는 분위기",
+    ],
+    overallRating: "관망",
+    ratingReason: "질 좋은 배당 성장주지만 현재 밸류에이션이 높고 기대수익 대비 안전마진이 부족합니다.",
+    targetBuyPrice: 37,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
