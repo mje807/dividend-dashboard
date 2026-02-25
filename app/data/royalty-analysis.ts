@@ -5782,6 +5782,55 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 성장성과 수익성은 매력적이지만 경기민감성과 부채 리스크가 공존해 보수적 비중 관리가 필요합니다.",
     targetBuyPrice: 200,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // MSCI — MSCI (배당귀족주, 11년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "MSCI",
+    analyzedAt: "2026-02-26 08:36 KST",
+    businessSummary: "MSCI는 글로벌 기관투자자에게 주식·채권 지수, 포트폴리오 리스크 분석, ESG/기후 데이터 및 프라이빗자산 분석 솔루션을 제공하는 금융 데이터·인덱스 기업입니다. 핵심 수익원은 자산운용사와 ETF 발행사의 지수 라이선스 및 반복 구독형 데이터/애널리틱스 매출로, 경기 변동 대비 방어력이 높은 편입니다. 금융시장 디지털화와 패시브 투자 확대의 구조적 수혜를 받고 있습니다.",
+    coreProducts: [
+      "글로벌 주식/채권 지수 및 ETF 라이선스",
+      "리스크 관리·포트폴리오 애널리틱스",
+      "ESG·기후·지속가능성 데이터 솔루션",
+    ],
+    geographicPresence: "미국 중심의 기관 고객 기반에 유럽·아시아 태평양을 포함한 글로벌 분산 매출 구조",
+    dividendStreakYears: 11,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 26.4%로 고성장 배당 기조가 지속되고 있습니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 45.9%로 과도하지 않고 반복 매출 비중이 높아 현금흐름 기반 배당 지속 가능성이 높습니다.",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "network_effect",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "MSCI 지수 브랜드는 글로벌 ETF·기관 운용의 벤치마크로 자리 잡아 강한 무형자산 효과를 보유합니다. 고객이 리스크 시스템·데이터 체계를 한번 구축하면 교체 비용이 높아 해지율이 낮고, 지수 채택이 늘수록 생태계 네트워크 효과가 강화됩니다. 규제·운용 실무에서 표준으로 쓰이는 점도 진입장벽을 높입니다.",
+    revenueGrowthTrend: "지수 라이선스·구독형 데이터 중심으로 중장기 우상향 성장 추세입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "고마진 소프트 데이터 비즈니스 특성상 수익성이 우수하고, 반복 매출 구조 덕분에 실적 가시성이 높습니다. 다만 프리미엄 밸류에이션이 유지되는 종목이라 금리·밸류 멀티플 조정 국면에서는 주가 변동성이 커질 수 있습니다. 전반적으로 배당과 자사주 환원을 병행할 여력은 양호한 편입니다.",
+    keyRisks: [
+      "패시브 자금 유입 둔화 시 지수 라이선스 성장률 둔화",
+      "고밸류에이션 구간에서 금리 상승 시 멀티플 압축 리스크",
+      "규제 변화 또는 경쟁 심화에 따른 가격 협상력 약화",
+    ],
+    bullCase: "ETF 및 글로벌 자산관리 시장 확대가 지속되면 지수·데이터 매출이 복리로 성장해 이익과 배당이 함께 증가할 가능성이 큽니다. AI 기반 분석 수요 확대도 추가 성장 동력이 될 수 있습니다.",
+    bearCase: "시장 변동성 확대와 밸류에이션 조정이 겹치면 실적은 견조해도 주가가 장기간 박스권에 머물 수 있습니다. 패시브 성장 둔화가 장기화되면 프리미엄 멀티플 정당화가 약해질 수 있습니다.",
+    valuationComment: "현재 Trailing PER 35.5는 고평가 부담이 있으나 Forward PER 25.3과 22% 상승여력을 감안하면 질적 프리미엄 구간으로 해석됩니다. 배당수익률이 5년 평균(0.97%) 대비 높은 1.49%인 점은 진입 매력 신호이며, 분할매수 기준으로는 520달러 이하에서 매력도가 더 높아집니다.",
+    recentDevelopments: [
+      "애널리스트 컨센서스는 buy이며 목표가 679.56달러로 제시됨",
+      "배당수익률이 5년 평균 대비 높아져 밸류에이션 부담이 일부 완화됨",
+    ],
+    overallRating: "보유",
+    ratingReason: "견고한 해자와 배당 성장성이 강점이지만 절대 밸류에이션이 낮지 않아 신규 대량 매수보다는 보유·분할 접근이 합리적입니다.",
+    targetBuyPrice: 520,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
