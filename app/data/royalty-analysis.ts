@@ -5068,6 +5068,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업 해자와 배당 안정성은 매우 우수하지만 현재 밸류에이션이 높아 배당 투자자 기준 추가 매수는 가격 조정 시점이 유리합니다.",
     targetBuyPrice: 430,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // MKTX — 마켓엑세스 홀딩스 (배당귀족주, 16년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "MKTX",
+    analyzedAt: "2026-02-26 08:29 KST",
+    businessSummary: "마켓엑세스 홀딩스(MKTX)는 기관투자자 중심의 전자채권 거래 플랫폼을 운영하며, 회사채·국채·신용상품 등의 유동성 매칭과 체결 인프라를 제공합니다. 거래 데이터, 알고리즘 도구, 사전·사후 거래 솔루션을 결합해 채권 거래의 디지털 전환 수혜를 받는 구조입니다. 핵심 수익원은 거래량 기반 수수료와 데이터/서비스 매출입니다.",
+    coreProducts: [
+      "전자채권 거래 플랫폼(Open Trading 포함)",
+      "시장 데이터 및 분석 서비스",
+      "거래 워크플로우/연결성 솔루션",
+    ],
+    geographicPresence: "미국 중심의 글로벌 사업 구조(북미 비중이 높고 유럽·아시아로 확장)",
+    dividendStreakYears: 16,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 10.9%로, 중고한 자릿수~두 자릿수 배당 성장 흐름을 유지 중입니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 45.8%와 ROE 19.4% 조합으로 이익 대비 배당 커버력이 양호합니다.",
+    moatTypes: [
+      "network_effect",
+      "switching_costs",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "기관 채권 거래는 참여자 밀도와 호가 깊이가 핵심이라 네트워크 효과가 작동합니다. 기존 거래 워크플로우와의 통합, 데이터 축적, 규제/신뢰 기반 운영 역량이 전환비용을 높입니다. 대형 전자거래 인프라는 규모가 중요해 효율적 규모의 진입장벽도 존재합니다.",
+    revenueGrowthTrend: "채권 전자화 확대의 구조적 수혜 속에 거래환경 변동을 동반한 중장기 우상향 추세입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "ROE 19.4%로 수익성 체력은 견조하며, 배당성향 45.8%는 배당과 재투자 간 균형 구간입니다. Trailing PER 27.2는 프리미엄이 남아 있으나 Forward PER 19.9로 이익 개선 기대가 반영됩니다. D/E 24.6 수준을 감안하면 과도한 재무 레버리지 부담은 제한적입니다.",
+    keyRisks: [
+      "채권시장 거래대금 둔화 시 수수료 매출 민감도 확대",
+      "대형 거래소/플랫폼과의 경쟁 심화로 수수료 압박 가능성",
+      "금리·신용스프레드 급변 시 거래 믹스 악화 및 실적 변동성",
+    ],
+    bullCase: "전자채권 침투율 상승과 기관 유동성 집중이 이어지면 거래량·데이터 매출이 동반 성장할 수 있습니다. Forward PER 디레이팅 없이 이익이 개선되면 배당 성장과 주가 재평가가 동시에 가능해집니다.",
+    bearCase: "거래활동 둔화와 경쟁 심화가 겹치면 수수료 단가와 마진이 동시에 압박받을 수 있습니다. 이 경우 현재의 프리미엄 밸류에이션이 축소되며 주가 회복이 지연될 수 있습니다.",
+    valuationComment: "현재가는 52주 밴드 하단권(31.7%)이고 배당수익률(1.72%)이 5년 평균(1.11%) 대비 높아 밸류 부담이 일부 완화됐습니다. 다만 Trailing PER 27.2는 여전히 절대적으로는 비싸 완전한 저평가 구간으로 보긴 어렵습니다. 분할 접근 기준으로는 170달러 내외 이하에서 매수 매력이 더 높습니다.",
+    recentDevelopments: [
+      "애널리스트 컨센서스는 buy, 목표가 192.90달러로 약 6.9% 상승여력 제시",
+      "배당은 16년 연속 증액 기조를 유지하며 주주환원 신뢰를 지속",
+    ],
+    overallRating: "관심",
+    ratingReason: "질 높은 해자와 배당 성장성은 매력적이지만, 밸류 프리미엄을 감안해 가격대별 분할 접근이 유리합니다.",
+    targetBuyPrice: 170,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
