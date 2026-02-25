@@ -5878,6 +5878,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "기업 질과 배당 안전성은 우수하지만 현재 가격이 고평가·고점권에 가까워 신규 진입은 조정 확인 후가 더 유리합니다.",
     targetBuyPrice: 1300,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // ALLY — 앨라이 파이낸셜 (배당귀족주, 7년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "ALLY",
+    analyzedAt: "2026-02-26 08:36 KST",
+    businessSummary: "앨라이 파이낸셜은 미국 중심의 디지털 뱅킹·자동차 금융 회사로, 오토론/리스와 온라인 예금 기반 자금조달을 결합한 비즈니스 모델을 운영합니다. 순이자마진, 신용손실률, 조달비용이 실적의 핵심 변수이며 경기·금리 사이클에 민감한 금융주 성격이 강합니다.",
+    coreProducts: [
+      "자동차 금융(신차·중고차 할부/리스)",
+      "온라인 예금·저축 상품",
+      "소비자 대출 및 보험/서비스 계약 연계 수익",
+    ],
+    geographicPresence: "미국 중심(사실상 대부분 미국 내 사업)",
+    dividendStreakYears: 7,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 7.7%로 배당은 완만한 증가 흐름을 유지했습니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 50.6%는 무리한 수준은 아니지만, 금융업 특성상 신용비용·경기 둔화에 따라 배당 여력이 흔들릴 수 있습니다.",
+    moatTypes: [
+      "switching_costs",
+      "cost_advantage",
+      "efficient_scale",
+      "brand",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "앨라이는 딜러 네트워크 기반 자동차 금융 취급 역량과 디지털 예금 조달 구조에서 운영 효율 우위를 가질 수 있습니다. 다만 은행·비은행 금융사와의 경쟁이 치열하고 상품 차별화가 제한적이라 초광범위 해자보다는 제한적(좁은) 해자에 가깝습니다.",
+    revenueGrowthTrend: "고금리·신용사이클 영향으로 변동성이 크며, 구조적 고성장보다는 사이클형 회복 패턴에 가깝습니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "PBR 0.97로 장부가 대비 할인 구간에 있고 Forward PER 6.6은 이익 정상화 기대를 반영한 저평가 신호로 해석될 수 있습니다. 반면 ROE 5.8%는 자본효율이 아직 강하지 않음을 보여주며, 은행업 특성상 대손비용 추이가 밸류에이션 재평가의 핵심입니다.",
+    keyRisks: [
+      "미국 경기 둔화 시 자동차 금융 연체율·대손비용 상승",
+      "예금 조달비용 상승에 따른 순이자마진 압박",
+      "규제 강화 및 자본규제 변화로 배당·자사주 정책 제약 가능성",
+    ],
+    bullCase: "신용비용이 안정되고 순이자마진이 방어되면 낮은 Forward PER과 PBR 할인 요인이 빠르게 해소될 수 있습니다. 애널리스트 목표가 기준 27.2% 상승여력이 실현되며 배당 성장도 동반될 가능성이 있습니다.",
+    bearCase: "연체율 상승과 충당금 확대가 겹치면 이익 추정치가 하향되고 저평가 매력이 약화될 수 있습니다. 이 경우 배당 성장 속도 둔화 또는 주가 박스권 장기화 가능성이 큽니다.",
+    valuationComment: "현재 주가는 PBR 1배 미만·Forward PER 6배대라는 점에서 밸류에이션 매력은 존재합니다. 다만 배당수익률(2.96%)이 5년 평균(3.11%)보다 낮아 배당 기준으로는 아주 싼 구간은 아니며, 보수적으로는 3%대 중반 수익률이 나오는 가격대에서 분할매수가 유리합니다.",
+    recentDevelopments: [
+      "Forward PER이 Trailing 대비 크게 낮아져 이익 정상화 기대가 반영되는 구간",
+      "애널리스트 컨센서스가 buy이며 목표가 기준 상승여력 27.2% 제시",
+    ],
+    overallRating: "관심",
+    ratingReason: "저PBR·낮은 Forward PER로 리레이팅 여지가 있으나, 신용사이클 민감도가 높아 추세 확인 후 접근이 합리적입니다.",
+    targetBuyPrice: 39,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
