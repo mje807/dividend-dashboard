@@ -5735,6 +5735,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "수익률 메리트와 업사이드는 매력적이지만, 높은 배당성향·부채 부담으로 리스크 관리형 접근이 필요합니다.",
     targetBuyPrice: 170,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // DKS — 딕스 스포팅 굿즈 (배당귀족주, 11년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "DKS",
+    analyzedAt: "2026-02-26 08:35 KST",
+    businessSummary: "딕스 스포팅 굿즈(DKS)는 미국 내 대형 스포츠용품 유통업체로, 운동·아웃도어·팀스포츠 관련 제품을 오프라인 매장과 디지털 채널에서 판매합니다. 자체 브랜드 확대와 옴니채널 운영을 통해 수익성을 높이고 있으며, 경기순환 소비 환경에 민감한 리테일 비즈니스 구조를 갖고 있습니다.",
+    coreProducts: [
+      "스포츠 의류·신발",
+      "운동기구·아웃도어 장비",
+      "팀스포츠/골프 등 전문 카테고리 상품",
+    ],
+    geographicPresence: "미국 95%+ · 국제 및 기타 5%-",
+    dividendStreakYears: 11,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 35.5%로 매우 높은 배당 성장세를 유지했습니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 38.6%와 ROE 23.8%를 고려하면 현재 이익 체력 대비 배당 여력은 양호한 편입니다.",
+    moatTypes: [
+      "brand",
+      "cost_advantage",
+      "efficient_scale",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "전국 단위 매장망과 브랜드 인지도는 고객 유입과 재고 회전에 유리하게 작용합니다. 규모의 경제를 활용한 구매력·유통 효율도 경쟁력 요인이지만, 소매 유통 특성상 진입장벽이 절대적으로 높지는 않아 해자는 협폭으로 판단됩니다.",
+    revenueGrowthTrend: "팬데믹 이후 높은 기저를 소화하는 구간에서 중장기적으로는 완만한 성장 기조입니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "PER 17.5(선행 14.5)로 이익 전망 기준 밸류에이션 부담은 다소 완화되어 있습니다. ROE는 높은 반면 D/E 139.5로 레버리지 지표는 점검이 필요합니다. 배당수익률 2.28%는 5년 평균(1.95%) 대비 높아져 소득 매력은 개선됐습니다.",
+    keyRisks: [
+      "소비 둔화 시 매출·재고 회전 악화 가능성",
+      "경쟁 심화(온라인/오프라인)로 인한 마진 압박",
+      "높은 부채비율(D/E)로 금리 및 신용환경 변화에 취약",
+    ],
+    bullCase: "소비 정상화와 프리미엄/자체브랜드 비중 확대가 이어지면 이익 레버리지가 재가동될 수 있습니다. 이 경우 배당 성장 지속과 함께 밸류에이션 리레이팅 여지가 있습니다.",
+    bearCase: "경기 둔화가 길어지면 할인 판매 확대와 재고 부담으로 수익성이 훼손될 수 있습니다. 부채 부담이 결합되면 주주환원 속도도 둔화될 수 있습니다.",
+    valuationComment: "현재 주가는 선행 PER 기준으로는 과도한 고평가 구간은 아니며, 애널리스트 목표가 대비 약 11% 상승여력이 있습니다. 다만 경기민감·레버리지 리스크를 감안하면 분할 접근이 유효하며, 200달러 안팎에서 리스크/리턴이 더 개선되는 구간으로 판단됩니다.",
+    recentDevelopments: [
+      "배당 성장세가 높게 유지되며 주주환원 스토리가 강화됨",
+      "선행 PER이 후행 대비 낮아 이익 기대치 개선이 주가에 반영되는 구간",
+    ],
+    overallRating: "보유",
+    ratingReason: "배당 성장성과 수익성은 매력적이지만 경기민감성과 부채 리스크가 공존해 보수적 비중 관리가 필요합니다.",
+    targetBuyPrice: 200,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
