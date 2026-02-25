@@ -5116,6 +5116,55 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "질 높은 해자와 배당 성장성은 매력적이지만, 밸류 프리미엄을 감안해 가격대별 분할 접근이 유리합니다.",
     targetBuyPrice: 170,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // UNH — 유나이티드헬스 (배당귀족주, 16년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "UNH",
+    analyzedAt: "2026-02-26 08:29 KST",
+    businessSummary: "유나이티드헬스(UNH)는 미국 최대 민간 건강보험 사업자이자 헬스케어 서비스 플랫폼 기업으로, 보험(UnitedHealthcare)과 헬스서비스(Optum)를 결합한 통합 모델을 운영합니다. 보험 가입자 기반, 약제급여관리(PBM), 진료 네트워크, 데이터·분석 역량을 통해 의료비 관리와 수익 다변화를 동시에 추구합니다.",
+    coreProducts: [
+      "고용주·개인·정부 프로그램 기반 건강보험",
+      "Optum Health(1차의료·가치기반 케어 서비스)",
+      "Optum Rx(PBM 및 약제 관리 서비스)",
+    ],
+    geographicPresence: "미국 중심(사실상 대부분 미국) · 해외는 제한적",
+    dividendStreakYears: 16,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 10.9%로 두 자릿수 배당 성장 기조를 유지 중입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "현 배당수익률은 역사 평균 대비 높지만 배당성향 66%와 의료비용 변동성으로 안전마진이 과거보다 얇아졌습니다.",
+    moatTypes: [
+      "switching_costs",
+      "efficient_scale",
+      "cost_advantage",
+      "intangible_assets",
+      "network_effect",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "대규모 가입자와 의료공급자 네트워크는 가격 협상력과 운영 효율을 높이는 규모의 경제를 제공합니다. 보험-케어-약제관리 통합 구조는 데이터 축적과 전환비용을 강화해 경쟁사가 단기간에 복제하기 어렵습니다. 규제 산업 특성상 인허가·컴플라이언스 역량도 진입장벽으로 작동합니다.",
+    revenueGrowthTrend: "중장기적으로는 성장세이나 최근에는 의료이용률 상승 영향으로 성장의 질이 둔화되는 구간입니다.",
+    marginTrend: "contracting",
+    debtLevel: "moderate",
+    financialSummary: "Forward PER 14.2는 Trailing PER 21.5 대비 이익 정상화 기대를 일부 반영합니다. ROE 12.5%, PBR 2.58은 질적 프리미엄이 남아 있음을 시사하지만, D/E 77.1과 비용 압력 환경에서는 이익 민감도가 커질 수 있습니다. 전반적으로 체력은 견조하나 단기 실적 변동성은 높은 편입니다.",
+    keyRisks: [
+      "메디케어 어드밴티지 의료손해율 상승 등 의료비 인플레이션",
+      "보험·PBM 관련 규제 강화 및 정책 불확실성",
+      "대형 사이버보안/운영 이슈 재발 시 비용 및 평판 리스크",
+    ],
+    bullCase: "의료비 추세가 안정되고 Optum의 고마진 사업 비중이 확대되면 이익 성장과 멀티플 재평가가 동시에 가능해집니다. 현재 높은 배당수익률 구간에서 배당 성장 지속 시 총주주수익률이 개선될 수 있습니다.",
+    bearCase: "의료이용률 고착과 규제 압력이 동반되면 마진 회복이 지연되어 이익 추정치 하향이 이어질 수 있습니다. 이 경우 저평가처럼 보이는 밸류에이션이 장기간 디스카운트로 남을 가능성이 있습니다.",
+    valuationComment: "52주 위치 13.3%와 배당수익률(3.23%)의 역사 대비 괴리를 보면 가격 메리트가 생긴 구간입니다. 다만 실적 불확실성을 감안해 분할 접근이 유효하며, 1차 매수는 270달러대, 보수적 추가 매수는 250달러 안팎이 적정해 보입니다.",
+    recentDevelopments: [
+      "의료비용 상승 및 메디케어 관련 수익성 압박으로 단기 실적 가시성이 낮아진 상태",
+      "애널리스트 목표가 364.62달러로 중장기 반등 여력(28.3%)은 남아 있으나 컨센서스 신뢰도는 변동성 구간",
+    ],
+    overallRating: "관심",
+    ratingReason: "역사 대비 높은 배당수익률과 낮은 주가 위치는 매력적이지만, 단기 의료비·규제 리스크가 커 공격적 비중 확대보다 분할 관찰 매수가 적절합니다.",
+    targetBuyPrice: 260,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
