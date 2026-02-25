@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { ArrowLeft, LineChart, Rocket, Search, SlidersHorizontal } from "lucide-react";
 import { bigTechTickers, hyperGrowthTickers } from "~/data/growth";
 import { getMetrics, type StockMetrics } from "~/data/metrics";
+import { getGrowthAnalysis } from "~/data/growth-analysis";
 
 type Group = "bigtech" | "hyper";
 
@@ -179,6 +180,7 @@ export default function GrowthPage() {
   const cautionCount = filtered.filter((r) => r.score.label === "주의").length;
 
   const selected = filtered.find((r) => r.ticker === selectedTicker) ?? filtered[0];
+  const selectedAnalysis = selected ? getGrowthAnalysis(selected.ticker) : undefined;
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
@@ -296,9 +298,36 @@ export default function GrowthPage() {
             <MiniMetric label="밸류" value={selected.score.parts.valuation.toFixed(1)} />
             <MiniMetric label="모멘텀" value={selected.score.parts.momentum.toFixed(1)} />
           </div>
-          <div className="text-xs text-gray-400">
+          <div className="text-xs text-gray-400 mb-4">
             52주: {selected.metric?.week52Low ?? "-"} ~ {selected.metric?.week52High ?? "-"} / 현재가 {selected.metric?.currentPrice ?? "-"}
           </div>
+
+          {selectedAnalysis ? (
+            <div className="rounded-lg border border-gray-800 bg-gray-800/40 p-4">
+              <div className="text-xs text-gray-400 mb-1">정성/정량 하이브리드 분석</div>
+              <div className="text-sm text-white mb-2">
+                등급: <span className="font-semibold">{selectedAnalysis.overallRating}</span> ·
+                매수관찰 구간: {selectedAnalysis.targetBuyLow ?? "-"} ~ {selectedAnalysis.targetBuyHigh ?? "-"}
+              </div>
+              <p className="text-xs text-gray-300 leading-relaxed mb-3">{selectedAnalysis.summary}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <div className="text-xs text-emerald-300 mb-1">상방 드라이버</div>
+                  <ul className="text-xs text-gray-300 list-disc pl-4 space-y-1">
+                    {selectedAnalysis.keyDrivers.map((d: string) => <li key={d}>{d}</li>)}
+                  </ul>
+                </div>
+                <div>
+                  <div className="text-xs text-red-300 mb-1">핵심 리스크</div>
+                  <ul className="text-xs text-gray-300 list-disc pl-4 space-y-1">
+                    {selectedAnalysis.keyRisks.map((r: string) => <li key={r}>{r}</li>)}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="text-xs text-gray-500">정성 분석 준비중</div>
+          )}
         </div>
       )}
     </div>
