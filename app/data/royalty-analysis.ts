@@ -5449,6 +5449,55 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 성장 품질은 양호하지만 밸류에이션 부담과 높은 레버리지 리스크를 함께 고려해 가격 메리트 확인 후 접근이 적절합니다.",
     targetBuyPrice: 48,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // JPM — JP모건 (배당귀족주, 15년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "JPM",
+    analyzedAt: "2026-02-26 08:33 KST",
+    businessSummary: "JP모건체이스는 미국 최대 상업은행으로 소비자금융, 기업금융, 투자은행, 자산·자산운용을 아우르는 종합 금융 플랫폼을 운영합니다. 예금 기반의 안정적 이자이익과 투자은행·자산운용 수수료 수익을 결합해 경기 국면별로 수익원을 분산하는 구조가 강점입니다.",
+    coreProducts: [
+      "소비자·상업은행(예금·대출·카드)",
+      "투자은행(IB·트레이딩·자본시장)",
+      "자산·자산운용(Wealth & Asset Management)",
+    ],
+    geographicPresence: "미국 중심(대부분) · 글로벌 기업금융/투자은행 네트워크를 통한 국제 매출 보완",
+    dividendStreakYears: 15,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "15년 연속 배당 증가를 이어가고 있으며 최근 3년 배당 CAGR은 20.8%로 매우 높은 편입니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 29.0%와 높은 수익성(ROE 16.1%)을 감안하면 현재 배당 여력은 충분한 편입니다.",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "network_effect",
+      "efficient_scale",
+      "intangible_assets",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "JP모건은 신뢰도 높은 브랜드와 광범위한 예금·결제·기업금융 관계를 기반으로 고객 이탈 비용이 큽니다. 대형 은행으로서 규제·자본·인프라 측면의 진입장벽과 스케일 효율이 크고, 글로벌 딜 소싱·유통 네트워크가 경쟁우위를 강화합니다.",
+    revenueGrowthTrend: "금리 사이클과 자본시장 환경 변동에도 다각화된 사업 포트폴리오로 중기 우상향 성장을 유지하는 흐름입니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "은행업 특성상 레버리지는 높게 보이지만, 핵심은 자본적정성과 이익창출력이며 JP모건은 업계 상위권 수익성과 규모의 경제를 보유합니다. PER 15.2(Forward 12.9)는 초고평가 구간은 아니나, PBR 2.39와 주가 위치를 보면 밸류 부담은 일부 존재합니다.",
+    keyRisks: [
+      "금리 인하 국면에서 순이자마진(NIM) 둔화 가능성",
+      "신용비용 증가(경기 둔화·상업용 부동산 등)로 충당금 부담 확대",
+      "강화되는 금융규제(자본규제·스트레스테스트)로 주주환원 여력 제약",
+    ],
+    bullCase: "미국 경기 연착륙과 기업금융·투자은행 회복이 동반되면 이익 추정치 상향과 밸류 재평가가 가능합니다. 이 경우 애널리스트 목표가(상승여력 13.5%)에 근접하는 주가 레벨이 현실화될 수 있습니다.",
+    bearCase: "경기 둔화로 대손비용이 예상보다 크게 늘고 금리 하락으로 NIM이 압박받으면 이익 모멘텀이 약해질 수 있습니다. 규제 강화가 겹치면 배당 성장 속도와 자사주 매입이 둔화될 수 있습니다.",
+    valuationComment: "Forward PER 12.9는 절대적으로 과도하진 않지만, 현재 배당수익률(2.02%)이 5년 평균(2.41%)보다 낮고 52주 위치도 높은 편이라 배당투자 관점의 매력은 다소 떨어집니다. 수익률 평균 회귀를 고려하면 보다 유리한 매수 구간은 현 주가 대비 하단에서 분할 접근이 적절합니다.",
+    recentDevelopments: [
+      "애널리스트 컨센서스는 buy이며 평균 목표가 $344.35로 제시됨",
+      "주가가 52주 범위 상단권(74.9%)에 위치해 밸류·수익률 매력은 중립 수준",
+    ],
+    overallRating: "관망",
+    ratingReason: "펀더멘털과 배당 안전성은 우수하지만 현재 배당수익률이 역사 평균 대비 낮아 배당투자 관점의 신규 진입 매력은 제한적입니다.",
+    targetBuyPrice: 260,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
