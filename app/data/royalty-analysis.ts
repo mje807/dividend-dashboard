@@ -5260,6 +5260,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 매력과 저평가 신호는 강하지만 업황 민감도가 커서 공격적 매수보다 가격 분할 접근이 유리합니다.",
     targetBuyPrice: 17,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // LFUS — 리틀퓨즈 (배당귀족주, 15년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "LFUS",
+    analyzedAt: "2026-02-26 08:31 KST",
+    businessSummary: "리틀퓨즈(Littelfuse)는 회로 보호, 전력 제어, 센싱 솔루션을 제공하는 산업·전자 부품 기업으로 자동차, 산업장비, 전자기기 고객에 공급합니다. 핵심은 전기/전자 시스템의 안전성·신뢰성을 높이는 고신뢰 부품 포트폴리오이며, 자동차 전장화와 산업 자동화 수요의 수혜를 받는 구조입니다.",
+    coreProducts: [
+      "회로 보호 소자(퓨즈·TVS 다이오드 등)",
+      "전력 반도체·전력 제어 모듈",
+      "센서 및 스위치 솔루션",
+    ],
+    geographicPresence: "미국·유럽·아시아에 생산/판매 네트워크를 보유한 글로벌 매출 구조(미주 비중이 상대적으로 크고 EMEA·아시아가 분산 기여)",
+    dividendStreakYears: 15,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 17.3%로 배당 성장 속도는 빠르지만, 현재 배당수익률은 5년 평균(0.96%)보다 낮은 0.81%입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 60%는 관리 가능한 수준이지만 경기민감 업황과 낮은 현재 수익률을 감안하면 안전성은 보통 수준입니다.",
+    moatTypes: [
+      "switching_costs",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "고객의 인증·설계 채택(Design-in) 이후 부품 교체가 쉽지 않아 전환비용 기반의 방어력이 있습니다. 또한 신뢰성 인증, 품질 레퍼런스, 응용 노하우가 무형자산 역할을 하며 일부 규모의 경제도 작동합니다. 다만 완전한 독점 구조는 아니어서 해자는 협소한 편입니다.",
+    revenueGrowthTrend: "중장기적으로 전장화·산업 자동화 수혜가 있으나 단기 실적은 경기와 고객 재고조정 영향으로 변동성이 존재합니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "PBR 3.87, Forward PER 25.1로 밸류에이션 부담이 있는 구간입니다. D/E 36.5는 과도하지 않지만 완전히 보수적인 재무구조로 보기도 어렵습니다. 배당은 성장성이 좋으나 현재 주가가 52주 고점권(99.4%)이라 기대수익률 관리가 중요합니다.",
+    keyRisks: [
+      "자동차·산업 경기 둔화 시 수요 및 가동률 하락",
+      "고점권 밸류에이션 부담에 따른 멀티플 조정 리스크",
+      "원가·공급망·환율 변동으로 인한 수익성 압박",
+    ],
+    bullCase: "전장화, 전력전자 고도화, 산업 자동화 확대로 고부가 제품 비중이 높아지면 이익 성장과 배당 증가가 동시에 가능해집니다. 이 경우 프리미엄 밸류에이션이 정당화될 수 있습니다.",
+    bearCase: "경기 둔화와 고객 재고조정이 길어지면 매출·마진이 동반 둔화되고 고PER 구간에서 주가 조정이 확대될 수 있습니다. 배당 성장률도 과거 대비 둔화될 가능성이 있습니다.",
+    valuationComment: "현재 주가는 52주 고점권이며 애널리스트 목표가($353.60)보다 높은 수준으로 단기 기대수익률은 제한적입니다. 배당수익률도 5년 평균 대비 낮아, 보수적으로는 320~340달러 구간 분할 접근이 유리합니다.",
+    recentDevelopments: [
+      "자동차 전장·산업 전력전자 중심의 제품 믹스 고도화 지속",
+      "주가가 고점권에 근접하며 밸류에이션 부담 논리 확대",
+    ],
+    overallRating: "관망",
+    ratingReason: "사업 경쟁력과 배당 성장성은 긍정적이지만 현재 가격이 고점권·저수익률 구간이라 신규 진입 매력은 낮습니다.",
+    targetBuyPrice: 330,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
