@@ -3975,6 +3975,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당수익률은 매력적이지만 배당 커버리지와 레버리지 리스크가 커 현재 구간에서는 리스크 대비 보상이 충분하지 않습니다.",
     targetBuyPrice: 42,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // BF.B — 브라운-포맨 Class B (배당귀족주, 40년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "BF.B",
+    analyzedAt: "2026-02-26 08:00 KST",
+    businessSummary: "브라운-포맨은 Jack Daniel’s를 중심으로 위스키, 테킬라, 보드카 등 프리미엄 주류 브랜드를 보유·유통하는 글로벌 주류 기업입니다. 핵심은 강한 브랜드 자산을 기반으로 한 가격 결정력과 현금창출력이며, 경기 둔화 구간에서도 상대적으로 방어적인 수요 특성을 보입니다.",
+    coreProducts: [
+      "Jack Daniel’s",
+      "Woodford Reserve",
+      "Herradura/El Jimador",
+    ],
+    geographicPresence: "미국 비중이 가장 크고, 유럽·신흥시장을 포함한 글로벌 판매 구조",
+    dividendStreakYears: 40,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "연속 증배 기조는 유지되고 있으나 최근 증액 폭은 과거 대비 완만한 편입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "브랜드 기반 현금흐름은 견조하지만 수요 둔화·환율·원가 변동이 배당여력의 변동성을 키울 수 있습니다.",
+    moatTypes: [
+      "brand",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "주류 산업에서 장기 축적된 브랜드 파워와 유통망은 강한 진입장벽으로 작동합니다. Jack Daniel’s 같은 대표 브랜드는 소비자 충성도와 프리미엄 포지셔닝을 통해 가격 전가력을 제공하며, 글로벌 스케일은 마케팅·유통 효율을 높입니다.",
+    revenueGrowthTrend: "중장기적으로 완만한 성장이나 최근에는 소비 둔화와 재고조정 영향으로 단기 변동성이 확대되는 흐름입니다.",
+    marginTrend: "contracting",
+    debtLevel: "moderate",
+    financialSummary: "전반적으로 수익성 높은 브랜드 포트폴리오와 안정적 현금흐름이 강점입니다. 다만 최근 구간에서는 판관비·원가·환율 영향으로 마진 압력이 관찰되며, 성장률이 둔화될 때 밸류에이션 부담이 부각될 수 있습니다.",
+    keyRisks: [
+      "글로벌 소비 둔화 및 프리미엄 주류 수요 약화",
+      "환율·원재료·유통비 상승에 따른 마진 압박",
+      "규제·관세·주세 정책 변화로 인한 수익성 훼손",
+    ],
+    bullCase: "프리미엄 주류 수요가 회복되고 가격 전가가 원활하면 매출 성장과 마진 정상화가 동반될 수 있습니다. 이 경우 장기 증배 스토리와 함께 멀티플 재평가가 가능합니다.",
+    bearCase: "소비 둔화가 장기화되고 유통 재고조정이 이어지면 매출 성장 정체와 이익률 하락이 지속될 수 있습니다. 고평가 구간에서 실적 미스가 발생하면 주가 조정 폭이 커질 수 있습니다.",
+    valuationComment: "현재가·수익지표 공백으로 정량 밸류에이션 확정은 어렵습니다. 일반적으로는 역사적 밴드 대비 프리미엄이 축소되고 배당수익률이 장기 평균 상단에 근접할 때 분할매수 접근이 유리합니다.",
+    recentDevelopments: [
+      "일부 시장에서 소비 둔화와 유통 재고조정 영향으로 단기 실적 가시성이 낮아진 국면",
+      "비용 효율화 및 포트폴리오 재정비를 통한 수익성 방어 시도",
+    ],
+    overallRating: "관망",
+    ratingReason: "장기 경쟁력은 우수하지만 단기 실적 모멘텀과 밸류에이션 확인이 필요해 추격매수보다는 가격·지표 확인 후 접근이 바람직합니다.",
+    targetBuyPrice: null,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
