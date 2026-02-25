@@ -5307,6 +5307,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업 경쟁력과 배당 성장성은 긍정적이지만 현재 가격이 고점권·저수익률 구간이라 신규 진입 매력은 낮습니다.",
     targetBuyPrice: 330,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // POOL — POOL CORP (배당귀족주, 15년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "POOL",
+    analyzedAt: "2026-02-26 08:31 KST",
+    businessSummary: "POOL CORP는 수영장 관련 자재·장비·화학제품을 유통하는 북미 최대 전문 디스트리뷰터로, 건설·리모델링·유지보수 수요를 모두 커버합니다. 자체 유통망과 광범위한 고객 접점을 기반으로 전문 시공업체와 서비스 업체에 빠른 공급과 재고 가용성을 제공하는 것이 핵심 경쟁력입니다.",
+    coreProducts: [
+      "수영장 유지보수 화학제품",
+      "수영장 장비(펌프·필터·히터 등)",
+      "야외생활/관개 관련 제품 유통",
+    ],
+    geographicPresence: "미국 중심(대부분) · 일부 국제(유럽/호주 등)로 구성된 북미 편중 구조",
+    dividendStreakYears: 15,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 9.2%로 한 자릿수 후반~두 자릿수에 가까운 배당 성장 흐름을 유지 중입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 44.7%와 높은 ROE는 우호적이지만, 경기민감 업종 특성과 높은 레버리지(D/E 129.5)로 안전성은 중간 수준입니다.",
+    moatTypes: [
+      "cost_advantage",
+      "efficient_scale",
+      "switching_costs",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "전국 단위 유통 인프라와 구매 규모를 통한 원가 경쟁력이 존재합니다. 전문 고객 입장에서는 납기·재고 신뢰성이 중요해 거래처 전환 비용이 발생합니다. 다만 제품 자체 차별화보다 유통 실행력이 중심이라 해자는 넓기보다 좁은 편입니다.",
+    revenueGrowthTrend: "팬데믹 이후 고성장 구간을 지나 현재는 주택·리모델링 경기 영향으로 둔화된 성장/조정 국면입니다.",
+    marginTrend: "contracting",
+    debtLevel: "high",
+    financialSummary: "ROE 33.1%로 자본효율은 매우 우수하지만 PBR 6.66이 이를 일부 선반영하고 있습니다. 배당수익률 2.30%는 5년 평균 1.14% 대비 높아져 밸류에이션 부담이 완화된 신호입니다. 다만 높은 부채비율과 경기순환 민감도는 실적 변동성을 키울 수 있습니다.",
+    keyRisks: [
+      "주택 경기 둔화 및 고금리로 인한 신규 설치·리모델링 수요 감소",
+      "높은 레버리지로 인한 금리/신용환경 변화 민감도 확대",
+      "기상 요인·계절성 및 소비 둔화에 따른 재고/마진 압박",
+    ],
+    bullCase: "현재 주가가 52주 하단권(2.5%)에 위치하고 배당수익률이 과거 평균 대비 높아 리레이팅 여지가 있습니다. 수요 정상화 시 유통 레버리지로 이익 회복 속도가 빨라질 수 있습니다.",
+    bearCase: "고금리 장기화와 소비 둔화가 겹치면 수영장 관련 지출이 더 위축되어 매출·마진이 동반 압박될 수 있습니다. 부채 부담이 높은 상태에서 실적 회복이 지연되면 밸류에이션 매력도 제한될 수 있습니다.",
+    valuationComment: "Trailing PER 19.6, Forward PER 18.1은 과열 구간은 아니며, 고점 대비 조정과 높은 배당수익률을 감안하면 중기 분할매수 관점이 유효합니다. 다만 경기민감·부채 리스크를 반영해 보수적으로 접근하면 200~215달러 구간이 상대적으로 매력적인 매수 범위입니다.",
+    recentDevelopments: [
+      "주가가 52주 밴드 하단권에 머물며 업황 둔화 우려를 상당 부분 반영",
+      "애널리스트 평균 목표가 263.70달러로 약 22.8% 상승여력이 제시되고 투자의견은 buy 우위",
+    ],
+    overallRating: "관심",
+    ratingReason: "밸류에이션과 배당 매력은 개선됐지만 경기순환·레버리지 리스크가 남아 있어 관찰과 분할 접근이 적절합니다.",
+    targetBuyPrice: 210,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
