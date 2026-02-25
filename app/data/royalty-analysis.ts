@@ -5547,6 +5547,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "견조한 수익성·낮은 배당성향·강한 해자 대비 현재 주가가 하단권에 있어 중장기 보유 매력이 높습니다.",
     targetBuyPrice: 420,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // AMGN — 암젠 (배당귀족주, 14년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "AMGN",
+    analyzedAt: "2026-02-26 08:33 KST",
+    businessSummary: "암젠은 종양학, 염증, 심혈관·대사, 희귀질환 분야의 바이오의약품을 개발·판매하는 글로벌 바이오제약사입니다. 블록버스터 생물의약품 포트폴리오와 바이오시밀러 사업을 함께 운영하며, 최근에는 Horizon 인수로 희귀질환 비중을 확대했습니다.",
+    coreProducts: [
+      "Prolia/XGEVA(골질환)",
+      "Enbrel/Otezla(염증·면역)",
+      "TEPEZZA·KRYSTEXXA(희귀질환)",
+    ],
+    geographicPresence: "미국 약 75% · 국제 약 25%",
+    dividendStreakYears: 14,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 15.8%로 두 자릿수 배당 성장세를 유지했으나, 절대 배당수익률은 역사 평균 대비 낮은 구간입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 66.9%는 감내 가능하나 D/E 640.3과 높은 밸류에이션·주가 고점 부담으로 안전마진은 중간 수준입니다.",
+    moatTypes: [
+      "intangible_assets",
+      "switching_costs",
+      "cost_advantage",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "암젠은 특허·규제 허가·생산공정 노하우 등 무형자산 기반 진입장벽이 높은 편입니다. 생물의약품은 처방 전환 비용과 임상 관성으로 고객 이탈이 제한적이며, 대규모 생산 역량은 원가경쟁력에도 기여합니다.",
+    revenueGrowthTrend: "기존 품목 성숙화와 신제품·희귀질환 매출 기여가 맞물리는 완만한 성장 국면입니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "ROE 106.1%는 매우 높지만 높은 레버리지의 영향이 큽니다. Forward PER 16.5로 이익 기준 부담은 완화되나, 현재 주가가 52주 고점권(97.5%)에 있어 밸류에이션 여유는 제한적입니다. 배당은 유지 가능하나 재무 유연성은 부채 관리에 좌우됩니다.",
+    keyRisks: [
+      "특허만료·바이오시밀러 경쟁에 따른 기존 제품 매출 둔화",
+      "고금리 환경에서 높은 부채 구조가 현금흐름에 주는 부담",
+      "신약 파이프라인 임상·허가 지연 및 약가 규제 리스크",
+    ],
+    bullCase: "희귀질환 포트폴리오와 후기 파이프라인이 예상보다 빠르게 성장하면 이익 레버리지가 확대될 수 있습니다. 이 경우 배당 성장과 밸류 재평가가 동시에 가능해집니다.",
+    bearCase: "주요 품목 침식이 신제품 성장보다 빠르면 매출·마진이 동반 압박받을 수 있습니다. 고점권 주가와 높은 부채가 겹치면 멀티플 조정으로 하방 변동성이 커질 수 있습니다.",
+    valuationComment: "현재 배당수익률 2.52%는 5년 평균 3.07%보다 낮아 배당주 관점에서는 비싼 구간입니다. 평균 수익률 회귀 기준으로는 약 315달러 내외가 더 매력적인 매수 구간이며, 보수적으로 310~325달러 분할 접근이 적정합니다.",
+    recentDevelopments: [
+      "Horizon 인수 이후 희귀질환 포트폴리오 통합·상업화 시너지 가시화 여부가 핵심",
+      "비만 등 대형 시장 파이프라인(예: 차세대 대사질환 후보)의 임상 데이터가 중장기 밸류에이션 변수",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 성장 품질은 우수하지만 고점권 주가·평균 대비 낮은 배당수익률·높은 레버리지로 신규 진입 매력은 제한적입니다.",
+    targetBuyPrice: 320,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
