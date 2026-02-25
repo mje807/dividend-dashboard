@@ -4686,6 +4686,55 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업·배당의 질은 매우 우수하지만 현재 밸류에이션이 높아 기대수익 대비 안전마진이 제한적입니다.",
     targetBuyPrice: 852,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // MSFT — 마이크로소프트 (배당귀족주, 21년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "MSFT",
+    analyzedAt: "2026-02-26 08:26 KST",
+    businessSummary: "마이크로소프트는 클라우드(Azure), 생산성 소프트웨어(Microsoft 365), 운영체제/개발자 생태계(Windows·GitHub)를 축으로 기업·개인 고객의 디지털 인프라를 제공하는 글로벌 플랫폼 기업입니다. 최근에는 생성형 AI를 전 제품군에 통합해 사용자당 매출(ARPU)과 기업 계약 단가를 높이는 전략을 추진하고 있습니다. 게임(Xbox, Activision Blizzard)과 보안 사업도 현금흐름 다변화에 기여하고 있습니다.",
+    coreProducts: [
+      "Azure 및 클라우드 서비스",
+      "Microsoft 365·Copilot·Dynamics",
+      "Windows·GitHub·보안/Xbox 생태계",
+    ],
+    geographicPresence: "미국 약 50% 내외 · 국제 약 50% 내외(유럽·아시아 중심)로 비교적 균형적인 매출 분포",
+    dividendStreakYears: 21,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 21년 연속 배당 증가를 이어가며 낮은 배당성향 기반의 증액 여력이 유지되고 있습니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 21.3%와 높은 수익성(ROE 34.4%)으로 이익 변동 시에도 배당 커버력이 매우 우수합니다.",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "network_effect",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "기업용 소프트웨어 표준 지위와 생태계 잠금효과(Office-Teams-Azure-보안)가 전환비용을 높입니다. 개발자 생태계(GitHub)와 클라우드 규모의 경제는 경쟁사 대비 제품 고도화 속도와 단가 방어력을 강화합니다. 브랜드 신뢰와 방대한 파트너 채널이 장기 계약 기반 매출을 지지합니다.",
+    revenueGrowthTrend: "클라우드·AI 수요 중심의 중고성장 기조가 유지되는 추세입니다.",
+    marginTrend: "expanding",
+    debtLevel: "moderate",
+    financialSummary: "마이크로소프트는 고마진 소프트웨어와 클라우드 구독 모델을 기반으로 안정적인 현금창출력을 보유하고 있습니다. PBR 7.61은 프리미엄 밸류에이션을 시사하지만, 높은 ROE와 낮은 배당성향이 자본 효율성과 배당 지속성을 뒷받침합니다. D/E 31.5 수준은 과도하지 않으며 재무 유연성은 양호한 편입니다.",
+    keyRisks: [
+      "AI 인프라 투자 확대에 따른 단기 수익성 압박",
+      "규제·반독점 이슈(클라우드/게임/데이터)로 인한 사업 제약 가능성",
+      "고밸류 구간에서 금리·성장 둔화 시 멀티플 디레이팅 위험",
+    ],
+    bullCase: "Copilot 상용화와 Azure AI 수요가 기업당 계약 단가를 끌어올리며 매출·마진 동반 성장이 가속될 수 있습니다. 이 경우 현재 밸류에이션 프리미엄이 정당화되며 배당도 고성장 기조를 유지할 가능성이 큽니다.",
+    bearCase: "AI 투자 대비 수익화 속도가 기대에 못 미치면 마진이 압박받고 멀티플이 빠르게 축소될 수 있습니다. 경기 둔화로 기업 IT 지출이 지연되면 실적 모멘텀이 약화될 위험이 있습니다.",
+    valuationComment: "Trailing PER 25.1, Forward PER 21.2는 품질 프리미엄을 반영한 수준입니다. 배당주 관점에서는 수익률이 낮아 분할 접근이 적절하며, 20~22배 Forward PER 구간(대략 360~390달러)을 상대적으로 매력적인 매수 구간으로 판단합니다.",
+    recentDevelopments: [
+      "Copilot 및 Azure AI 서비스 확대로 기업용 AI 상용화가 본격 진행",
+      "클라우드·보안·생산성 제품군의 통합 판매 강화로 구독형 매출 비중 확대",
+    ],
+    overallRating: "관심",
+    ratingReason: "배당 안전성과 질적 경쟁우위는 매우 우수하지만, 낮은 배당수익률과 프리미엄 밸류에이션을 감안해 가격 조정 시 비중 확대가 유리합니다.",
+    targetBuyPrice: 380,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
