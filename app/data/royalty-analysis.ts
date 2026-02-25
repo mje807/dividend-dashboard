@@ -4305,6 +4305,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 안전성은 우수하지만 현재 밸류에이션 프리미엄과 낮은 배당 매력도를 감안하면 신규 매수는 가격 메리트 확인이 우선입니다.",
     targetBuyPrice: 120,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SJM — J.M.스머커 (배당귀족주, 28년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "SJM",
+    analyzedAt: "2026-02-26 08:22 KST",
+    businessSummary: "J.M. 스머커는 미국 중심의 포장식품 기업으로 커피, 반려동물 식품, 스낵, 과일 스프레드 등 일상 소비재를 판매합니다. Folgers, Dunkin'(소매 커피), Milk-Bone, Meow Mix, Smucker's, Jif 같은 강한 브랜드 포트폴리오를 기반으로 경기방어적 수요를 확보해 왔습니다. 최근에는 스낵 포트폴리오 확장과 비용 효율화로 성장과 수익성 방어를 동시에 추진 중입니다.",
+    coreProducts: [
+      "소매 커피(Folgers, Dunkin')",
+      "반려동물 식품·간식(Meow Mix, Milk-Bone 등)",
+      "스프레드·땅콩버터·스낵(Smucker's, Jif, Hostess 계열)",
+    ],
+    geographicPresence: "미국 비중이 매우 높은 내수형 구조(미국 중심, 국제 비중 제한적)",
+    dividendStreakYears: 28,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 10.7%로 배당 성장 속도는 양호하나, 높은 배당성향으로 추가 가속 여력은 제한적입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "28년 연속 증액 이력은 강점이지만 배당성향 86.1%와 높은 레버리지(D/E 131.4)로 안전마진은 크지 않습니다.",
+    moatTypes: [
+      "brand",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "스머커의 핵심 해자는 오랜 기간 축적된 브랜드 신뢰와 유통 채널 내 진열/점유 경쟁력입니다. 식품 대기업 특유의 규모 기반 조달·물류 효율이 원가 방어에 기여합니다. 다만 카테고리 경쟁이 치열하고 소비 트렌드 변화가 빨라 해자 폭은 넓기보다는 중간 수준으로 판단됩니다.",
+    revenueGrowthTrend: "인수 효과를 제외한 유기적 매출 성장은 전반적으로 완만하며 카테고리별 온도차가 큽니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "Forward PER 10.8배로 밸류에이션 부담은 크지 않은 편이며 배당수익률도 5년 평균 대비 높은 구간입니다. 다만 높은 부채와 높은 배당성향이 재무 유연성을 낮춰 금리·원가 변동기에 방어력이 약해질 수 있습니다. 현금흐름 안정성은 방어적 섹터 특성상 유지되지만, 우선 과제는 레버리지 점진적 축소입니다.",
+    keyRisks: [
+      "높은 부채비율에 따른 이자비용 부담 및 재무 유연성 저하",
+      "원재료·물류·프로모션 비용 상승 시 마진 압박",
+      "브랜드 경쟁 심화 및 소비 트렌드 변화로 인한 점유율 하락 가능성",
+    ],
+    bullCase: "브랜드 파워와 가격 전가력이 유지되고 비용 절감 및 포트폴리오 최적화가 성과를 내면 이익 안정성과 배당 매력이 동시에 부각될 수 있습니다. 평균 배당수익률로의 회귀가 발생하면 주가 재평가 여지도 있습니다.",
+    bearCase: "스낵·반려동물·커피 일부 카테고리에서 성장 둔화가 지속되고 원가 부담이 겹치면 실적 모멘텀이 약해질 수 있습니다. 높은 배당성향과 부채가 맞물릴 경우 배당 성장률 둔화 가능성이 커집니다.",
+    valuationComment: "현재 배당수익률(4.02%)이 5년 평균(3.29%)보다 높아 역사적 기준으로는 할인 구간에 가깝습니다. 다만 레버리지 부담을 감안하면 공격적 추격 매수보다 분할 접근이 적절하며, 100~106달러 구간은 방어적 배당 관점에서 매수 검토 구간으로 판단됩니다.",
+    recentDevelopments: [
+      "포트폴리오 확장(스낵 카테고리) 이후 통합·수익성 정상화가 핵심 과제로 부각",
+      "시장에서는 높은 배당수익률과 저밸류에이션 대비 부채 부담의 균형을 주요 체크포인트로 인식",
+    ],
+    overallRating: "관심",
+    ratingReason: "배당 매력과 저평가 신호는 긍정적이지만, 높은 배당성향과 부채 수준을 확인하며 보수적으로 접근할 필요가 있습니다.",
+    targetBuyPrice: 102,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
