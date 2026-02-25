@@ -5926,6 +5926,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "저PBR·낮은 Forward PER로 리레이팅 여지가 있으나, 신용사이클 민감도가 높아 추세 확인 후 접근이 합리적입니다.",
     targetBuyPrice: 39,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SLGN — 실간홀딩스 (배당귀족주, 6년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "SLGN",
+    analyzedAt: "2026-02-26 08:37 KST",
+    businessSummary: "실간홀딩스(SLGN)는 식음료용 금속 캔, 플라스틱 용기, 금속/플라스틱 클로저를 제조하는 소비재 포장 전문 기업입니다. 북미 중심의 대형 식품·음료 고객사에 장기적으로 공급하며, 생활필수 소비재 수요에 연동되는 비교적 방어적인 사업 구조를 보유하고 있습니다.",
+    coreProducts: [
+      "식품용 금속 캔",
+      "음료·식품용 플라스틱 용기",
+      "금속/플라스틱 클로저(뚜껑)",
+    ],
+    geographicPresence: "북미 중심(미국 비중이 높음) · 유럽/중남미 일부",
+    dividendStreakYears: 6,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "주당배당금 $0.80, 최근 3년 배당 CAGR 7.7%로 완만한 증배 기조를 유지하고 있습니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 29.6%로 배당 여력은 양호하지만 D/E 191.1의 높은 레버리지가 안전성 평가를 제약합니다.",
+    moatTypes: [
+      "cost_advantage",
+      "efficient_scale",
+      "switching_costs",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "포장 산업은 규모의 경제와 운영 효율이 원가 경쟁력으로 직결되어, 대형 생산기반을 가진 사업자에 유리합니다. 또한 식품·음료 고객사의 품질 인증 및 공급망 안정성 요구로 공급사 전환 비용이 존재합니다. 다만 제품 차별화가 제한적이어서 해자는 넓기보다 좁은 편입니다.",
+    revenueGrowthTrend: "성숙 산업 특성상 구조적 고성장보다는 가격·물량·믹스에 따른 저단일자릿수 변동이 반복되는 추세입니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "ROE 13.5%, PBR 2.22로 수익성은 무난한 수준입니다. Trailing PER 17.7 대비 Forward PER 11.7은 이익 회복 기대를 반영합니다. 다만 높은 부채비율은 금리 및 경기 둔화 국면에서 재무 탄력성을 낮출 수 있습니다.",
+    keyRisks: [
+      "높은 레버리지로 인한 이자비용 부담 및 재무 유연성 저하",
+      "원재료(금속·수지) 가격 및 에너지 비용 변동성",
+      "대형 고객사 협상력 강화와 수요 둔화 시 마진 압박",
+    ],
+    bullCase: "원재료비 안정과 운영 효율화가 이어지면 이익 개선으로 Forward PER 기준 밸류 매력이 부각될 수 있습니다. 낮은 배당성향을 바탕으로 증배 지속 가능성이 유지되면 주주환원 매력이 강화됩니다.",
+    bearCase: "경기 둔화로 물량이 약해지고 비용 전가가 지연되면 수익성과 현금흐름이 압박될 수 있습니다. 높은 부채 구조가 겹치면 밸류에이션 재평가가 지연될 가능성이 있습니다.",
+    valuationComment: "현재 주가는 52주 밴드 중립(56.1%) 구간이며, 수익률(1.65%)은 5년 평균(1.46%) 대비 소폭 매력적입니다. 다만 고부채 리스크를 감안하면 추격 매수보다 할인 구간 분할 접근이 유리하며, 보수적 매수 구간은 $42~45가 적절합니다.",
+    recentDevelopments: [
+      "Forward PER이 Trailing 대비 크게 낮아 이익 개선 기대가 주가에 반영되는 구간입니다.",
+      "애널리스트 목표가 $55.27로 현재가 대비 약 15.5% 상승여력이 제시되어 있습니다.",
+    ],
+    overallRating: "관심",
+    ratingReason: "배당 성장과 밸류 매력은 긍정적이지만 높은 부채가 핵심 리스크라 가격 메리트가 커질 때 접근이 더 합리적입니다.",
+    targetBuyPrice: 44,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
