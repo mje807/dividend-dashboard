@@ -4923,6 +4923,55 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업·배당 체력은 우수하지만 현재 가격이 고점권이라 신규 진입의 기대수익 대비 위험이 더 커 보입니다.",
     targetBuyPrice: 860,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // BLK — 블랙락 (배당귀족주, 16년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "BLK",
+    analyzedAt: "2026-02-26 08:28 KST",
+    businessSummary: "블랙락은 세계 최대 자산운용사로, ETF(iShares), 기관·개인 대상 투자 솔루션, 리스크 관리 플랫폼(Aladdin)을 중심으로 수익을 창출합니다. 운용자산(AUM) 규모와 글로벌 유통망을 바탕으로 수수료 기반의 안정적 현금흐름을 확보하고 있으며, 시장 상승기에는 AUM 증가에 따른 실적 레버리지가 크게 작동합니다.",
+    coreProducts: [
+      "iShares ETF",
+      "기관·개인 자산운용 및 자문",
+      "Aladdin 리스크/포트폴리오 기술 플랫폼",
+    ],
+    geographicPresence: "미국 중심의 매출 구조에 유럽·아시아 등 글로벌 고객 기반이 결합된 분포",
+    dividendStreakYears: 16,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "16년 연속 증배를 이어가고 있으나 최근 3년 배당 CAGR 2.2%로 배당 성장 속도는 완만한 편입니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 59%는 관리 가능한 수준이지만, 자산운용 업황과 시장 변동성에 따라 이익 민감도가 존재합니다.",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "network_effect",
+      "intangible_assets",
+      "efficient_scale",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "블랙락은 iShares 브랜드 파워와 대규모 운용자산에서 오는 규모의 경제로 강한 진입장벽을 보유합니다. 기관 고객은 Aladdin 및 통합 운용 프로세스에 대한 전환비용이 높아 고객 락인이 발생합니다. 글로벌 유통·상품 라인업·데이터 역량의 결합이 장기 경쟁우위를 강화합니다.",
+    revenueGrowthTrend: "시장 상승과 순유입 구간에서 수수료 수익이 확대되는 구조로 중기적으로 우상향 추세입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "ROE 10.7%, PBR 3.06으로 자본효율은 양호하나 밸류에이션 프리미엄이 반영된 상태입니다. Forward PER 17.7은 Trailing PER 30.9 대비 부담이 완화된 모습이며, 이익 정상화 기대가 주가에 반영되고 있습니다. 금융업 특성상 부채지표 해석은 일반 제조업과 다르지만, 시장 사이클에 따른 실적 변동성은 감안이 필요합니다.",
+    keyRisks: [
+      "주식·채권 시장 조정 시 AUM 감소로 수수료 매출 동반 둔화",
+      "ETF 수수료 경쟁 심화에 따른 수익성 압박",
+      "규제 강화 및 특정 자산군 유출에 따른 성장 둔화",
+    ],
+    bullCase: "글로벌 자금이 저비용 ETF와 패시브 상품으로 지속 유입되면 AUM과 수수료 수익이 동반 성장할 수 있습니다. 기술 플랫폼(Aladdin) 확장이 병행되면 멀티플 정당화가 가능해집니다.",
+    bearCase: "글로벌 증시 조정과 금리/경기 불확실성이 길어지면 운용보수 기반 실적이 둔화되고 밸류에이션 디레이팅이 발생할 수 있습니다. 배당 성장률이 낮은 구간이 지속되면 배당투자 매력도도 약해질 수 있습니다.",
+    valuationComment: "현재 배당수익률(2.12%)이 5년 평균(2.33%)보다 낮고 52주 위치도 71.7%로 높은 편이라 배당 관점의 신규 매수 매력은 다소 제한적입니다. 다만 애널리스트 목표가 기준 상승여력은 존재하므로, 보다 유리한 진입은 수익률이 장기 평균 이상으로 회복되는 가격대에서 분할 접근이 적절합니다.",
+    recentDevelopments: [
+      "AI·인덱스·ETF 중심의 장기 자금 유입 기대가 실적 추정치에 반영",
+      "애널리스트 컨센서스가 buy이며 목표가가 현 주가 대비 상방을 제시",
+    ],
+    overallRating: "관망",
+    ratingReason: "질적으로 우수한 해자와 장기 성장성은 매력적이지만, 현재 배당수익률과 가격 위치를 감안하면 배당투자 기준에서는 진입 여유가 크지 않습니다.",
+    targetBuyPrice: 980,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
