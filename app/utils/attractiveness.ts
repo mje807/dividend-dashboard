@@ -27,6 +27,7 @@ export function calcAttractiveness(
   const trPE      = m.trailingPE;
   const fwdPE     = m.forwardPE;
   const ddm       = m.ddmFairValue;
+  const divRate   = m.dividendRate;
   const pct52     = m.pctIn52Range;
   const upside    = m.analystUpside;
 
@@ -39,12 +40,18 @@ export function calcAttractiveness(
     else                    yieldSignal = "적정";
   }
 
-  // ② DDM 시그널
+  // ② DDM 시그널 (fallback: 수율기반 적정가)
   let ddmSignal: "저평가" | "적정" | "고평가" | "N/A" = "N/A";
   if (ddm && price) {
     const gap = (ddm - price) / price * 100;
     if (gap >= 15)       ddmSignal = "저평가";
     else if (gap <= -15) ddmSignal = "고평가";
+    else                 ddmSignal = "적정";
+  } else if (divRate && yieldAvg && price && yieldAvg > 0) {
+    const fairByYield = divRate / (yieldAvg / 100);
+    const gap = (fairByYield - price) / price * 100;
+    if (gap >= 12)       ddmSignal = "저평가";
+    else if (gap <= -12) ddmSignal = "고평가";
     else                 ddmSignal = "적정";
   }
 

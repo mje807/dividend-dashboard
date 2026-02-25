@@ -48,6 +48,8 @@ function computeValuation(m: ReturnType<typeof getRoyaltyMetrics>, streak: numbe
   const trPE = m.trailingPE;
   const fwdPE = m.forwardPE;
   const ddm = m.ddmFairValue;
+  const divRate = m.dividendRate;
+  const yieldAvgForFallback = m.fiveYearAvgYield;
   const analystTarget = m.targetMeanPrice;
   const pct52 = m.pctIn52Range;
   const cagr3 = m.dividendCAGR3yr;
@@ -65,10 +67,22 @@ function computeValuation(m: ReturnType<typeof getRoyaltyMetrics>, streak: numbe
   // ② DDM 괴리율
   let ddmGap: number | null = null;
   let ddmSignal: "저평가" | "적정" | "고평가" | "N/A" = "N/A";
+  let fairValueUsed: number | null = null;
+  let fairValueMethod: "ddm" | "yield" | "none" = "none";
   if (ddm && price) {
+    fairValueUsed = ddm;
+    fairValueMethod = "ddm";
     ddmGap = parseFloat(((ddm - price) / price * 100).toFixed(1));
     if (ddmGap >= 15)       ddmSignal = "저평가";
     else if (ddmGap <= -15) ddmSignal = "고평가";
+    else                    ddmSignal = "적정";
+  } else if (divRate && yieldAvgForFallback && price && yieldAvgForFallback > 0) {
+    const fairByYield = divRate / (yieldAvgForFallback / 100);
+    fairValueUsed = parseFloat(fairByYield.toFixed(2));
+    fairValueMethod = "yield";
+    ddmGap = parseFloat(((fairByYield - price) / price * 100).toFixed(1));
+    if (ddmGap >= 12)       ddmSignal = "저평가";
+    else if (ddmGap <= -12) ddmSignal = "고평가";
     else                    ddmSignal = "적정";
   }
 
@@ -132,6 +146,7 @@ function computeValuation(m: ReturnType<typeof getRoyaltyMetrics>, streak: numbe
     overallVerdict,
     yieldSignal, yieldDiff,
     ddmSignal, ddmGap,
+    fairValueUsed, fairValueMethod,
     peSignal, activePE,
     rangeSignal, pct52,
     analystSignal, upside,
@@ -255,14 +270,18 @@ export default function StockDetail() {
 
             {/* ② DDM */}
             <SignalCard
-              title="② DDM 적정가 (Gordon Growth)"
+              title="② 내재가치 추정 (DDM / 수율기반 폴백)"
               signal={val.ddmSignal}
               detail={
-                m?.ddmFairValue && price
-                  ? `적정가 $${m.ddmFairValue} / 현재 $${price.toFixed(2)} / 괴리율 ${val.ddmGap! > 0 ? "+" : ""}${val.ddmGap}%`
-                  : "배당CAGR 데이터 부족"
+                val.fairValueUsed && price
+                  ? `${val.fairValueMethod === "ddm" ? "DDM" : "수율평균 폴백"} 적정가 $${val.fairValueUsed} / 현재 $${price.toFixed(2)} / 괴리율 ${val.ddmGap! > 0 ? "+" : ""}${val.ddmGap}%`
+                  : "내재가치 계산 데이터 부족"
               }
-              description={`DDM = 주당배당금 ÷ (요구수익률 7% - 배당성장률 ${m?.dividendCAGR3yr ?? "?"}%)`}
+              description={
+                val.fairValueMethod === "ddm"
+                  ? `DDM = 주당배당금 ÷ (요구수익률 7% - 배당성장률 ${m?.dividendCAGR3yr ?? "?"}%)`
+                  : "DDM 불가 시: 배당금 ÷ 5년 평균수율(히스토리컬 수율 회귀)"
+              }
             />
 
             {/* ③ PE */}
