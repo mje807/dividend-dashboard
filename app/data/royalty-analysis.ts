@@ -4257,6 +4257,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 안전성과 질은 우수하지만 현재 주가 메리트와 업사이드가 제한적이어서 대기 전략이 합리적입니다.",
     targetBuyPrice: 70,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // EXPD — 익스페디터 인터내셔널 오브 워싱턴 (배당귀족주, 29년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "EXPD",
+    analyzedAt: "2026-02-26 08:21 KST",
+    businessSummary: "EXPD는 해상·항공 포워딩, 통관, 내륙운송을 통합 제공하는 자산경량형 글로벌 물류 중개 기업입니다. 자체 운송자산보다 네트워크·운영역량·IT 시스템을 기반으로 화주와 운송사를 연결해 수수료 기반 이익을 창출합니다. 경기와 교역량에 민감하지만, 강한 현금창출력과 보수적 재무 운영이 특징입니다.",
+    coreProducts: [
+      "항공·해상 국제 포워딩",
+      "통관 및 무역 규정 대응 서비스",
+      "내륙운송·창고·공급망 관리",
+    ],
+    geographicPresence: "미주 중심에 아시아·유럽을 포함한 글로벌 네트워크 기반 매출 구조",
+    dividendStreakYears: 29,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 4.7%로 배당은 완만하지만 꾸준한 증가 흐름입니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 24.4%로 여력이 크고, ROE 35.4% 및 현금창출력 대비 배당 부담이 낮습니다.",
+    moatTypes: [
+      "switching_costs",
+      "network_effect",
+      "intangible_assets",
+      "cost_advantage",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "글로벌 지점망과 화주·운송사 관계 데이터가 누적되며 운영 효율과 서비스 신뢰도가 경쟁력으로 작동합니다. 대형 화주의 경우 통관·운송 프로세스 전환 비용이 존재해 고객 이탈이 제한됩니다. 다만 산업 자체의 가격 경쟁과 경기 민감도로 해자는 넓기보다 견고한 협소 해자에 가깝습니다.",
+    revenueGrowthTrend: "팬데믹 특수 이후 정상화 구간에서 변동성이 크고, 중장기적으로는 교역량과 점유율 확대로 완만한 성장 추세입니다.",
+    marginTrend: "contracting",
+    debtLevel: "low",
+    financialSummary: "PBR 8.06으로 자본 대비 시장 프리미엄이 높지만, 높은 ROE가 이를 일부 정당화합니다. D/E 24.2로 레버리지는 통제 가능한 수준이며 재무 유연성이 양호합니다. 배당성향이 낮아 경기 둔화 구간에서도 배당 유지·증액 여력이 상대적으로 큽니다.",
+    keyRisks: [
+      "글로벌 교역 둔화 및 운임 하락에 따른 이익 변동성",
+      "물류 중개업 내 가격 경쟁 심화",
+      "강달러·지정학 리스크로 인한 국제 물동량 불확실성",
+    ],
+    bullCase: "글로벌 제조·유통 재고 정상화 이후 물동량이 회복되고, 고부가 통관·공급망 서비스 비중이 확대되면 수익성 반등이 가능합니다. 낮은 배당성향을 바탕으로 배당 성장의 지속 가능성도 높습니다.",
+    bearCase: "교역 둔화가 장기화되면 운임·물동량 동반 약세로 이익과 멀티플이 동시에 압박받을 수 있습니다. 현재 높은 PBR 구간에서는 실적 미스 시 주가 조정 폭이 커질 위험이 있습니다.",
+    valuationComment: "현재 PER 23.1(Forward 22.0), PBR 8.06은 경기민감 물류업 대비 프리미엄 구간으로 보수적으로는 비싸거나 적정 상단에 가깝습니다. 배당수익률도 1.11%로 5년 평균 1.14% 대비 큰 할인 신호가 약해, 의미 있는 안전마진은 주가 조정 시에 더 확보됩니다.",
+    recentDevelopments: [
+      "팬데믹 이후 운임 정상화 영향으로 실적 변동성이 확대된 구간",
+      "애널리스트 컨센서스가 hold이고 목표가가 현재가 대비 보수적 수준",
+    ],
+    overallRating: "관망",
+    ratingReason: "배당 안전성은 우수하지만 현재 밸류에이션 프리미엄과 낮은 배당 매력도를 감안하면 신규 매수는 가격 메리트 확인이 우선입니다.",
+    targetBuyPrice: 120,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
