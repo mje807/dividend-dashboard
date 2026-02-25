@@ -4829,6 +4829,53 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "배당 안전성과 브랜드 경쟁력은 우수하지만, 현재 가격은 배당·밸류에이션 매력이 낮아 추격 매수보다는 조정 대기가 합리적입니다.",
     targetBuyPrice: 175,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // KR — 크로거 (배당귀족주, 19년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "KR",
+    analyzedAt: "2026-02-26 08:27 KST",
+    businessSummary: "크로거(KR)는 미국 내 대형 식료품 유통사로, 슈퍼마켓·멀티채널 유통·자체 브랜드를 결합한 생활필수 소비재 플랫폼을 운영합니다. 오프라인 점포망과 디지털 주문/배송 역량을 함께 확대하며, 식품 중심의 반복 구매 수요를 기반으로 안정적 현금흐름을 창출하는 구조입니다.",
+    coreProducts: [
+      "식료품 소매(신선식품·가공식품·생활필수품)",
+      "자체 브랜드(Private Label) 상품",
+      "디지털 주문·픽업·배송 서비스",
+    ],
+    geographicPresence: "미국 100% 중심(전국 점포망 기반)",
+    dividendStreakYears: 19,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 21.6%로 배당 성장 속도는 빠르지만, 현재 배당성향 부담이 동반됩니다.",
+    dividendSafety: "watch",
+    dividendSafetyReason: "배당성향 115.9%와 높은 레버리지(D/E 358.0)가 배당 지속가능성의 핵심 점검 포인트입니다.",
+    moatTypes: [
+      "cost_advantage",
+      "efficient_scale",
+      "brand",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "식료품 유통은 규모의 경제와 물류 효율이 수익성의 핵심이어서 대형 사업자에 유리합니다. 크로거는 전국 점포망과 자체 브랜드 비중을 통해 가격 경쟁력과 고객 유지력을 확보하고 있습니다. 다만 업계 경쟁 강도가 높아 해자는 넓기보다 협소한 편으로 판단됩니다.",
+    revenueGrowthTrend: "필수소비 중심의 완만한 성장 추세이나, 인플레이션·경쟁 환경에 따라 변동성이 존재합니다.",
+    marginTrend: "stable",
+    debtLevel: "high",
+    financialSummary: "Forward PER 12.8 기준으로 이익 대비 밸류에이션은 과도하지 않지만, Trailing PER 59.8은 최근 이익 왜곡 가능성을 시사합니다. PBR 5.48과 D/E 358.0은 자본구조 측면에서 보수적 접근이 필요함을 보여줍니다. ROE 8.0%는 방어주 성격 대비 무난한 수준이나, 배당성향이 높아 재무 유연성 확인이 중요합니다.",
+    keyRisks: [
+      "가격 경쟁 심화로 인한 마진 압박",
+      "높은 부채 레벨과 금리 부담",
+      "인건비·물류비 상승에 따른 수익성 둔화",
+    ],
+    bullCase: "필수소비 경기방어 특성과 디지털/자체브랜드 강화가 결합되면 이익 안정성과 현금흐름이 개선될 수 있습니다. 애널리스트 목표가 기준 8.7% 상승여력이 실현될 여지도 있습니다.",
+    bearCase: "경쟁 심화와 비용 상승이 겹치면 낮은 마진 구조에서 이익이 빠르게 압박될 수 있습니다. 높은 배당성향과 레버리지가 지속될 경우 배당 성장 여력이 둔화될 가능성이 있습니다.",
+    valuationComment: "현재 주가는 52주 밴드 중간대(55.2%)로 극단적 저평가 구간은 아닙니다. 방어주 특성을 감안하면 안전마진 확보를 위해 추가 조정 구간에서 분할 접근이 유리합니다.",
+    recentDevelopments: [
+      "비핵심 자산 정리 및 포트폴리오 재편으로 본업 효율화 기조를 유지",
+      "디지털 채널·로열티 기반 판매 강화로 고객 락인 및 반복구매 확대 추진",
+    ],
+    overallRating: "관망",
+    ratingReason: "방어적 사업구조는 매력적이지만, 낮은 배당수익률 대비 높은 배당성향·부채 부담을 더 확인할 필요가 있습니다.",
+    targetBuyPrice: 62,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
