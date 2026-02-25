@@ -5498,6 +5498,55 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "펀더멘털과 배당 안전성은 우수하지만 현재 배당수익률이 역사 평균 대비 낮아 배당투자 관점의 신규 진입 매력은 제한적입니다.",
     targetBuyPrice: 260,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // INTU — 인튜이트 (배당귀족주, 14년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "INTU",
+    analyzedAt: "2026-02-26 08:33 KST",
+    businessSummary: "인튜이트는 개인·소상공인·회계사를 위한 재무 소프트웨어를 제공하는 플랫폼 기업으로, 세무 신고·회계·급여·개인재무 관리를 핵심으로 합니다. TurboTax, QuickBooks, Credit Karma, Mailchimp를 중심으로 고객의 금융 데이터와 업무 흐름을 통합해 반복 사용을 유도하는 구조를 갖고 있습니다. 최근에는 AI 기반 자동화 기능을 강화해 생산성 소프트웨어 성격을 더욱 확대하고 있습니다.",
+    coreProducts: [
+      "TurboTax",
+      "QuickBooks",
+      "Credit Karma",
+      "Mailchimp",
+    ],
+    geographicPresence: "미국 중심 매출 구조(미국 비중이 매우 높고 국제 비중은 상대적으로 제한적)",
+    dividendStreakYears: 14,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR이 25.1%로 매우 높고, 14년 연속 배당 증가를 이어가고 있습니다.",
+    dividendSafety: "strong",
+    dividendSafetyReason: "배당성향 29.7%와 ROE 22.0%를 감안하면 이익 대비 배당 부담이 낮아 배당 지속 여력이 높습니다.",
+    moatTypes: [
+      "brand",
+      "switching_costs",
+      "network_effect",
+      "intangible_assets",
+    ],
+    moatStrength: "wide",
+    moatNarrative: "TurboTax·QuickBooks는 강한 브랜드 인지도와 세무/회계 업무의 높은 전환비용을 기반으로 고객 락인을 형성합니다. 회계사·소상공인·개인 사용자가 축적한 데이터와 생태계 연동은 경쟁사 대비 진입장벽을 높입니다. 세무 규정 대응 노하우와 제품 신뢰성 같은 무형자산도 장기 경쟁우위에 기여합니다.",
+    revenueGrowthTrend: "핵심 플랫폼 중심으로 중장기 매출 성장 기조가 유지되는 흐름입니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "PER(TTM) 26.2 대비 Forward PER 14.4는 향후 이익 성장 기대를 반영합니다. ROE 22.0%로 수익성이 우수하고 배당성향 29.7%로 자본 배분의 균형도 양호합니다. D/E 지표 공백은 보수적으로 해석할 필요가 있으나, 전반적 체력은 견조한 편입니다.",
+    keyRisks: [
+      "중소기업 경기 둔화 시 QuickBooks 생태계 성장률 저하 가능성",
+      "세무/핀테크 규제 변화 및 데이터 프라이버시 리스크",
+      "AI 경쟁 심화에 따른 제품 차별화 약화 및 마진 압박",
+    ],
+    bullCase: "AI 기반 자동화 기능 확산으로 ARPU와 고객 유지율이 동시에 개선되면 이익 성장률이 시장 기대를 상회할 수 있습니다. 현재 주가가 52주 저점권에 가까워 밸류에이션 리레이팅 여지도 큽니다.",
+    bearCase: "경기 둔화와 경쟁 심화가 겹치면 신규 고객 유입이 둔화되고 마케팅·R&D 비용 부담으로 이익 레버리지가 약화될 수 있습니다. 이 경우 고성장 프리미엄이 축소되며 주가 변동성이 확대될 수 있습니다.",
+    valuationComment: "현재가가 52주 범위 하단(위치 6.0%)에 있고 배당수익률이 5년 평균 대비 높아(1.25% vs 0.59%) 상대적으로 저평가 신호가 관찰됩니다. Forward PER 14.4 기준으로는 성장주 대비 부담이 낮아 분할매수 관점이 유효하며, 변동성 감안 시 350~420달러 구간을 우선 매수 고려 구간으로 볼 수 있습니다.",
+    recentDevelopments: [
+      "애널리스트 컨센서스가 buy이며 목표가 729.26달러로 상향 여력이 크게 제시됨",
+      "배당 성장률이 높은 수준을 유지하며 주주환원 신뢰도가 강화됨",
+    ],
+    overallRating: "보유",
+    ratingReason: "견조한 수익성·낮은 배당성향·강한 해자 대비 현재 주가가 하단권에 있어 중장기 보유 매력이 높습니다.",
+    targetBuyPrice: 420,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
