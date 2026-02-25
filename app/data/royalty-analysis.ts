@@ -5212,6 +5212,54 @@ export const stockAnalyses: StockAnalysis[] = [
     ratingReason: "사업 경쟁력은 매우 강하지만 현재 가격은 배당·밸류에이션 기준으로 매력도가 낮아 추격매수보다는 조정 대기 전략이 합리적입니다.",
     targetBuyPrice: 280,
   },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // HPQ — 에이치피 (배당귀족주, 15년 연속)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    ticker: "HPQ",
+    analyzedAt: "2026-02-26 08:30 KST",
+    businessSummary: "HP는 개인용 PC와 프린터를 중심으로 하드웨어, 소모품, 관련 솔루션을 제공하는 글로벌 기술 기업입니다. 매출은 PC 수요 사이클과 프린팅 소모품의 반복 매출 구조가 함께 작동하는 형태이며, 기업·공공·소비자 채널을 모두 보유하고 있습니다.",
+    coreProducts: [
+      "개인용 PC 및 워크스테이션",
+      "프린터 하드웨어",
+      "잉크·토너 등 프린팅 소모품 및 관리 솔루션",
+    ],
+    geographicPresence: "미국 중심의 선진국 비중이 크고, 유럽·아시아 등 글로벌 기업/소비자 시장에 분산된 매출 구조",
+    dividendStreakYears: 15,
+    dividendCAGR5yr: null,
+    dividendCAGR10yr: null,
+    recentDividendGrowth: "최근 3년 배당 CAGR 4.8%로 완만한 증배 기조를 유지하고 있습니다.",
+    dividendSafety: "moderate",
+    dividendSafetyReason: "배당성향 43.7%는 무리한 수준이 아니지만, 하드웨어 경기 민감 업종 특성상 이익 변동성은 점검이 필요합니다.",
+    moatTypes: [
+      "brand",
+      "cost_advantage",
+      "switching_costs",
+      "intangible_assets",
+    ],
+    moatStrength: "narrow",
+    moatNarrative: "HP는 오랜 브랜드 인지도와 글로벌 유통·조달 규모에서 오는 비용 우위를 보유합니다. 프린팅 부문은 설치 기반과 소모품 생태계로 인해 일정 수준의 전환비용이 존재합니다. 다만 기술 하드웨어 시장의 경쟁 강도가 높아 해자는 넓기보다 제한적인 편입니다.",
+    revenueGrowthTrend: "성숙 산업 특성상 구조적 고성장보다는 경기·교체수요에 따른 박스권 흐름 가능성이 큽니다.",
+    marginTrend: "stable",
+    debtLevel: "moderate",
+    financialSummary: "Trailing PER 6.9, Forward PER 6.0으로 밸류에이션은 역사적 평균 대비 보수적으로 보입니다. 배당수익률 6.59%가 5년 평균 3.38%를 크게 상회해 주가에 경기 둔화 우려가 반영된 상태로 해석됩니다. 52주 위치 3.7%로 가격 부담은 낮지만, 실적 민감도와 재무 레버리지 변수는 함께 확인해야 합니다.",
+    keyRisks: [
+      "PC·프린터 수요 둔화 시 매출 및 현금흐름 약화 가능성",
+      "가격 경쟁 심화에 따른 마진 압박",
+      "하드웨어 사이클과 기업 IT 지출 축소에 따른 실적 변동성",
+    ],
+    bullCase: "저평가 구간에서 수요 정상화와 비용 통제가 동반되면 이익 회복과 멀티플 리레이팅이 가능합니다. 높은 배당수익률이 총수익 방어에 기여할 수 있습니다.",
+    bearCase: "IT 수요 부진이 장기화되면 배당 성장 여력이 둔화되고, 밸류에이션 할인 상태가 장기 고착될 수 있습니다. 경쟁 심화로 ASP와 수익성이 동시에 압박받을 위험이 있습니다.",
+    valuationComment: "현재 주가는 저PER·고배당 관점에서 할인 영역으로 판단됩니다. 다만 업황 변동성을 감안해 분할 접근이 적절하며, 17달러 안팎 이하에서 위험대비 기대수익이 더 좋아지는 구간으로 봅니다.",
+    recentDevelopments: [
+      "주가가 52주 레인지 하단(위치 3.7%)에 근접해 가치주 성격이 강화된 상태",
+      "애널리스트 컨센서스는 hold이며 목표가 20.77달러로 제한적 상방(14.1%) 제시",
+    ],
+    overallRating: "관심",
+    ratingReason: "배당 매력과 저평가 신호는 강하지만 업황 민감도가 커서 공격적 매수보다 가격 분할 접근이 유리합니다.",
+    targetBuyPrice: 17,
+  },
 ];
 
 export function getAnalysis(ticker: string): StockAnalysis | undefined {
