@@ -289,7 +289,9 @@ export default function GrowthPage() {
                   className={`border-b border-gray-800/50 hover:bg-gray-800/30 cursor-pointer ${selected?.ticker === g.ticker ? "bg-gray-800/40" : ""}`}
                 >
                   <td className="px-5 py-3">
-                    <div className="font-bold text-white text-sm">{g.ticker}</div>
+                    <Link to={`/growth/${g.ticker}`} className="font-bold text-cyan-300 hover:text-cyan-200 text-sm underline-offset-2 hover:underline">
+                      {g.ticker}
+                    </Link>
                     <div className="text-gray-500 text-xs max-w-[260px] truncate">{g.name}</div>
                   </td>
                   <td className="text-right px-4 py-3 text-white text-sm">{g.price ? g.price.toLocaleString() : "-"}</td>
