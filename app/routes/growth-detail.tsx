@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router";
 import { ArrowLeft, AlertTriangle, CheckCircle2, LineChart } from "lucide-react";
 import { getGrowthAnalysis } from "~/data/growth-analysis";
+import { getGrowthHistory } from "~/data/growth-history";
 import { getMetrics } from "~/data/metrics";
 
 export function meta() {
@@ -17,6 +18,7 @@ export default function GrowthDetailPage() {
 
   const a = getGrowthAnalysis(t);
   const m = getMetrics(t);
+  const h = getGrowthHistory(t);
 
   if (!a) {
     return (
@@ -68,6 +70,38 @@ export default function GrowthDetailPage() {
           <Mini label="Trailing PE" value={metric(m?.trailingPE)} />
           <Mini label="52주 범위" value={`${metric(m?.week52Low)} ~ ${metric(m?.week52High)}`} />
         </div>
+      </div>
+
+      <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 mb-5">
+        <h2 className="text-sm font-semibold mb-3">실적/가이던스 히스토리 (최근 분기)</h2>
+        {h.length === 0 ? (
+          <div className="text-xs text-gray-500">히스토리 데이터 없음</div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="text-gray-500 border-b border-gray-800">
+                  <th className="text-left py-2">분기</th>
+                  <th className="text-right py-2">매출(십억$)</th>
+                  <th className="text-right py-2">EPS 실제</th>
+                  <th className="text-right py-2">EPS 예상</th>
+                  <th className="text-right py-2">서프라이즈%</th>
+                </tr>
+              </thead>
+              <tbody>
+                {h.map((q) => (
+                  <tr key={q.label} className="border-b border-gray-800/50">
+                    <td className="py-2 text-gray-300">{q.label}</td>
+                    <td className="py-2 text-right text-gray-200">{q.revenueB == null ? "-" : q.revenueB.toFixed(2)}</td>
+                    <td className="py-2 text-right text-gray-200">{q.epsActual == null ? "-" : q.epsActual.toFixed(2)}</td>
+                    <td className="py-2 text-right text-gray-200">{q.epsEstimate == null ? "-" : q.epsEstimate.toFixed(2)}</td>
+                    <td className="py-2 text-right text-gray-200">{q.surprisePct == null ? "-" : `${q.surprisePct.toFixed(1)}%`}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
