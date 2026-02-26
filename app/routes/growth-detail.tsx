@@ -12,6 +12,11 @@ function metric(v: number | null | undefined, suffix = "") {
   return v == null ? "-" : `${v.toFixed(1)}${suffix}`;
 }
 
+function qoqDelta(curr: number | null | undefined, prev: number | null | undefined): number | null {
+  if (curr == null || prev == null || prev === 0) return null;
+  return ((curr - prev) / Math.abs(prev)) * 100;
+}
+
 export default function GrowthDetailPage() {
   const { ticker } = useParams();
   const t = (ticker || "").toUpperCase();
@@ -83,21 +88,28 @@ export default function GrowthDetailPage() {
                 <tr className="text-gray-500 border-b border-gray-800">
                   <th className="text-left py-2">분기</th>
                   <th className="text-right py-2">매출(십억$)</th>
+                  <th className="text-right py-2">매출 QoQ</th>
                   <th className="text-right py-2">EPS 실제</th>
                   <th className="text-right py-2">EPS 예상</th>
                   <th className="text-right py-2">서프라이즈%</th>
                 </tr>
               </thead>
               <tbody>
-                {h.map((q) => (
-                  <tr key={q.label} className="border-b border-gray-800/50">
-                    <td className="py-2 text-gray-300">{q.label}</td>
-                    <td className="py-2 text-right text-gray-200">{q.revenueB == null ? "-" : q.revenueB.toFixed(2)}</td>
-                    <td className="py-2 text-right text-gray-200">{q.epsActual == null ? "-" : q.epsActual.toFixed(2)}</td>
-                    <td className="py-2 text-right text-gray-200">{q.epsEstimate == null ? "-" : q.epsEstimate.toFixed(2)}</td>
-                    <td className="py-2 text-right text-gray-200">{q.surprisePct == null ? "-" : `${q.surprisePct.toFixed(1)}%`}</td>
-                  </tr>
-                ))}
+                {h.map((q, i) => {
+                  const prev = i + 1 < h.length ? h[i + 1] : undefined;
+                  const delta = qoqDelta(q.revenueB, prev?.revenueB);
+                  const deltaColor = delta == null ? "text-gray-500" : delta >= 0 ? "text-emerald-300" : "text-red-300";
+                  return (
+                    <tr key={q.label} className="border-b border-gray-800/50">
+                      <td className="py-2 text-gray-300">{q.label}</td>
+                      <td className="py-2 text-right text-gray-200">{q.revenueB == null ? "-" : q.revenueB.toFixed(2)}</td>
+                      <td className={`py-2 text-right ${deltaColor}`}>{delta == null ? "-" : `${delta >= 0 ? "+" : ""}${delta.toFixed(1)}%`}</td>
+                      <td className="py-2 text-right text-gray-200">{q.epsActual == null ? "-" : q.epsActual.toFixed(2)}</td>
+                      <td className="py-2 text-right text-gray-200">{q.epsEstimate == null ? "-" : q.epsEstimate.toFixed(2)}</td>
+                      <td className="py-2 text-right text-gray-200">{q.surprisePct == null ? "-" : `${q.surprisePct.toFixed(1)}%`}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
