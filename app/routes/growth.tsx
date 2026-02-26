@@ -182,6 +182,14 @@ export default function GrowthPage() {
   const selected = filtered.find((r) => r.ticker === selectedTicker) ?? filtered[0];
   const selectedAnalysis = selected ? getGrowthAnalysis(selected.ticker) : undefined;
 
+  const topMovers = useMemo(() => {
+    return [...(group === "bigtech" ? bigTechRows : hyperRows)]
+      .map((r) => ({ row: r, delta: getGrowthAnalysis(r.ticker)?.scoreDelta ?? null }))
+      .filter((x) => x.delta !== null)
+      .sort((a, b) => Math.abs(b.delta as number) - Math.abs(a.delta as number))
+      .slice(0, 3);
+  }, [group, bigTechRows, hyperRows]);
+
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
       <div className="flex items-center gap-4 mb-8">
@@ -243,10 +251,18 @@ export default function GrowthPage() {
         />
       </div>
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-3">
         {top3.map((g, idx) => (
           <span key={g.ticker} className="text-[11px] px-2 py-1 rounded-full bg-emerald-900/30 text-emerald-300 border border-emerald-700/40">
             TOP{idx + 1} {g.ticker} {g.score.score.toFixed(1)}
+          </span>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {topMovers.map((m) => (
+          <span key={m.row.ticker} className="text-[11px] px-2 py-1 rounded-full bg-indigo-900/30 text-indigo-300 border border-indigo-700/40">
+            Δ {m.row.ticker} {m.delta! >= 0 ? "+" : ""}{m.delta!.toFixed(2)}
           </span>
         ))}
       </div>
@@ -281,7 +297,13 @@ export default function GrowthPage() {
                   <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.roe !== null ? `${g.roe.toFixed(1)}%` : "-"}</td>
                   <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.margin !== null ? `${g.margin.toFixed(1)}%` : "-"}</td>
                   <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.pe !== null ? g.pe.toFixed(1) : "-"}</td>
-                  <td className={`text-right px-4 py-3 text-sm font-bold ${g.score.color}`}>{g.score.score.toFixed(1)} ({g.score.label})</td>
+                  <td className={`text-right px-4 py-3 text-sm font-bold ${g.score.color}`}>
+                    <div>{g.score.score.toFixed(1)} ({g.score.label})</div>
+                    <div className="text-[10px] text-gray-500">
+                      신뢰도 {getGrowthAnalysis(g.ticker)?.confidence ?? "B"}
+                      {getGrowthAnalysis(g.ticker)?.scoreDelta != null ? ` · Δ ${getGrowthAnalysis(g.ticker)!.scoreDelta! >= 0 ? "+" : ""}${getGrowthAnalysis(g.ticker)!.scoreDelta!.toFixed(2)}` : ""}
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -307,6 +329,7 @@ export default function GrowthPage() {
               <div className="text-xs text-gray-400 mb-1">정성/정량 하이브리드 분석</div>
               <div className="text-sm text-white mb-2">
                 등급: <span className="font-semibold">{selectedAnalysis.overallRating}</span> ·
+                신뢰도: <span className="font-semibold">{selectedAnalysis.confidence}</span> ·
                 매수관찰 구간: {selectedAnalysis.targetBuyLow ?? "-"} ~ {selectedAnalysis.targetBuyHigh ?? "-"}
               </div>
               <p className="text-xs text-gray-300 leading-relaxed mb-3">{selectedAnalysis.summary}</p>

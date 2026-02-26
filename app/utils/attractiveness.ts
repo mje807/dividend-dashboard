@@ -10,6 +10,8 @@ export interface AttractivenessResult {
   bgColor: string;        // tailwind bg color
   yieldSignal: "저평가" | "적정" | "고평가" | "N/A";
   ddmSignal: "저평가" | "적정" | "고평가" | "N/A";
+  valuationMethod: "ddm" | "yield" | "analyst" | "none";
+  valuationConfidence: "A" | "B" | "C" | "D";
   peSignal: "저평가" | "적정" | "고평가" | "N/A";
   rangeSignal: "저점권" | "중간" | "고점권";
   analystSignal: "상승여력" | "중립" | "하락우려";
@@ -43,18 +45,26 @@ export function calcAttractiveness(
 
   // ② DDM 시그널 (fallback: 수율기반 적정가)
   let ddmSignal: "저평가" | "적정" | "고평가" | "N/A" = "N/A";
+  let valuationMethod: "ddm" | "yield" | "analyst" | "none" = "none";
+  let valuationConfidence: "A" | "B" | "C" | "D" = "D";
   if (ddm && price) {
+    valuationMethod = "ddm";
+    valuationConfidence = "A";
     const gap = (ddm - price) / price * 100;
     if (gap >= 15)       ddmSignal = "저평가";
     else if (gap <= -15) ddmSignal = "고평가";
     else                 ddmSignal = "적정";
   } else if (divRate && yieldAvg && price && yieldAvg > 0) {
+    valuationMethod = "yield";
+    valuationConfidence = "B";
     const fairByYield = divRate / (yieldAvg / 100);
     const gap = (fairByYield - price) / price * 100;
     if (gap >= 12)       ddmSignal = "저평가";
     else if (gap <= -12) ddmSignal = "고평가";
     else                 ddmSignal = "적정";
   } else if (target && price) {
+    valuationMethod = "analyst";
+    valuationConfidence = "C";
     const gap = (target - price) / price * 100;
     if (gap >= 10)       ddmSignal = "저평가";
     else if (gap <= -10) ddmSignal = "고평가";
@@ -112,5 +122,5 @@ export function calcAttractiveness(
     score <= 3.5 ? "bg-red-900/30 border-red-700/40" :
                    "bg-yellow-900/30 border-yellow-700/40";
 
-  return { score, label, color, bgColor, yieldSignal, ddmSignal, peSignal, rangeSignal, analystSignal };
+  return { score, label, color, bgColor, yieldSignal, ddmSignal, valuationMethod, valuationConfidence, peSignal, rangeSignal, analystSignal };
 }

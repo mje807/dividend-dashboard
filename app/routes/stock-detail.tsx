@@ -281,8 +281,8 @@ export default function StockDetail() {
               signal={val.ddmSignal}
               detail={
                 val.fairValueUsed && price
-                  ? `${val.fairValueMethod === "ddm" ? "DDM" : val.fairValueMethod === "yield" ? "수율평균 폴백" : "애널리스트 목표가 폴백"} 적정가 $${val.fairValueUsed} / 현재 $${price.toFixed(2)} / 괴리율 ${val.ddmGap! > 0 ? "+" : ""}${val.ddmGap}%`
-                  : "내재가치 계산 데이터 부족"
+                  ? `${val.fairValueMethod === "ddm" ? "DDM(A)" : val.fairValueMethod === "yield" ? "수율평균 폴백(B)" : "애널리스트 목표가 폴백(C)"} 적정가 $${val.fairValueUsed} / 현재 $${price.toFixed(2)} / 괴리율 ${val.ddmGap! > 0 ? "+" : ""}${val.ddmGap}%`
+                  : "내재가치 계산 데이터 부족(D)"
               }
               description={
                 val.fairValueMethod === "ddm"
