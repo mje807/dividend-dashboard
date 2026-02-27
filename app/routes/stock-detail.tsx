@@ -281,6 +281,24 @@ export default function StockDetail() {
             <span className="text-gray-500 text-xs ml-2">— yfinance 기준 · 자동 계산</span>
           </div>
 
+          <div className="flex flex-wrap gap-2 mb-4">
+            {val.yieldDiff != null && (
+              <span className={`text-[11px] px-2 py-1 rounded-full border ${val.yieldDiff >= 0 ? "bg-emerald-900/30 text-emerald-300 border-emerald-700/40" : "bg-red-900/30 text-red-300 border-red-700/40"}`}>
+                Δ수율 {val.yieldDiff >= 0 ? "+" : ""}{val.yieldDiff.toFixed(2)}%p
+              </span>
+            )}
+            {val.ddmGap != null && (
+              <span className={`text-[11px] px-2 py-1 rounded-full border ${val.ddmGap >= 0 ? "bg-emerald-900/30 text-emerald-300 border-emerald-700/40" : "bg-red-900/30 text-red-300 border-red-700/40"}`}>
+                Δ내재가치 {val.ddmGap >= 0 ? "+" : ""}{val.ddmGap.toFixed(1)}%
+              </span>
+            )}
+            {val.upside != null && (
+              <span className={`text-[11px] px-2 py-1 rounded-full border ${val.upside >= 0 ? "bg-indigo-900/30 text-indigo-300 border-indigo-700/40" : "bg-red-900/30 text-red-300 border-red-700/40"}`}>
+                Δ컨센서스 {val.upside >= 0 ? "+" : ""}{val.upside.toFixed(1)}%
+              </span>
+            )}
+          </div>
+
           {/* 종합 판정 + 점수 */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <div className={`flex-1 rounded-xl p-5 border ${
