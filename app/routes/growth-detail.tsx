@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
 import { ArrowLeft, AlertTriangle, CheckCircle2, LineChart } from "lucide-react";
 import { getGrowthAnalysis } from "~/data/growth-analysis";
-import { getGrowthHistory } from "~/data/growth-history";
+import { getGrowthHistory, type GrowthQuarterPoint } from "~/data/growth-history";
 import { getMetrics } from "~/data/metrics";
 
 export function meta() {
@@ -17,6 +17,66 @@ function qoqDelta(curr: number | null | undefined, prev: number | null | undefin
   return ((curr - prev) / Math.abs(prev)) * 100;
 }
 
+function buildAutoCommentary(history: GrowthQuarterPoint[]) {
+  const latest = history[0];
+  const prev = history[1];
+  const revDelta = qoqDelta(latest?.revenueB, prev?.revenueB);
+
+  let revComment = "매출 QoQ 데이터가 충분하지 않아 추세 판단 유보";
+  if (revDelta != null) {
+    revComment = revDelta >= 0
+      ? `최근 분기 매출은 전분기 대비 +${revDelta.toFixed(1)}%로 증가 흐름을 유지` 
+      : `최근 분기 매출은 전분기 대비 ${revDelta.toFixed(1)}%로 둔화 신호`;
+  }
+
+  const surprises = history.map(h => h.surprisePct).filter((v): v is number => v != null);
+  const avgSurprise = surprises.length ? surprises.reduce((a, b) => a + b, 0) / surprises.length : null;
+  let epsComment = "EPS 서프라이즈 데이터가 제한적";
+  if (avgSurprise != null) {
+    epsComment = avgSurprise >= 0
+      ? `최근 EPS 서프라이즈 평균은 +${avgSurprise.toFixed(1)}%로 컨센서스 상회 경향`
+      : `최근 EPS 서프라이즈 평균은 ${avgSurprise.toFixed(1)}%로 기대치 하회 경향`;
+  }
+
+  const latestSurprise = latest?.surprisePct;
+  const guideComment = latestSurprise == null
+    ? "가이던스 강도는 다음 분기 코멘트/컨센서스 리비전 확인 필요"
+    : latestSurprise >= 0
+      ? "직전 실적 서프라이즈가 양호해 가이던스 유지/상향 여부 점검이 핵심"
+      : "직전 실적이 기대 하회여서 보수적 가이던스 가능성 점검 필요";
+
+  return [revComment, epsComment, guideComment];
+}
+
+function buildNextQuarterCheckpoints(params: {
+  revenueGrowth: number | null | undefined;
+  forwardPE: number | null | undefined;
+  targetMeanPrice: number | null | undefined;
+  currentPrice: number | null | undefined;
+}): string[] {
+  const out: string[] = [];
+
+  const rg = params.revenueGrowth;
+  if (rg == null) out.push("매출 성장률 가이던스 제시 여부 및 YoY 회복 확인");
+  else if (rg >= 20) out.push("고성장(20%+) 유지 여부: 매출 성장률 둔화 폭 점검");
+  else out.push("성장 재가속 신호 확인: 신규 수요/세그먼트 확장 여부 점검");
+
+  const pe = params.forwardPE;
+  if (pe != null && pe >= 40) out.push("고밸류 부담 구간: 실적 발표 후 멀티플 압축 리스크 관리");
+  else out.push("밸류에이션 방어력 확인: 실적 대비 밸류 재평가 흐름 점검");
+
+  const tp = params.targetMeanPrice;
+  const cp = params.currentPrice;
+  if (tp != null && cp != null && cp > 0) {
+    const upside = ((tp - cp) / cp) * 100;
+    out.push(`컨센서스 목표가 대비 괴리(${upside >= 0 ? "+" : ""}${upside.toFixed(1)}%) 변화 추적`);
+  } else {
+    out.push("애널리스트 컨센서스 리비전(상향/하향) 추세 확인");
+  }
+
+  return out.slice(0, 3);
+}
+
 export default function GrowthDetailPage() {
   const { ticker } = useParams();
   const t = (ticker || "").toUpperCase();
@@ -24,6 +84,13 @@ export default function GrowthDetailPage() {
   const a = getGrowthAnalysis(t);
   const m = getMetrics(t);
   const h = getGrowthHistory(t);
+  const autoCommentary = buildAutoCommentary(h);
+  const checkpoints = buildNextQuarterCheckpoints({
+    revenueGrowth: m?.revenueGrowth,
+    forwardPE: m?.forwardPE,
+    targetMeanPrice: m?.targetMeanPrice,
+    currentPrice: m?.currentPrice,
+  });
 
   if (!a) {
     return (
@@ -114,6 +181,20 @@ export default function GrowthDetailPage() {
             </table>
           </div>
         )}
+      </div>
+
+      <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 mb-5">
+        <h2 className="text-sm font-semibold mb-3">자동 코멘트 (실적 흐름 해석)</h2>
+        <ul className="text-sm text-gray-300 list-disc pl-4 space-y-2">
+          {autoCommentary.map((c) => <li key={c}>{c}</li>)}
+        </ul>
+      </div>
+
+      <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 mb-5">
+        <h2 className="text-sm font-semibold mb-3">다음 분기 체크포인트 (3)</h2>
+        <ul className="text-sm text-gray-300 list-disc pl-4 space-y-2">
+          {checkpoints.map((c) => <li key={c}>{c}</li>)}
+        </ul>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
