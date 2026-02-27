@@ -160,12 +160,56 @@ function computeValuation(m: ReturnType<typeof getRoyaltyMetrics>, streak: numbe
   };
 }
 
+function buildDividendAutoCommentary(val: ReturnType<typeof computeValuation> | null, m: ReturnType<typeof getRoyaltyMetrics> | undefined) {
+  if (!val || !m) return ["핵심 지표 데이터가 부족해 자동 코멘트 생성이 제한됩니다."];
+
+  const c1 = val.yieldDiff == null
+    ? "현재 수율과 5년 평균 수율 비교 데이터가 부족합니다."
+    : val.yieldDiff >= 0
+      ? `현재 배당수율이 5년 평균 대비 +${val.yieldDiff.toFixed(2)}%p 높아 상대 저평가 신호가 유효합니다.`
+      : `현재 배당수율이 5년 평균 대비 ${val.yieldDiff.toFixed(2)}%p 낮아 밸류 부담 구간일 수 있습니다.`;
+
+  const c2 = val.ddmGap == null
+    ? "내재가치 괴리율 계산 데이터가 제한적입니다."
+    : `${val.fairValueMethod === "ddm" ? "DDM" : val.fairValueMethod === "yield" ? "수율기반" : "애널리스트"} 기준 괴리율은 ${val.ddmGap >= 0 ? "+" : ""}${val.ddmGap.toFixed(1)}%입니다.`;
+
+  const c3 = val.upside == null
+    ? "애널리스트 컨센서스 데이터가 제한적입니다."
+    : `애널리스트 기준 목표가 대비 ${val.upside >= 0 ? "+" : ""}${val.upside.toFixed(1)}%로 시장 기대를 확인할 필요가 있습니다.`;
+
+  return [c1, c2, c3];
+}
+
+function buildDividendCheckpoints(val: ReturnType<typeof computeValuation> | null, m: ReturnType<typeof getRoyaltyMetrics> | undefined) {
+  if (!val || !m) return ["다음 분기 배당 발표에서 배당 인상 여부 확인", "실적발표 후 배당성향 변화 점검", "52주 밴드 내 가격 위치 재점검"];
+
+  const p1 = m.payoutRatio != null && m.payoutRatio > 80
+    ? "배당성향 80%+ 구간: 배당 지속가능성/증액 여력 점검"
+    : "배당성향 변화(실적 대비 배당 지급 여력) 추적";
+
+  const p2 = val.fairValueMethod === "ddm"
+    ? "DDM 전제(성장률·요구수익률) 유효성 재점검"
+    : val.fairValueMethod === "yield"
+      ? "5년 평균 수율 회귀 가정 유지 여부 점검"
+      : "애널리스트 컨센서스 리비전(상향/하향) 추적";
+
+  const p3 = val.rangeSignal === "저점권"
+    ? "저점권 이탈 여부와 거래량 동반 반등 신호 확인"
+    : val.rangeSignal === "고점권"
+      ? "고점권 과열 구간에서 분할 대응 기준 점검"
+      : "중간 구간에서 실적 모멘텀 확인 후 비중 조절";
+
+  return [p1, p2, p3];
+}
+
 export default function StockDetail() {
   const { ticker } = useParams<{ ticker: string }>();
   const stock = royaltyStocks.find(s => s.ticker === ticker);
   const analysis = ticker ? getAnalysis(ticker) : undefined;
   const m = ticker ? getRoyaltyMetrics(ticker) : undefined;
   const val = m ? computeValuation(m, stock?.streak ?? 0) : null;
+  const autoCommentary = buildDividendAutoCommentary(val, m);
+  const checkpoints = buildDividendCheckpoints(val, m);
 
   if (!stock) {
     return (
@@ -381,6 +425,21 @@ export default function StockDetail() {
           )}
         </div>
       )}
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6">
+        <div className="bg-gray-900 rounded-xl p-5">
+          <SectionHeader icon={<Gauge size={16} className="text-cyan-400" />} title="자동 코멘트 (밸류 흐름 해석)" />
+          <ul className="text-sm text-gray-300 list-disc pl-4 space-y-2">
+            {autoCommentary.map((c) => <li key={c}>{c}</li>)}
+          </ul>
+        </div>
+        <div className="bg-gray-900 rounded-xl p-5">
+          <SectionHeader icon={<Target size={16} className="text-indigo-400" />} title="다음 분기 체크포인트 (3)" />
+          <ul className="text-sm text-gray-300 list-disc pl-4 space-y-2">
+            {checkpoints.map((c) => <li key={c}>{c}</li>)}
+          </ul>
+        </div>
+      </div>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           📝 정성 심층 분석 (수동 작성 — 분석 완료 종목만)
