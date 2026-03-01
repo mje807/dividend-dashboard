@@ -10,4 +10,5 @@ export default [
   route("calculator", "routes/calculator.tsx"),
   route("market", "routes/market.tsx"),
   route("api/jobs/run", "routes/api.jobs.run.ts"),
+  route("api/supabase/migrate", "routes/api.supabase.migrate.ts"),
 ] satisfies RouteConfig;
