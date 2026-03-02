@@ -482,7 +482,7 @@ export const stockMetrics: StockMetrics[] = [
     debtToEquity: 132.1,
     currentRatio: 0.97,
     revenueGrowth: -1.6,
-    targetMeanPrice: 106.91,
+    targetMeanPrice: 107.28,
     recommendationKey: "hold",
     numberOfAnalystOpinions: 32,
     longName: "Target Corporation",
