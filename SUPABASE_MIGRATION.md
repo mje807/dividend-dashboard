@@ -7,8 +7,11 @@
 - target tables:
   - `public.stock_metrics_latest`
   - `public.growth_analyses_latest`
-- SQL migration file:
+  - `public.royalty_metrics_latest`
+  - `public.royalty_analyses_latest`
+- SQL migration files:
   - `supabase/migrations/20260301_init_market_tables.sql`
+  - `supabase/migrations/20260302_add_royalty_tables.sql`
 
 ## Prerequisites
 Set env vars:
@@ -17,8 +20,9 @@ Set env vars:
 - `JOB_RUNNER_TOKEN`
 
 ## 1) Run SQL migration
-In Supabase SQL Editor, run:
+In Supabase SQL Editor, run in order:
 - `supabase/migrations/20260301_init_market_tables.sql`
+- `supabase/migrations/20260302_add_royalty_tables.sql`
 
 ## 2) Run migrate endpoint
 ```bash
