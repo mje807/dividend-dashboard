@@ -3,12 +3,23 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 
-export type JobName = "analysis-worker" | "naver-insight-watcher" | "cron-health-summary";
+export type JobName =
+  | "analysis-worker"
+  | "naver-insight-watcher"
+  | "cron-health-summary"
+  | "therich-scraper"
+  | "dividend-royalty-scraper"
+  | "portfolio-metrics-scraper"
+  | "royalty-metrics-scraper"
+  | "growth-metrics-scraper"
+  | "growth-analysis-worker"
+  | "growth-history-scraper";
 
 type JobConfig = {
   command: string;
   args: string[];
   timeoutMs?: number;
+  env?: Record<string, string>;
 };
 
 type JobRunResult = {
@@ -23,22 +34,59 @@ type JobRunResult = {
 };
 
 const DEFAULT_TIMEOUT_MS = 1000 * 60 * 15;
+const SCRIPTS = "/Users/kimjonghyeon/.openclaw/workspace/scripts";
 
 const JOB_CONFIGS: Record<JobName, JobConfig> = {
   "analysis-worker": {
     command: "/opt/homebrew/bin/python3",
-    args: ["/Users/kimjonghyeon/.openclaw/workspace/scripts/analysis-worker.py"],
+    args: [`${SCRIPTS}/analysis-worker.py`],
     timeoutMs: 1000 * 60 * 20,
   },
   "naver-insight-watcher": {
     command: "/opt/homebrew/bin/python3",
-    args: ["/Users/kimjonghyeon/.openclaw/workspace/scripts/naver-insight-watcher.py"],
+    args: [`${SCRIPTS}/naver-insight-watcher.py`],
     timeoutMs: 1000 * 60 * 10,
   },
   "cron-health-summary": {
     command: "/opt/homebrew/bin/python3",
-    args: ["/Users/kimjonghyeon/.openclaw/workspace/scripts/cron-health-summary.py"],
+    args: [`${SCRIPTS}/cron-health-summary.py`],
     timeoutMs: 1000 * 60 * 5,
+  },
+  "therich-scraper": {
+    command: "/opt/homebrew/bin/node",
+    args: [`${SCRIPTS}/therich-scraper.mjs`],
+    timeoutMs: 1000 * 60 * 10,
+    env: { SKIP_SCREENSHOT: "1" },
+  },
+  "dividend-royalty-scraper": {
+    command: "/opt/homebrew/bin/python3",
+    args: [`${SCRIPTS}/dividend-royalty-scraper.py`],
+    timeoutMs: 1000 * 60 * 15,
+  },
+  "portfolio-metrics-scraper": {
+    command: "/opt/homebrew/bin/python3",
+    args: [`${SCRIPTS}/portfolio-metrics-scraper.py`],
+    timeoutMs: 1000 * 60 * 15,
+  },
+  "royalty-metrics-scraper": {
+    command: "/opt/homebrew/bin/python3",
+    args: [`${SCRIPTS}/royalty-metrics-scraper.py`],
+    timeoutMs: 1000 * 60 * 20,
+  },
+  "growth-metrics-scraper": {
+    command: "/opt/homebrew/bin/python3",
+    args: [`${SCRIPTS}/growth-metrics-scraper.py`],
+    timeoutMs: 1000 * 60 * 15,
+  },
+  "growth-analysis-worker": {
+    command: "/opt/homebrew/bin/python3",
+    args: [`${SCRIPTS}/growth-analysis-worker.py`],
+    timeoutMs: 1000 * 60 * 20,
+  },
+  "growth-history-scraper": {
+    command: "/opt/homebrew/bin/python3",
+    args: [`${SCRIPTS}/growth-history-scraper.py`],
+    timeoutMs: 1000 * 60 * 20,
   },
 };
 
@@ -77,6 +125,7 @@ export async function runJob(jobInput: string): Promise<JobRunResult> {
       env: {
         ...process.env,
         HOME: "/Users/kimjonghyeon",
+        ...(cfg.env ?? {}),
       },
     });
 
