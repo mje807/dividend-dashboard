@@ -1,5 +1,5 @@
 // 자동 생성 - 보유 종목 상세 지표
-// 마지막 업데이트: 2026-03-01
+// 마지막 업데이트: 2026-03-02
 
 export interface StockMetrics {
   ticker: string;
@@ -40,13 +40,13 @@ export interface StockMetrics {
   longBusinessSummary: string | null;
 }
 
-export const metricsLastUpdated = "2026-03-01";
+export const metricsLastUpdated = "2026-03-02";
 
 export const stockMetrics: StockMetrics[] = [
   {
     ticker: "SCHD",
     yfTicker: "SCHD",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 31.77,
     currency: "USD",
     week52High: 31.88,
@@ -78,7 +78,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "SOL 배당다우",
     yfTicker: "446720.KS",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 13085.0,
     currency: "KRW",
     week52High: 13490.0,
@@ -110,7 +110,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "O",
     yfTicker: "O",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 67.0,
     currency: "USD",
     week52High: 67.94,
@@ -142,7 +142,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "ACE 배당다우",
     yfTicker: "402970.KS",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 14500.0,
     currency: "KRW",
     week52High: 14940.0,
@@ -174,7 +174,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "ACE 나스닥100",
     yfTicker: "367380.KS",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 27340.0,
     currency: "KRW",
     week52High: 29040.0,
@@ -206,7 +206,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "NVDA",
     yfTicker: "NVDA",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 177.19,
     currency: "USD",
     week52High: 212.19,
@@ -238,7 +238,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "QQQM",
     yfTicker: "QQQM",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 250.06,
     currency: "USD",
     week52High: 262.23,
@@ -270,7 +270,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "KODEX TRF3070",
     yfTicker: "441800.KS",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 30275.0,
     currency: "KRW",
     week52High: 30945.0,
@@ -302,7 +302,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "TIGER 테크TOP10",
     yfTicker: "381170.KS",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 28640.0,
     currency: "KRW",
     week52High: 31805.0,
@@ -334,7 +334,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "ACE 배당퀄리티",
     yfTicker: "441680.KS",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 10740.0,
     currency: "KRW",
     week52High: 11400.0,
@@ -366,7 +366,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "TLT",
     yfTicker: "TLT",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 90.82,
     currency: "USD",
     week52High: 94.09,
@@ -398,7 +398,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "SCHG",
     yfTicker: "SCHG",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 30.74,
     currency: "USD",
     week52High: 33.74,
@@ -430,7 +430,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "TSLA",
     yfTicker: "TSLA",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 402.51,
     currency: "USD",
     week52High: 498.83,
@@ -462,7 +462,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "TGT",
     yfTicker: "TGT",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 113.79,
     currency: "USD",
     week52High: 127.06,
@@ -482,7 +482,7 @@ export const stockMetrics: StockMetrics[] = [
     debtToEquity: 132.1,
     currentRatio: 0.97,
     revenueGrowth: -1.6,
-    targetMeanPrice: 106.44,
+    targetMeanPrice: 106.91,
     recommendationKey: "hold",
     numberOfAnalystOpinions: 32,
     longName: "Target Corporation",
@@ -494,7 +494,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "BTC / KRW",
     yfTicker: null,
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: null,
     currency: null,
     week52High: null,
@@ -526,7 +526,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "ARKK",
     yfTicker: "ARKK",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 72.91,
     currency: "USD",
     week52High: 92.65,
@@ -558,7 +558,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "MGK",
     yfTicker: "MGK",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 386.95,
     currency: "USD",
     week52High: 426.8,
@@ -590,7 +590,7 @@ export const stockMetrics: StockMetrics[] = [
   {
     ticker: "TIGER S&P500",
     yfTicker: "143850.KS",
-    lastUpdated: "2026-03-01",
+    lastUpdated: "2026-03-02",
     currentPrice: 70545.0,
     currency: "KRW",
     week52High: 72725.0,
