@@ -1,5 +1,5 @@
 // 자동 생성 - 배당 유니버스 데이터 (왕족/귀족/배당성장)
-// 마지막 업데이트: 2026-03-01
+// 마지막 업데이트: 2026-03-02
 
 export type DividendCategory = "king" | "aristocrat" | "growth";
 
@@ -19,7 +19,7 @@ export interface RoyaltyStock {
   avgYield10y: number;
 }
 
-export const royaltyLastUpdated = "2026-03-01";
+export const royaltyLastUpdated = "2026-03-02";
 
 export const royaltyStocks: RoyaltyStock[] = [
   {
