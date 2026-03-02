@@ -1,5 +1,5 @@
 // 자동 생성 - 성장주 실적/가이던스 히스토리(요약)
-// 마지막 업데이트: 2026-03-02
+// 마지막 업데이트: 2026-03-03
 
 export interface GrowthQuarterPoint {
   label: string;
@@ -9,7 +9,7 @@ export interface GrowthQuarterPoint {
   surprisePct: number | null;
 }
 
-export const growthHistoryLastUpdated = "2026-03-02";
+export const growthHistoryLastUpdated = "2026-03-03";
 
 export const growthHistoryMap: Record<string, GrowthQuarterPoint[]> = {
   "MSFT": [{ label: "2025-Q", revenueB: 81.27, epsActual: null, epsEstimate: null, surprisePct: null }, { label: "2025-Q", revenueB: 77.67, epsActual: null, epsEstimate: null, surprisePct: null }, { label: "2025-Q", revenueB: 76.44, epsActual: null, epsEstimate: null, surprisePct: null }, { label: "2025-Q", revenueB: 70.07, epsActual: null, epsEstimate: null, surprisePct: null }],
