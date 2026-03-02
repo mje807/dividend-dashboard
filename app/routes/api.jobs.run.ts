@@ -1,4 +1,5 @@
 import { listSupportedJobs, runJob } from "~/lib/job-runner.server";
+import { migrateSnapshotsToSupabase } from "~/lib/supabase-migrate.server";
 
 function j(body: unknown, status = 200) {
   return Response.json(body, { status });
@@ -41,5 +42,18 @@ export async function action({ request }: { request: Request }) {
   }
 
   const result = await runJob(job);
+
+  // 분석/수집 잡 성공 시 최신 스냅샷을 Supabase에 자동 반영
+  if (result.ok && (job === "analysis-worker" || job === "naver-insight-watcher")) {
+    const migrate = await migrateSnapshotsToSupabase();
+    return j(
+      {
+        ...result,
+        supabaseSync: migrate,
+      },
+      migrate.ok ? 200 : 500,
+    );
+  }
+
   return j(result, result.ok ? 200 : 500);
 }

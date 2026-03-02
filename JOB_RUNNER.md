@@ -16,6 +16,11 @@
 - `naver-insight-watcher`
 - `cron-health-summary`
 
+## 자동 Supabase 동기화
+- `analysis-worker`, `naver-insight-watcher` 성공 시
+- `stock_metrics_latest`, `growth_analyses_latest`로 자동 upsert 수행
+- 응답의 `supabaseSync` 필드에서 동기화 성공/실패 확인 가능
+
 ## 환경변수
 - `JOB_RUNNER_TOKEN`: 필수
 
