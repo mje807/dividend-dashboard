@@ -1,12 +1,18 @@
 import { useState, useMemo } from "react";
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { ArrowLeft, Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 import { royaltyStocks, royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
-import { getRoyaltyMetrics } from "~/data/royalty-metrics";
+import { type RoyaltyMetrics } from "~/data/royalty-metrics";
+import { getRoyaltyMetricsLatest } from "~/lib/market-data.server";
 import { calcAttractiveness } from "~/utils/attractiveness";
 
 export function meta() {
   return [{ title: "배당 왕족주·귀족주·배당성장주" }];
+}
+
+export async function loader() {
+  const metrics = await getRoyaltyMetricsLatest();
+  return Response.json({ metrics });
 }
 
 type Category = "all" | "king" | "aristocrat" | "growth";
@@ -26,7 +32,12 @@ const SECTOR_COLORS: Record<string, string> = {
   "리츠":       "bg-pink-900/40 text-pink-400",
 };
 
+type WatchlistLoaderData = { metrics: RoyaltyMetrics[] };
+
 export default function Watchlist() {
+  const { metrics } = useLoaderData<WatchlistLoaderData>();
+  const metricsMap = useMemo(() => new Map(metrics.map((m) => [m.ticker, m])), [metrics]);
+
   const [category, setCategory] = useState<Category>("all");
   const [attrFilter, setAttrFilter] = useState<AttrFilter>("all");
   const [search, setSearch] = useState("");
@@ -43,11 +54,11 @@ export default function Watchlist() {
 
   const enriched = useMemo(() =>
     royaltyStocks.map(s => {
-      const m = getRoyaltyMetrics(s.ticker);
+      const m = metricsMap.get(s.ticker);
       const att = calcAttractiveness(m, s.streak);
 
       return { ...s, attractivenessScore: att?.score ?? 5, attractiveness: att };
-    }), []
+    }), [metricsMap]
   );
 
 

@@ -1,15 +1,31 @@
-import { Link, useParams } from "react-router";
+import { Link, useLoaderData, useParams } from "react-router";
 import {
   ArrowLeft, Shield, TrendingUp, AlertTriangle, Star, BookOpen,
   Calendar, DollarSign, BarChart2, Target, Gauge, Users,
 } from "lucide-react";
 import { royaltyStocks } from "~/data/royalty";
-import { getAnalysis, type MoatType } from "~/data/royalty-analysis";
-import { getRoyaltyMetrics } from "~/data/royalty-metrics";
+import { type MoatType } from "~/data/royalty-analysis";
+import { getRoyaltyAnalysesLatest, getRoyaltyMetricsLatest } from "~/lib/market-data.server";
 
 export function meta({ params }: { params: { ticker: string } }) {
   return [{ title: `${params.ticker} 심층분석 — 배당 대시보드` }];
 }
+
+export async function loader({ params }: { params: { ticker: string } }) {
+  const ticker = (params.ticker || "").toUpperCase();
+  const [metrics, analyses] = await Promise.all([
+    getRoyaltyMetricsLatest(),
+    getRoyaltyAnalysesLatest(),
+  ]);
+
+  return Response.json({
+    ticker,
+    metric: metrics.find((m) => m.ticker === ticker) ?? null,
+    analysis: analyses.find((a) => a.ticker === ticker) ?? null,
+  });
+}
+
+type RoyaltyMetricItem = Awaited<ReturnType<typeof getRoyaltyMetricsLatest>>[number];
 
 const MOAT_LABELS: Record<MoatType, string> = {
   brand: "브랜드",
@@ -39,7 +55,7 @@ const RATING_CFG = {
 };
 
 // ─── 밸류에이션 판단 로직 ────────────────────────────────────────────────────
-function computeValuation(m: ReturnType<typeof getRoyaltyMetrics>, streak: number) {
+function computeValuation(m: RoyaltyMetricItem | null, streak: number) {
   if (!m) return null;
 
   const price = m.currentPrice;
@@ -160,7 +176,7 @@ function computeValuation(m: ReturnType<typeof getRoyaltyMetrics>, streak: numbe
   };
 }
 
-function buildDividendAutoCommentary(val: ReturnType<typeof computeValuation> | null, m: ReturnType<typeof getRoyaltyMetrics> | undefined) {
+function buildDividendAutoCommentary(val: ReturnType<typeof computeValuation> | null, m: RoyaltyMetricItem | null) {
   if (!val || !m) return ["핵심 지표 데이터가 부족해 자동 코멘트 생성이 제한됩니다."];
 
   const c1 = val.yieldDiff == null
@@ -180,7 +196,7 @@ function buildDividendAutoCommentary(val: ReturnType<typeof computeValuation> | 
   return [c1, c2, c3];
 }
 
-function buildDividendCheckpoints(val: ReturnType<typeof computeValuation> | null, m: ReturnType<typeof getRoyaltyMetrics> | undefined) {
+function buildDividendCheckpoints(val: ReturnType<typeof computeValuation> | null, m: RoyaltyMetricItem | null) {
   if (!val || !m) return ["다음 분기 배당 발표에서 배당 인상 여부 확인", "실적발표 후 배당성향 변화 점검", "52주 밴드 내 가격 위치 재점검"];
 
   const p1 = m.payoutRatio != null && m.payoutRatio > 80
@@ -202,12 +218,20 @@ function buildDividendCheckpoints(val: ReturnType<typeof computeValuation> | nul
   return [p1, p2, p3];
 }
 
+type StockDetailLoaderData = {
+  ticker: string;
+  metric: RoyaltyMetricItem | null;
+  analysis: Awaited<ReturnType<typeof getRoyaltyAnalysesLatest>>[number] | null;
+};
+
 export default function StockDetail() {
   const { ticker } = useParams<{ ticker: string }>();
-  const stock = royaltyStocks.find(s => s.ticker === ticker);
-  const analysis = ticker ? getAnalysis(ticker) : undefined;
-  const m = ticker ? getRoyaltyMetrics(ticker) : undefined;
-  const val = m ? computeValuation(m, stock?.streak ?? 0) : null;
+  const data = useLoaderData<StockDetailLoaderData>();
+  const resolvedTicker = (ticker || data.ticker || "").toUpperCase();
+  const stock = royaltyStocks.find(s => s.ticker === resolvedTicker);
+  const analysis = data.analysis;
+  const m = data.metric;
+  const val = computeValuation(m, stock?.streak ?? 0);
   const autoCommentary = buildDividendAutoCommentary(val, m);
   const checkpoints = buildDividendCheckpoints(val, m);
 
