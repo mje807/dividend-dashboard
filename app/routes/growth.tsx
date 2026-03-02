@@ -1,9 +1,10 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { ArrowLeft, LineChart, Rocket, Search, SlidersHorizontal } from "lucide-react";
 import { bigTechTickers, hyperGrowthTickers } from "~/data/growth";
-import { getMetrics, type StockMetrics } from "~/data/metrics";
-import { getGrowthAnalysis } from "~/data/growth-analysis";
+import { type StockMetrics } from "~/data/metrics";
+import { type GrowthAnalysis } from "~/data/growth-analysis";
+import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-data.server";
 
 type Group = "bigtech" | "hyper";
 
@@ -44,6 +45,14 @@ type Row = {
 
 export function meta() {
   return [{ title: "성장주 분석" }];
+}
+
+export async function loader() {
+  const [metrics, analyses] = await Promise.all([
+    getStockMetricsLatest(),
+    getGrowthAnalysesLatest(),
+  ]);
+  return Response.json({ metrics, analyses });
 }
 
 function clamp(v: number, min: number, max: number) {
@@ -112,10 +121,14 @@ function calcGrowthScoreWithWeights(m: StockMetrics | undefined, w: Weights): Sc
   };
 }
 
-function buildRows(tickers: readonly string[], weights: Weights): Row[] {
+function buildRows(
+  tickers: readonly string[],
+  weights: Weights,
+  metricsMap: Map<string, StockMetrics>,
+): Row[] {
   return tickers
     .map((ticker) => {
-      const m = getMetrics(ticker);
+      const m = metricsMap.get(ticker);
       const score = calcGrowthScoreWithWeights(m, weights);
       return {
         ticker,
@@ -159,14 +172,36 @@ function WeightSlider({
   );
 }
 
+type GrowthLoaderData = {
+  metrics: StockMetrics[];
+  analyses: GrowthAnalysis[];
+};
+
 export default function GrowthPage() {
+  const { metrics, analyses } = useLoaderData<GrowthLoaderData>();
+
+  const metricsMap = useMemo(
+    () => new Map<string, StockMetrics>(metrics.map((m) => [m.ticker, m])),
+    [metrics],
+  );
+  const analysisMap = useMemo(
+    () => new Map<string, GrowthAnalysis>(analyses.map((a) => [a.ticker, a])),
+    [analyses],
+  );
+
   const [group, setGroup] = useState<Group>("bigtech");
   const [query, setQuery] = useState("");
   const [weights, setWeights] = useState<Weights>(DEFAULT_WEIGHTS);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
 
-  const bigTechRows = useMemo(() => buildRows(bigTechTickers, weights), [weights]);
-  const hyperRows = useMemo(() => buildRows(hyperGrowthTickers, weights), [weights]);
+  const bigTechRows = useMemo(
+    () => buildRows(bigTechTickers, weights, metricsMap),
+    [weights, metricsMap],
+  );
+  const hyperRows = useMemo(
+    () => buildRows(hyperGrowthTickers, weights, metricsMap),
+    [weights, metricsMap],
+  );
 
   const rows = group === "bigtech" ? bigTechRows : hyperRows;
   const filtered = useMemo(() => {
@@ -180,15 +215,15 @@ export default function GrowthPage() {
   const cautionCount = filtered.filter((r) => r.score.label === "주의").length;
 
   const selected = filtered.find((r) => r.ticker === selectedTicker) ?? filtered[0];
-  const selectedAnalysis = selected ? getGrowthAnalysis(selected.ticker) : undefined;
+  const selectedAnalysis = selected ? analysisMap.get(selected.ticker) : undefined;
 
   const topMovers = useMemo(() => {
     return [...(group === "bigtech" ? bigTechRows : hyperRows)]
-      .map((r) => ({ row: r, delta: getGrowthAnalysis(r.ticker)?.scoreDelta ?? null }))
+      .map((r) => ({ row: r, delta: analysisMap.get(r.ticker)?.scoreDelta ?? null }))
       .filter((x) => x.delta !== null)
       .sort((a, b) => Math.abs(b.delta as number) - Math.abs(a.delta as number))
       .slice(0, 3);
-  }, [group, bigTechRows, hyperRows]);
+  }, [group, bigTechRows, hyperRows, analysisMap]);
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
@@ -302,8 +337,8 @@ export default function GrowthPage() {
                   <td className={`text-right px-4 py-3 text-sm font-bold ${g.score.color}`}>
                     <div>{g.score.score.toFixed(1)} ({g.score.label})</div>
                     <div className="text-[10px] text-gray-500">
-                      신뢰도 {getGrowthAnalysis(g.ticker)?.confidence ?? "B"}
-                      {getGrowthAnalysis(g.ticker)?.scoreDelta != null ? ` · Δ ${getGrowthAnalysis(g.ticker)!.scoreDelta! >= 0 ? "+" : ""}${getGrowthAnalysis(g.ticker)!.scoreDelta!.toFixed(2)}` : ""}
+                      신뢰도 {analysisMap.get(g.ticker)?.confidence ?? "B"}
+                      {analysisMap.get(g.ticker)?.scoreDelta != null ? ` · Δ ${analysisMap.get(g.ticker)!.scoreDelta! >= 0 ? "+" : ""}${analysisMap.get(g.ticker)!.scoreDelta!.toFixed(2)}` : ""}
                     </div>
                   </td>
                 </tr>

@@ -1,11 +1,24 @@
-import { Link, useParams } from "react-router";
+import { Link, useLoaderData, useParams } from "react-router";
 import { ArrowLeft, AlertTriangle, CheckCircle2, LineChart } from "lucide-react";
-import { getGrowthAnalysis } from "~/data/growth-analysis";
 import { getGrowthHistory, type GrowthQuarterPoint } from "~/data/growth-history";
-import { getMetrics } from "~/data/metrics";
+import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-data.server";
 
 export function meta() {
   return [{ title: "성장주 상세 분석" }];
+}
+
+export async function loader({ params }: { params: { ticker?: string } }) {
+  const ticker = (params.ticker || "").toUpperCase();
+  const [metrics, analyses] = await Promise.all([
+    getStockMetricsLatest(),
+    getGrowthAnalysesLatest(),
+  ]);
+
+  return Response.json({
+    ticker,
+    metric: metrics.find((m) => m.ticker === ticker) ?? null,
+    analysis: analyses.find((a) => a.ticker === ticker) ?? null,
+  });
 }
 
 function metric(v: number | null | undefined, suffix = "") {
@@ -77,12 +90,19 @@ function buildNextQuarterCheckpoints(params: {
   return out.slice(0, 3);
 }
 
+type GrowthDetailLoaderData = {
+  ticker: string;
+  metric: Awaited<ReturnType<typeof getStockMetricsLatest>>[number] | null;
+  analysis: Awaited<ReturnType<typeof getGrowthAnalysesLatest>>[number] | null;
+};
+
 export default function GrowthDetailPage() {
   const { ticker } = useParams();
-  const t = (ticker || "").toUpperCase();
+  const data = useLoaderData<GrowthDetailLoaderData>();
+  const t = (ticker || data.ticker || "").toUpperCase();
 
-  const a = getGrowthAnalysis(t);
-  const m = getMetrics(t);
+  const a = data.analysis;
+  const m = data.metric;
   const h = getGrowthHistory(t);
   const autoCommentary = buildAutoCommentary(h);
   const checkpoints = buildNextQuarterCheckpoints({
@@ -201,13 +221,13 @@ export default function GrowthDetailPage() {
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-5">
           <h3 className="text-sm font-semibold text-emerald-300 mb-2 inline-flex items-center gap-2"><CheckCircle2 size={14}/>상방 드라이버</h3>
           <ul className="text-sm text-gray-300 list-disc pl-4 space-y-1">
-            {a.keyDrivers.map((d) => <li key={d}>{d}</li>)}
+            {a.keyDrivers.map((d: string) => <li key={d}>{d}</li>)}
           </ul>
         </div>
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-5">
           <h3 className="text-sm font-semibold text-red-300 mb-2 inline-flex items-center gap-2"><AlertTriangle size={14}/>핵심 리스크</h3>
           <ul className="text-sm text-gray-300 list-disc pl-4 space-y-1">
-            {a.keyRisks.map((r) => <li key={r}>{r}</li>)}
+            {a.keyRisks.map((r: string) => <li key={r}>{r}</li>)}
           </ul>
         </div>
       </div>
