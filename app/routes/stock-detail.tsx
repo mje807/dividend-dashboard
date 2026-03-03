@@ -1,6 +1,8 @@
 import { Link, useLoaderData, useParams } from "react-router";
+import { PageHeader } from "~/components/ui/PageHeader";
+import { SectionCard } from "~/components/ui/SectionCard";
 import {
-  ArrowLeft, Shield, TrendingUp, AlertTriangle, Star, BookOpen,
+  Shield, TrendingUp, AlertTriangle, Star, BookOpen,
   Calendar, DollarSign, BarChart2, Target, Gauge, Users,
 } from "lucide-react";
 import { royaltyStocks } from "~/data/royalty";
@@ -248,20 +250,16 @@ export default function StockDetail() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
-      {/* 헤더 */}
-      <div className="flex items-center justify-between gap-4 mb-8">
-        <Link to="/watchlist" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
-          <ArrowLeft size={16} />
-          왕족·귀족주 목록
-        </Link>
-        <div className="text-[11px] text-gray-500 text-right">
-          <div>분석 업데이트: {analysis?.analyzedAt ?? "-"}</div>
-          <div>지표 업데이트: {m?.fetchedAt ?? "-"}</div>
-        </div>
-      </div>
+      <PageHeader
+        title={`${stock.ticker} 심층분석`}
+        subtitle={stock.name}
+        backHref="/watchlist"
+        backLabel="왕족·귀족주 목록"
+        updatedAt={`분석 ${analysis?.analyzedAt ?? "-"} · 지표 ${m?.fetchedAt ?? "-"}`}
+      />
 
       {/* 종목 헤더 */}
-      <div className="bg-gray-900 rounded-xl p-6 mb-6">
+      <SectionCard className="p-6 mb-6">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>
             <div className="flex items-center gap-3 mb-2">
@@ -296,13 +294,13 @@ export default function StockDetail() {
               color={(m?.payoutRatio ?? stock.payoutRatio) > 80 ? "text-red-400" : (m?.payoutRatio ?? stock.payoutRatio) > 60 ? "text-yellow-400" : "text-gray-300"} />
           </div>
         </div>
-      </div>
+      </SectionCard>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           🔍 정량 밸류에이션 분석 (자동 계산 — 모든 종목 표시)
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       {val && (
-        <div className="bg-gray-900 rounded-xl p-6 mb-6">
+        <SectionCard className="p-6 mb-6">
           <div className="flex items-center gap-2 mb-5">
             <Target size={18} className="text-indigo-400" />
             <h2 className="font-semibold text-white">밸류에이션 분석</h2>
@@ -469,7 +467,7 @@ export default function StockDetail() {
               </div>
             </div>
           )}
-        </div>
+        </SectionCard>
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6">
