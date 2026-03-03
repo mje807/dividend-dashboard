@@ -12,7 +12,14 @@ export function meta() {
 
 export async function loader() {
   const metrics = await getRoyaltyMetricsLatest();
-  return Response.json({ metrics });
+  return Response.json(
+    { metrics },
+    {
+      headers: {
+        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+      },
+    },
+  );
 }
 
 type Category = "all" | "king" | "aristocrat" | "growth";

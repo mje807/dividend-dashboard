@@ -262,12 +262,49 @@ function mapRoyaltyAnalysis(row: DbRoyaltyAnalysis): StockAnalysis {
   };
 }
 
+const ROYALTY_METRICS_WATCHLIST_COLUMNS = [
+  "ticker",
+  "fetched_at",
+  "current_price",
+  "week52_low",
+  "week52_high",
+  "pct_in52_range",
+  "beta",
+  "dividend_rate",
+  "dividend_yield",
+  "five_year_avg_yield",
+  "yield_vs_avg",
+  "payout_ratio",
+  "dividend_cagr3yr",
+  "trailing_pe",
+  "forward_pe",
+  "price_to_book",
+  "ev_to_ebitda",
+  "peg_ratio",
+  "ddm_fair_value",
+  "roe",
+  "profit_margin",
+  "debt_to_equity",
+  "current_ratio",
+  "revenue_growth",
+  "free_cashflow",
+  "target_mean_price",
+  "analyst_upside",
+  "recommendation_key",
+  "number_of_analysts",
+  "market_cap",
+  "sector",
+  "industry"
+].join(",");
+
 export async function getRoyaltyMetricsLatest(): Promise<RoyaltyMetrics[]> {
   try {
     const supabase = createSupabaseAdminClient();
-    const { data, error } = await supabase.from("royalty_metrics_latest").select("*");
+    const { data, error } = await supabase
+      .from("royalty_metrics_latest")
+      .select(ROYALTY_METRICS_WATCHLIST_COLUMNS);
     if (error || !data?.length) return royaltyMetrics;
-    return (data as DbRoyaltyMetric[]).map(mapRoyaltyMetric);
+    return (data as unknown as DbRoyaltyMetric[]).map(mapRoyaltyMetric);
   } catch {
     return royaltyMetrics;
   }
