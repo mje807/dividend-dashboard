@@ -2,8 +2,7 @@ import { useState, useMemo } from "react";
 import { Link, useLoaderData } from "react-router";
 import { ArrowLeft, Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 import { royaltyStocks, royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
-import { type RoyaltyMetrics } from "~/data/royalty-metrics";
-import { getRoyaltyMetricsLatest } from "~/lib/market-data.server";
+import { royaltyMetrics, type RoyaltyMetrics } from "~/data/royalty-metrics";
 import { calcAttractiveness } from "~/utils/attractiveness";
 
 export function meta() {
@@ -11,15 +10,7 @@ export function meta() {
 }
 
 export async function loader() {
-  const metrics = await getRoyaltyMetricsLatest();
-  return Response.json(
-    { metrics },
-    {
-      headers: {
-        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
-      },
-    },
-  );
+  return Response.json({ metrics: royaltyMetrics });
 }
 
 type Category = "all" | "king" | "aristocrat" | "growth";

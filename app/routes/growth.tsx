@@ -2,9 +2,8 @@ import { useMemo, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import { ArrowLeft, LineChart, Rocket, Search, SlidersHorizontal } from "lucide-react";
 import { bigTechTickers, hyperGrowthTickers } from "~/data/growth";
-import { type StockMetrics } from "~/data/metrics";
-import { type GrowthAnalysis } from "~/data/growth-analysis";
-import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-data.server";
+import { stockMetrics, type StockMetrics } from "~/data/metrics";
+import { growthAnalyses, type GrowthAnalysis } from "~/data/growth-analysis";
 
 type Group = "bigtech" | "hyper";
 
@@ -48,11 +47,7 @@ export function meta() {
 }
 
 export async function loader() {
-  const [metrics, analyses] = await Promise.all([
-    getStockMetricsLatest(),
-    getGrowthAnalysesLatest(),
-  ]);
-  return Response.json({ metrics, analyses });
+  return Response.json({ metrics: stockMetrics, analyses: growthAnalyses });
 }
 
 function clamp(v: number, min: number, max: number) {
