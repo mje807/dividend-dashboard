@@ -1,7 +1,11 @@
 import { useMemo, useState } from "react";
 import { Link, useLoaderData } from "react-router";
-import { ArrowLeft, LineChart, Rocket, Search, SlidersHorizontal } from "lucide-react";
+import { LineChart, Rocket, Search, SlidersHorizontal } from "lucide-react";
 import { bigTechTickers, hyperGrowthTickers } from "~/data/growth";
+import { PageHeader } from "~/components/ui/PageHeader";
+import { SectionCard } from "~/components/ui/SectionCard";
+import { StatCard } from "~/components/ui/StatCard";
+import { StatusBadge } from "~/components/ui/StatusBadge";
 import { stockMetrics, type StockMetrics } from "~/data/metrics";
 import { growthAnalyses, type GrowthAnalysis } from "~/data/growth-analysis";
 
@@ -218,20 +222,12 @@ export default function GrowthPage() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
-      <div className="flex items-center gap-4 mb-8">
-        <Link to="/" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
-          <ArrowLeft size={16} />
-          대시보드
-        </Link>
-      </div>
-
-      <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 mb-5">
-        <div className="flex items-center gap-2 mb-2">
-          <LineChart size={18} className="text-emerald-400" />
-          <h1 className="text-xl font-bold">성장주 분석</h1>
-        </div>
-        <p className="text-gray-400 text-sm">Big Tech(QQQ Top10 proxy) / Hyper Growth(ARKK proxy) 분리 스코어링</p>
-      </div>
+      <PageHeader
+        title="성장주 분석"
+        subtitle="Big Tech(QQQ Top10 proxy) / Hyper Growth(ARKK proxy) 분리 스코어링"
+        backHref="/"
+        backLabel="대시보드"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
         <StatCard label="평균 점수" value={String(avgScore)} sub={`${group === "bigtech" ? "Big Tech" : "Hyper Growth"} 기준`} />
@@ -239,7 +235,7 @@ export default function GrowthPage() {
         <StatCard label="스코어 가중치합" value={`${weights.growth + weights.quality + weights.valuation + weights.momentum}`} sub="자동 정규화" />
       </div>
 
-      <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 mb-5">
+      <SectionCard className="mb-5">
         <div className="flex items-center gap-2 mb-3">
           <SlidersHorizontal size={14} className="text-indigo-400" />
           <h2 className="text-sm font-semibold">가중치 조정</h2>
@@ -250,7 +246,7 @@ export default function GrowthPage() {
           <WeightSlider label="밸류에이션" value={weights.valuation} onChange={(v) => setWeights((w) => ({ ...w, valuation: v }))} />
           <WeightSlider label="모멘텀" value={weights.momentum} onChange={(v) => setWeights((w) => ({ ...w, momentum: v }))} />
         </div>
-      </div>
+      </SectionCard>
 
       <div className="flex flex-wrap gap-2 mb-4">
         <button
@@ -279,17 +275,17 @@ export default function GrowthPage() {
 
       <div className="flex flex-wrap gap-2 mb-3">
         {top3.map((g, idx) => (
-          <span key={g.ticker} className="text-[11px] px-2 py-1 rounded-full bg-emerald-900/30 text-emerald-300 border border-emerald-700/40">
-            TOP{idx + 1} {g.ticker} {g.score.score.toFixed(1)}
-          </span>
+          <StatusBadge key={g.ticker} tone="success" label={`TOP${idx + 1} ${g.ticker} ${g.score.score.toFixed(1)}`} />
         ))}
       </div>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {topMovers.map((m) => (
-          <span key={m.row.ticker} className="text-[11px] px-2 py-1 rounded-full bg-indigo-900/30 text-indigo-300 border border-indigo-700/40">
-            Δ {m.row.ticker} {m.delta! >= 0 ? "+" : ""}{m.delta!.toFixed(2)}
-          </span>
+          <StatusBadge
+            key={m.row.ticker}
+            tone="info"
+            label={`Δ ${m.row.ticker} ${m.delta! >= 0 ? "+" : ""}${m.delta!.toFixed(2)}`}
+          />
         ))}
       </div>
 
@@ -344,16 +340,6 @@ export default function GrowthPage() {
         </div>
       </div>
 
-    </div>
-  );
-}
-
-function StatCard({ label, value, sub }: { label: string; value: string; sub: string }) {
-  return (
-    <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-      <div className="text-xs text-gray-500 mb-1">{label}</div>
-      <div className="text-xl font-bold text-white">{value}</div>
-      <div className="text-xs text-gray-400 mt-1">{sub}</div>
     </div>
   );
 }
