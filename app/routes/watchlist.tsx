@@ -1,6 +1,9 @@
 import { useState, useMemo } from "react";
 import { Link, useLoaderData } from "react-router";
-import { ArrowLeft, Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
+import { PageHeader } from "~/components/ui/PageHeader";
+import { StatCard } from "~/components/ui/StatCard";
+import { SectionCard } from "~/components/ui/SectionCard";
+import { Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 import { royaltyStocks, royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
 import { royaltyMetrics, type RoyaltyMetrics } from "~/data/royalty-metrics";
 import { calcAttractiveness } from "~/utils/attractiveness";
@@ -101,61 +104,24 @@ export default function Watchlist() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
-      {/* 헤더 */}
-      <div className="flex items-center gap-4 mb-8">
-        <Link to="/" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
-          <ArrowLeft size={16} />
-          대시보드
-        </Link>
-        <div>
-          <h1 className="text-2xl font-bold text-white">👑 배당 왕족주·귀족주·배당성장주</h1>
-          <p className="text-gray-400 text-sm mt-1">
-            연속 배당 증가 우량주 · 업데이트: {royaltyLastUpdated}
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        title="👑 배당 왕족주·귀족주·배당성장주"
+        subtitle="연속 배당 증가 우량주"
+        backHref="/"
+        backLabel="대시보드"
+        updatedAt={`업데이트: ${royaltyLastUpdated}`}
+      />
 
-      {/* 요약 카드 */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
-        <SummaryCard
-          icon={<Crown size={18} className="text-yellow-400" />}
-          label="배당 왕족주"
-          value={`${kingCount}개`}
-          sub="50년+ 연속 증가"
-          subColor="text-yellow-400"
-        />
-        <SummaryCard
-          icon={<Trophy size={18} className="text-indigo-400" />}
-          label="배당 귀족주"
-          value={`${aristoCount}개`}
-          sub="25년+ 연속 증가"
-          subColor="text-indigo-400"
-        />
-        <SummaryCard
-          icon={<TrendingUp size={18} className="text-emerald-400" />}
-          label="배당성장주"
-          value={`${growthDivCount}개`}
-          sub="10~24년 증가"
-          subColor="text-emerald-400"
-        />
-        <SummaryCard
-          icon={<TrendingUp size={18} className="text-green-400" />}
-          label="평균 배당률"
-          value={`${avgYield}%`}
-          sub="전체 평균"
-          subColor="text-gray-400"
-        />
-        <SummaryCard
-          icon={<Crown size={18} className="text-pink-400" />}
-          label="최장 연속 증가"
-          value={`${maxStreak}년`}
-          sub="American States Water"
-          subColor="text-gray-400"
-        />
+        <StatCard label="배당 왕족주" value={`${kingCount}개`} sub="50년+ 연속 증가" />
+        <StatCard label="배당 귀족주" value={`${aristoCount}개`} sub="25년+ 연속 증가" />
+        <StatCard label="배당성장주" value={`${growthDivCount}개`} sub="10~24년 증가" />
+        <StatCard label="평균 배당률" value={`${avgYield}%`} sub="전체 평균" />
+        <StatCard label="최장 연속 증가" value={`${maxStreak}년`} sub="American States Water" />
       </div>
 
-      {/* 필터·검색 */}
-      <div className="flex flex-col gap-3 mb-5">
+      <SectionCard className="mb-5">
+      <div className="flex flex-col gap-3">
         {/* 1행: 카테고리 + 매력도 필터 + 종목수 */}
         <div className="flex flex-wrap items-center gap-2">
           {/* 카테고리 탭 */}
@@ -216,6 +182,7 @@ export default function Watchlist() {
           />
         </div>
       </div>
+      </SectionCard>
 
       {/* 테이블 */}
       <div className="bg-gray-900 rounded-xl overflow-hidden">
@@ -366,27 +333,6 @@ export default function Watchlist() {
       <p className="text-gray-600 text-xs mt-4 text-center">
         배당성향 빨간색 &gt; 80% · 노란색 60~80% · 배당률 초록색 ≥ 3% · 노란색 2~3%
       </p>
-    </div>
-  );
-}
-
-function SummaryCard({
-  icon, label, value, sub, subColor,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  sub: string;
-  subColor: string;
-}) {
-  return (
-    <div className="bg-gray-900 rounded-xl p-5">
-      <div className="flex items-center gap-2 mb-3">
-        {icon}
-        <span className="text-gray-400 text-xs">{label}</span>
-      </div>
-      <div className="text-xl font-bold text-white">{value}</div>
-      <div className={`text-xs mt-1 ${subColor}`}>{sub}</div>
     </div>
   );
 }
