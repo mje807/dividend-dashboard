@@ -249,11 +249,15 @@ export default function StockDetail() {
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
       {/* 헤더 */}
-      <div className="flex items-center gap-4 mb-8">
+      <div className="flex items-center justify-between gap-4 mb-8">
         <Link to="/watchlist" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
           <ArrowLeft size={16} />
           왕족·귀족주 목록
         </Link>
+        <div className="text-[11px] text-gray-500 text-right">
+          <div>분석 업데이트: {analysis?.analyzedAt ?? "-"}</div>
+          <div>지표 업데이트: {m?.fetchedAt ?? "-"}</div>
+        </div>
       </div>
 
       {/* 종목 헤더 */}

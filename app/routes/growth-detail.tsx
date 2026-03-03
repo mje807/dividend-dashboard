@@ -129,7 +129,10 @@ export default function GrowthDetailPage() {
         <Link to="/growth" className="text-gray-400 hover:text-white text-sm inline-flex items-center gap-2">
           <ArrowLeft size={16} /> 성장주 목록
         </Link>
-        <div className="text-xs text-gray-500">updated {a.analyzedAt}</div>
+        <div className="text-[11px] text-gray-500 text-right">
+          <div>분석 업데이트: {a.analyzedAt}</div>
+          <div>지표 업데이트: {m?.lastUpdated ?? "-"}</div>
+        </div>
       </div>
 
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 mb-5">
