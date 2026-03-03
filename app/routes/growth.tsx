@@ -192,7 +192,6 @@ export default function GrowthPage() {
   const [group, setGroup] = useState<Group>("bigtech");
   const [query, setQuery] = useState("");
   const [weights, setWeights] = useState<Weights>(DEFAULT_WEIGHTS);
-  const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
 
   const bigTechRows = useMemo(
     () => buildRows(bigTechTickers, weights, metricsMap),
@@ -213,9 +212,6 @@ export default function GrowthPage() {
   const top3 = filtered.slice(0, 3);
   const avgScore = filtered.length ? (filtered.reduce((acc, r) => acc + r.score.score, 0) / filtered.length).toFixed(1) : "-";
   const cautionCount = filtered.filter((r) => r.score.label === "주의").length;
-
-  const selected = filtered.find((r) => r.ticker === selectedTicker) ?? filtered[0];
-  const selectedAnalysis = selected ? analysisMap.get(selected.ticker) : undefined;
 
   const topMovers = useMemo(() => {
     return [...(group === "bigtech" ? bigTechRows : hyperRows)]
@@ -311,85 +307,48 @@ export default function GrowthPage() {
                 <th className="text-right px-4 py-3">현재가</th>
                 <th className="text-right px-4 py-3">매출성장률</th>
                 <th className="text-right px-4 py-3">ROE</th>
-                <th className="text-right px-4 py-3">순이익률</th>
-                <th className="text-right px-4 py-3">PE</th>
-                <th className="text-right px-4 py-3">점수</th>
+                <th className="text-right px-4 py-3">Forward PE</th>
+                <th className="text-right px-4 py-3">등급/신뢰도</th>
+                <th className="text-right px-4 py-3">점수/Δ</th>
+                <th className="text-right px-4 py-3">상세</th>
               </tr>
             </thead>
             <tbody>
-              {filtered.map((g) => (
-                <tr
-                  key={g.ticker}
-                  onClick={() => setSelectedTicker(g.ticker)}
-                  className={`border-b border-gray-800/50 hover:bg-gray-800/30 cursor-pointer ${selected?.ticker === g.ticker ? "bg-gray-800/40" : ""}`}
-                >
-                  <td className="px-5 py-3">
-                    <Link to={`/growth/${g.ticker}`} className="font-bold text-cyan-300 hover:text-cyan-200 text-sm underline-offset-2 hover:underline">
-                      {g.ticker}
-                    </Link>
-                    <div className="text-gray-500 text-xs max-w-[260px] truncate">{g.name}</div>
-                  </td>
-                  <td className="text-right px-4 py-3 text-white text-sm">{g.price ? g.price.toLocaleString() : "-"}</td>
-                  <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.revenueGrowth !== null ? `${g.revenueGrowth.toFixed(1)}%` : "-"}</td>
-                  <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.roe !== null ? `${g.roe.toFixed(1)}%` : "-"}</td>
-                  <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.margin !== null ? `${g.margin.toFixed(1)}%` : "-"}</td>
-                  <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.pe !== null ? g.pe.toFixed(1) : "-"}</td>
-                  <td className={`text-right px-4 py-3 text-sm font-bold ${g.score.color}`}>
-                    <div>{g.score.score.toFixed(1)} ({g.score.label})</div>
-                    <div className="text-[10px] text-gray-500">
-                      신뢰도 {analysisMap.get(g.ticker)?.confidence ?? "B"}
-                      {analysisMap.get(g.ticker)?.scoreDelta != null ? ` · Δ ${analysisMap.get(g.ticker)!.scoreDelta! >= 0 ? "+" : ""}${analysisMap.get(g.ticker)!.scoreDelta!.toFixed(2)}` : ""}
-                    </div>
-                  </td>
-                </tr>
-              ))}
+              {filtered.map((g) => {
+                const a = analysisMap.get(g.ticker);
+                return (
+                  <tr key={g.ticker} className="border-b border-gray-800/50 hover:bg-gray-800/20">
+                    <td className="px-5 py-3">
+                      <div className="font-bold text-cyan-300 text-sm">{g.ticker}</div>
+                      <div className="text-gray-500 text-xs max-w-[260px] truncate">{g.name}</div>
+                      <div className="text-[11px] text-gray-400 max-w-[340px] truncate">{a?.summary ?? "분석 요약 없음"}</div>
+                    </td>
+                    <td className="text-right px-4 py-3 text-white text-sm">{g.price ? g.price.toLocaleString() : "-"}</td>
+                    <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.revenueGrowth !== null ? `${g.revenueGrowth.toFixed(1)}%` : "-"}</td>
+                    <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.roe !== null ? `${g.roe.toFixed(1)}%` : "-"}</td>
+                    <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.pe !== null ? g.pe.toFixed(1) : "-"}</td>
+                    <td className="text-right px-4 py-3 text-xs text-gray-200">
+                      {a?.overallRating ?? g.score.label} / {a?.confidence ?? "B"}
+                    </td>
+                    <td className={`text-right px-4 py-3 text-sm font-bold ${g.score.color}`}>
+                      <div>{g.score.score.toFixed(1)}</div>
+                      <div className="text-[10px] text-gray-500">
+                        {a?.scoreDelta != null ? `Δ ${a.scoreDelta >= 0 ? "+" : ""}${a.scoreDelta.toFixed(2)}` : "-"}
+                      </div>
+                    </td>
+                    <td className="text-right px-4 py-3">
+                      <Link to={`/growth/${g.ticker}`} className="text-xs px-2 py-1 rounded-md border border-cyan-700/50 text-cyan-300 hover:bg-cyan-900/20">
+                        상세보기
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
       </div>
 
-      {selected && (
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-5">
-          <h3 className="text-sm font-semibold mb-3">상세 드릴다운 — {selected.ticker}</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
-            <MiniMetric label="성장성" value={selected.score.parts.growth.toFixed(1)} />
-            <MiniMetric label="수익성" value={selected.score.parts.quality.toFixed(1)} />
-            <MiniMetric label="밸류" value={selected.score.parts.valuation.toFixed(1)} />
-            <MiniMetric label="모멘텀" value={selected.score.parts.momentum.toFixed(1)} />
-          </div>
-          <div className="text-xs text-gray-400 mb-4">
-            52주: {selected.metric?.week52Low ?? "-"} ~ {selected.metric?.week52High ?? "-"} / 현재가 {selected.metric?.currentPrice ?? "-"}
-          </div>
-
-          {selectedAnalysis ? (
-            <div className="rounded-lg border border-gray-800 bg-gray-800/40 p-4">
-              <div className="text-xs text-gray-400 mb-1">정성/정량 하이브리드 분석</div>
-              <div className="text-sm text-white mb-2">
-                등급: <span className="font-semibold">{selectedAnalysis.overallRating}</span> ·
-                신뢰도: <span className="font-semibold">{selectedAnalysis.confidence}</span> ·
-                매수관찰 구간: {selectedAnalysis.targetBuyLow ?? "-"} ~ {selectedAnalysis.targetBuyHigh ?? "-"}
-              </div>
-              <p className="text-xs text-gray-300 leading-relaxed mb-3">{selectedAnalysis.summary}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div>
-                  <div className="text-xs text-emerald-300 mb-1">상방 드라이버</div>
-                  <ul className="text-xs text-gray-300 list-disc pl-4 space-y-1">
-                    {selectedAnalysis.keyDrivers.map((d: string) => <li key={d}>{d}</li>)}
-                  </ul>
-                </div>
-                <div>
-                  <div className="text-xs text-red-300 mb-1">핵심 리스크</div>
-                  <ul className="text-xs text-gray-300 list-disc pl-4 space-y-1">
-                    {selectedAnalysis.keyRisks.map((r: string) => <li key={r}>{r}</li>)}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="text-xs text-gray-500">정성 분석 준비중</div>
-          )}
-        </div>
-      )}
     </div>
   );
 }
@@ -400,15 +359,6 @@ function StatCard({ label, value, sub }: { label: string; value: string; sub: st
       <div className="text-xs text-gray-500 mb-1">{label}</div>
       <div className="text-xl font-bold text-white">{value}</div>
       <div className="text-xs text-gray-400 mt-1">{sub}</div>
-    </div>
-  );
-}
-
-function MiniMetric({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="bg-gray-800 rounded-lg p-3 text-center">
-      <div className="text-xs text-gray-500 mb-1">{label}</div>
-      <div className="text-base font-bold text-white">{value}</div>
     </div>
   );
 }
