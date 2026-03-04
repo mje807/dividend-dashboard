@@ -1,4 +1,6 @@
 import { macroData } from "../data/macro";
+import { PageHeader } from "~/components/ui/PageHeader";
+import { SectionCard } from "~/components/ui/SectionCard";
 
 // ── 헬퍼 ─────────────────────────────────────────────────────────────────────
 function fmt(n: number, decimals = 2) {
@@ -113,25 +115,17 @@ export default function MarketPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 헤더 */}
-      <div className="bg-white border-b border-gray-200 px-4 py-4">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-bold text-gray-800">🌍 시장 인사이트</h1>
-            <p className="text-xs text-gray-400 mt-0.5">배당주 투자 거시환경 모니터</p>
-          </div>
-          <div className="text-right">
-            <div className="text-xs text-gray-400">마지막 업데이트</div>
-            <div className="text-xs font-medium text-gray-600">{updatedAt} KST</div>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
+        <PageHeader
+          title="🌍 시장 인사이트"
+          subtitle="배당주 투자 거시환경 모니터"
+          updatedAt={`${updatedAt} KST`}
+        />
 
         {/* ① 시장 스냅샷 */}
         <section>
           <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📈 시장 스냅샷</h2>
+          <SectionCard>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             <MarketCard label="S&P 500" price={market.sp500.price} changePercent={market.sp500.changePercent} />
             <MarketCard label="NASDAQ" price={market.nasdaq.price} changePercent={market.nasdaq.changePercent} />
@@ -149,6 +143,7 @@ export default function MarketPage() {
             <MarketCard label="WTI 원유 (USO)" price={market.oil.price} changePercent={market.oil.changePercent} prefix="$" />
             <MarketCard label="달러인덱스 (UUP)" price={market.dollarIndex.price} changePercent={market.dollarIndex.changePercent} prefix="$" />
           </div>
+          </SectionCard>
         </section>
 
         {/* ② 배당 환경 점수 */}

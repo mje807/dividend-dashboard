@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { ArrowLeft, CalendarDays, DollarSign, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { PageHeader } from "~/components/ui/PageHeader";
+import { SectionCard } from "~/components/ui/SectionCard";
+import { CalendarDays, DollarSign, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { holdings } from "~/data/portfolio";
 import { getMetrics } from "~/data/metrics";
 
@@ -148,20 +150,15 @@ export default function Calendar() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
-      {/* 헤더 */}
-      <div className="flex items-center gap-4 mb-8">
-        <Link to="/" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
-          <ArrowLeft size={16} />
-          대시보드
-        </Link>
-        <div>
-          <h1 className="text-2xl font-bold text-white">📅 배당 캘린더</h1>
-          <p className="text-gray-400 text-sm mt-1">{viewYear}년 배당 일정</p>
-        </div>
-      </div>
+      <PageHeader
+        title="📅 배당 캘린더"
+        subtitle={`${viewYear}년 배당 일정`}
+        backHref="/"
+        backLabel="대시보드"
+      />
 
-      {/* 연간 요약 카드 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <SectionCard className="mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-gray-900 rounded-xl p-5">
           <div className="flex items-center gap-2 mb-2">
             <DollarSign size={18} className="text-yellow-400" />
@@ -187,6 +184,7 @@ export default function Calendar() {
           <div className="text-gray-400 text-xs mt-1">세전 · KRW 환산 기준</div>
         </div>
       </div>
+      </SectionCard>
 
       {/* 달력 + 사이드패널 */}
       <div className="flex gap-4 mb-8">
