@@ -6,8 +6,9 @@ import { PageHeader } from "~/components/ui/PageHeader";
 import { SectionCard } from "~/components/ui/SectionCard";
 import { StatCard } from "~/components/ui/StatCard";
 import { StatusBadge } from "~/components/ui/StatusBadge";
-import { stockMetrics, type StockMetrics } from "~/data/metrics";
-import { growthAnalyses, type GrowthAnalysis } from "~/data/growth-analysis";
+import { type StockMetrics } from "~/data/metrics";
+import { type GrowthAnalysis } from "~/data/growth-analysis";
+import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-data.server";
 
 type Group = "bigtech" | "hyper";
 
@@ -51,7 +52,11 @@ export function meta() {
 }
 
 export async function loader() {
-  return Response.json({ metrics: stockMetrics, analyses: growthAnalyses });
+  const [metrics, analyses] = await Promise.all([
+    getStockMetricsLatest(),
+    getGrowthAnalysesLatest(),
+  ]);
+  return Response.json({ metrics, analyses });
 }
 
 function clamp(v: number, min: number, max: number) {
