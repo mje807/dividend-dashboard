@@ -117,6 +117,22 @@ export async function getStockMetricsLatest(): Promise<StockMetrics[]> {
   }
 }
 
+export async function getStockMetricByTicker(ticker: string): Promise<StockMetrics | null> {
+  const t = ticker.toUpperCase();
+  try {
+    const supabase = createSupabaseAdminClient();
+    const { data, error } = await supabase
+      .from("stock_metrics_latest")
+      .select("*")
+      .eq("ticker", t)
+      .maybeSingle();
+    if (error || !data) return stockMetrics.find((m) => m.ticker === t) ?? null;
+    return mapMetric(data as DbMetric);
+  } catch {
+    return stockMetrics.find((m) => m.ticker === t) ?? null;
+  }
+}
+
 export async function getGrowthAnalysesLatest(): Promise<GrowthAnalysis[]> {
   try {
     const supabase = createSupabaseAdminClient();
@@ -125,6 +141,22 @@ export async function getGrowthAnalysesLatest(): Promise<GrowthAnalysis[]> {
     return (data as DbGrowthAnalysis[]).map(mapAnalysis);
   } catch {
     return growthAnalyses;
+  }
+}
+
+export async function getGrowthAnalysisByTicker(ticker: string): Promise<GrowthAnalysis | null> {
+  const t = ticker.toUpperCase();
+  try {
+    const supabase = createSupabaseAdminClient();
+    const { data, error } = await supabase
+      .from("growth_analyses_latest")
+      .select("*")
+      .eq("ticker", t)
+      .maybeSingle();
+    if (error || !data) return growthAnalyses.find((a) => a.ticker === t) ?? null;
+    return mapAnalysis(data as DbGrowthAnalysis);
+  } catch {
+    return growthAnalyses.find((a) => a.ticker === t) ?? null;
   }
 }
 
@@ -310,6 +342,22 @@ export async function getRoyaltyMetricsLatest(): Promise<RoyaltyMetrics[]> {
   }
 }
 
+export async function getRoyaltyMetricByTicker(ticker: string): Promise<RoyaltyMetrics | null> {
+  const t = ticker.toUpperCase();
+  try {
+    const supabase = createSupabaseAdminClient();
+    const { data, error } = await supabase
+      .from("royalty_metrics_latest")
+      .select("*")
+      .eq("ticker", t)
+      .maybeSingle();
+    if (error || !data) return royaltyMetrics.find((m) => m.ticker === t) ?? null;
+    return mapRoyaltyMetric(data as DbRoyaltyMetric);
+  } catch {
+    return royaltyMetrics.find((m) => m.ticker === t) ?? null;
+  }
+}
+
 export async function getRoyaltyAnalysesLatest(): Promise<StockAnalysis[]> {
   try {
     const supabase = createSupabaseAdminClient();
@@ -318,5 +366,21 @@ export async function getRoyaltyAnalysesLatest(): Promise<StockAnalysis[]> {
     return (data as DbRoyaltyAnalysis[]).map(mapRoyaltyAnalysis);
   } catch {
     return stockAnalyses;
+  }
+}
+
+export async function getRoyaltyAnalysisByTicker(ticker: string): Promise<StockAnalysis | null> {
+  const t = ticker.toUpperCase();
+  try {
+    const supabase = createSupabaseAdminClient();
+    const { data, error } = await supabase
+      .from("royalty_analyses_latest")
+      .select("*")
+      .eq("ticker", t)
+      .maybeSingle();
+    if (error || !data) return stockAnalyses.find((a) => a.ticker === t) ?? null;
+    return mapRoyaltyAnalysis(data as DbRoyaltyAnalysis);
+  } catch {
+    return stockAnalyses.find((a) => a.ticker === t) ?? null;
   }
 }

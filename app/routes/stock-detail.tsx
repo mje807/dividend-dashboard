@@ -6,8 +6,8 @@ import {
   Calendar, DollarSign, BarChart2, Target, Gauge, Users,
 } from "lucide-react";
 import { royaltyStocks } from "~/data/royalty";
-import { type MoatType } from "~/data/royalty-analysis";
-import { getRoyaltyAnalysesLatest, getRoyaltyMetricsLatest } from "~/lib/market-data.server";
+import { type MoatType, type StockAnalysis } from "~/data/royalty-analysis";
+import { getRoyaltyAnalysisByTicker, getRoyaltyMetricByTicker } from "~/lib/market-data.server";
 
 export function meta({ params }: { params: { ticker: string } }) {
   return [{ title: `${params.ticker} 심층분석 — 배당 대시보드` }];
@@ -15,19 +15,19 @@ export function meta({ params }: { params: { ticker: string } }) {
 
 export async function loader({ params }: { params: { ticker: string } }) {
   const ticker = (params.ticker || "").toUpperCase();
-  const [metrics, analyses] = await Promise.all([
-    getRoyaltyMetricsLatest(),
-    getRoyaltyAnalysesLatest(),
+  const [metric, analysis] = await Promise.all([
+    getRoyaltyMetricByTicker(ticker),
+    getRoyaltyAnalysisByTicker(ticker),
   ]);
 
   return Response.json({
     ticker,
-    metric: metrics.find((m) => m.ticker === ticker) ?? null,
-    analysis: analyses.find((a) => a.ticker === ticker) ?? null,
+    metric,
+    analysis,
   });
 }
 
-type RoyaltyMetricItem = Awaited<ReturnType<typeof getRoyaltyMetricsLatest>>[number];
+type RoyaltyMetricItem = import("~/data/royalty-metrics").RoyaltyMetrics;
 
 const MOAT_LABELS: Record<MoatType, string> = {
   brand: "브랜드",
@@ -223,7 +223,7 @@ function buildDividendCheckpoints(val: ReturnType<typeof computeValuation> | nul
 type StockDetailLoaderData = {
   ticker: string;
   metric: RoyaltyMetricItem | null;
-  analysis: Awaited<ReturnType<typeof getRoyaltyAnalysesLatest>>[number] | null;
+  analysis: StockAnalysis | null;
 };
 
 export default function StockDetail() {

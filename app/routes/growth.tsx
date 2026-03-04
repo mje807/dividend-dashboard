@@ -335,7 +335,7 @@ export default function GrowthPage() {
                       </div>
                     </td>
                     <td className="text-right px-4 py-3">
-                      <Link to={`/growth/${g.ticker}`} className="text-xs px-2 py-1 rounded-md border border-cyan-700/50 text-cyan-300 hover:bg-cyan-900/20">
+                      <Link to={`/growth/${g.ticker}`} prefetch="intent" className="text-xs px-2 py-1 rounded-md border border-cyan-700/50 text-cyan-300 hover:bg-cyan-900/20">
                         상세보기
                       </Link>
                     </td>

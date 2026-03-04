@@ -5,7 +5,7 @@ import { StatCard } from "~/components/ui/StatCard";
 import { StatusBadge } from "~/components/ui/StatusBadge";
 import { AlertTriangle, CheckCircle2, LineChart } from "lucide-react";
 import { getGrowthHistory, type GrowthQuarterPoint } from "~/data/growth-history";
-import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-data.server";
+import { getGrowthAnalysisByTicker, getStockMetricByTicker } from "~/lib/market-data.server";
 
 export function meta() {
   return [{ title: "성장주 상세 분석" }];
@@ -13,15 +13,15 @@ export function meta() {
 
 export async function loader({ params }: { params: { ticker?: string } }) {
   const ticker = (params.ticker || "").toUpperCase();
-  const [metrics, analyses] = await Promise.all([
-    getStockMetricsLatest(),
-    getGrowthAnalysesLatest(),
+  const [metric, analysis] = await Promise.all([
+    getStockMetricByTicker(ticker),
+    getGrowthAnalysisByTicker(ticker),
   ]);
 
   return Response.json({
     ticker,
-    metric: metrics.find((m) => m.ticker === ticker) ?? null,
-    analysis: analyses.find((a) => a.ticker === ticker) ?? null,
+    metric,
+    analysis,
   });
 }
 
@@ -96,8 +96,8 @@ function buildNextQuarterCheckpoints(params: {
 
 type GrowthDetailLoaderData = {
   ticker: string;
-  metric: Awaited<ReturnType<typeof getStockMetricsLatest>>[number] | null;
-  analysis: Awaited<ReturnType<typeof getGrowthAnalysesLatest>>[number] | null;
+  metric: import("~/data/metrics").StockMetrics | null;
+  analysis: import("~/data/growth-analysis").GrowthAnalysis | null;
 };
 
 export default function GrowthDetailPage() {

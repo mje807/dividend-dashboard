@@ -265,7 +265,7 @@ export default function Watchlist() {
                 >
                   {/* 종목 */}
                   <td className="px-5 py-3">
-                    <Link to={`/watchlist/${s.ticker}`} className="flex items-center gap-2.5">
+                    <Link to={`/watchlist/${s.ticker}`} prefetch="intent" className="flex items-center gap-2.5">
                       <span className="text-base">
                         {s.category === "king" ? "👑" : "🏆"}
                       </span>
