@@ -227,6 +227,7 @@ export default function GrowthPage() {
         subtitle="Big Tech(QQQ Top10 proxy) / Hyper Growth(ARKK proxy) 분리 스코어링"
         backHref="/"
         backLabel="대시보드"
+        motionPreset="page-soft"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
@@ -235,7 +236,7 @@ export default function GrowthPage() {
         <StatCard label="스코어 가중치합" value={`${weights.growth + weights.quality + weights.valuation + weights.momentum}`} sub="자동 정규화" />
       </div>
 
-      <SectionCard className="mb-5">
+      <SectionCard className="mb-5" motionPreset="surface-enter">
         <div className="flex items-center gap-2 mb-3">
           <SlidersHorizontal size={14} className="text-indigo-400" />
           <h2 className="text-sm font-semibold">가중치 조정</h2>
@@ -275,7 +276,7 @@ export default function GrowthPage() {
 
       <div className="flex flex-wrap gap-2 mb-3">
         {top3.map((g, idx) => (
-          <StatusBadge key={g.ticker} tone="success" label={`TOP${idx + 1} ${g.ticker} ${g.score.score.toFixed(1)}`} />
+          <StatusBadge key={g.ticker} tone="success" motionPreset="list-item-enter" label={`TOP${idx + 1} ${g.ticker} ${g.score.score.toFixed(1)}`} />
         ))}
       </div>
 
@@ -284,6 +285,7 @@ export default function GrowthPage() {
           <StatusBadge
             key={m.row.ticker}
             tone="info"
+            motionPreset="list-item-enter"
             label={`Δ ${m.row.ticker} ${m.delta! >= 0 ? "+" : ""}${m.delta!.toFixed(2)}`}
           />
         ))}
