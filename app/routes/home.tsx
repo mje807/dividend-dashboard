@@ -3,10 +3,13 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip,
   PieChart, Pie, Cell, ResponsiveContainer,
 } from "recharts";
-import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, RefreshCw, Crown, Calculator, Globe } from "lucide-react";
+import { TrendingUp, DollarSign, PieChartIcon, CalendarDays, Crown, Calculator, Globe } from "lucide-react";
 import { holdings, portfolioSummary, calcPortfolioStats, type Holding } from "~/data/portfolio";
 import { stockMetrics, getMetrics } from "~/data/metrics";
 import { Link } from "react-router";
+import { PageHeader } from "~/components/ui/PageHeader";
+import { SectionCard } from "~/components/ui/SectionCard";
+import { StatCard } from "~/components/ui/StatCard";
 import StockDetailDrawer from "~/components/StockDetailDrawer";
 
 export function meta() {
@@ -74,17 +77,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
-      {/* 헤더 */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-2xl font-bold text-white">📊 배당 대시보드</h1>
-          <p className="text-gray-400 text-sm mt-1">종구리의 포트폴리오</p>
-        </div>
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 text-gray-500 text-xs">
-            <RefreshCw size={12} />
-            <span>업데이트: {portfolioSummary.lastUpdated}</span>
-          </div>
+      <PageHeader
+        title="📊 배당 대시보드"
+        subtitle="종구리의 포트폴리오"
+        updatedAt={`업데이트: ${portfolioSummary.lastUpdated}`}
+      />
+
+      <SectionCard className="mb-8">
+        <div className="flex flex-wrap items-center gap-3">
           <Link
             to="/calendar"
             className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm transition-colors"
@@ -121,7 +121,7 @@ export default function Home() {
             시장 인사이트
           </Link>
         </div>
-      </div>
+      </SectionCard>
 
       {/* 요약 카드 */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -310,19 +310,6 @@ export default function Home() {
           onClose={() => setSelectedHolding(null)}
         />
       )}
-    </div>
-  );
-}
-
-function StatCard({ icon, label, value, sub }: { icon: React.ReactNode; label: string; value: string; sub: React.ReactNode }) {
-  return (
-    <div className="bg-gray-900 rounded-xl p-5">
-      <div className="flex items-center gap-2 mb-3">
-        {icon}
-        <span className="text-gray-400 text-xs">{label}</span>
-      </div>
-      <div className="text-lg font-bold text-white leading-tight">{value}</div>
-      <div className="text-xs mt-1">{sub}</div>
     </div>
   );
 }
