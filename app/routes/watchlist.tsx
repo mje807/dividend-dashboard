@@ -20,6 +20,18 @@ type Category = "all" | "king" | "aristocrat" | "growth";
 type AttrFilter = "all" | "buy" | "neutral" | "caution";
 type SortKey = "streak" | "dividendYield" | "price" | "peRatio" | "payoutRatio" | "attractiveness";
 
+type TradeOpinion = {
+  label: "강력매수" | "매수" | "관망" | "주의";
+  cls: string;
+};
+
+function getTradeOpinion(score: number): TradeOpinion {
+  if (score >= 8.0) return { label: "강력매수", cls: "bg-emerald-900/40 text-emerald-300 border border-emerald-700/40" };
+  if (score >= 6.5) return { label: "매수", cls: "bg-green-900/40 text-green-300 border border-green-700/40" };
+  if (score > 3.5) return { label: "관망", cls: "bg-yellow-900/40 text-yellow-300 border border-yellow-700/40" };
+  return { label: "주의", cls: "bg-red-900/40 text-red-300 border border-red-700/40" };
+}
+
 const SECTOR_COLORS: Record<string, string> = {
   "필수소비재": "bg-green-900/40 text-green-400",
   "임의소비재": "bg-emerald-900/40 text-emerald-400",
@@ -201,6 +213,7 @@ export default function Watchlist() {
                     매력도 <SortIcon k="attractiveness" />
                   </span>
                 </th>
+                <th className="text-center px-3 py-3">매매의견</th>
                 <th
                   className="text-right px-4 py-3 cursor-pointer hover:text-white select-none"
                   onClick={() => handleSort("streak")}
@@ -291,6 +304,13 @@ export default function Watchlist() {
                     )}
                   </td>
 
+                  {/* 매매의견 */}
+                  <td className="text-center px-3 py-3">
+                    <span className={`text-[11px] font-semibold px-2 py-1 rounded-md ${getTradeOpinion(s.attractivenessScore ?? 5).cls}`}>
+                      {getTradeOpinion(s.attractivenessScore ?? 5).label}
+                    </span>
+                  </td>
+
                   {/* 연속증가 */}
                   <td className="text-right px-4 py-3">
                     <span className="text-yellow-400 font-semibold text-sm">{s.streak}년</span>
@@ -332,7 +352,7 @@ export default function Watchlist() {
       </div>
 
       <p className="text-gray-600 text-xs mt-4 text-center">
-        배당성향 빨간색 &gt; 80% · 노란색 60~80% · 배당률 초록색 ≥ 3% · 노란색 2~3%
+        매매의견 기준: 강력매수 ≥ 8.0 · 매수 ≥ 6.5 · 관망 3.6~6.4 · 주의 ≤ 3.5 · 배당성향 빨간색 &gt; 80% · 노란색 60~80%
       </p>
     </div>
   );
