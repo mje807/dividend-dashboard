@@ -105,6 +105,7 @@ export default function Watchlist() {
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
       <PageHeader
+        motionPreset="page-soft"
         title="👑 배당 왕족주·귀족주·배당성장주"
         subtitle="연속 배당 증가 우량주"
         backHref="/"
@@ -113,14 +114,14 @@ export default function Watchlist() {
       />
 
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
-        <StatCard label="배당 왕족주" value={`${kingCount}개`} sub="50년+ 연속 증가" />
-        <StatCard label="배당 귀족주" value={`${aristoCount}개`} sub="25년+ 연속 증가" />
-        <StatCard label="배당성장주" value={`${growthDivCount}개`} sub="10~24년 증가" />
-        <StatCard label="평균 배당률" value={`${avgYield}%`} sub="전체 평균" />
-        <StatCard label="최장 연속 증가" value={`${maxStreak}년`} sub="American States Water" />
+        <StatCard motionPreset="surface-enter" label="배당 왕족주" value={`${kingCount}개`} sub="50년+ 연속 증가" />
+        <StatCard motionPreset="surface-enter" label="배당 귀족주" value={`${aristoCount}개`} sub="25년+ 연속 증가" />
+        <StatCard motionPreset="surface-enter" label="배당성장주" value={`${growthDivCount}개`} sub="10~24년 증가" />
+        <StatCard motionPreset="surface-enter" label="평균 배당률" value={`${avgYield}%`} sub="전체 평균" />
+        <StatCard motionPreset="surface-enter" label="최장 연속 증가" value={`${maxStreak}년`} sub="American States Water" />
       </div>
 
-      <SectionCard className="mb-5">
+      <SectionCard className="mb-5" motionPreset="surface-enter">
       <div className="flex flex-col gap-3">
         {/* 1행: 카테고리 + 매력도 필터 + 종목수 */}
         <div className="flex flex-wrap items-center gap-2">

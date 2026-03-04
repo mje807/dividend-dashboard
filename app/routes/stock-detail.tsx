@@ -251,6 +251,7 @@ export default function StockDetail() {
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
       <PageHeader
+        motionPreset="page-soft"
         title={`${stock.ticker} 심층분석`}
         subtitle={stock.name}
         backHref="/watchlist"
@@ -259,7 +260,7 @@ export default function StockDetail() {
       />
 
       {/* 종목 헤더 */}
-      <SectionCard className="p-6 mb-6">
+      <SectionCard className="p-6 mb-6" motionPreset="surface-enter">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>
             <div className="flex items-center gap-3 mb-2">
@@ -300,7 +301,7 @@ export default function StockDetail() {
           🔍 정량 밸류에이션 분석 (자동 계산 — 모든 종목 표시)
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       {val && (
-        <SectionCard className="p-6 mb-6">
+        <SectionCard className="p-6 mb-6" motionPreset="surface-enter">
           <div className="flex items-center gap-2 mb-5">
             <Target size={18} className="text-indigo-400" />
             <h2 className="font-semibold text-white">밸류에이션 분석</h2>
