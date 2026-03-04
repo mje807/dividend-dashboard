@@ -19,6 +19,17 @@ export function useMotionPreset(name: MotionPresetName = "none", motionDisabled 
     const duration = reduceMotionDuration(preset.transition?.duration ?? 0, reduced);
     const easing = preset.transition?.easing ?? "ease";
 
+    // Reduced motion: keep state transitions but minimize movement.
+    if (reduced) {
+      const to = (preset.animate ?? {}) as CSSProperties;
+      return {
+        ...to,
+        transform: "none",
+        transition: `opacity ${duration}ms ${easing}`,
+        willChange: "opacity",
+      };
+    }
+
     const base: CSSProperties = {
       transition: `all ${duration}ms ${easing}`,
       willChange: "opacity, transform",
