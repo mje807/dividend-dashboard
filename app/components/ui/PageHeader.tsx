@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 import { ArrowLeft } from "lucide-react";
+import { useMotionPreset } from "~/design/useMotionPreset";
+import type { MotionPresetName } from "~/design/motion-presets";
 
 export function PageHeader({
   title,
@@ -7,13 +9,19 @@ export function PageHeader({
   backHref,
   backLabel,
   updatedAt,
+  motionPreset = "surface-enter",
+  motionDisabled = false,
 }: {
   title: string;
   subtitle?: string;
   backHref?: string;
   backLabel?: string;
   updatedAt?: string;
+  motionPreset?: MotionPresetName;
+  motionDisabled?: boolean;
 }) {
+  const motion = useMotionPreset(motionPreset, motionDisabled);
+
   return (
     <>
       {backHref ? (
@@ -25,7 +33,7 @@ export function PageHeader({
         </div>
       ) : null}
 
-      <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 mb-5">
+      <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 mb-5" style={motion.style} data-motion={motion.dataMotion}>
         <div className="flex items-start justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-white">{title}</h1>

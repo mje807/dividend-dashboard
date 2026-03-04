@@ -1,4 +1,19 @@
-export function StatusBadge({ label, tone = "neutral" }: { label: string; tone?: "success" | "warn" | "danger" | "info" | "neutral" }) {
+import { useMotionPreset } from "~/design/useMotionPreset";
+import type { MotionPresetName } from "~/design/motion-presets";
+
+export function StatusBadge({
+  label,
+  tone = "neutral",
+  motionPreset = "none",
+  motionDisabled = false,
+}: {
+  label: string;
+  tone?: "success" | "warn" | "danger" | "info" | "neutral";
+  motionPreset?: MotionPresetName;
+  motionDisabled?: boolean;
+}) {
+  const motion = useMotionPreset(motionPreset, motionDisabled);
+
   const cls =
     tone === "success"
       ? "bg-emerald-900/30 text-emerald-300 border-emerald-700/40"
@@ -10,5 +25,9 @@ export function StatusBadge({ label, tone = "neutral" }: { label: string; tone?:
             ? "bg-indigo-900/30 text-indigo-300 border-indigo-700/40"
             : "bg-gray-800 text-gray-300 border-gray-700/40";
 
-  return <span className={`text-[11px] px-2 py-1 rounded-full border ${cls}`}>{label}</span>;
+  return (
+    <span className={`text-[11px] px-2 py-1 rounded-full border ${cls}`} style={motion.style} data-motion={motion.dataMotion}>
+      {label}
+    </span>
+  );
 }
