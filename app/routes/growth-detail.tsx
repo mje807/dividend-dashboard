@@ -1,5 +1,9 @@
 import { Link, useLoaderData, useParams } from "react-router";
-import { ArrowLeft, AlertTriangle, CheckCircle2, LineChart } from "lucide-react";
+import { PageHeader } from "~/components/ui/PageHeader";
+import { SectionCard } from "~/components/ui/SectionCard";
+import { StatCard } from "~/components/ui/StatCard";
+import { StatusBadge } from "~/components/ui/StatusBadge";
+import { AlertTriangle, CheckCircle2, LineChart } from "lucide-react";
 import { getGrowthHistory, type GrowthQuarterPoint } from "~/data/growth-history";
 import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-data.server";
 
@@ -116,7 +120,7 @@ export default function GrowthDetailPage() {
     return (
       <div className="min-h-screen bg-gray-950 text-white p-6">
         <Link to="/growth" className="text-gray-400 hover:text-white text-sm inline-flex items-center gap-2">
-          <ArrowLeft size={16} /> 성장주 목록
+          성장주 목록
         </Link>
         <div className="mt-8 text-sm text-gray-400">{t} 분석 데이터가 없습니다.</div>
       </div>
@@ -125,34 +129,33 @@ export default function GrowthDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
-      <div className="flex items-center justify-between mb-6">
-        <Link to="/growth" className="text-gray-400 hover:text-white text-sm inline-flex items-center gap-2">
-          <ArrowLeft size={16} /> 성장주 목록
-        </Link>
-        <div className="text-[11px] text-gray-500 text-right">
-          <div>분석 업데이트: {a.analyzedAt}</div>
-          <div>지표 업데이트: {m?.lastUpdated ?? "-"}</div>
-        </div>
-      </div>
+      <PageHeader
+        title={`${t} 상세 분석`}
+        subtitle={a.summary}
+        backHref="/growth"
+        backLabel="성장주 목록"
+        updatedAt={`분석 ${a.analyzedAt} · 지표 ${m?.lastUpdated ?? "-"}`}
+      />
 
-      <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 mb-5">
+      <SectionCard className="p-6 mb-5">
         <div className="flex items-center gap-2 mb-2">
           <LineChart size={18} className="text-cyan-400" />
           <h1 className="text-xl font-bold">{t} 상세 분석</h1>
         </div>
         <p className="text-sm text-gray-300 leading-relaxed">{a.summary}</p>
-        <div className="mt-3 text-xs text-gray-400">
-          그룹: {a.group} · 등급: <span className="text-white font-semibold">{a.overallRating}</span> ·
-          신뢰도: <span className="text-white font-semibold">{a.confidence}</span> ({a.source})
-          {a.scoreDelta != null ? ` · 점수변화 Δ ${a.scoreDelta >= 0 ? "+" : ""}${a.scoreDelta.toFixed(2)}` : ""}
+        <div className="mt-3 flex flex-wrap gap-2 text-xs">
+          <StatusBadge tone="info" label={`그룹 ${a.group}`} />
+          <StatusBadge tone={a.overallRating === "관심" ? "success" : a.overallRating === "신중" ? "danger" : "warn"} label={`등급 ${a.overallRating}`} />
+          <StatusBadge tone="neutral" label={`신뢰도 ${a.confidence} (${a.source})`} />
+          {a.scoreDelta != null ? <StatusBadge tone="info" label={`점수변화 Δ ${a.scoreDelta >= 0 ? "+" : ""}${a.scoreDelta.toFixed(2)}`} /> : null}
         </div>
-      </div>
+      </SectionCard>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-        <Card label="현재가" value={m?.currentPrice ? `$${m.currentPrice.toFixed(2)}` : "-"} />
-        <Card label="종합점수" value={a.score.toFixed(1)} />
-        <Card label="매수관찰 하단" value={a.targetBuyLow ? `$${a.targetBuyLow}` : "-"} />
-        <Card label="매수관찰 상단" value={a.targetBuyHigh ? `$${a.targetBuyHigh}` : "-"} />
+        <StatCard label="현재가" value={m?.currentPrice ? `$${m.currentPrice.toFixed(2)}` : "-"} />
+        <StatCard label="종합점수" value={a.score.toFixed(1)} />
+        <StatCard label="매수관찰 하단" value={a.targetBuyLow ? `$${a.targetBuyLow}` : "-"} />
+        <StatCard label="매수관찰 상단" value={a.targetBuyHigh ? `$${a.targetBuyHigh}` : "-"} />
       </div>
 
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 mb-5">
@@ -234,15 +237,6 @@ export default function GrowthDetailPage() {
           </ul>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Card({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-      <div className="text-xs text-gray-500 mb-1">{label}</div>
-      <div className="text-lg font-bold text-white">{value}</div>
     </div>
   );
 }
