@@ -1,6 +1,9 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router";
-import { ArrowLeft, Target, Flame, TrendingUp } from "lucide-react";
+import { PageHeader } from "~/components/ui/PageHeader";
+import { SectionCard } from "~/components/ui/SectionCard";
+import { StatCard } from "~/components/ui/StatCard";
+import { Target, Flame, TrendingUp } from "lucide-react";
 import {
   LineChart, Line, XAxis, YAxis, Tooltip,
   Legend, ResponsiveContainer, CartesianGrid,
@@ -74,28 +77,23 @@ export default function Calculator() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
-      {/* 헤더 */}
-      <div className="flex items-center gap-4 mb-8">
-        <Link to="/" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
-          <ArrowLeft size={16} />
-          대시보드
-        </Link>
-        <div>
-          <h1 className="text-2xl font-bold text-white">🧮 배당 계산기</h1>
-          <p className="text-gray-400 text-sm mt-1">목표 달성 분석 · FIRE 계산기 · 성장 시뮬레이터</p>
-        </div>
-      </div>
+      <PageHeader
+        title="🧮 배당 계산기"
+        subtitle="목표 달성 분석 · FIRE 계산기 · 성장 시뮬레이터"
+        backHref="/"
+        backLabel="대시보드"
+      />
 
       {/* 현재 상태 요약 */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-        <StatCard label="현재 월 배당" value={`₩${Math.round(monthlyDivKRW).toLocaleString()}`} sub="세전 추정" color="text-green-400" />
-        <StatCard label="연간 배당" value={`₩${Math.round(annualDivKRW).toLocaleString()}`} sub="세전 추정" color="text-indigo-400" />
-        <StatCard label="포트폴리오 총액" value={`₩${Math.round(totalValueKRW / 100000000 * 10) / 10}억`} sub={`평균 배당률 ${(avgYield * 100).toFixed(2)}%`} color="text-yellow-400" />
+        <StatCard label="현재 월 배당" value={`₩${Math.round(monthlyDivKRW).toLocaleString()}`} sub="세전 추정" />
+        <StatCard label="연간 배당" value={`₩${Math.round(annualDivKRW).toLocaleString()}`} sub="세전 추정" />
+        <StatCard label="포트폴리오 총액" value={`₩${Math.round(totalValueKRW / 100000000 * 10) / 10}억`} sub={`평균 배당률 ${(avgYield * 100).toFixed(2)}%`} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         {/* 목표 계산기 */}
-        <div className="bg-gray-900 rounded-xl p-6">
+        <SectionCard className="p-6">
           <div className="flex items-center gap-2 mb-5">
             <Target size={18} className="text-indigo-400" />
             <h2 className="font-semibold text-white">월 배당 목표 계산기</h2>
@@ -158,10 +156,10 @@ export default function Calculator() {
             </div>
             <div className="text-xs text-gray-500 mt-1">현재 평균 배당률 {(avgYield * 100).toFixed(2)}% 기준</div>
           </div>
-        </div>
+        </SectionCard>
 
         {/* FIRE 계산기 */}
-        <div className="bg-gray-900 rounded-xl p-6">
+        <SectionCard className="p-6">
           <div className="flex items-center gap-2 mb-5">
             <Flame size={18} className="text-orange-400" />
             <h2 className="font-semibold text-white">FIRE 계산기</h2>
@@ -221,11 +219,11 @@ export default function Calculator() {
             <span>₩0</span>
             <span>₩{(firePortfolio / 100000000).toFixed(1)}억</span>
           </div>
-        </div>
+        </SectionCard>
       </div>
 
       {/* 배당 성장 시뮬레이터 */}
-      <div className="bg-gray-900 rounded-xl p-6">
+      <SectionCard className="p-6">
         <div className="flex items-center gap-2 mb-5">
           <TrendingUp size={18} className="text-green-400" />
           <h2 className="font-semibold text-white">배당 성장 시뮬레이터</h2>
@@ -293,21 +291,7 @@ export default function Calculator() {
             </div>
           ))}
         </div>
-      </div>
-    </div>
-  );
-}
-
-function StatCard({
-  label, value, sub, color,
-}: {
-  label: string; value: string; sub: string; color: string;
-}) {
-  return (
-    <div className="bg-gray-900 rounded-xl p-5">
-      <div className="text-gray-400 text-xs mb-2">{label}</div>
-      <div className={`text-xl font-bold ${color}`}>{value}</div>
-      <div className="text-gray-600 text-xs mt-1">{sub}</div>
+      </SectionCard>
     </div>
   );
 }
