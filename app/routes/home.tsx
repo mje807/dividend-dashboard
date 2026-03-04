@@ -78,12 +78,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
       <PageHeader
+        motionPreset="page-soft"
         title="📊 배당 대시보드"
         subtitle="종구리의 포트폴리오"
         updatedAt={`업데이트: ${portfolioSummary.lastUpdated}`}
       />
 
-      <SectionCard className="mb-8">
+      <SectionCard className="mb-8" motionPreset="surface-enter">
         <div className="flex flex-wrap items-center gap-3">
           <Link
             to="/calendar"

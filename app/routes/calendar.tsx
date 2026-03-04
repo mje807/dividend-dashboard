@@ -151,13 +151,14 @@ export default function Calendar() {
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
       <PageHeader
+        motionPreset="page-soft"
         title="📅 배당 캘린더"
         subtitle={`${viewYear}년 배당 일정`}
         backHref="/"
         backLabel="대시보드"
       />
 
-      <SectionCard className="mb-8">
+      <SectionCard className="mb-8" motionPreset="surface-enter">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-gray-900 rounded-xl p-5">
           <div className="flex items-center gap-2 mb-2">

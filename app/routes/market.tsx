@@ -117,6 +117,7 @@ export default function MarketPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
         <PageHeader
+        motionPreset="page-soft"
           title="🌍 시장 인사이트"
           subtitle="배당주 투자 거시환경 모니터"
           updatedAt={`${updatedAt} KST`}

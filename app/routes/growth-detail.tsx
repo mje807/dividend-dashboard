@@ -130,6 +130,7 @@ export default function GrowthDetailPage() {
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
       <PageHeader
+        motionPreset="page-soft"
         title={`${t} 상세 분석`}
         subtitle={a.summary}
         backHref="/growth"
@@ -137,7 +138,7 @@ export default function GrowthDetailPage() {
         updatedAt={`분석 ${a.analyzedAt} · 지표 ${m?.lastUpdated ?? "-"}`}
       />
 
-      <SectionCard className="p-6 mb-5">
+      <SectionCard className="p-6 mb-5" motionPreset="surface-enter">
         <div className="flex items-center gap-2 mb-2">
           <LineChart size={18} className="text-cyan-400" />
           <h1 className="text-xl font-bold">{t} 상세 분석</h1>
@@ -152,10 +153,10 @@ export default function GrowthDetailPage() {
       </SectionCard>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-        <StatCard label="현재가" value={m?.currentPrice ? `$${m.currentPrice.toFixed(2)}` : "-"} />
-        <StatCard label="종합점수" value={a.score.toFixed(1)} />
-        <StatCard label="매수관찰 하단" value={a.targetBuyLow ? `$${a.targetBuyLow}` : "-"} />
-        <StatCard label="매수관찰 상단" value={a.targetBuyHigh ? `$${a.targetBuyHigh}` : "-"} />
+        <StatCard motionPreset="surface-enter" label="현재가" value={m?.currentPrice ? `$${m.currentPrice.toFixed(2)}` : "-"} />
+        <StatCard motionPreset="surface-enter" label="종합점수" value={a.score.toFixed(1)} />
+        <StatCard motionPreset="surface-enter" label="매수관찰 하단" value={a.targetBuyLow ? `$${a.targetBuyLow}` : "-"} />
+        <StatCard motionPreset="surface-enter" label="매수관찰 상단" value={a.targetBuyHigh ? `$${a.targetBuyHigh}` : "-"} />
       </div>
 
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 mb-5">
