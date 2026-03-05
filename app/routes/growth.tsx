@@ -1,7 +1,13 @@
 import { useMemo, useState } from "react";
 import { Link, useLoaderData } from "react-router";
-import { LineChart, Rocket, Search, SlidersHorizontal } from "lucide-react";
-import { bigTechTickers, hyperGrowthTickers } from "~/data/growth";
+import { LineChart, Rocket, Search, SlidersHorizontal, Layers, Compass } from "lucide-react";
+import {
+  growth50Tickers,
+  megaGrowthTickers,
+  innovativeGrowthTickers,
+  profitableMidGrowthTickers,
+  turnaroundGrowthTickers,
+} from "~/data/growth";
 import { PageHeader } from "~/components/ui/PageHeader";
 import { SectionCard } from "~/components/ui/SectionCard";
 import { StatCard } from "~/components/ui/StatCard";
@@ -10,7 +16,7 @@ import { type StockMetrics } from "~/data/metrics";
 import { type GrowthAnalysis } from "~/data/growth-analysis";
 import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-data.server";
 
-type Group = "bigtech" | "hyper";
+type Group = "core50" | "mega" | "innovative" | "mid" | "turnaround";
 
 type WeightKey = "growth" | "quality" | "valuation" | "momentum";
 
@@ -193,20 +199,37 @@ export default function GrowthPage() {
     [analyses],
   );
 
-  const [group, setGroup] = useState<Group>("bigtech");
+  const [group, setGroup] = useState<Group>("core50");
   const [query, setQuery] = useState("");
   const [weights, setWeights] = useState<Weights>(DEFAULT_WEIGHTS);
 
-  const bigTechRows = useMemo(
-    () => buildRows(bigTechTickers, weights, metricsMap),
+  const core50Rows = useMemo(
+    () => buildRows(growth50Tickers, weights, metricsMap),
     [weights, metricsMap],
   );
-  const hyperRows = useMemo(
-    () => buildRows(hyperGrowthTickers, weights, metricsMap),
+  const megaRows = useMemo(
+    () => buildRows(megaGrowthTickers, weights, metricsMap),
+    [weights, metricsMap],
+  );
+  const innovativeRows = useMemo(
+    () => buildRows(innovativeGrowthTickers, weights, metricsMap),
+    [weights, metricsMap],
+  );
+  const midRows = useMemo(
+    () => buildRows(profitableMidGrowthTickers, weights, metricsMap),
+    [weights, metricsMap],
+  );
+  const turnaroundRows = useMemo(
+    () => buildRows(turnaroundGrowthTickers, weights, metricsMap),
     [weights, metricsMap],
   );
 
-  const rows = group === "bigtech" ? bigTechRows : hyperRows;
+  const rows =
+    group === "core50" ? core50Rows :
+    group === "mega" ? megaRows :
+    group === "innovative" ? innovativeRows :
+    group === "mid" ? midRows :
+    turnaroundRows;
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return rows;
@@ -218,25 +241,32 @@ export default function GrowthPage() {
   const cautionCount = filtered.filter((r) => r.score.label === "주의").length;
 
   const topMovers = useMemo(() => {
-    return [...(group === "bigtech" ? bigTechRows : hyperRows)]
+    const baseRows =
+      group === "core50" ? core50Rows :
+      group === "mega" ? megaRows :
+      group === "innovative" ? innovativeRows :
+      group === "mid" ? midRows :
+      turnaroundRows;
+
+    return [...baseRows]
       .map((r) => ({ row: r, delta: analysisMap.get(r.ticker)?.scoreDelta ?? null }))
       .filter((x) => x.delta !== null)
       .sort((a, b) => Math.abs(b.delta as number) - Math.abs(a.delta as number))
       .slice(0, 3);
-  }, [group, bigTechRows, hyperRows, analysisMap]);
+  }, [group, core50Rows, megaRows, innovativeRows, midRows, turnaroundRows, analysisMap]);
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-6">
       <PageHeader
         title="성장주 분석"
-        subtitle="Big Tech(QQQ Top10 proxy) / Hyper Growth(ARKK proxy) 분리 스코어링"
+        subtitle="Core 50 (4-basket) 성장 유니버스 스코어링"
         backHref="/"
         backLabel="대시보드"
         motionPreset="page-soft"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
-        <StatCard label="평균 점수" value={String(avgScore)} sub={`${group === "bigtech" ? "Big Tech" : "Hyper Growth"} 기준`} />
+        <StatCard label="평균 점수" value={String(avgScore)} sub={`${group === "core50" ? "Core50" : group === "mega" ? "Mega Growth" : group === "innovative" ? "Innovative" : group === "mid" ? "Profitable Mid" : "Turnaround"} 기준`} />
         <StatCard label="주의 종목" value={`${cautionCount}개`} sub="점수 label=주의" />
         <StatCard label="스코어 가중치합" value={`${weights.growth + weights.quality + weights.valuation + weights.momentum}`} sub="자동 정규화" />
       </div>
@@ -256,16 +286,34 @@ export default function GrowthPage() {
 
       <div className="flex flex-wrap gap-2 mb-4">
         <button
-          onClick={() => setGroup("bigtech")}
-          className={`px-4 py-2 rounded-lg text-sm font-medium ${group === "bigtech" ? "bg-indigo-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
+          onClick={() => setGroup("core50")}
+          className={`px-4 py-2 rounded-lg text-sm font-medium ${group === "core50" ? "bg-fuchsia-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
         >
-          <LineChart size={14} className="inline mr-1" /> Big Tech
+          <Layers size={14} className="inline mr-1" /> Core 50
         </button>
         <button
-          onClick={() => setGroup("hyper")}
-          className={`px-4 py-2 rounded-lg text-sm font-medium ${group === "hyper" ? "bg-emerald-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
+          onClick={() => setGroup("mega")}
+          className={`px-4 py-2 rounded-lg text-sm font-medium ${group === "mega" ? "bg-indigo-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
         >
-          <Rocket size={14} className="inline mr-1" /> Hyper Growth
+          <LineChart size={14} className="inline mr-1" /> Mega Growth
+        </button>
+        <button
+          onClick={() => setGroup("innovative")}
+          className={`px-4 py-2 rounded-lg text-sm font-medium ${group === "innovative" ? "bg-emerald-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
+        >
+          <Rocket size={14} className="inline mr-1" /> Innovative
+        </button>
+        <button
+          onClick={() => setGroup("mid")}
+          className={`px-4 py-2 rounded-lg text-sm font-medium ${group === "mid" ? "bg-cyan-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
+        >
+          <Compass size={14} className="inline mr-1" /> Profitable Mid
+        </button>
+        <button
+          onClick={() => setGroup("turnaround")}
+          className={`px-4 py-2 rounded-lg text-sm font-medium ${group === "turnaround" ? "bg-amber-600 text-white" : "bg-gray-900 text-gray-400 hover:text-white"}`}
+        >
+          Turnaround
         </button>
       </div>
 

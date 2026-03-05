@@ -39,7 +39,7 @@ type DbMetric = {
 
 type DbGrowthAnalysis = {
   ticker: string;
-  group_name: "bigtech" | "hyper";
+  group_name: "bigtech" | "hyper" | "mega" | "innovative" | "mid" | "turnaround" | "core50";
   analyzed_at: string;
   overall_rating: "관심" | "관망" | "신중";
   score: number;

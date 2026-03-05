@@ -3,7 +3,7 @@
 
 export interface GrowthAnalysis {
   ticker: string;
-  group: "bigtech" | "hyper";
+  group: "bigtech" | "hyper" | "mega" | "innovative" | "mid" | "turnaround" | "core50";
   analyzedAt: string;
   overallRating: "관심" | "관망" | "신중";
   score: number;
