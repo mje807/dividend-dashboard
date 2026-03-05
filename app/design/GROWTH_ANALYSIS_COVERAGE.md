@@ -1,62 +1,24 @@
 # Growth Analysis Coverage Report
 
 - Universe size: **50**
-- Covered in growth-analysis.ts: **19**
-- Missing analysis: **31**
-- Coverage: **38.0%**
+- Covered in growth-analysis.ts: **50**
+- Missing analysis: **0**
+- Coverage: **100.0%**
 
 ## Missing by basket
 
-### mega (5)
-- NFLX
-- AMD
-- ASML
-- CRM
-- ORCL
+### mega (0)
+- none
 
-### innovative (5)
-- SNOW
-- NET
-- CRWD
-- DDOG
-- MDB
+### innovative (0)
+- none
 
-### mid (15)
-- ADBE
-- INTU
-- NOW
-- UBER
-- ABNB
-- MELI
-- TTD
-- PANW
-- ANET
-- CDNS
-- SNPS
-- KLAC
-- LRCX
-- FTNT
-- MRVL
+### mid (0)
+- none
 
-### turnaround (6)
-- PYPL
-- DOCU
-- ETSY
-- TWLO
-- RBLX
-- BIDU
+### turnaround (0)
+- none
 
 ## Suggested next analysis batch (Top 12)
 
-- NFLX
-- AMD
-- ASML
-- CRM
-- ORCL
-- SNOW
-- NET
-- CRWD
-- DDOG
-- MDB
-- ADBE
-- INTU
+- none
