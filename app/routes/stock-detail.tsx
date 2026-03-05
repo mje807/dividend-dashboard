@@ -8,6 +8,7 @@ import {
 import { royaltyStocks } from "~/data/royalty";
 import { type MoatType, type StockAnalysis } from "~/data/royalty-analysis";
 import { getRoyaltyAnalysisByTicker, getRoyaltyMetricByTicker } from "~/lib/market-data.server";
+import { calcAttractiveness, getTradeOpinionByScore } from "~/utils/attractiveness";
 
 export function meta({ params }: { params: { ticker: string } }) {
   return [{ title: `${params.ticker} 심층분석 — 배당 대시보드` }];
@@ -234,6 +235,8 @@ export default function StockDetail() {
   const analysis = data.analysis;
   const m = data.metric;
   const val = computeValuation(m, stock?.streak ?? 0);
+  const listAlignedAttractiveness = calcAttractiveness(m, stock?.streak ?? 0);
+  const listAlignedOpinion = getTradeOpinionByScore(listAlignedAttractiveness?.score ?? 5);
   const autoCommentary = buildDividendAutoCommentary(val, m);
   const checkpoints = buildDividendCheckpoints(val, m);
 
@@ -339,13 +342,16 @@ export default function StockDetail() {
                 val.score <= 3.5 ? "text-red-400" : "text-yellow-400"
               }`}>{val.overallVerdict}</div>
             </div>
-            <div className="bg-gray-800 rounded-xl p-5 text-center w-32 flex-shrink-0">
+            <div className="bg-gray-800 rounded-xl p-5 text-center w-36 flex-shrink-0">
               <div className="text-xs text-gray-500 mb-1">매수 매력도</div>
               <div className={`text-4xl font-black ${
                 val.score >= 7 ? "text-green-400" :
                 val.score >= 5 ? "text-yellow-400" : "text-red-400"
               }`}>{val.score}</div>
-              <div className="text-gray-600 text-xs">/10</div>
+              <div className="text-gray-600 text-xs mb-2">/10</div>
+              <div className={`text-[11px] font-semibold px-2 py-1 rounded-md ${listAlignedOpinion.cls}`}>
+                매매의견: {listAlignedOpinion.label}
+              </div>
             </div>
           </div>
 

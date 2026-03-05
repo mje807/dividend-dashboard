@@ -6,7 +6,7 @@ import { SectionCard } from "~/components/ui/SectionCard";
 import { Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 import { royaltyStocks, royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
 import { royaltyMetrics, type RoyaltyMetrics } from "~/data/royalty-metrics";
-import { calcAttractiveness } from "~/utils/attractiveness";
+import { calcAttractiveness, getTradeOpinionByScore } from "~/utils/attractiveness";
 
 export function meta() {
   return [{ title: "배당 왕족주·귀족주·배당성장주" }];
@@ -19,18 +19,6 @@ export async function loader() {
 type Category = "all" | "king" | "aristocrat" | "growth";
 type AttrFilter = "all" | "buy" | "neutral" | "caution";
 type SortKey = "streak" | "dividendYield" | "price" | "peRatio" | "payoutRatio" | "attractiveness";
-
-type TradeOpinion = {
-  label: "강력매수" | "매수" | "관망" | "주의";
-  cls: string;
-};
-
-function getTradeOpinion(score: number): TradeOpinion {
-  if (score >= 8.0) return { label: "강력매수", cls: "bg-emerald-900/40 text-emerald-300 border border-emerald-700/40" };
-  if (score >= 6.5) return { label: "매수", cls: "bg-green-900/40 text-green-300 border border-green-700/40" };
-  if (score > 3.5) return { label: "관망", cls: "bg-yellow-900/40 text-yellow-300 border border-yellow-700/40" };
-  return { label: "주의", cls: "bg-red-900/40 text-red-300 border border-red-700/40" };
-}
 
 const SECTOR_COLORS: Record<string, string> = {
   "필수소비재": "bg-green-900/40 text-green-400",
@@ -306,8 +294,8 @@ export default function Watchlist() {
 
                   {/* 매매의견 */}
                   <td className="text-center px-3 py-3">
-                    <span className={`text-[11px] font-semibold px-2 py-1 rounded-md ${getTradeOpinion(s.attractivenessScore ?? 5).cls}`}>
-                      {getTradeOpinion(s.attractivenessScore ?? 5).label}
+                    <span className={`text-[11px] font-semibold px-2 py-1 rounded-md ${getTradeOpinionByScore(s.attractivenessScore ?? 5).cls}`}>
+                      {getTradeOpinionByScore(s.attractivenessScore ?? 5).label}
                     </span>
                   </td>
 
