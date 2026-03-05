@@ -249,6 +249,13 @@ export default function StockDetail() {
       : listAlignedOpinion.label === "주의"
         ? "주의 — 고평가 신중"
         : "관망 — 적정가";
+
+  const qualitativeOpinion = analysis
+    ? (analysis.overallRating === "보유" ? "매수" : analysis.overallRating === "관심" ? "관망" : "주의")
+    : null;
+
+  const isOpinionMismatch = !!(qualitativeOpinion && qualitativeOpinion !== listAlignedOpinion.label);
+
   const autoCommentary = buildDividendAutoCommentary(val, m);
   const checkpoints = buildDividendCheckpoints(val, m);
 
@@ -321,6 +328,7 @@ export default function StockDetail() {
             <Target size={18} className="text-indigo-400" />
             <h2 className="font-semibold text-white">밸류에이션 분석</h2>
             <span className="text-gray-500 text-xs ml-2">— yfinance 기준 · 자동 계산</span>
+            <span className="text-[10px] px-2 py-0.5 rounded-full border border-indigo-700/50 bg-indigo-900/30 text-indigo-300">정량 의견(자동)</span>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-4">
@@ -533,8 +541,17 @@ export default function StockDetail() {
                   <span className="text-2xl">{cfg.emoji}</span>
                   <span className={`text-xl font-bold ${cfg.color}`}>{analysis.overallRating}</span>
                   <span className="text-gray-500 text-xs">· 분석일: {analysis.analyzedAt}</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full border border-cyan-700/50 bg-cyan-900/30 text-cyan-300">정성 의견(심층)</span>
+                  {isOpinionMismatch ? (
+                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-amber-700/50 bg-amber-900/30 text-amber-300">
+                      의견 불일치
+                    </span>
+                  ) : null}
                 </div>
                 <p className="text-gray-300 text-sm leading-relaxed">{analysis.ratingReason}</p>
+                <div className="mt-2 text-xs text-gray-400">
+                  정량(자동): <span className="text-white">{listAlignedOpinion.label}</span> · 정성(심층): <span className="text-white">{analysis.overallRating}</span>
+                </div>
                 {analysis.targetBuyPrice && (
                   <div className="mt-2 text-xs text-gray-500">
                     관심 매수가: <span className="text-white font-medium">${analysis.targetBuyPrice}</span> 이하
