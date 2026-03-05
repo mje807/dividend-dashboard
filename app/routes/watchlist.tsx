@@ -35,6 +35,12 @@ const SECTOR_COLORS: Record<string, string> = {
 
 type WatchlistLoaderData = { metrics: RoyaltyMetrics[] };
 
+function normalizeYieldPercent(raw: number | null | undefined): number {
+  if (raw == null || Number.isNaN(raw)) return 0;
+  if (raw >= 30 && raw <= 1000) return raw / 100; // 92 -> 0.92, 77 -> 0.77
+  return raw;
+}
+
 export default function Watchlist() {
   const { metrics } = useLoaderData<WatchlistLoaderData>();
   const metricsMap = useMemo(() => new Map(metrics.map((m) => [m.ticker, m])), [metrics]);
@@ -48,19 +54,30 @@ export default function Watchlist() {
   const kingCount = royaltyStocks.filter(s => s.category === "king").length;
   const aristoCount = royaltyStocks.filter(s => s.category === "aristocrat").length;
   const growthDivCount = royaltyStocks.filter(s => s.category === "growth").length;
-  const avgYield = royaltyStocks.length
-    ? (royaltyStocks.reduce((s, r) => s + r.dividendYield, 0) / royaltyStocks.length).toFixed(2)
-    : "0";
   const maxStreak = royaltyStocks.reduce((m, r) => Math.max(m, r.streak), 0);
 
   const enriched = useMemo(() =>
     royaltyStocks.map(s => {
       const m = metricsMap.get(s.ticker);
       const att = calcAttractiveness(m, s.streak);
+      const normalizedYield = normalizeYieldPercent(m?.dividendYield ?? s.dividendYield);
 
-      return { ...s, attractivenessScore: att?.score ?? 5, attractiveness: att };
+      return {
+        ...s,
+        price: m?.currentPrice ?? s.price,
+        dividendYield: normalizedYield,
+        dividendRate: m?.dividendRate ?? s.dividendRate,
+        peRatio: (m?.forwardPE ?? m?.trailingPE ?? s.peRatio) ?? s.peRatio,
+        payoutRatio: m?.payoutRatio ?? s.payoutRatio,
+        attractivenessScore: att?.score ?? 5,
+        attractiveness: att,
+      };
     }), [metricsMap]
   );
+
+  const avgYield = enriched.length
+    ? (enriched.reduce((s, r) => s + (r.dividendYield || 0), 0) / enriched.length).toFixed(2)
+    : "0";
 
 
   const filtered = useMemo(() => {
@@ -340,7 +357,7 @@ export default function Watchlist() {
       </div>
 
       <p className="text-gray-600 text-xs mt-4 text-center">
-        매매의견 기준: 강력매수 ≥ 8.0 · 매수 ≥ 6.5 · 관망 3.6~6.4 · 주의 ≤ 3.5 · 배당성향 빨간색 &gt; 80% · 노란색 60~80%
+        목록 지표는 상세와 동일하게 metrics 기준으로 표기(배당률 정규화 포함) · 매매의견 기준: 강력매수 ≥ 8.0 · 매수 ≥ 6.5 · 관망 3.6~6.4 · 주의 ≤ 3.5 · 배당성향 빨간색 &gt; 80% · 노란색 60~80%
       </p>
     </div>
   );
