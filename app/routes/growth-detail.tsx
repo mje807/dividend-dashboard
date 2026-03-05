@@ -22,6 +22,10 @@ export async function loader({ params }: { params: { ticker?: string } }) {
     ticker,
     metric,
     analysis,
+  }, {
+    headers: {
+      "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+    },
   });
 }
 

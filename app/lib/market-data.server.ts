@@ -117,17 +117,32 @@ export async function getStockMetricsLatest(): Promise<StockMetrics[]> {
   }
 }
 
+const STOCK_METRIC_DETAIL_COLUMNS = [
+  "ticker",
+  "yf_ticker",
+  "last_updated",
+  "current_price",
+  "week52_high",
+  "week52_low",
+  "revenue_growth",
+  "roe",
+  "profit_margin",
+  "forward_pe",
+  "trailing_pe",
+  "target_mean_price"
+].join(",");
+
 export async function getStockMetricByTicker(ticker: string): Promise<StockMetrics | null> {
   const t = ticker.toUpperCase();
   try {
     const supabase = createSupabaseAdminClient();
     const { data, error } = await supabase
       .from("stock_metrics_latest")
-      .select("*")
+      .select(STOCK_METRIC_DETAIL_COLUMNS)
       .eq("ticker", t)
       .maybeSingle();
     if (error || !data) return stockMetrics.find((m) => m.ticker === t) ?? null;
-    return mapMetric(data as DbMetric);
+    return mapMetric(data as unknown as DbMetric);
   } catch {
     return stockMetrics.find((m) => m.ticker === t) ?? null;
   }
@@ -144,17 +159,33 @@ export async function getGrowthAnalysesLatest(): Promise<GrowthAnalysis[]> {
   }
 }
 
+const GROWTH_ANALYSIS_DETAIL_COLUMNS = [
+  "ticker",
+  "group_name",
+  "analyzed_at",
+  "overall_rating",
+  "score",
+  "score_delta",
+  "confidence",
+  "source",
+  "target_buy_low",
+  "target_buy_high",
+  "summary",
+  "key_drivers",
+  "key_risks"
+].join(",");
+
 export async function getGrowthAnalysisByTicker(ticker: string): Promise<GrowthAnalysis | null> {
   const t = ticker.toUpperCase();
   try {
     const supabase = createSupabaseAdminClient();
     const { data, error } = await supabase
       .from("growth_analyses_latest")
-      .select("*")
+      .select(GROWTH_ANALYSIS_DETAIL_COLUMNS)
       .eq("ticker", t)
       .maybeSingle();
     if (error || !data) return growthAnalyses.find((a) => a.ticker === t) ?? null;
-    return mapAnalysis(data as DbGrowthAnalysis);
+    return mapAnalysis(data as unknown as DbGrowthAnalysis);
   } catch {
     return growthAnalyses.find((a) => a.ticker === t) ?? null;
   }
@@ -342,17 +373,47 @@ export async function getRoyaltyMetricsLatest(): Promise<RoyaltyMetrics[]> {
   }
 }
 
+const ROYALTY_METRIC_DETAIL_COLUMNS = [
+  "ticker",
+  "fetched_at",
+  "current_price",
+  "week52_low",
+  "week52_high",
+  "pct_in52_range",
+  "dividend_rate",
+  "dividend_yield",
+  "five_year_avg_yield",
+  "yield_vs_avg",
+  "payout_ratio",
+  "dividend_cagr3yr",
+  "trailing_pe",
+  "forward_pe",
+  "price_to_book",
+  "roe",
+  "profit_margin",
+  "debt_to_equity",
+  "current_ratio",
+  "revenue_growth",
+  "target_mean_price",
+  "analyst_upside",
+  "recommendation_key",
+  "number_of_analysts",
+  "sector",
+  "industry",
+  "long_business_summary"
+].join(",");
+
 export async function getRoyaltyMetricByTicker(ticker: string): Promise<RoyaltyMetrics | null> {
   const t = ticker.toUpperCase();
   try {
     const supabase = createSupabaseAdminClient();
     const { data, error } = await supabase
       .from("royalty_metrics_latest")
-      .select("*")
+      .select(ROYALTY_METRIC_DETAIL_COLUMNS)
       .eq("ticker", t)
       .maybeSingle();
     if (error || !data) return royaltyMetrics.find((m) => m.ticker === t) ?? null;
-    return mapRoyaltyMetric(data as DbRoyaltyMetric);
+    return mapRoyaltyMetric(data as unknown as DbRoyaltyMetric);
   } catch {
     return royaltyMetrics.find((m) => m.ticker === t) ?? null;
   }
@@ -369,17 +430,46 @@ export async function getRoyaltyAnalysesLatest(): Promise<StockAnalysis[]> {
   }
 }
 
+const ROYALTY_ANALYSIS_DETAIL_COLUMNS = [
+  "ticker",
+  "analyzed_at",
+  "business_summary",
+  "core_products",
+  "geographic_presence",
+  "dividend_streak_years",
+  "dividend_cagr5yr",
+  "dividend_cagr10yr",
+  "recent_dividend_growth",
+  "dividend_safety",
+  "dividend_safety_reason",
+  "moat_types",
+  "moat_strength",
+  "moat_narrative",
+  "revenue_growth_trend",
+  "margin_trend",
+  "debt_level",
+  "financial_summary",
+  "key_risks",
+  "bull_case",
+  "bear_case",
+  "valuation_comment",
+  "recent_developments",
+  "overall_rating",
+  "rating_reason",
+  "target_buy_price"
+].join(",");
+
 export async function getRoyaltyAnalysisByTicker(ticker: string): Promise<StockAnalysis | null> {
   const t = ticker.toUpperCase();
   try {
     const supabase = createSupabaseAdminClient();
     const { data, error } = await supabase
       .from("royalty_analyses_latest")
-      .select("*")
+      .select(ROYALTY_ANALYSIS_DETAIL_COLUMNS)
       .eq("ticker", t)
       .maybeSingle();
     if (error || !data) return stockAnalyses.find((a) => a.ticker === t) ?? null;
-    return mapRoyaltyAnalysis(data as DbRoyaltyAnalysis);
+    return mapRoyaltyAnalysis(data as unknown as DbRoyaltyAnalysis);
   } catch {
     return stockAnalyses.find((a) => a.ticker === t) ?? null;
   }
