@@ -236,7 +236,15 @@ export default function StockDetail() {
   const m = data.metric;
   const val = computeValuation(m, stock?.streak ?? 0);
   const listAlignedAttractiveness = calcAttractiveness(m, stock?.streak ?? 0);
-  const listAlignedOpinion = getTradeOpinionByScore(listAlignedAttractiveness?.score ?? 5);
+  const unifiedScore = listAlignedAttractiveness?.score ?? val?.score ?? 5;
+  const listAlignedOpinion = getTradeOpinionByScore(unifiedScore);
+  const unifiedVerdict = listAlignedOpinion.label === "강력매수"
+    ? "강력매수 — 저평가 매력"
+    : listAlignedOpinion.label === "매수"
+      ? "매수 — 저평가 매력"
+      : listAlignedOpinion.label === "주의"
+        ? "주의 — 고평가 신중"
+        : "관망 — 적정가";
   const autoCommentary = buildDividendAutoCommentary(val, m);
   const checkpoints = buildDividendCheckpoints(val, m);
 
@@ -338,20 +346,21 @@ export default function StockDetail() {
             }`}>
               <div className="text-xs text-gray-500 mb-1">종합 판정</div>
               <div className={`text-xl font-bold ${
-                val.score >= 6.5 ? "text-green-400" :
-                val.score <= 3.5 ? "text-red-400" : "text-yellow-400"
-              }`}>{val.overallVerdict}</div>
+                unifiedScore >= 6.5 ? "text-green-400" :
+                unifiedScore <= 3.5 ? "text-red-400" : "text-yellow-400"
+              }`}>{unifiedVerdict}</div>
             </div>
             <div className="bg-gray-800 rounded-xl p-5 text-center w-36 flex-shrink-0">
               <div className="text-xs text-gray-500 mb-1">매수 매력도</div>
               <div className={`text-4xl font-black ${
-                val.score >= 7 ? "text-green-400" :
-                val.score >= 5 ? "text-yellow-400" : "text-red-400"
-              }`}>{val.score}</div>
+                unifiedScore >= 7 ? "text-green-400" :
+                unifiedScore >= 5 ? "text-yellow-400" : "text-red-400"
+              }`}>{unifiedScore}</div>
               <div className="text-gray-600 text-xs mb-2">/10</div>
               <div className={`text-[11px] font-semibold px-2 py-1 rounded-md ${listAlignedOpinion.cls}`}>
                 매매의견: {listAlignedOpinion.label}
               </div>
+              <div className="text-[10px] text-gray-500 mt-1">목록과 동일 기준</div>
             </div>
           </div>
 
