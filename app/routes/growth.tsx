@@ -62,7 +62,13 @@ export async function loader() {
     getStockMetricsLatest(),
     getGrowthAnalysesLatest(),
   ]);
-  return Response.json({ metrics, analyses });
+
+  const latestAnalyzedAt = analyses
+    .map((a) => a.analyzedAt)
+    .filter(Boolean)
+    .sort((a, b) => String(b).localeCompare(String(a)))[0] ?? null;
+
+  return Response.json({ metrics, analyses, latestAnalyzedAt });
 }
 
 function clamp(v: number, min: number, max: number) {
@@ -185,10 +191,11 @@ function WeightSlider({
 type GrowthLoaderData = {
   metrics: StockMetrics[];
   analyses: GrowthAnalysis[];
+  latestAnalyzedAt: string | null;
 };
 
 export default function GrowthPage() {
-  const { metrics, analyses } = useLoaderData<GrowthLoaderData>();
+  const { metrics, analyses, latestAnalyzedAt } = useLoaderData<GrowthLoaderData>();
 
   const metricsMap = useMemo(
     () => new Map<string, StockMetrics>(metrics.map((m) => [m.ticker, m])),
@@ -262,6 +269,7 @@ export default function GrowthPage() {
         subtitle="Core 50 (4-basket) 성장 유니버스 스코어링"
         backHref="/"
         backLabel="대시보드"
+        updatedAt={latestAnalyzedAt ? `Supabase 최신 분석시각: ${latestAnalyzedAt}` : "Supabase 최신 분석시각: -"}
         motionPreset="page-soft"
       />
 

@@ -151,9 +151,22 @@ export async function getStockMetricByTicker(ticker: string): Promise<StockMetri
 export async function getGrowthAnalysesLatest(): Promise<GrowthAnalysis[]> {
   try {
     const supabase = createSupabaseAdminClient();
-    const { data, error } = await supabase.from("growth_analyses_latest").select("*");
+    const { data, error } = await supabase
+      .from("growth_analyses_latest")
+      .select("*")
+      .order("analyzed_at", { ascending: false });
     if (error || !data?.length) return growthAnalyses;
-    return (data as DbGrowthAnalysis[]).map(mapAnalysis);
+
+    const seen = new Set<string>();
+    const deduped: DbGrowthAnalysis[] = [];
+    for (const row of data as DbGrowthAnalysis[]) {
+      const t = (row.ticker || "").toUpperCase();
+      if (!t || seen.has(t)) continue;
+      seen.add(t);
+      deduped.push(row);
+    }
+
+    return deduped.map(mapAnalysis);
   } catch {
     return growthAnalyses;
   }
@@ -183,6 +196,8 @@ export async function getGrowthAnalysisByTicker(ticker: string): Promise<GrowthA
       .from("growth_analyses_latest")
       .select(GROWTH_ANALYSIS_DETAIL_COLUMNS)
       .eq("ticker", t)
+      .order("analyzed_at", { ascending: false })
+      .limit(1)
       .maybeSingle();
     if (error || !data) return growthAnalyses.find((a) => a.ticker === t) ?? null;
     return mapAnalysis(data as unknown as DbGrowthAnalysis);
