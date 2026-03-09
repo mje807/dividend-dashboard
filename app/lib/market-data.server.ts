@@ -482,6 +482,8 @@ export async function getRoyaltyAnalysisByTicker(ticker: string): Promise<StockA
       .from("royalty_analyses_latest")
       .select(ROYALTY_ANALYSIS_DETAIL_COLUMNS)
       .eq("ticker", t)
+      .order("analyzed_at", { ascending: false })
+      .limit(1)
       .maybeSingle();
     if (error || !data) return stockAnalyses.find((a) => a.ticker === t) ?? null;
     return mapRoyaltyAnalysis(data as unknown as DbRoyaltyAnalysis);
