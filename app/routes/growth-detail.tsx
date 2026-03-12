@@ -5,7 +5,7 @@ import { StatCard } from "~/components/ui/StatCard";
 import { StatusBadge } from "~/components/ui/StatusBadge";
 import { AlertTriangle, CheckCircle2, LineChart } from "lucide-react";
 import { getGrowthHistory, type GrowthQuarterPoint } from "~/data/growth-history";
-import { getGrowthAnalysisByTicker, getStockMetricByTicker } from "~/lib/market-data.server";
+import { getGrowthAnalysisByTicker, getGrowthMetricByTicker } from "~/lib/market-data.server";
 
 export function meta() {
   return [{ title: "성장주 상세 분석" }];
@@ -14,7 +14,7 @@ export function meta() {
 export async function loader({ params }: { params: { ticker?: string } }) {
   const ticker = (params.ticker || "").toUpperCase();
   const [metric, analysis] = await Promise.all([
-    getStockMetricByTicker(ticker),
+    getGrowthMetricByTicker(ticker),
     getGrowthAnalysisByTicker(ticker),
   ]);
 

@@ -14,7 +14,7 @@ import { StatCard } from "~/components/ui/StatCard";
 import { StatusBadge } from "~/components/ui/StatusBadge";
 import { type StockMetrics } from "~/data/metrics";
 import { type GrowthAnalysis } from "~/data/growth-analysis";
-import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-data.server";
+import { getGrowthAnalysesLatest, getGrowthMetricsLatest } from "~/lib/market-data.server";
 
 type Group = "core50" | "mega" | "innovative" | "mid" | "turnaround";
 
@@ -60,7 +60,7 @@ export function meta() {
 
 export async function loader() {
   const [metrics, analyses] = await Promise.all([
-    getStockMetricsLatest(),
+    getGrowthMetricsLatest(),
     getGrowthAnalysesLatest(),
   ]);
 
