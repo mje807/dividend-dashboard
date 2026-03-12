@@ -425,6 +425,12 @@ export default function GrowthPage() {
                       <div className="font-bold text-cyan-300 text-sm">{g.ticker}</div>
                       <div className="text-gray-500 text-xs max-w-[260px] truncate">{g.name}</div>
                       <div className="text-[11px] text-gray-400 max-w-[340px] truncate">{a?.summary ?? "분석 요약 없음"}</div>
+                      <div className="text-[10px] mt-1 max-w-[360px] truncate">
+                        <span className="text-emerald-300">▲ {a?.keyDrivers?.[0] ?? "상방 요인 확인 필요"}</span>
+                      </div>
+                      <div className="text-[10px] max-w-[360px] truncate">
+                        <span className="text-red-300">▼ {a?.keyRisks?.[0] ?? "하방 리스크 확인 필요"}</span>
+                      </div>
                     </td>
                     <td className="text-right px-4 py-3 text-white text-sm">{g.price ? g.price.toLocaleString() : "-"}</td>
                     <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.revenueGrowth !== null ? `${g.revenueGrowth.toFixed(1)}%` : "-"}</td>
