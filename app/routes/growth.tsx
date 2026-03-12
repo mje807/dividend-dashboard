@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link, useLoaderData } from "react-router";
-import { LineChart, Rocket, Search, SlidersHorizontal, Layers, Compass } from "lucide-react";
+import { LineChart, Rocket, Search, SlidersHorizontal, Layers, Compass, ArrowUpDown, ChevronUp, ChevronDown } from "lucide-react";
 import {
   growth50Tickers,
   megaGrowthTickers,
@@ -19,6 +19,7 @@ import { getGrowthAnalysesLatest, getStockMetricsLatest } from "~/lib/market-dat
 type Group = "core50" | "mega" | "innovative" | "mid" | "turnaround";
 
 type WeightKey = "growth" | "quality" | "valuation" | "momentum";
+type SortKey = "score" | "price" | "revenueGrowth" | "roe" | "pe";
 
 type Weights = Record<WeightKey, number>;
 
@@ -209,6 +210,8 @@ export default function GrowthPage() {
   const [group, setGroup] = useState<Group>("core50");
   const [query, setQuery] = useState("");
   const [weights, setWeights] = useState<Weights>(DEFAULT_WEIGHTS);
+  const [sortKey, setSortKey] = useState<SortKey>("score");
+  const [sortAsc, setSortAsc] = useState(false);
 
   const core50Rows = useMemo(
     () => buildRows(growth50Tickers, weights, metricsMap),
@@ -239,9 +242,29 @@ export default function GrowthPage() {
     turnaroundRows;
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return rows;
-    return rows.filter((r) => r.ticker.toLowerCase().includes(q) || r.name.toLowerCase().includes(q));
-  }, [rows, query]);
+    let list = !q ? rows : rows.filter((r) => r.ticker.toLowerCase().includes(q) || r.name.toLowerCase().includes(q));
+
+    list = [...list].sort((a, b) => {
+      const av = sortKey === "score" ? a.score.score : (a[sortKey] ?? -9999) as number;
+      const bv = sortKey === "score" ? b.score.score : (b[sortKey] ?? -9999) as number;
+      return sortAsc ? av - bv : bv - av;
+    });
+
+    return list;
+  }, [rows, query, sortKey, sortAsc]);
+
+  const handleSort = (key: SortKey) => {
+    if (sortKey === key) setSortAsc(!sortAsc);
+    else {
+      setSortKey(key);
+      setSortAsc(false);
+    }
+  };
+
+  const SortIcon = ({ k }: { k: SortKey }) => {
+    if (sortKey !== k) return <ArrowUpDown size={12} className="text-gray-600" />;
+    return sortAsc ? <ChevronUp size={12} className="text-indigo-400" /> : <ChevronDown size={12} className="text-indigo-400" />;
+  };
 
   const top3 = filtered.slice(0, 3);
   const avgScore = filtered.length ? (filtered.reduce((acc, r) => acc + r.score.score, 0) / filtered.length).toFixed(1) : "-";
@@ -358,12 +381,38 @@ export default function GrowthPage() {
             <thead>
               <tr className="border-b border-gray-800 text-gray-500 text-xs">
                 <th className="text-left px-5 py-3">종목</th>
-                <th className="text-right px-4 py-3">현재가</th>
-                <th className="text-right px-4 py-3">매출성장률</th>
-                <th className="text-right px-4 py-3">ROE</th>
-                <th className="text-right px-4 py-3">Forward PE</th>
+                <th
+                  className="text-right px-4 py-3 cursor-pointer hover:text-white select-none"
+                  onClick={() => handleSort("price")}
+                >
+                  <span className="flex items-center justify-end gap-1">현재가 <SortIcon k="price" /></span>
+                </th>
+                <th
+                  className="text-right px-4 py-3 cursor-pointer hover:text-white select-none"
+                  onClick={() => handleSort("revenueGrowth")}
+                >
+                  <span className="flex items-center justify-end gap-1">매출성장률 <SortIcon k="revenueGrowth" /></span>
+                </th>
+                <th
+                  className="text-right px-4 py-3 cursor-pointer hover:text-white select-none"
+                  onClick={() => handleSort("roe")}
+                >
+                  <span className="flex items-center justify-end gap-1">ROE <SortIcon k="roe" /></span>
+                </th>
+                <th
+                  className="text-right px-4 py-3 cursor-pointer hover:text-white select-none"
+                  onClick={() => handleSort("pe")}
+                >
+                  <span className="flex items-center justify-end gap-1">Forward PE <SortIcon k="pe" /></span>
+                </th>
+                <th className="text-center px-3 py-3">매매의견</th>
                 <th className="text-right px-4 py-3">등급/신뢰도</th>
-                <th className="text-right px-4 py-3">점수/Δ</th>
+                <th
+                  className="text-right px-4 py-3 cursor-pointer hover:text-white select-none"
+                  onClick={() => handleSort("score")}
+                >
+                  <span className="flex items-center justify-end gap-1">점수/Δ <SortIcon k="score" /></span>
+                </th>
                 <th className="text-right px-4 py-3">상세</th>
               </tr>
             </thead>
@@ -381,6 +430,15 @@ export default function GrowthPage() {
                     <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.revenueGrowth !== null ? `${g.revenueGrowth.toFixed(1)}%` : "-"}</td>
                     <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.roe !== null ? `${g.roe.toFixed(1)}%` : "-"}</td>
                     <td className="text-right px-4 py-3 text-gray-300 text-xs">{g.pe !== null ? g.pe.toFixed(1) : "-"}</td>
+                    <td className="text-center px-3 py-3">
+                      <span className={`text-[11px] font-semibold px-2 py-1 rounded-md ${
+                        (a?.overallRating ?? "관망") === "관심" ? "bg-emerald-900/40 text-emerald-300 border border-emerald-700/40" :
+                        (a?.overallRating ?? "관망") === "관망" ? "bg-yellow-900/40 text-yellow-300 border border-yellow-700/40" :
+                        "bg-red-900/40 text-red-300 border border-red-700/40"
+                      }`}>
+                        {a?.overallRating ?? "관망"}
+                      </span>
+                    </td>
                     <td className="text-right px-4 py-3 text-xs text-gray-200">
                       {a?.overallRating ?? g.score.label} / {a?.confidence ?? "B"}
                     </td>
