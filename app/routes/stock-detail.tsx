@@ -5,9 +5,9 @@ import {
   Shield, TrendingUp, AlertTriangle, Star, BookOpen,
   Calendar, DollarSign, BarChart2, Target, Gauge, Users,
 } from "lucide-react";
-import { royaltyStocks } from "~/data/royalty";
+import { type RoyaltyStock } from "~/data/royalty";
 import { type MoatType, type StockAnalysis } from "~/data/royalty-analysis";
-import { getRoyaltyAnalysisByTicker, getRoyaltyMetricByTicker } from "~/lib/market-data.server";
+import { getRoyaltyAnalysisByTicker, getRoyaltyMetricByTicker, getRoyaltyUniverseByTicker } from "~/lib/market-data.server";
 import { calcAttractiveness, getTradeOpinionByScore } from "~/utils/attractiveness";
 
 export function meta({ params }: { params: { ticker: string } }) {
@@ -16,13 +16,15 @@ export function meta({ params }: { params: { ticker: string } }) {
 
 export async function loader({ params }: { params: { ticker: string } }) {
   const ticker = (params.ticker || "").toUpperCase();
-  const [metric, analysis] = await Promise.all([
+  const [stock, metric, analysis] = await Promise.all([
+    getRoyaltyUniverseByTicker(ticker),
     getRoyaltyMetricByTicker(ticker),
     getRoyaltyAnalysisByTicker(ticker),
   ]);
 
   return Response.json({
     ticker,
+    stock,
     metric,
     analysis,
   }, {
@@ -33,6 +35,12 @@ export async function loader({ params }: { params: { ticker: string } }) {
 }
 
 type RoyaltyMetricItem = import("~/data/royalty-metrics").RoyaltyMetrics;
+type StockDetailLoaderData = {
+  ticker: string;
+  stock: RoyaltyStock | null;
+  metric: RoyaltyMetricItem | null;
+  analysis: StockAnalysis | null;
+};
 
 const MOAT_LABELS: Record<MoatType, string> = {
   brand: "브랜드",
@@ -225,17 +233,11 @@ function buildDividendCheckpoints(val: ReturnType<typeof computeValuation> | nul
   return [p1, p2, p3];
 }
 
-type StockDetailLoaderData = {
-  ticker: string;
-  metric: RoyaltyMetricItem | null;
-  analysis: StockAnalysis | null;
-};
-
 export default function StockDetail() {
   const { ticker } = useParams<{ ticker: string }>();
   const data = useLoaderData<StockDetailLoaderData>();
   const resolvedTicker = (ticker || data.ticker || "").toUpperCase();
-  const stock = royaltyStocks.find(s => s.ticker === resolvedTicker);
+  const stock = data.stock;
   const analysis = data.analysis;
   const m = data.metric;
   const val = computeValuation(m, stock?.streak ?? 0);

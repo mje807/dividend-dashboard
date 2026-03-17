@@ -4,16 +4,21 @@ import { PageHeader } from "~/components/ui/PageHeader";
 import { StatCard } from "~/components/ui/StatCard";
 import { SectionCard } from "~/components/ui/SectionCard";
 import { Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
-import { royaltyStocks, royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
-import { royaltyMetrics, type RoyaltyMetrics } from "~/data/royalty-metrics";
+import { royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
+import { type RoyaltyMetrics } from "~/data/royalty-metrics";
 import { calcAttractiveness, getTradeOpinionByScore } from "~/utils/attractiveness";
+import { getRoyaltyMetricsLatest, getRoyaltyUniverseLatest } from "~/lib/market-data.server";
 
 export function meta() {
   return [{ title: "배당 왕족주·귀족주·배당성장주" }];
 }
 
 export async function loader() {
-  return Response.json({ metrics: royaltyMetrics });
+  const [universe, metrics] = await Promise.all([
+    getRoyaltyUniverseLatest(),
+    getRoyaltyMetricsLatest(),
+  ]);
+  return Response.json({ universe, metrics });
 }
 
 type Category = "all" | "king" | "aristocrat" | "growth";
@@ -33,7 +38,7 @@ const SECTOR_COLORS: Record<string, string> = {
   "리츠":       "bg-pink-900/40 text-pink-400",
 };
 
-type WatchlistLoaderData = { metrics: RoyaltyMetrics[] };
+type WatchlistLoaderData = { universe: RoyaltyStock[]; metrics: RoyaltyMetrics[] };
 
 function normalizeYieldPercent(raw: number | null | undefined): number {
   if (raw == null || Number.isNaN(raw)) return 0;
@@ -42,7 +47,7 @@ function normalizeYieldPercent(raw: number | null | undefined): number {
 }
 
 export default function Watchlist() {
-  const { metrics } = useLoaderData<WatchlistLoaderData>();
+  const { universe, metrics } = useLoaderData<WatchlistLoaderData>();
   const metricsMap = useMemo(() => new Map(metrics.map((m) => [m.ticker, m])), [metrics]);
 
   const [category, setCategory] = useState<Category>("all");
@@ -51,13 +56,13 @@ export default function Watchlist() {
   const [sortKey, setSortKey] = useState<SortKey>("attractiveness");
   const [sortAsc, setSortAsc] = useState(false);
 
-  const kingCount = royaltyStocks.filter(s => s.category === "king").length;
-  const aristoCount = royaltyStocks.filter(s => s.category === "aristocrat").length;
-  const growthDivCount = royaltyStocks.filter(s => s.category === "growth").length;
-  const maxStreak = royaltyStocks.reduce((m, r) => Math.max(m, r.streak), 0);
+  const kingCount = universe.filter(s => s.category === "king").length;
+  const aristoCount = universe.filter(s => s.category === "aristocrat").length;
+  const growthDivCount = universe.filter(s => s.category === "growth").length;
+  const maxStreak = universe.reduce((m, r) => Math.max(m, r.streak), 0);
 
   const enriched = useMemo(() =>
-    royaltyStocks.map(s => {
+    universe.map(s => {
       const m = metricsMap.get(s.ticker);
       const att = calcAttractiveness(m, s.streak);
       const normalizedYield = normalizeYieldPercent(m?.dividendYield ?? s.dividendYield);
@@ -72,7 +77,7 @@ export default function Watchlist() {
         attractivenessScore: att?.score ?? 5,
         attractiveness: att,
       };
-    }), [metricsMap]
+    }), [universe, metricsMap]
   );
 
   const avgYield = enriched.length
