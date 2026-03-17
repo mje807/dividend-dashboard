@@ -14,11 +14,12 @@ export function meta() {
 }
 
 export async function loader() {
-  const [universe, metrics] = await Promise.all([
+  const [universe, metrics, analyses] = await Promise.all([
     getRoyaltyUniverseLatest(),
     getRoyaltyMetricsLatest(),
+    getRoyaltyAnalysesLatest(),
   ]);
-  return Response.json({ universe, metrics });
+  return Response.json({ universe, metrics, analyses });
 }
 
 type Category = "all" | "king" | "aristocrat" | "growth";
@@ -44,6 +45,13 @@ function normalizeYieldPercent(raw: number | null | undefined): number {
   if (raw == null || Number.isNaN(raw)) return 0;
   if (raw >= 30 && raw <= 1000) return raw / 100; // 92 -> 0.92, 77 -> 0.77
   return raw;
+}
+
+function getRatingBadge(rating?: StockAnalysis["overallRating"] | null): RatingBadge {
+  if (rating === "관심") return { label: "관심", cls: "bg-green-900/40 text-green-300 border border-green-700/40" };
+  if (rating === "보유") return { label: "보유", cls: "bg-indigo-900/40 text-indigo-300 border border-indigo-700/40" };
+  if (rating === "관망") return { label: "관망", cls: "bg-yellow-900/40 text-yellow-300 border border-yellow-700/40" };
+  return { label: "미분석", cls: "bg-gray-800/60 text-gray-400 border border-gray-700/40" };
 }
 
 export default function Watchlist() {
@@ -80,9 +88,10 @@ export default function Watchlist() {
     }), [universe, metricsMap]
   );
 
-  const avgYield = enriched.length
-    ? (enriched.reduce((s, r) => s + (r.dividendYield || 0), 0) / enriched.length).toFixed(2)
-    : "0";
+  const avgYieldBase = enriched.filter((r) => r.dividendYield != null);
+  const avgYield = avgYieldBase.length
+    ? (avgYieldBase.reduce((s, r) => s + (r.dividendYield || 0), 0) / avgYieldBase.length).toFixed(2)
+    : "-";
 
 
   const filtered = useMemo(() => {
@@ -106,8 +115,8 @@ export default function Watchlist() {
       );
     }
     return [...list].sort((a, b) => {
-      const av = sortKey === "attractiveness" ? (a.attractivenessScore ?? 0) : (a[sortKey as keyof RoyaltyStock] ?? 0) as number;
-      const bv = sortKey === "attractiveness" ? (b.attractivenessScore ?? 0) : (b[sortKey as keyof RoyaltyStock] ?? 0) as number;
+      const av = sortKey === "attractiveness" ? (a.attractivenessScore ?? -1) : ((a[sortKey as keyof typeof a] ?? -1) as number);
+      const bv = sortKey === "attractiveness" ? (b.attractivenessScore ?? -1) : ((b[sortKey as keyof typeof b] ?? -1) as number);
       return sortAsc ? av - bv : bv - av;
     });
   }, [enriched, category, attrFilter, search, sortKey, sortAsc]);
@@ -362,8 +371,27 @@ export default function Watchlist() {
       </div>
 
       <p className="text-gray-600 text-xs mt-4 text-center">
-        목록 지표는 상세와 동일하게 metrics 기준으로 표기(배당률 정규화 포함) · 매매의견 기준: 강력매수 ≥ 8.0 · 매수 ≥ 6.5 · 관망 3.6~6.4 · 주의 ≤ 3.5 · 배당성향 빨간색 &gt; 80% · 노란색 60~80%
+        목록 지표와 상세는 모두 DB 기준으로만 표기됩니다. metric이 없으면 값은 비워지고, 의견은 analysis의 overall_rating을 그대로 사용합니다.
       </p>
     </div>
+  );
+}
+div>
+  );
+}
+� 주의 ≤ 3.5 · 배당성향 빨간색 &gt; 80% · 노란색 60~80%
+      </p>
+    </div>
+  );
+}
+div>
+  );
+}
+≤ 3.5 · 배당성향 빨간색 &gt; 80% · 노란색 60~80%
+      </p>
+    </div>
+  );
+}
+div>
   );
 }
