@@ -6,7 +6,7 @@ import { SectionCard } from "~/components/ui/SectionCard";
 import { Crown, Trophy, TrendingUp, Search, ArrowUpDown, ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 import { royaltyLastUpdated, type RoyaltyStock } from "~/data/royalty";
 import { type RoyaltyMetrics } from "~/data/royalty-metrics";
-import { calcAttractiveness, getTradeOpinionByScore } from "~/utils/attractiveness";
+import { calcAttractiveness } from "~/utils/attractiveness";
 import { getRoyaltyMetricsLatest, getRoyaltyUniverseLatest } from "~/lib/market-data.server";
 
 export function meta() {
@@ -39,7 +39,12 @@ const SECTOR_COLORS: Record<string, string> = {
   "리츠":       "bg-pink-900/40 text-pink-400",
 };
 
-type WatchlistLoaderData = { universe: RoyaltyStock[]; metrics: RoyaltyMetrics[] };
+type WatchlistLoaderData = { universe: RoyaltyStock[]; metrics: RoyaltyMetrics[]; analyses: StockAnalysis[] };
+
+type RatingBadge = {
+  label: "관심" | "보유" | "관망" | "미분석";
+  cls: string;
+};
 
 function normalizeYieldPercent(raw: number | null | undefined): number {
   if (raw == null || Number.isNaN(raw)) return 0;
@@ -72,20 +77,22 @@ export default function Watchlist() {
   const enriched = useMemo(() =>
     universe.map(s => {
       const m = metricsMap.get(s.ticker);
-      const att = calcAttractiveness(m, s.streak);
-      const normalizedYield = normalizeYieldPercent(m?.dividendYield ?? s.dividendYield);
+      const analysis = analysesMap.get(s.ticker);
+      const att = m ? calcAttractiveness(m, s.streak) : null;
+      const normalizedYield = normalizeYieldPercent(m?.dividendYield);
 
       return {
         ...s,
-        price: m?.currentPrice ?? s.price,
-        dividendYield: normalizedYield,
-        dividendRate: m?.dividendRate ?? s.dividendRate,
-        peRatio: (m?.forwardPE ?? m?.trailingPE ?? s.peRatio) ?? s.peRatio,
-        payoutRatio: m?.payoutRatio ?? s.payoutRatio,
-        attractivenessScore: att?.score ?? 5,
+        price: m?.currentPrice ?? null,
+        dividendYield: m ? normalizedYield : null,
+        dividendRate: m?.dividendRate ?? null,
+        peRatio: (m?.forwardPE ?? m?.trailingPE) ?? null,
+        payoutRatio: m?.payoutRatio ?? null,
+        attractivenessScore: att?.score ?? null,
         attractiveness: att,
+        analysis,
       };
-    }), [universe, metricsMap]
+    }), [universe, metricsMap, analysesMap]
   );
 
   const avgYieldBase = enriched.filter((r) => r.dividendYield != null);
@@ -337,30 +344,30 @@ export default function Watchlist() {
 
                   {/* 현재가 */}
                   <td className="text-right px-4 py-3 text-white text-sm">
-                    {s.price > 0 ? `$${s.price.toFixed(2)}` : "-"}
+                    {typeof s.price === "number" && s.price > 0 ? `$${s.price.toFixed(2)}` : "-"}
                   </td>
 
                   {/* 배당률 */}
                   <td className="text-right px-4 py-3">
-                    <span className={`font-semibold text-sm ${s.dividendYield >= 3 ? "text-green-400" : s.dividendYield >= 2 ? "text-yellow-400" : "text-gray-400"}`}>
-                      {s.dividendYield > 0 ? `${s.dividendYield.toFixed(2)}%` : "-"}
+                    <span className={`font-semibold text-sm ${typeof s.dividendYield === "number" ? (s.dividendYield >= 3 ? "text-green-400" : s.dividendYield >= 2 ? "text-yellow-400" : "text-gray-400") : "text-gray-500"}`}>
+                      {typeof s.dividendYield === "number" && s.dividendYield > 0 ? `${s.dividendYield.toFixed(2)}%` : "-"}
                     </span>
                   </td>
 
                   {/* 주당배당금 */}
                   <td className="text-right px-4 py-3 text-gray-300 text-xs">
-                    {s.dividendRate > 0 ? `$${s.dividendRate.toFixed(2)}` : "-"}
+                    {typeof s.dividendRate === "number" && s.dividendRate > 0 ? `$${s.dividendRate.toFixed(2)}` : "-"}
                   </td>
 
                   {/* PER */}
                   <td className="text-right px-4 py-3 text-gray-400 text-xs">
-                    {s.peRatio > 0 ? s.peRatio.toFixed(1) : "-"}
+                    {typeof s.peRatio === "number" && s.peRatio > 0 ? s.peRatio.toFixed(1) : "-"}
                   </td>
 
                   {/* 배당성향 */}
                   <td className="text-right px-4 py-3">
-                    <span className={`text-xs ${s.payoutRatio > 80 ? "text-red-400" : s.payoutRatio > 60 ? "text-yellow-400" : "text-gray-400"}`}>
-                      {s.payoutRatio > 0 ? `${s.payoutRatio.toFixed(0)}%` : "-"}
+                    <span className={`text-xs ${typeof s.payoutRatio === "number" ? (s.payoutRatio > 80 ? "text-red-400" : s.payoutRatio > 60 ? "text-yellow-400" : "text-gray-400") : "text-gray-500"}`}>
+                      {typeof s.payoutRatio === "number" && s.payoutRatio > 0 ? `${s.payoutRatio.toFixed(0)}%` : "-"}
                     </span>
                   </td>
                 </tr>
@@ -374,24 +381,5 @@ export default function Watchlist() {
         목록 지표와 상세는 모두 DB 기준으로만 표기됩니다. metric이 없으면 값은 비워지고, 의견은 analysis의 overall_rating을 그대로 사용합니다.
       </p>
     </div>
-  );
-}
-div>
-  );
-}
-� 주의 ≤ 3.5 · 배당성향 빨간색 &gt; 80% · 노란색 60~80%
-      </p>
-    </div>
-  );
-}
-div>
-  );
-}
-≤ 3.5 · 배당성향 빨간색 &gt; 80% · 노란색 60~80%
-      </p>
-    </div>
-  );
-}
-div>
   );
 }
